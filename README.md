@@ -90,7 +90,7 @@
 
   - preferred example
 
-  ```swif
+  ```swift
   protocol MyCellDelegate {
     func myCellWillPresent(_ cell: MyCell)
     func myCell(_ cell: MyCell, didTapFollowButtonWith user: User)
@@ -99,7 +99,7 @@
 
   - Not preferred example
 
-  ```swif
+  ```swift
   protocol MyCellDelegate {
     func willPresent(_ cell: MyCell)
     func myCell(_ cell: MyCell, didTapFollowButtonWith user: User)
