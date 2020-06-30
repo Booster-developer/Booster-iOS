@@ -1,19 +1,26 @@
+
+
 # Booster-iOS
+
 ### Table of Contents
 
 - [Coding Convention](#coding-convention)
-  - [layout](#layout)
-  - [naming rules](#naming-rules)
+  - [Layout](#layout)
+  - [Naming rules](#naming-rules)
+  - [Comment](#comment)
+  - [Else](#else)
 - [Foldering](#Foldering)
-- IDE and Library used
-- APP Specification
-- APP Functions and Developer Commentaries
-- Challenges and Something New
-- About
+- [IDE and Library used](#ide-and-library-used)
+- [APP Specification](#app-specification)
+- [APP Functions and Developer Commentaries](#app-functions-and-developer-commentaries)
+- [Challenges and Something New](#challenges-and-something-new)
+- [About](#about)
 
 
 
 ### Coding Convention
+
+  based on [API Design Guidelines](https://swift.org/documentation/api-design-guidelines/). Some key rules are below.
 
 ------
 
@@ -97,7 +104,7 @@
   }
   ```
 
-  - Not preferred example
+  - not preferred example
 
   ```swift
   protocol MyCellDelegate {
@@ -116,3 +123,47 @@
 
 - use lowerCamelCase in a constant name.
 
+------
+
+#### Comment
+
+- use triple slash(///) for comment
+
+- do not use comment type like C (/* ... */) .
+
+  - preferred example
+
+  ```swift
+  /// MARK - IBOutlets
+  @IBOutlet weak var tableView: UITableView!
+  @IBOutlet weak var nameLabel: UILabel!
+  ```
+
+  - not preferred example
+
+  ```swift
+  /* these are IBOutlets
+      that are connected with objects on storyboard */
+  @IBOutlet weak var tableView: UITableView!
+  @IBOutlet weak var nameLabel: UILabel!
+  ```
+
+- avoid block comments inline with code.
+
+------
+
+#### Else
+
+- use then to initialize properties of variables during declaration.
+
+  - example
+
+  ```swift
+  let nameLabel = UILabel().then{
+    $0.backgroundColor = .white
+    $0.textColor = .blue
+    $0.text = "world"
+  }
+  ```
+
+- 
