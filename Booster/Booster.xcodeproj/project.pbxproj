@@ -130,6 +130,7 @@
 				DA2BC40A24AB4BA600013143 /* Assets.xcassets */,
 				DA2BC43924AB580500013143 /* API */,
 				DA2BC43524AB569100013143 /* Storyboards */,
+				DA2BC43A24AB5F0500013143 /* Fonts */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -198,6 +199,13 @@
 			children = (
 			);
 			path = API;
+			sourceTree = "<group>";
+		};
+		DA2BC43A24AB5F0500013143 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
