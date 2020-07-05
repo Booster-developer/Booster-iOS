@@ -11,8 +11,8 @@
   - [Else](#else)
 - [Foldering](#foldering)
   - [Functional]
-    - [Sources]
-    - [Resources]
+  - [API_and_Fonts]
+  - [Models_and_Extensions]
 - [IDE and Library used](#ide-and-library-used)
 - [APP Specification](#app-specification)
 - [APP Functions and Developer Commentaries](#app-functions-and-developer-commentaries)
@@ -174,9 +174,24 @@
 
 ### Foldering
 
+#### API_and_Fonts
+Commonly used API and Font related files are managed in this folder
+#### Models_and_Extensions
+Commonly used Model and Extension related files are managed in this folder
 #### Functional
+There are 5 major functions in this project
+```
+1. Home
+2. Search
+3. Order
+4. Status
+5. MyPage
+6. Login and Signin
+```
+Groups are devided by function and each groups has sources and resources folders.
 
 ##### Sources
+These files can included in sources folder
 
 - Viewcontrollers
 - Views
@@ -185,6 +200,6 @@
 - Models
 
 ##### Resources
+These files can included in resources folder
+
 - Storyboards
-- Fonts
-- 
