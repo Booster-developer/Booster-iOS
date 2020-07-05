@@ -9,7 +9,10 @@
   - [Naming rules](#naming-rules)
   - [Comment](#comment)
   - [Else](#else)
-- [Foldering](#Foldering)
+- [Foldering](#foldering)
+  - [Functional]
+    - [Sources]
+    - [Resources]
 - [IDE and Library used](#ide-and-library-used)
 - [APP Specification](#app-specification)
 - [APP Functions and Developer Commentaries](#app-functions-and-developer-commentaries)
@@ -67,7 +70,7 @@
 
 ------
 
-#### Naming
+#### Naming rules
 
 #####   Common
 
@@ -166,4 +169,22 @@
   }
   ```
 
+- 
+
+
+### Foldering
+
+#### Functional
+
+##### Sources
+
+- Viewcontrollers
+- Views
+- Cells
+- APIServices
+- Models
+
+##### Resources
+- Storyboards
+- Fonts
 - 
