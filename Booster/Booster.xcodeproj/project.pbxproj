@@ -9,12 +9,24 @@
 /* Begin PBXBuildFile section */
 		DA2BC40224AB4BA300013143 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2BC40124AB4BA300013143 /* AppDelegate.swift */; };
 		DA2BC40424AB4BA300013143 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2BC40324AB4BA300013143 /* SceneDelegate.swift */; };
-		DA2BC40624AB4BA300013143 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2BC40524AB4BA300013143 /* ViewController.swift */; };
-		DA2BC40924AB4BA300013143 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA2BC40724AB4BA300013143 /* Main.storyboard */; };
 		DA2BC40B24AB4BA600013143 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA2BC40A24AB4BA600013143 /* Assets.xcassets */; };
 		DA2BC40E24AB4BA600013143 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA2BC40C24AB4BA600013143 /* LaunchScreen.storyboard */; };
 		DA2BC41924AB4BA600013143 /* BoosterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2BC41824AB4BA600013143 /* BoosterTests.swift */; };
 		DA2BC42424AB4BA600013143 /* BoosterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2BC42324AB4BA600013143 /* BoosterUITests.swift */; };
+		DACA38F924B229650025E230 /* mainTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DACA38F824B229650025E230 /* mainTab.storyboard */; };
+		DACA38FB24B22A5E0025E230 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACA38FA24B22A5E0025E230 /* MainTabBarController.swift */; };
+		DACA38FF24B22D0C0025E230 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DACA38FE24B22D0C0025E230 /* Home.storyboard */; };
+		DACA390124B22D410025E230 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACA390024B22D410025E230 /* HomeViewController.swift */; };
+		DACA390524B231640025E230 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACA390424B231640025E230 /* SearchViewController.swift */; };
+		DACA390724B231710025E230 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DACA390624B231710025E230 /* Search.storyboard */; };
+		DACA390924B231880025E230 /* Order.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DACA390824B231880025E230 /* Order.storyboard */; };
+		DACA390B24B231970025E230 /* OrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACA390A24B231970025E230 /* OrderViewController.swift */; };
+		DACA390E24B231AE0025E230 /* StatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACA390D24B231AE0025E230 /* StatusViewController.swift */; };
+		DACA391024B231E20025E230 /* Status.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DACA390F24B231E20025E230 /* Status.storyboard */; };
+		DACA391224B231F40025E230 /* MyPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DACA391124B231F40025E230 /* MyPage.storyboard */; };
+		DACA391424B232020025E230 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACA391324B232020025E230 /* MyPageViewController.swift */; };
+		DACA391824B23ADA0025E230 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACA391724B23ADA0025E230 /* LogInViewController.swift */; };
+		DACA391A24B23AEB0025E230 /* LogIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DACA391924B23AEB0025E230 /* LogIn.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,8 +50,6 @@
 		DA2BC3FE24AB4BA300013143 /* Booster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Booster.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA2BC40124AB4BA300013143 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DA2BC40324AB4BA300013143 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		DA2BC40524AB4BA300013143 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		DA2BC40824AB4BA300013143 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DA2BC40A24AB4BA600013143 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DA2BC40D24AB4BA600013143 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DA2BC40F24AB4BA600013143 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +59,20 @@
 		DA2BC41F24AB4BA600013143 /* BoosterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BoosterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA2BC42324AB4BA600013143 /* BoosterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoosterUITests.swift; sourceTree = "<group>"; };
 		DA2BC42524AB4BA600013143 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DACA38F824B229650025E230 /* mainTab.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = mainTab.storyboard; sourceTree = "<group>"; };
+		DACA38FA24B22A5E0025E230 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		DACA38FE24B22D0C0025E230 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		DACA390024B22D410025E230 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		DACA390424B231640025E230 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		DACA390624B231710025E230 /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
+		DACA390824B231880025E230 /* Order.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Order.storyboard; sourceTree = "<group>"; };
+		DACA390A24B231970025E230 /* OrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewController.swift; sourceTree = "<group>"; };
+		DACA390D24B231AE0025E230 /* StatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusViewController.swift; sourceTree = "<group>"; };
+		DACA390F24B231E20025E230 /* Status.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Status.storyboard; sourceTree = "<group>"; };
+		DACA391124B231F40025E230 /* MyPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyPage.storyboard; sourceTree = "<group>"; };
+		DACA391324B232020025E230 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
+		DACA391724B23ADA0025E230 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		DACA391924B23AEB0025E230 /* LogIn.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LogIn.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,9 +123,19 @@
 		DA2BC40024AB4BA300013143 /* Booster */ = {
 			isa = PBXGroup;
 			children = (
-				DA2BC43124AB564500013143 /* Resources */,
-				DA2BC43224AB566100013143 /* Sources */,
+				DA2BC40A24AB4BA600013143 /* Assets.xcassets */,
+				DA2BC43124AB564500013143 /* API_and_Fonts */,
+				DA2BC43224AB566100013143 /* Models_and_Extensions */,
+				DACA38E024B217040025E230 /* Home */,
+				DACA38E124B2170B0025E230 /* Search */,
+				DACA38E224B217320025E230 /* Order */,
+				DACA38E324B217400025E230 /* Status */,
+				DACA38E424B2174A0025E230 /* Mypage */,
+				DACA38DF24B216E10025E230 /* Login_Signin */,
 				DA2BC40F24AB4BA600013143 /* Info.plist */,
+				DA2BC40C24AB4BA600013143 /* LaunchScreen.storyboard */,
+				DACA38F824B229650025E230 /* mainTab.storyboard */,
+				DACA38FA24B22A5E0025E230 /* MainTabBarController.swift */,
 			);
 			path = Booster;
 			sourceTree = "<group>";
@@ -124,53 +158,24 @@
 			path = BoosterUITests;
 			sourceTree = "<group>";
 		};
-		DA2BC43124AB564500013143 /* Resources */ = {
+		DA2BC43124AB564500013143 /* API_and_Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				DA2BC40A24AB4BA600013143 /* Assets.xcassets */,
 				DA2BC43924AB580500013143 /* API */,
-				DA2BC43524AB569100013143 /* Storyboards */,
 				DA2BC43A24AB5F0500013143 /* Fonts */,
 			);
-			path = Resources;
+			path = API_and_Fonts;
 			sourceTree = "<group>";
 		};
-		DA2BC43224AB566100013143 /* Sources */ = {
+		DA2BC43224AB566100013143 /* Models_and_Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				DA2BC40124AB4BA300013143 /* AppDelegate.swift */,
 				DA2BC40324AB4BA300013143 /* SceneDelegate.swift */,
-				DA2BC43824AB57F600013143 /* Cells */,
 				DA2BC43724AB576800013143 /* Extensions */,
 				DA2BC43624AB576100013143 /* Models */,
-				DA2BC43424AB568500013143 /* Views */,
-				DA2BC43324AB567D00013143 /* ViewControllers */,
 			);
-			path = Sources;
-			sourceTree = "<group>";
-		};
-		DA2BC43324AB567D00013143 /* ViewControllers */ = {
-			isa = PBXGroup;
-			children = (
-				DA2BC40524AB4BA300013143 /* ViewController.swift */,
-			);
-			path = ViewControllers;
-			sourceTree = "<group>";
-		};
-		DA2BC43424AB568500013143 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		DA2BC43524AB569100013143 /* Storyboards */ = {
-			isa = PBXGroup;
-			children = (
-				DA2BC40C24AB4BA600013143 /* LaunchScreen.storyboard */,
-				DA2BC40724AB4BA300013143 /* Main.storyboard */,
-			);
-			path = Storyboards;
+			path = Models_and_Extensions;
 			sourceTree = "<group>";
 		};
 		DA2BC43624AB576100013143 /* Models */ = {
@@ -187,13 +192,6 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		DA2BC43824AB57F600013143 /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Cells;
-			sourceTree = "<group>";
-		};
 		DA2BC43924AB580500013143 /* API */ = {
 			isa = PBXGroup;
 			children = (
@@ -206,6 +204,254 @@
 			children = (
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		DACA38DF24B216E10025E230 /* Login_Signin */ = {
+			isa = PBXGroup;
+			children = (
+				DACA38F024B226620025E230 /* Resources */,
+				DACA38EF24B2265C0025E230 /* Sources */,
+			);
+			path = Login_Signin;
+			sourceTree = "<group>";
+		};
+		DACA38E024B217040025E230 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				DACA38EE24B226540025E230 /* Resources */,
+				DACA38ED24B2264E0025E230 /* Sources */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		DACA38E124B2170B0025E230 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				DACA38EC24B226490025E230 /* Resources */,
+				DACA38EB24B2263F0025E230 /* Sources */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		DACA38E224B217320025E230 /* Order */ = {
+			isa = PBXGroup;
+			children = (
+				DACA38EA24B226350025E230 /* Resources */,
+				DACA38E924B21ADB0025E230 /* Sources */,
+			);
+			path = Order;
+			sourceTree = "<group>";
+		};
+		DACA38E324B217400025E230 /* Status */ = {
+			isa = PBXGroup;
+			children = (
+				DACA38E824B21AD40025E230 /* Resources */,
+				DACA38E724B21ACD0025E230 /* Sources */,
+			);
+			path = Status;
+			sourceTree = "<group>";
+		};
+		DACA38E424B2174A0025E230 /* Mypage */ = {
+			isa = PBXGroup;
+			children = (
+				DACA38E624B217970025E230 /* Sources */,
+				DACA38E524B2178C0025E230 /* Resources */,
+			);
+			path = Mypage;
+			sourceTree = "<group>";
+		};
+		DACA38E524B2178C0025E230 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DACA38F324B226BD0025E230 /* Storyboards */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		DACA38E624B217970025E230 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				DACA38F524B226DA0025E230 /* ViewControllers */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		DACA38E724B21ACD0025E230 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				DACA38F124B2268A0025E230 /* ViewControllers */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		DACA38E824B21AD40025E230 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DACA38F424B226CF0025E230 /* Storyboards */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		DACA38E924B21ADB0025E230 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				DACA38F724B227C10025E230 /* ViewControllers */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		DACA38EA24B226350025E230 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DACA38F624B227B70025E230 /* Storyboards */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		DACA38EB24B2263F0025E230 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				DACA390324B2314F0025E230 /* ViewControllers */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		DACA38EC24B226490025E230 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DACA390224B231490025E230 /* Storyboards */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		DACA38ED24B2264E0025E230 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				DACA38FC24B22CA00025E230 /* ViewControllers */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		DACA38EE24B226540025E230 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DACA38FD24B22CA90025E230 /* Storyboards */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		DACA38EF24B2265C0025E230 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				DACA391524B23AB30025E230 /* ViewControllers */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		DACA38F024B226620025E230 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DACA391624B23ABD0025E230 /* Storyboards */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		DACA38F124B2268A0025E230 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				DACA390D24B231AE0025E230 /* StatusViewController.swift */,
+			);
+			name = ViewControllers;
+			path = ../ViewControllers;
+			sourceTree = "<group>";
+		};
+		DACA38F324B226BD0025E230 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				DACA391124B231F40025E230 /* MyPage.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		DACA38F424B226CF0025E230 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				DACA390F24B231E20025E230 /* Status.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		DACA38F524B226DA0025E230 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				DACA391324B232020025E230 /* MyPageViewController.swift */,
+			);
+			name = ViewControllers;
+			path = ../../Status/Sources/ViewControllers;
+			sourceTree = "<group>";
+		};
+		DACA38F624B227B70025E230 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				DACA390824B231880025E230 /* Order.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		DACA38F724B227C10025E230 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				DACA390A24B231970025E230 /* OrderViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		DACA38FC24B22CA00025E230 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				DACA390024B22D410025E230 /* HomeViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		DACA38FD24B22CA90025E230 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				DACA38FE24B22D0C0025E230 /* Home.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		DACA390224B231490025E230 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				DACA390624B231710025E230 /* Search.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		DACA390324B2314F0025E230 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				DACA390424B231640025E230 /* SearchViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		DACA391524B23AB30025E230 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				DACA391724B23ADA0025E230 /* LogInViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		DACA391624B23ABD0025E230 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				DACA391924B23AEB0025E230 /* LogIn.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -313,8 +559,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA2BC40E24AB4BA600013143 /* LaunchScreen.storyboard in Resources */,
+				DACA38FF24B22D0C0025E230 /* Home.storyboard in Resources */,
 				DA2BC40B24AB4BA600013143 /* Assets.xcassets in Resources */,
-				DA2BC40924AB4BA300013143 /* Main.storyboard in Resources */,
+				DACA391224B231F40025E230 /* MyPage.storyboard in Resources */,
+				DACA391024B231E20025E230 /* Status.storyboard in Resources */,
+				DACA390924B231880025E230 /* Order.storyboard in Resources */,
+				DACA390724B231710025E230 /* Search.storyboard in Resources */,
+				DACA391A24B23AEB0025E230 /* LogIn.storyboard in Resources */,
+				DACA38F924B229650025E230 /* mainTab.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,8 +591,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DA2BC40624AB4BA300013143 /* ViewController.swift in Sources */,
+				DACA390E24B231AE0025E230 /* StatusViewController.swift in Sources */,
+				DACA391424B232020025E230 /* MyPageViewController.swift in Sources */,
+				DACA391824B23ADA0025E230 /* LogInViewController.swift in Sources */,
+				DACA390524B231640025E230 /* SearchViewController.swift in Sources */,
+				DACA390124B22D410025E230 /* HomeViewController.swift in Sources */,
+				DACA390B24B231970025E230 /* OrderViewController.swift in Sources */,
 				DA2BC40224AB4BA300013143 /* AppDelegate.swift in Sources */,
+				DACA38FB24B22A5E0025E230 /* MainTabBarController.swift in Sources */,
 				DA2BC40424AB4BA300013143 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -377,14 +635,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		DA2BC40724AB4BA300013143 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				DA2BC40824AB4BA300013143 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		DA2BC40C24AB4BA600013143 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
