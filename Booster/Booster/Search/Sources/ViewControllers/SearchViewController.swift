@@ -9,7 +9,18 @@
 import UIKit
 
 class SearchViewController: UIViewController {
-
+    @IBAction func selectUniv(_ sender: Any) {
+        guard let univSelect = self.storyboard?.instantiateViewController(identifier: "UnivSelectViewController", creator: nil) as? UnivSelectViewController else { return}
+        univSelect.modalPresentationStyle = .fullScreen
+        
+        univSelect.backgroundImg = self.tabBarController?.view.asImage()
+        self.present(univSelect,animated: false, completion: nil)
+    }
+//    @objc func onClickTransparentView() {
+//        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1.0, initialSpringVelocity: 1.0,options: .curveEaseInOut, animations: {self.transparentView.alpha=0
+//            self.univSelectionTableHeight.constant = 0
+//        }, completion: nil)
+//    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
