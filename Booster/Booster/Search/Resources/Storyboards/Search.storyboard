@@ -236,6 +236,10 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wvC-A6-8Kh">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="1448"/>
                             </imageView>
+                            <view alpha="0.59999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VeB-vD-OXW">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="1448"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sis-Fw-MrG">
                                 <rect key="frame" x="0.0" y="660" width="375" height="754"/>
                                 <subviews>
@@ -297,10 +301,6 @@
                                     <constraint firstItem="tVO-Kg-8op" firstAttribute="leading" secondItem="sis-Fw-MrG" secondAttribute="leading" id="ihs-DV-8gn"/>
                                     <constraint firstItem="tVO-Kg-8op" firstAttribute="top" secondItem="sis-Fw-MrG" secondAttribute="top" constant="25" id="x0y-kN-xSC"/>
                                 </constraints>
-                            </view>
-                            <view alpha="0.59999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VeB-vD-OXW">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="1448"/>
-                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
