@@ -15,6 +15,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="42h-00-vlm">
+                                <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="L5u-5v-CZo"/>
+                                </constraints>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fpl-MS-PKF">
                                 <rect key="frame" x="0.0" y="88" width="375" height="690"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -24,8 +31,11 @@
                         <constraints>
                             <constraint firstItem="4sZ-p9-aWw" firstAttribute="bottom" secondItem="fpl-MS-PKF" secondAttribute="bottom" id="623-3G-fWM"/>
                             <constraint firstItem="fpl-MS-PKF" firstAttribute="leading" secondItem="4sZ-p9-aWw" secondAttribute="leading" id="c4f-bp-jNM"/>
+                            <constraint firstItem="42h-00-vlm" firstAttribute="top" secondItem="4sZ-p9-aWw" secondAttribute="top" id="hqT-QU-Hs7"/>
+                            <constraint firstItem="4sZ-p9-aWw" firstAttribute="trailing" secondItem="42h-00-vlm" secondAttribute="trailing" id="kfs-lL-1ue"/>
+                            <constraint firstItem="42h-00-vlm" firstAttribute="leading" secondItem="4sZ-p9-aWw" secondAttribute="leading" id="n6J-Fu-6lQ"/>
                             <constraint firstItem="4sZ-p9-aWw" firstAttribute="trailing" secondItem="fpl-MS-PKF" secondAttribute="trailing" id="rUa-tx-g68"/>
-                            <constraint firstItem="fpl-MS-PKF" firstAttribute="top" secondItem="4sZ-p9-aWw" secondAttribute="top" id="w4L-pd-d0c"/>
+                            <constraint firstItem="fpl-MS-PKF" firstAttribute="top" secondItem="42h-00-vlm" secondAttribute="bottom" id="wCF-7h-jyu"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="4sZ-p9-aWw"/>
                     </view>
@@ -33,7 +43,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zq8-cJ-Dhz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1018.840579710145" y="-91.071428571428569"/>
+            <point key="canvasLocation" x="1018.4" y="-91.625615763546804"/>
         </scene>
         <!--Store Detail View Controller-->
         <scene sceneID="DtO-jW-RJf">
@@ -43,6 +53,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3RR-gd-bp6">
+                                <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="g9N-42-4yi"/>
+                                </constraints>
+                            </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="storeDetailImg" translatesAutoresizingMaskIntoConstraints="NO" id="vl7-pF-Rwg">
                                 <rect key="frame" x="0.0" y="88" width="375" height="207"/>
                             </imageView>
@@ -311,11 +328,11 @@
                         </subviews>
                         <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="vl7-pF-Rwg" firstAttribute="top" secondItem="wn5-Ej-9QH" secondAttribute="top" id="1RB-Xa-vbj"/>
                             <constraint firstItem="vl7-pF-Rwg" firstAttribute="leading" secondItem="wn5-Ej-9QH" secondAttribute="leading" id="7sH-Kz-Fli"/>
                             <constraint firstItem="Bbg-Je-cFd" firstAttribute="top" secondItem="3R5-oB-rWU" secondAttribute="bottom" constant="1" id="D2w-YW-KXw"/>
                             <constraint firstItem="3R5-oB-rWU" firstAttribute="height" secondItem="rdX-c9-Opd" secondAttribute="height" multiplier="193:812" id="Did-jd-Hgd"/>
                             <constraint firstAttribute="bottom" secondItem="N6x-Fp-fSj" secondAttribute="bottom" id="L2g-IB-Bcu"/>
+                            <constraint firstItem="3RR-gd-bp6" firstAttribute="leading" secondItem="wn5-Ej-9QH" secondAttribute="leading" id="Lmh-uf-I9k"/>
                             <constraint firstItem="vl7-pF-Rwg" firstAttribute="height" secondItem="rdX-c9-Opd" secondAttribute="height" multiplier="207:812" id="Oja-qV-TLj"/>
                             <constraint firstItem="N6x-Fp-fSj" firstAttribute="height" secondItem="rdX-c9-Opd" secondAttribute="height" multiplier="100:812" id="OpA-wy-jEb"/>
                             <constraint firstItem="6IE-6f-uQZ" firstAttribute="height" secondItem="rdX-c9-Opd" secondAttribute="height" multiplier="48:812" id="Uwd-rI-wls"/>
@@ -323,8 +340,11 @@
                             <constraint firstItem="Bbg-Je-cFd" firstAttribute="height" secondItem="rdX-c9-Opd" secondAttribute="height" multiplier="147:812" id="XZh-f3-emv"/>
                             <constraint firstItem="N6x-Fp-fSj" firstAttribute="leading" secondItem="wn5-Ej-9QH" secondAttribute="leading" id="Xdy-yj-oXt"/>
                             <constraint firstItem="wn5-Ej-9QH" firstAttribute="trailing" secondItem="Bbg-Je-cFd" secondAttribute="trailing" id="Z0z-UR-QmR"/>
+                            <constraint firstItem="3RR-gd-bp6" firstAttribute="top" secondItem="wn5-Ej-9QH" secondAttribute="top" id="aAj-x9-8rO"/>
                             <constraint firstItem="3R5-oB-rWU" firstAttribute="top" secondItem="vl7-pF-Rwg" secondAttribute="bottom" id="dWw-nQ-nWr"/>
                             <constraint firstItem="wn5-Ej-9QH" firstAttribute="trailing" secondItem="3R5-oB-rWU" secondAttribute="trailing" id="fJx-J1-QfZ"/>
+                            <constraint firstItem="vl7-pF-Rwg" firstAttribute="top" secondItem="3RR-gd-bp6" secondAttribute="bottom" id="fiL-n5-X0M"/>
+                            <constraint firstItem="wn5-Ej-9QH" firstAttribute="trailing" secondItem="3RR-gd-bp6" secondAttribute="trailing" id="h2c-3G-wTH"/>
                             <constraint firstItem="wn5-Ej-9QH" firstAttribute="trailing" secondItem="N6x-Fp-fSj" secondAttribute="trailing" id="rta-Hp-2Pg"/>
                             <constraint firstItem="wn5-Ej-9QH" firstAttribute="trailing" secondItem="vl7-pF-Rwg" secondAttribute="trailing" id="t2P-u1-XXG"/>
                             <constraint firstItem="3R5-oB-rWU" firstAttribute="leading" secondItem="wn5-Ej-9QH" secondAttribute="leading" id="tms-gn-2Lk"/>
@@ -339,42 +359,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vB4-Yd-ER3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1048.8" y="621.42857142857144"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="GFr-Jn-uux">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="yVH-dI-KDC" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="XQK-RI-kEc">
-                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="kzo-xg-kue" kind="relationship" relationship="rootViewController" id="kn1-jZ-QgY"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="aA3-PF-7I8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="108.69565217391305" y="-91.071428571428569"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="EEP-qB-ryQ">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="VCr-Xm-Ei2" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="4yz-K9-PWo">
-                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="k03-jQ-lQK" kind="relationship" relationship="rootViewController" id="JaL-9c-WoN"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="I51-s5-cSl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="108" y="622"/>
         </scene>
     </scenes>
     <resources>

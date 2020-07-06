@@ -18,8 +18,7 @@
 - [APP Functions and Developer Commentaries](#app-functions-and-developer-commentaries)
 - [Challenges and Something New](#challenges-and-something-new)
 - [About](#about)
-
-
+  - [Copyright Statement](#copyright_statement)
 
 ### Coding Convention
 
