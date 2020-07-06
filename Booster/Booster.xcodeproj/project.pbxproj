@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,6 +16,8 @@
 		DA2BC40E24AB4BA600013143 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA2BC40C24AB4BA600013143 /* LaunchScreen.storyboard */; };
 		DA2BC41924AB4BA600013143 /* BoosterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2BC41824AB4BA600013143 /* BoosterTests.swift */; };
 		DA2BC42424AB4BA600013143 /* BoosterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2BC42324AB4BA600013143 /* BoosterUITests.swift */; };
+		DA95BDA124B2DA7D00BC1F60 /* StoreCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA95BDA024B2DA7D00BC1F60 /* StoreCollectionViewCell.swift */; };
+		DA95BDA324B2FB7300BC1F60 /* univTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA95BDA224B2FB7300BC1F60 /* univTableViewCell.swift */; };
 		DACA38F924B229650025E230 /* mainTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DACA38F824B229650025E230 /* mainTab.storyboard */; };
 		DACA38FB24B22A5E0025E230 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACA38FA24B22A5E0025E230 /* MainTabBarController.swift */; };
 		DACA38FF24B22D0C0025E230 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DACA38FE24B22D0C0025E230 /* Home.storyboard */; };
@@ -72,6 +74,8 @@
 		DA2BC41F24AB4BA600013143 /* BoosterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BoosterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA2BC42324AB4BA600013143 /* BoosterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoosterUITests.swift; sourceTree = "<group>"; };
 		DA2BC42524AB4BA600013143 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DA95BDA024B2DA7D00BC1F60 /* StoreCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreCollectionViewCell.swift; sourceTree = "<group>"; };
+		DA95BDA224B2FB7300BC1F60 /* univTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = univTableViewCell.swift; sourceTree = "<group>"; };
 		DACA38F824B229650025E230 /* mainTab.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = mainTab.storyboard; sourceTree = "<group>"; };
 		DACA38FA24B22A5E0025E230 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		DACA38FE24B22D0C0025E230 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
@@ -86,9 +90,9 @@
 		DACA391324B232020025E230 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
 		DACA391724B23ADA0025E230 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		DACA391924B23AEB0025E230 /* LogIn.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LogIn.storyboard; sourceTree = "<group>"; };
-		EA9E906D8C1B39603966245B /* Pods-Booster.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Booster.release.xcconfig"; path = "Target Support Files/Pods-Booster/Pods-Booster.release.xcconfig"; sourceTree = "<group>"; };
 		DACA391B24B2BAEA0025E230 /* UnivSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnivSelectViewController.swift; sourceTree = "<group>"; };
 		DACA392024B2C0030025E230 /* SnapShotScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapShotScreen.swift; sourceTree = "<group>"; };
+		EA9E906D8C1B39603966245B /* Pods-Booster.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Booster.release.xcconfig"; path = "Target Support Files/Pods-Booster/Pods-Booster.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,7 +133,6 @@
 				0492869B94BAE57E36EB3D97 /* Pods-BoosterTests.debug.xcconfig */,
 				B4FE09C82524C313ED6A8771 /* Pods-BoosterTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -251,6 +254,15 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		DA95BD9F24B2DA5300BC1F60 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				DA95BDA024B2DA7D00BC1F60 /* StoreCollectionViewCell.swift */,
+				DA95BDA224B2FB7300BC1F60 /* univTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		DACA38DF24B216E10025E230 /* Login_Signin */ = {
 			isa = PBXGroup;
 			children = (
@@ -356,6 +368,7 @@
 		DACA38EB24B2263F0025E230 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				DA95BD9F24B2DA5300BC1F60 /* Cells */,
 				DACA391D24B2BFB70025E230 /* Views */,
 				DACA390324B2314F0025E230 /* ViewControllers */,
 			);
@@ -755,9 +768,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				DACA392124B2C0030025E230 /* SnapShotScreen.swift in Sources */,
+				DA95BDA324B2FB7300BC1F60 /* univTableViewCell.swift in Sources */,
 				DACA390E24B231AE0025E230 /* StatusViewController.swift in Sources */,
 				DACA391424B232020025E230 /* MyPageViewController.swift in Sources */,
 				DACA391824B23ADA0025E230 /* LogInViewController.swift in Sources */,
+				DA95BDA124B2DA7D00BC1F60 /* StoreCollectionViewCell.swift in Sources */,
 				DACA390524B231640025E230 /* SearchViewController.swift in Sources */,
 				DACA390124B22D410025E230 /* HomeViewController.swift in Sources */,
 				DACA390B24B231970025E230 /* OrderViewController.swift in Sources */,

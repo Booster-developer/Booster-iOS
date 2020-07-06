@@ -53,7 +53,7 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>NFMClinetId</key>
+	<key>NMFClientId</key>
 	<string>8wzsru0n0y</string>
 	<key>NSAppTransportSecurity</key>
 	<dict>
