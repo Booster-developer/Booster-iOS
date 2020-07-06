@@ -3,12 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		099603BCE0EEA53B9D20DA32 /* Pods_Booster.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 914771C07D11C5A5E6DFC8B4 /* Pods_Booster.framework */; };
 		8DEDC2D64F3E1358A5920590 /* Pods_Booster_BoosterUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D3D2ACB3821194FDEE7982B /* Pods_Booster_BoosterUITests.framework */; };
+		CCE019E324B2D13A0067F721 /* Search_hs.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCE019E224B2D13A0067F721 /* Search_hs.storyboard */; };
+		CCE019E524B2D1CB0067F721 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE019E424B2D1CB0067F721 /* MapViewController.swift */; };
 		D37338012F3166BBDF741F1C /* Pods_BoosterTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF5F3976B85D8FEDD0677FC6 /* Pods_BoosterTests.framework */; };
 		DA2BC40224AB4BA300013143 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2BC40124AB4BA300013143 /* AppDelegate.swift */; };
 		DA2BC40424AB4BA300013143 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2BC40324AB4BA300013143 /* SceneDelegate.swift */; };
@@ -60,6 +62,8 @@
 		A60AF9142B5D7975299C506E /* Pods-Booster-BoosterUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Booster-BoosterUITests.release.xcconfig"; path = "Target Support Files/Pods-Booster-BoosterUITests/Pods-Booster-BoosterUITests.release.xcconfig"; sourceTree = "<group>"; };
 		B4FE09C82524C313ED6A8771 /* Pods-BoosterTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BoosterTests.release.xcconfig"; path = "Target Support Files/Pods-BoosterTests/Pods-BoosterTests.release.xcconfig"; sourceTree = "<group>"; };
 		BF5F3976B85D8FEDD0677FC6 /* Pods_BoosterTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BoosterTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CCE019E224B2D13A0067F721 /* Search_hs.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search_hs.storyboard; sourceTree = "<group>"; };
+		CCE019E424B2D1CB0067F721 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		DA2BC3FE24AB4BA300013143 /* Booster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Booster.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA2BC40124AB4BA300013143 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DA2BC40324AB4BA300013143 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -86,9 +90,9 @@
 		DACA391324B232020025E230 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
 		DACA391724B23ADA0025E230 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		DACA391924B23AEB0025E230 /* LogIn.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LogIn.storyboard; sourceTree = "<group>"; };
-		EA9E906D8C1B39603966245B /* Pods-Booster.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Booster.release.xcconfig"; path = "Target Support Files/Pods-Booster/Pods-Booster.release.xcconfig"; sourceTree = "<group>"; };
 		DACA391B24B2BAEA0025E230 /* UnivSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnivSelectViewController.swift; sourceTree = "<group>"; };
 		DACA392024B2C0030025E230 /* SnapShotScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapShotScreen.swift; sourceTree = "<group>"; };
+		EA9E906D8C1B39603966245B /* Pods-Booster.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Booster.release.xcconfig"; path = "Target Support Files/Pods-Booster/Pods-Booster.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,7 +133,6 @@
 				0492869B94BAE57E36EB3D97 /* Pods-BoosterTests.debug.xcconfig */,
 				B4FE09C82524C313ED6A8771 /* Pods-BoosterTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -472,6 +475,7 @@
 			isa = PBXGroup;
 			children = (
 				DACA390624B231710025E230 /* Search.storyboard */,
+				CCE019E224B2D13A0067F721 /* Search_hs.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -481,6 +485,7 @@
 			children = (
 				DACA390424B231640025E230 /* SearchViewController.swift */,
 				DACA391B24B2BAEA0025E230 /* UnivSelectViewController.swift */,
+				CCE019E424B2D1CB0067F721 /* MapViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -627,6 +632,7 @@
 				DACA390724B231710025E230 /* Search.storyboard in Resources */,
 				DACA391A24B23AEB0025E230 /* LogIn.storyboard in Resources */,
 				DACA38F924B229650025E230 /* mainTab.storyboard in Resources */,
+				CCE019E324B2D13A0067F721 /* Search_hs.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -761,6 +767,7 @@
 				DACA390524B231640025E230 /* SearchViewController.swift in Sources */,
 				DACA390124B22D410025E230 /* HomeViewController.swift in Sources */,
 				DACA390B24B231970025E230 /* OrderViewController.swift in Sources */,
+				CCE019E524B2D1CB0067F721 /* MapViewController.swift in Sources */,
 				DA2BC40224AB4BA300013143 /* AppDelegate.swift in Sources */,
 				DACA38FB24B22A5E0025E230 /* MainTabBarController.swift in Sources */,
 				DACA391C24B2BAEA0025E230 /* UnivSelectViewController.swift in Sources */,
