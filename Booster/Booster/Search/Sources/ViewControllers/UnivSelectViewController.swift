@@ -66,7 +66,7 @@ class UnivSelectViewController: UIViewController {
           selectionViewConstraint.constant = safeAreaHeight - 235
           
       }
-        let showView = UIViewPropertyAnimator(duration: 0.25, curve: .easeIn, animations: {
+      let showView = UIViewPropertyAnimator(duration: 0.25, curve: .easeIn, animations: {
           self.view.layoutIfNeeded()
          })
       showView.addAnimations {
@@ -160,6 +160,9 @@ extension UnivSelectViewController:UITableViewDataSource{
     }
     univTableCell.selectedBox.tag = indexPath.row    
     univTableCell.selectedBox.alpha = 0
+    if indexPath.row == 0 {
+      univTableCell.selectedBox.alpha = 1
+    }
     return univTableCell
   }
 }

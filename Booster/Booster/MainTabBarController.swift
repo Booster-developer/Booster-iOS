@@ -8,10 +8,11 @@
 
 import UIKit
 
-class MainTabBarController: UITabBarController {
+class MainTabBarController: UITabBarController ,UITabBarControllerDelegate{
 
     override func viewDidLoad() {
         super.viewDidLoad()
+      self.delegate = self
         setTabBar()
         // Do any additional setup after loading the view.
     }
@@ -32,8 +33,8 @@ class MainTabBarController: UITabBarController {
         secondTab.tabBarItem.selectedImage = UIImage(named: "btnTab2")?.withRenderingMode(.alwaysTemplate)
         
         let orderStoryboard = UIStoryboard.init(name:"Order",bundle: nil)
-        guard let thirdTab = orderStoryboard.instantiateViewController(identifier: "OrderViewController") as? OrderViewController else{return}
-
+        guard let thirdTab = orderStoryboard.instantiateViewController(identifier: "OrderViewController") as? UINavigationController else{return}
+      
         thirdTab.tabBarItem.title = ""
         thirdTab.tabBarItem.image = UIImage(named: "btnTab3")?.withRenderingMode(.alwaysOriginal)
         thirdTab.tabBarItem.selectedImage = UIImage(named: "btnTab3")?.withRenderingMode(.alwaysTemplate)
@@ -56,7 +57,17 @@ class MainTabBarController: UITabBarController {
         let tabs = [firstTab, secondTab, thirdTab,fourthTab,fifthTab]
         self.setViewControllers(tabs, animated: false)
         self.selectedViewController = firstTab
+
     }
+  func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+    let itemIndex = tabBarController.selectedIndex
+    if(itemIndex == 2){
+      tabBarController.tabBar.isHidden = true
+    }
+    else{
+      tabBarController.tabBar.isHidden = false
+    }
+  }
     /*
     // MARK: - Navigation
 CategoryVC
