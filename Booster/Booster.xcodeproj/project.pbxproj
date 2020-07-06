@@ -9,8 +9,12 @@
 /* Begin PBXBuildFile section */
 		099603BCE0EEA53B9D20DA32 /* Pods_Booster.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 914771C07D11C5A5E6DFC8B4 /* Pods_Booster.framework */; };
 		8DEDC2D64F3E1358A5920590 /* Pods_Booster_BoosterUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D3D2ACB3821194FDEE7982B /* Pods_Booster_BoosterUITests.framework */; };
-		CCE019E324B2D13A0067F721 /* Search_hs.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCE019E224B2D13A0067F721 /* Search_hs.storyboard */; };
+		CC1233CF24B3544D0049F7A4 /* StatusHs.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC1233CE24B3544D0049F7A4 /* StatusHs.storyboard */; };
+		CC1233D124B354830049F7A4 /* StatusHsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1233D024B354830049F7A4 /* StatusHsViewController.swift */; };
+		CC1233D324B363AC0049F7A4 /* StatusHsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1233D224B363AC0049F7A4 /* StatusHsCell.swift */; };
+		CCE019E324B2D13A0067F721 /* SearchHs.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCE019E224B2D13A0067F721 /* SearchHs.storyboard */; };
 		CCE019E524B2D1CB0067F721 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE019E424B2D1CB0067F721 /* MapViewController.swift */; };
+		CCE019E724B2D7CA0067F721 /* StoreDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE019E624B2D7CA0067F721 /* StoreDetailViewController.swift */; };
 		D37338012F3166BBDF741F1C /* Pods_BoosterTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF5F3976B85D8FEDD0677FC6 /* Pods_BoosterTests.framework */; };
 		DA2BC40224AB4BA300013143 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2BC40124AB4BA300013143 /* AppDelegate.swift */; };
 		DA2BC40424AB4BA300013143 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2BC40324AB4BA300013143 /* SceneDelegate.swift */; };
@@ -62,8 +66,12 @@
 		A60AF9142B5D7975299C506E /* Pods-Booster-BoosterUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Booster-BoosterUITests.release.xcconfig"; path = "Target Support Files/Pods-Booster-BoosterUITests/Pods-Booster-BoosterUITests.release.xcconfig"; sourceTree = "<group>"; };
 		B4FE09C82524C313ED6A8771 /* Pods-BoosterTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BoosterTests.release.xcconfig"; path = "Target Support Files/Pods-BoosterTests/Pods-BoosterTests.release.xcconfig"; sourceTree = "<group>"; };
 		BF5F3976B85D8FEDD0677FC6 /* Pods_BoosterTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BoosterTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CCE019E224B2D13A0067F721 /* Search_hs.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search_hs.storyboard; sourceTree = "<group>"; };
+		CC1233CE24B3544D0049F7A4 /* StatusHs.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StatusHs.storyboard; sourceTree = "<group>"; };
+		CC1233D024B354830049F7A4 /* StatusHsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusHsViewController.swift; sourceTree = "<group>"; };
+		CC1233D224B363AC0049F7A4 /* StatusHsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusHsCell.swift; sourceTree = "<group>"; };
+		CCE019E224B2D13A0067F721 /* SearchHs.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchHs.storyboard; sourceTree = "<group>"; };
 		CCE019E424B2D1CB0067F721 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		CCE019E624B2D7CA0067F721 /* StoreDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreDetailViewController.swift; sourceTree = "<group>"; };
 		DA2BC3FE24AB4BA300013143 /* Booster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Booster.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA2BC40124AB4BA300013143 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DA2BC40324AB4BA300013143 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -328,6 +336,7 @@
 			isa = PBXGroup;
 			children = (
 				DACA38F124B2268A0025E230 /* ViewControllers */,
+				CC1233D224B363AC0049F7A4 /* StatusHsCell.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -409,6 +418,7 @@
 			isa = PBXGroup;
 			children = (
 				DACA390D24B231AE0025E230 /* StatusViewController.swift */,
+				CC1233D024B354830049F7A4 /* StatusHsViewController.swift */,
 			);
 			name = ViewControllers;
 			path = ../ViewControllers;
@@ -426,6 +436,7 @@
 			isa = PBXGroup;
 			children = (
 				DACA390F24B231E20025E230 /* Status.storyboard */,
+				CC1233CE24B3544D0049F7A4 /* StatusHs.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -475,7 +486,7 @@
 			isa = PBXGroup;
 			children = (
 				DACA390624B231710025E230 /* Search.storyboard */,
-				CCE019E224B2D13A0067F721 /* Search_hs.storyboard */,
+				CCE019E224B2D13A0067F721 /* SearchHs.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -484,6 +495,7 @@
 			isa = PBXGroup;
 			children = (
 				DACA390424B231640025E230 /* SearchViewController.swift */,
+				CCE019E624B2D7CA0067F721 /* StoreDetailViewController.swift */,
 				DACA391B24B2BAEA0025E230 /* UnivSelectViewController.swift */,
 				CCE019E424B2D1CB0067F721 /* MapViewController.swift */,
 			);
@@ -632,7 +644,8 @@
 				DACA390724B231710025E230 /* Search.storyboard in Resources */,
 				DACA391A24B23AEB0025E230 /* LogIn.storyboard in Resources */,
 				DACA38F924B229650025E230 /* mainTab.storyboard in Resources */,
-				CCE019E324B2D13A0067F721 /* Search_hs.storyboard in Resources */,
+				CC1233CF24B3544D0049F7A4 /* StatusHs.storyboard in Resources */,
+				CCE019E324B2D13A0067F721 /* SearchHs.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -762,14 +775,17 @@
 			files = (
 				DACA392124B2C0030025E230 /* SnapShotScreen.swift in Sources */,
 				DACA390E24B231AE0025E230 /* StatusViewController.swift in Sources */,
+				CC1233D324B363AC0049F7A4 /* StatusHsCell.swift in Sources */,
 				DACA391424B232020025E230 /* MyPageViewController.swift in Sources */,
 				DACA391824B23ADA0025E230 /* LogInViewController.swift in Sources */,
 				DACA390524B231640025E230 /* SearchViewController.swift in Sources */,
+				CC1233D124B354830049F7A4 /* StatusHsViewController.swift in Sources */,
 				DACA390124B22D410025E230 /* HomeViewController.swift in Sources */,
 				DACA390B24B231970025E230 /* OrderViewController.swift in Sources */,
 				CCE019E524B2D1CB0067F721 /* MapViewController.swift in Sources */,
 				DA2BC40224AB4BA300013143 /* AppDelegate.swift in Sources */,
 				DACA38FB24B22A5E0025E230 /* MainTabBarController.swift in Sources */,
+				CCE019E724B2D7CA0067F721 /* StoreDetailViewController.swift in Sources */,
 				DACA391C24B2BAEA0025E230 /* UnivSelectViewController.swift in Sources */,
 				DA2BC40424AB4BA300013143 /* SceneDelegate.swift in Sources */,
 			);
