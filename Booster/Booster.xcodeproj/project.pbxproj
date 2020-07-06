@@ -27,6 +27,8 @@
 		DACA391424B232020025E230 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACA391324B232020025E230 /* MyPageViewController.swift */; };
 		DACA391824B23ADA0025E230 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACA391724B23ADA0025E230 /* LogInViewController.swift */; };
 		DACA391A24B23AEB0025E230 /* LogIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DACA391924B23AEB0025E230 /* LogIn.storyboard */; };
+		DACA391C24B2BAEA0025E230 /* UnivSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACA391B24B2BAEA0025E230 /* UnivSelectViewController.swift */; };
+		DACA392124B2C0030025E230 /* SnapShotScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACA392024B2C0030025E230 /* SnapShotScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +75,8 @@
 		DACA391324B232020025E230 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
 		DACA391724B23ADA0025E230 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		DACA391924B23AEB0025E230 /* LogIn.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LogIn.storyboard; sourceTree = "<group>"; };
+		DACA391B24B2BAEA0025E230 /* UnivSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnivSelectViewController.swift; sourceTree = "<group>"; };
+		DACA392024B2C0030025E230 /* SnapShotScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapShotScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -311,6 +315,7 @@
 		DACA38EB24B2263F0025E230 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				DACA391D24B2BFB70025E230 /* Views */,
 				DACA390324B2314F0025E230 /* ViewControllers */,
 			);
 			path = Sources;
@@ -434,6 +439,7 @@
 			isa = PBXGroup;
 			children = (
 				DACA390424B231640025E230 /* SearchViewController.swift */,
+				DACA391B24B2BAEA0025E230 /* UnivSelectViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -452,6 +458,14 @@
 				DACA391924B23AEB0025E230 /* LogIn.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		DACA391D24B2BFB70025E230 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DACA392024B2C0030025E230 /* SnapShotScreen.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -591,6 +605,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DACA392124B2C0030025E230 /* SnapShotScreen.swift in Sources */,
 				DACA390E24B231AE0025E230 /* StatusViewController.swift in Sources */,
 				DACA391424B232020025E230 /* MyPageViewController.swift in Sources */,
 				DACA391824B23ADA0025E230 /* LogInViewController.swift in Sources */,
@@ -599,6 +614,7 @@
 				DACA390B24B231970025E230 /* OrderViewController.swift in Sources */,
 				DA2BC40224AB4BA300013143 /* AppDelegate.swift in Sources */,
 				DACA38FB24B22A5E0025E230 /* MainTabBarController.swift in Sources */,
+				DACA391C24B2BAEA0025E230 /* UnivSelectViewController.swift in Sources */,
 				DA2BC40424AB4BA300013143 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
