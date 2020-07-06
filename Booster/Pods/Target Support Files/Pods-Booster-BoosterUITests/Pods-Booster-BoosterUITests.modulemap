@@ -1,0 +1,6 @@
+framework module Pods_Booster_BoosterUITests {
+  umbrella header "Pods-Booster-BoosterUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

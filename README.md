@@ -10,9 +10,9 @@
   - [Comment](#comment)
   - [Else](#else)
 - [Foldering](#foldering)
-  - [Functional]
-  - [API_and_Fonts]
-  - [Models_and_Extensions]
+  - [Functional](#functional)
+  - [API_and_Fonts](#api_and_fonts)
+  - [Models_and_Extensions](#models_and_extensions)
 - [IDE and Library used](#ide-and-library-used)
 - [APP Specification](#app-specification)
 - [APP Functions and Developer Commentaries](#app-functions-and-developer-commentaries)
