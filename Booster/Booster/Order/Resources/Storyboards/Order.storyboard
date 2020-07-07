@@ -16,10 +16,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uWg-bP-qz1">
-                                <rect key="frame" x="0.0" y="88" width="375" height="1162"/>
+                                <rect key="frame" x="0.0" y="88" width="375" height="1196"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="89" id="s7A-yK-ZgW">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="storeCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="storeCell" rowHeight="89" id="s7A-yK-ZgW" customClass="SearchStoreTableViewCell" customModule="Booster" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="89"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="s7A-yK-ZgW" id="Y7n-mt-Rur">
@@ -85,11 +85,17 @@
                                                 <constraint firstItem="wYH-FJ-ujj" firstAttribute="leading" secondItem="Y7n-mt-Rur" secondAttribute="leading" constant="16" id="ZIP-1V-Dcr"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="selectionButton" destination="f8Z-vP-dI1" id="CaZ-E4-9HK"/>
+                                            <outlet property="storeAddress" destination="cY3-x9-jxs" id="2Mb-4D-d3T"/>
+                                            <outlet property="storeName" destination="Dkr-kH-zf4" id="mDO-K2-BCo"/>
+                                            <outlet property="storeThumbNailImg" destination="WIm-18-zr3" id="N77-Gm-Xoy"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zDu-HA-yqp">
-                                <rect key="frame" x="0.0" y="1250" width="375" height="156"/>
+                                <rect key="frame" x="0.0" y="1284" width="375" height="156"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="매장 이름" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hqs-ay-nrd">
                                         <rect key="frame" x="24" y="16" width="60" height="16"/>
@@ -127,7 +133,7 @@
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="4Wz-gO-Rpt" firstAttribute="trailing" secondItem="uWg-bP-qz1" secondAttribute="trailing" id="Q1k-Nj-aJe"/>
-                            <constraint firstItem="zDu-HA-yqp" firstAttribute="bottom" secondItem="4Wz-gO-Rpt" secondAttribute="bottom" id="Zmn-08-KDu"/>
+                            <constraint firstItem="zDu-HA-yqp" firstAttribute="bottom" secondItem="UD2-nW-G5H" secondAttribute="bottom" id="Zmn-08-KDu"/>
                             <constraint firstItem="4Wz-gO-Rpt" firstAttribute="trailing" secondItem="zDu-HA-yqp" secondAttribute="trailing" id="bgN-zK-RaP"/>
                             <constraint firstItem="uWg-bP-qz1" firstAttribute="top" secondItem="4Wz-gO-Rpt" secondAttribute="top" id="e5Z-TN-AIg"/>
                             <constraint firstItem="zDu-HA-yqp" firstAttribute="top" secondItem="uWg-bP-qz1" secondAttribute="bottom" id="nbw-2H-ghZ"/>
@@ -144,6 +150,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <size key="freeformSize" width="375" height="1440"/>
+                    <connections>
+                        <outlet property="storeTableView" destination="uWg-bP-qz1" id="XGL-BS-wVN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wUZ-Y9-ChR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

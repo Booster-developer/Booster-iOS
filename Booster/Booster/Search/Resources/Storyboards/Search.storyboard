@@ -402,7 +402,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dyx-FX-KHf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2502.1739130434785" y="170.75892857142856"/>
+            <point key="canvasLocation" x="2185" y="203"/>
         </scene>
     </scenes>
     <resources>

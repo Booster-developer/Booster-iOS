@@ -19,6 +19,7 @@
 		DA95BDA124B2DA7D00BC1F60 /* StoreCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA95BDA024B2DA7D00BC1F60 /* StoreCollectionViewCell.swift */; };
 		DA95BDA324B2FB7300BC1F60 /* univTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA95BDA224B2FB7300BC1F60 /* univTableViewCell.swift */; };
 		DA95BDA524B3623A00BC1F60 /* WaitingListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA95BDA424B3623A00BC1F60 /* WaitingListViewController.swift */; };
+		DA95BDA824B38A3400BC1F60 /* SearchStoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA95BDA724B38A3400BC1F60 /* SearchStoreTableViewCell.swift */; };
 		DACA38F924B229650025E230 /* mainTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DACA38F824B229650025E230 /* mainTab.storyboard */; };
 		DACA38FB24B22A5E0025E230 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACA38FA24B22A5E0025E230 /* MainTabBarController.swift */; };
 		DACA38FF24B22D0C0025E230 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DACA38FE24B22D0C0025E230 /* Home.storyboard */; };
@@ -78,6 +79,7 @@
 		DA95BDA024B2DA7D00BC1F60 /* StoreCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreCollectionViewCell.swift; sourceTree = "<group>"; };
 		DA95BDA224B2FB7300BC1F60 /* univTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = univTableViewCell.swift; sourceTree = "<group>"; };
 		DA95BDA424B3623A00BC1F60 /* WaitingListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingListViewController.swift; sourceTree = "<group>"; };
+		DA95BDA724B38A3400BC1F60 /* SearchStoreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchStoreTableViewCell.swift; sourceTree = "<group>"; };
 		DACA38F824B229650025E230 /* mainTab.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = mainTab.storyboard; sourceTree = "<group>"; };
 		DACA38FA24B22A5E0025E230 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		DACA38FE24B22D0C0025E230 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
@@ -265,6 +267,14 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		DA95BDA624B38A0800BC1F60 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				DA95BDA724B38A3400BC1F60 /* SearchStoreTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		DACA38DF24B216E10025E230 /* Login_Signin */ = {
 			isa = PBXGroup;
 			children = (
@@ -354,6 +364,7 @@
 		DACA38E924B21ADB0025E230 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				DA95BDA624B38A0800BC1F60 /* Cells */,
 				DACA38F724B227C10025E230 /* ViewControllers */,
 			);
 			path = Sources;
@@ -778,6 +789,7 @@
 				DA95BDA124B2DA7D00BC1F60 /* StoreCollectionViewCell.swift in Sources */,
 				DACA390524B231640025E230 /* SearchViewController.swift in Sources */,
 				DACA390124B22D410025E230 /* HomeViewController.swift in Sources */,
+				DA95BDA824B38A3400BC1F60 /* SearchStoreTableViewCell.swift in Sources */,
 				DACA390B24B231970025E230 /* OrderViewController.swift in Sources */,
 				DA2BC40224AB4BA300013143 /* AppDelegate.swift in Sources */,
 				DACA38FB24B22A5E0025E230 /* MainTabBarController.swift in Sources */,
