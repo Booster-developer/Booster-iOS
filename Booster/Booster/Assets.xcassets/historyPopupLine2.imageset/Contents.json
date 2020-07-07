@@ -1,0 +1,23 @@
+{
+  "images" : [
+    {
+      "filename" : "historyPopupLine2.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "scale" : "2x",
+      "idiom" : "universal",
+      "filename" : "historyPopupLine2@2x.png"
+    },
+    {
+      "filename" : "historyPopupLine2@3x.png",
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "version" : 1,
+    "author" : "xcode"
+  }
+}

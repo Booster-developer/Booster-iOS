@@ -232,7 +232,6 @@
                                 </prototypes>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="kxz-Tn-nID" firstAttribute="trailing" secondItem="ipW-6R-PiC" secondAttribute="trailing" id="1Yf-zv-MU6"/>
                             <constraint firstItem="saP-QG-0aA" firstAttribute="top" secondItem="kxz-Tn-nID" secondAttribute="top" id="2Z2-w3-Odr"/>

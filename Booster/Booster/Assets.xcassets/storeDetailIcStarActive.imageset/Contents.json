@@ -6,18 +6,18 @@
       "scale" : "1x"
     },
     {
-      "filename" : "storeDetailIcStarActive@2x.png",
       "idiom" : "universal",
-      "scale" : "2x"
+      "scale" : "2x",
+      "filename" : "storeDetailIcStarActive@2x.png"
     },
     {
-      "filename" : "storeDetailIcStarActive@3x.png",
       "idiom" : "universal",
+      "filename" : "storeDetailIcStarActive@3x.png",
       "scale" : "3x"
     }
   ],
   "info" : {
-    "author" : "xcode",
-    "version" : 1
+    "version" : 1,
+    "author" : "xcode"
   }
 }
