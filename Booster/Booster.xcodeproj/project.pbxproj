@@ -26,7 +26,7 @@
 		DA95BDA124B2DA7D00BC1F60 /* StoreCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA95BDA024B2DA7D00BC1F60 /* StoreCollectionViewCell.swift */; };
 		DA95BDA324B2FB7300BC1F60 /* univTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA95BDA224B2FB7300BC1F60 /* univTableViewCell.swift */; };
 		DA95BDA524B3623A00BC1F60 /* WaitingListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA95BDA424B3623A00BC1F60 /* WaitingListViewController.swift */; };
-		DA95BDA824B38A3400BC1F60 /* SearchStoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA95BDA724B38A3400BC1F60 /* SearchStoreTableViewCell.swift */; };
+		DAC4D1CD24B4A8AA0025EC1C /* OrderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC4D1CC24B4A8AA0025EC1C /* OrderCollectionViewCell.swift */; };
 		DACA38F924B229650025E230 /* mainTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DACA38F824B229650025E230 /* mainTab.storyboard */; };
 		DACA38FB24B22A5E0025E230 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACA38FA24B22A5E0025E230 /* MainTabBarController.swift */; };
 		DACA38FF24B22D0C0025E230 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DACA38FE24B22D0C0025E230 /* Home.storyboard */; };
@@ -43,6 +43,7 @@
 		DACA391A24B23AEB0025E230 /* LogIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DACA391924B23AEB0025E230 /* LogIn.storyboard */; };
 		DACA391C24B2BAEA0025E230 /* UnivSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACA391B24B2BAEA0025E230 /* UnivSelectViewController.swift */; };
 		DACA392124B2C0030025E230 /* SnapShotScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACA392024B2C0030025E230 /* SnapShotScreen.swift */; };
+		DAD179A324B4BF40009BFECC /* OrderCollectionViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD179A224B4BF40009BFECC /* OrderCollectionViewHeader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,7 +94,7 @@
 		DA95BDA024B2DA7D00BC1F60 /* StoreCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreCollectionViewCell.swift; sourceTree = "<group>"; };
 		DA95BDA224B2FB7300BC1F60 /* univTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = univTableViewCell.swift; sourceTree = "<group>"; };
 		DA95BDA424B3623A00BC1F60 /* WaitingListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingListViewController.swift; sourceTree = "<group>"; };
-		DA95BDA724B38A3400BC1F60 /* SearchStoreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchStoreTableViewCell.swift; sourceTree = "<group>"; };
+		DAC4D1CC24B4A8AA0025EC1C /* OrderCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCollectionViewCell.swift; sourceTree = "<group>"; };
 		DACA38F824B229650025E230 /* mainTab.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = mainTab.storyboard; sourceTree = "<group>"; };
 		DACA38FA24B22A5E0025E230 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		DACA38FE24B22D0C0025E230 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
@@ -110,6 +111,7 @@
 		DACA391924B23AEB0025E230 /* LogIn.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LogIn.storyboard; sourceTree = "<group>"; };
 		DACA391B24B2BAEA0025E230 /* UnivSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnivSelectViewController.swift; sourceTree = "<group>"; };
 		DACA392024B2C0030025E230 /* SnapShotScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapShotScreen.swift; sourceTree = "<group>"; };
+		DAD179A224B4BF40009BFECC /* OrderCollectionViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCollectionViewHeader.swift; sourceTree = "<group>"; };
 		EA9E906D8C1B39603966245B /* Pods-Booster.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Booster.release.xcconfig"; path = "Target Support Files/Pods-Booster/Pods-Booster.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -284,7 +286,8 @@
 		DA95BDA624B38A0800BC1F60 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				DA95BDA724B38A3400BC1F60 /* SearchStoreTableViewCell.swift */,
+				DAC4D1CC24B4A8AA0025EC1C /* OrderCollectionViewCell.swift */,
+				DAD179A224B4BF40009BFECC /* OrderCollectionViewHeader.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -814,11 +817,12 @@
 				DACA390524B231640025E230 /* SearchViewController.swift in Sources */,
 				CC1233D124B354830049F7A4 /* StatusHsViewController.swift in Sources */,
 				DACA390124B22D410025E230 /* HomeViewController.swift in Sources */,
-				DA95BDA824B38A3400BC1F60 /* SearchStoreTableViewCell.swift in Sources */,
 				DACA390B24B231970025E230 /* OrderViewController.swift in Sources */,
+				DAC4D1CD24B4A8AA0025EC1C /* OrderCollectionViewCell.swift in Sources */,
 				CCE019E524B2D1CB0067F721 /* MapViewController.swift in Sources */,
 				DA2BC40224AB4BA300013143 /* AppDelegate.swift in Sources */,
 				DACA38FB24B22A5E0025E230 /* MainTabBarController.swift in Sources */,
+				DAD179A324B4BF40009BFECC /* OrderCollectionViewHeader.swift in Sources */,
 				CC1233D524B45F200049F7A4 /* StatusInformation.swift in Sources */,
 				CCE019E724B2D7CA0067F721 /* StoreDetailViewController.swift in Sources */,
 				DACA391C24B2BAEA0025E230 /* UnivSelectViewController.swift in Sources */,
