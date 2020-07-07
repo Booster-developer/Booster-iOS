@@ -12,6 +12,7 @@
 		CC1233CF24B3544D0049F7A4 /* StatusHs.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC1233CE24B3544D0049F7A4 /* StatusHs.storyboard */; };
 		CC1233D124B354830049F7A4 /* StatusHsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1233D024B354830049F7A4 /* StatusHsViewController.swift */; };
 		CC1233D324B363AC0049F7A4 /* StatusHsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1233D224B363AC0049F7A4 /* StatusHsCell.swift */; };
+		CC1233D524B45F200049F7A4 /* StatusInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1233D424B45F200049F7A4 /* StatusInformation.swift */; };
 		CCE019E324B2D13A0067F721 /* SearchHs.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCE019E224B2D13A0067F721 /* SearchHs.storyboard */; };
 		CCE019E524B2D1CB0067F721 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE019E424B2D1CB0067F721 /* MapViewController.swift */; };
 		CCE019E724B2D7CA0067F721 /* StoreDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE019E624B2D7CA0067F721 /* StoreDetailViewController.swift */; };
@@ -69,6 +70,7 @@
 		CC1233CE24B3544D0049F7A4 /* StatusHs.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StatusHs.storyboard; sourceTree = "<group>"; };
 		CC1233D024B354830049F7A4 /* StatusHsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusHsViewController.swift; sourceTree = "<group>"; };
 		CC1233D224B363AC0049F7A4 /* StatusHsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusHsCell.swift; sourceTree = "<group>"; };
+		CC1233D424B45F200049F7A4 /* StatusInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusInformation.swift; sourceTree = "<group>"; };
 		CCE019E224B2D13A0067F721 /* SearchHs.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchHs.storyboard; sourceTree = "<group>"; };
 		CCE019E424B2D1CB0067F721 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		CCE019E624B2D7CA0067F721 /* StoreDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreDetailViewController.swift; sourceTree = "<group>"; };
@@ -337,6 +339,7 @@
 			children = (
 				DACA38F124B2268A0025E230 /* ViewControllers */,
 				CC1233D224B363AC0049F7A4 /* StatusHsCell.swift */,
+				CC1233D424B45F200049F7A4 /* StatusInformation.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -785,6 +788,7 @@
 				CCE019E524B2D1CB0067F721 /* MapViewController.swift in Sources */,
 				DA2BC40224AB4BA300013143 /* AppDelegate.swift in Sources */,
 				DACA38FB24B22A5E0025E230 /* MainTabBarController.swift in Sources */,
+				CC1233D524B45F200049F7A4 /* StatusInformation.swift in Sources */,
 				CCE019E724B2D7CA0067F721 /* StoreDetailViewController.swift in Sources */,
 				DACA391C24B2BAEA0025E230 /* UnivSelectViewController.swift in Sources */,
 				DA2BC40424AB4BA300013143 /* SceneDelegate.swift in Sources */,

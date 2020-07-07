@@ -18,6 +18,7 @@ class StatusHsCell: UITableViewCell {
   @IBOutlet weak var storeLabel: UILabel!
   @IBOutlet weak var dateLabel: UILabel!
   @IBOutlet weak var docsLabel: UILabel!
+  @IBOutlet weak var statusImg: UIImageView!
   
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -29,5 +30,12 @@ class StatusHsCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+  
+  func setStatusInformation(num: Int, storeName: String, date: String, docsName: String) {
+    numLabel.text = String(num)
+    storeLabel.text = storeName
+    dateLabel.text = date
+    docsLabel.text = docsName
+  }
 
 }
