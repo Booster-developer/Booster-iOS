@@ -19,6 +19,8 @@ class StatusHsCell: UITableViewCell {
   @IBOutlet weak var dateLabel: UILabel!
   @IBOutlet weak var docsLabel: UILabel!
   @IBOutlet weak var statusImg: UIImageView!
+  @IBOutlet weak var cancelOrderBtn: UIButton!
+  @IBOutlet weak var completePickUpBtn: UIButton!
   
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -31,11 +33,36 @@ class StatusHsCell: UITableViewCell {
         // Configure the view for the selected state
     }
   
-  func setStatusInformation(num: Int, storeName: String, date: String, docsName: String) {
+  func setStatusInformation(num: Int, storeName: String, date: String, docsName: String,
+                            imageName: String) {
     numLabel.text = String(num)
     storeLabel.text = storeName
     dateLabel.text = date
     docsLabel.text = docsName
+    statusImg.image = UIImage(named: imageName)
   }
+  func setBtnImg(imgName: String) {
+    switch imgName {
+    case "progressSlider1":
+      cancelOrderBtn.isHidden = false
+      cancelOrderBtn.isUserInteractionEnabled = true
+      completePickUpBtn.setImage(UIImage.init(named: "processBtnPickupFile2"), for: .normal)
+      completePickUpBtn.isUserInteractionEnabled = false
+    case "progressSlider2":
+      cancelOrderBtn.isHidden = true
+      cancelOrderBtn.isUserInteractionEnabled = false
+      completePickUpBtn.setImage(UIImage.init(named: "processBtnPickupFile2"), for: .normal)
+      completePickUpBtn.isUserInteractionEnabled = false
+    case "progressSlider3":
+      cancelOrderBtn.isHidden = true
+      cancelOrderBtn.isUserInteractionEnabled = false
+      completePickUpBtn.setImage(UIImage.init(named: "processBtnPickupFile3"), for: .normal)
+      completePickUpBtn.isUserInteractionEnabled = true
+    default:
+      cancelOrderBtn.isHidden = false
+    }
+  }
+  
+  
 
 }

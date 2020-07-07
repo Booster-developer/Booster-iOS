@@ -85,6 +85,10 @@
                                     <constraint firstItem="82i-r3-d8B" firstAttribute="width" secondItem="ipW-6R-PiC" secondAttribute="width" multiplier="217:375" id="nLR-yz-O4m"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PFL-Wl-c1J">
+                                <rect key="frame" x="0.0" y="209" width="375" height="4"/>
+                                <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2Yb-H3-3mG">
                                 <rect key="frame" x="0.0" y="213" width="375" height="565"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -177,13 +181,22 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kaM-jf-GVh">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kaM-jf-GVh">
                                                     <rect key="frame" x="282" y="188.33333333333334" width="77" height="50.666666666666657"/>
-                                                    <state key="normal" title="Button"/>
+                                                    <state key="normal" image="processBtnPickupFile2"/>
+                                                    <connections>
+                                                        <action selector="completePickUp:" destination="5zu-yB-ZBx" eventType="touchUpInside" id="3jQ-Lp-ent"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BN3-AV-mN3">
                                                     <rect key="frame" x="205" y="188.33333333333334" width="77" height="50.666666666666657"/>
-                                                    <state key="normal" title="Button"/>
+                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="14"/>
+                                                    <state key="normal" title="주문 취소">
+                                                        <color key="titleColor" red="0.73333333333333328" green="0.73333333333333328" blue="0.73333333333333328" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="presentCancelOrderViewController:" destination="5zu-yB-ZBx" eventType="touchUpInside" id="M39-Ls-VIu"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -222,6 +235,8 @@
                                             <constraint firstItem="dlo-37-C2z" firstAttribute="width" secondItem="6Oz-gA-8yy" secondAttribute="width" multiplier="323:375" id="8IX-gR-yCe"/>
                                         </constraints>
                                         <connections>
+                                            <outlet property="cancelOrderBtn" destination="BN3-AV-mN3" id="qhM-Cs-kV2"/>
+                                            <outlet property="completePickUpBtn" destination="kaM-jf-GVh" id="283-m0-JIj"/>
                                             <outlet property="dateLabel" destination="q9q-Lb-jac" id="aUZ-Rw-xwg"/>
                                             <outlet property="docsLabel" destination="O1h-DN-Lj8" id="Goi-0X-rXY"/>
                                             <outlet property="numLabel" destination="0bV-eB-tMF" id="dwK-Nm-oDn"/>
@@ -236,13 +251,17 @@
                             <constraint firstItem="kxz-Tn-nID" firstAttribute="trailing" secondItem="ipW-6R-PiC" secondAttribute="trailing" id="1Yf-zv-MU6"/>
                             <constraint firstItem="saP-QG-0aA" firstAttribute="top" secondItem="kxz-Tn-nID" secondAttribute="top" id="2Z2-w3-Odr"/>
                             <constraint firstItem="kxz-Tn-nID" firstAttribute="trailing" secondItem="2Yb-H3-3mG" secondAttribute="trailing" id="DvO-Vc-2Z3"/>
+                            <constraint firstItem="PFL-Wl-c1J" firstAttribute="top" secondItem="ipW-6R-PiC" secondAttribute="bottom" id="GeM-dp-Cxc"/>
                             <constraint firstItem="kxz-Tn-nID" firstAttribute="bottom" secondItem="2Yb-H3-3mG" secondAttribute="bottom" id="J6x-3R-NS9"/>
                             <constraint firstItem="saP-QG-0aA" firstAttribute="bottom" secondItem="ipW-6R-PiC" secondAttribute="top" id="JRu-gE-emF"/>
+                            <constraint firstItem="PFL-Wl-c1J" firstAttribute="height" secondItem="oFW-d0-JYT" secondAttribute="height" multiplier="4:812" priority="250" id="Kya-nG-LEK"/>
+                            <constraint firstItem="PFL-Wl-c1J" firstAttribute="leading" secondItem="kxz-Tn-nID" secondAttribute="leading" id="QsA-F4-IX3"/>
                             <constraint firstItem="saP-QG-0aA" firstAttribute="leading" secondItem="oFW-d0-JYT" secondAttribute="leading" id="SUY-Ed-oPm"/>
                             <constraint firstAttribute="trailing" secondItem="saP-QG-0aA" secondAttribute="trailing" id="UXR-8U-4JF"/>
+                            <constraint firstItem="kxz-Tn-nID" firstAttribute="trailing" secondItem="PFL-Wl-c1J" secondAttribute="trailing" id="WDD-Hz-thG"/>
                             <constraint firstItem="ipW-6R-PiC" firstAttribute="height" secondItem="oFW-d0-JYT" secondAttribute="height" multiplier="121:812" id="bZf-1M-yLc"/>
                             <constraint firstItem="ipW-6R-PiC" firstAttribute="leading" secondItem="kxz-Tn-nID" secondAttribute="leading" id="jlw-6B-Hmv"/>
-                            <constraint firstItem="2Yb-H3-3mG" firstAttribute="top" secondItem="ipW-6R-PiC" secondAttribute="bottom" constant="4" id="ol8-Au-BTj"/>
+                            <constraint firstItem="2Yb-H3-3mG" firstAttribute="top" secondItem="PFL-Wl-c1J" secondAttribute="bottom" id="lSs-NF-576"/>
                             <constraint firstItem="2Yb-H3-3mG" firstAttribute="leading" secondItem="kxz-Tn-nID" secondAttribute="leading" id="sfK-O1-P8z"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="kxz-Tn-nID"/>
@@ -250,14 +269,101 @@
                     <navigationItem key="navigationItem" id="x9N-o9-lRX"/>
                     <connections>
                         <outlet property="StatusHsTableView" destination="2Yb-H3-3mG" id="dnN-Hh-plu"/>
+                        <outlet property="marginView" destination="PFL-Wl-c1J" id="v5Y-75-CRt"/>
+                        <outlet property="marginViewHeight" destination="Kya-nG-LEK" id="kS8-0m-d2N"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CPB-V0-Bc1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1037.5999999999999" y="133.74384236453201"/>
         </scene>
+        <!--Cancel Order View Controller-->
+        <scene sceneID="SQh-rm-BCB">
+            <objects>
+                <viewController storyboardIdentifier="cancelOrderViewController" id="EvP-QF-1Hb" customClass="CancelOrderViewController" customModule="Booster" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="loY-qf-xJZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hfl-CJ-obI">
+                                <rect key="frame" x="24" y="327" width="327" height="199"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="'데이터 분석 외 2건'의 인쇄를 취소하려고 합니다." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y4f-dn-BGo">
+                                        <rect key="frame" x="48.666666666666686" y="40" width="230" height="48"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="48" id="xHE-bh-LUV"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ewd-TA-tsH">
+                                        <rect key="frame" x="0.0" y="151" width="163.66666666666666" height="48"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="17"/>
+                                        <state key="normal" title="허용 안 함"/>
+                                        <connections>
+                                            <action selector="dismissToStatusVC:" destination="EvP-QF-1Hb" eventType="touchUpInside" id="ZtJ-yU-dRg"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z9M-om-bak">
+                                        <rect key="frame" x="163.66666666666663" y="151" width="163.33333333333337" height="48"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="17"/>
+                                        <state key="normal" title="확인"/>
+                                        <connections>
+                                            <action selector="dismissAndCancelOrder:" destination="EvP-QF-1Hb" eventType="touchUpInside" id="nfE-RK-cjS"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="ewd-TA-tsH" firstAttribute="height" secondItem="Hfl-CJ-obI" secondAttribute="height" multiplier="48:199" id="1QH-1r-vAa"/>
+                                    <constraint firstItem="y4f-dn-BGo" firstAttribute="top" secondItem="Hfl-CJ-obI" secondAttribute="top" constant="40" id="BZ6-Of-X75"/>
+                                    <constraint firstItem="ewd-TA-tsH" firstAttribute="leading" secondItem="Hfl-CJ-obI" secondAttribute="leading" id="CPN-L1-h5k"/>
+                                    <constraint firstAttribute="bottom" secondItem="ewd-TA-tsH" secondAttribute="bottom" id="CxO-GX-RPw"/>
+                                    <constraint firstItem="Z9M-om-bak" firstAttribute="width" secondItem="Hfl-CJ-obI" secondAttribute="width" multiplier="1:2" id="IPJ-1A-WFZ"/>
+                                    <constraint firstItem="ewd-TA-tsH" firstAttribute="width" secondItem="Hfl-CJ-obI" secondAttribute="width" multiplier="1:2" id="QoD-nR-r5h"/>
+                                    <constraint firstItem="Z9M-om-bak" firstAttribute="height" secondItem="Hfl-CJ-obI" secondAttribute="height" multiplier="48:199" id="g1A-w6-uH3"/>
+                                    <constraint firstAttribute="bottom" secondItem="Z9M-om-bak" secondAttribute="bottom" id="j9u-WK-4mf"/>
+                                    <constraint firstItem="y4f-dn-BGo" firstAttribute="centerX" secondItem="Hfl-CJ-obI" secondAttribute="centerX" id="lld-Jl-85x"/>
+                                    <constraint firstItem="Z9M-om-bak" firstAttribute="leading" secondItem="ewd-TA-tsH" secondAttribute="trailing" id="nXN-i3-7He"/>
+                                    <constraint firstAttribute="trailing" secondItem="Z9M-om-bak" secondAttribute="trailing" id="sM5-eq-RLu"/>
+                                    <constraint firstAttribute="height" constant="199" id="vJL-uo-NL0"/>
+                                    <constraint firstItem="y4f-dn-BGo" firstAttribute="width" secondItem="Hfl-CJ-obI" secondAttribute="width" multiplier="230:327" id="wem-up-ACa"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="복사왕 김제본에 요청한 요청이 취소됩니다." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q0k-PK-Znw">
+                                <rect key="frame" x="69.666666666666686" y="427" width="236" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="17" id="PQR-Ve-6EE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="14"/>
+                                <color key="textColor" red="0.49019607843137253" green="0.49019607843137253" blue="0.49019607843137253" alpha="0.64937392979452058" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.64937392979452058" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Hfl-CJ-obI" firstAttribute="width" secondItem="loY-qf-xJZ" secondAttribute="width" multiplier="327:375" id="8Rr-Ck-Igr"/>
+                            <constraint firstItem="Z9M-om-bak" firstAttribute="top" secondItem="q0k-PK-Znw" secondAttribute="bottom" constant="34" id="HIx-x7-lpf"/>
+                            <constraint firstItem="Hfl-CJ-obI" firstAttribute="centerX" secondItem="wE6-mK-GYy" secondAttribute="centerX" id="ONP-mN-gEQ"/>
+                            <constraint firstItem="q0k-PK-Znw" firstAttribute="top" secondItem="y4f-dn-BGo" secondAttribute="bottom" constant="12" id="ldq-wQ-zSQ"/>
+                            <constraint firstItem="Hfl-CJ-obI" firstAttribute="top" secondItem="wE6-mK-GYy" secondAttribute="top" constant="283" id="pxz-8J-oSS"/>
+                            <constraint firstItem="q0k-PK-Znw" firstAttribute="centerX" secondItem="Hfl-CJ-obI" secondAttribute="centerX" id="voN-GC-06c"/>
+                            <constraint firstItem="ewd-TA-tsH" firstAttribute="top" secondItem="q0k-PK-Znw" secondAttribute="bottom" constant="34" id="xQa-sL-h8s"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="wE6-mK-GYy"/>
+                    </view>
+                    <connections>
+                        <outlet property="popUpView" destination="Hfl-CJ-obI" id="Ulm-Rr-6G1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="84Q-ha-xgh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1023" y="807"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="processBtnPickupFile2" width="77" height="48"/>
         <image name="progressSlider1" width="323" height="16"/>
     </resources>
 </document>

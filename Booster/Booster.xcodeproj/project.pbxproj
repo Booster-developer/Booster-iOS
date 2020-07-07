@@ -13,6 +13,7 @@
 		CC1233D124B354830049F7A4 /* StatusHsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1233D024B354830049F7A4 /* StatusHsViewController.swift */; };
 		CC1233D324B363AC0049F7A4 /* StatusHsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1233D224B363AC0049F7A4 /* StatusHsCell.swift */; };
 		CC1233D524B45F200049F7A4 /* StatusInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1233D424B45F200049F7A4 /* StatusInformation.swift */; };
+		CC1233D724B47FE50049F7A4 /* CancelOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1233D624B47FE50049F7A4 /* CancelOrderViewController.swift */; };
 		CCE019E324B2D13A0067F721 /* SearchHs.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCE019E224B2D13A0067F721 /* SearchHs.storyboard */; };
 		CCE019E524B2D1CB0067F721 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE019E424B2D1CB0067F721 /* MapViewController.swift */; };
 		CCE019E724B2D7CA0067F721 /* StoreDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE019E624B2D7CA0067F721 /* StoreDetailViewController.swift */; };
@@ -75,6 +76,7 @@
 		CC1233D024B354830049F7A4 /* StatusHsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusHsViewController.swift; sourceTree = "<group>"; };
 		CC1233D224B363AC0049F7A4 /* StatusHsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusHsCell.swift; sourceTree = "<group>"; };
 		CC1233D424B45F200049F7A4 /* StatusInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusInformation.swift; sourceTree = "<group>"; };
+		CC1233D624B47FE50049F7A4 /* CancelOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelOrderViewController.swift; sourceTree = "<group>"; };
 		CCE019E224B2D13A0067F721 /* SearchHs.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchHs.storyboard; sourceTree = "<group>"; };
 		CCE019E424B2D1CB0067F721 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		CCE019E624B2D7CA0067F721 /* StoreDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreDetailViewController.swift; sourceTree = "<group>"; };
@@ -449,6 +451,7 @@
 			children = (
 				DACA390D24B231AE0025E230 /* StatusViewController.swift */,
 				CC1233D024B354830049F7A4 /* StatusHsViewController.swift */,
+				CC1233D624B47FE50049F7A4 /* CancelOrderViewController.swift */,
 			);
 			name = ViewControllers;
 			path = ../ViewControllers;
@@ -816,6 +819,7 @@
 				DACA390124B22D410025E230 /* HomeViewController.swift in Sources */,
 				DA95BDA824B38A3400BC1F60 /* SearchStoreTableViewCell.swift in Sources */,
 				DACA390B24B231970025E230 /* OrderViewController.swift in Sources */,
+				CC1233D724B47FE50049F7A4 /* CancelOrderViewController.swift in Sources */,
 				CCE019E524B2D1CB0067F721 /* MapViewController.swift in Sources */,
 				DA2BC40224AB4BA300013143 /* AppDelegate.swift in Sources */,
 				DACA38FB24B22A5E0025E230 /* MainTabBarController.swift in Sources */,
