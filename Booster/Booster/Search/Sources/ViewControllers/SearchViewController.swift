@@ -9,25 +9,27 @@
 import UIKit
 
 class SearchViewController: UIViewController {
-    @IBAction func selectUniv(_ sender: Any) {
+  @IBOutlet weak var univNameButton: UIButton!
+  @IBAction func selectUniv(_ sender: Any) {
         guard let univSelect = self.storyboard?.instantiateViewController(identifier: "UnivSelectViewController", creator: nil) as? UnivSelectViewController else { return}
         univSelect.modalPresentationStyle = .fullScreen
         
         univSelect.backgroundImg = self.tabBarController?.view.asImage()
         self.present(univSelect,animated: false, completion: nil)
     }
-//    @objc func onClickTransparentView() {
-//        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1.0, initialSpringVelocity: 1.0,options: .curveEaseInOut, animations: {self.transparentView.alpha=0
-//            self.univSelectionTableHeight.constant = 0
-//        }, completion: nil)
-//    }
+  
     override func viewDidLoad() {
-        super.viewDidLoad()
+      super.viewDidLoad()
+      setCollectionViewInfo()
+      print(self.view.bounds)
 
         // Do any additional setup after loading the view.
     }
-    
-
+  @IBOutlet weak var storeCollectionView: UICollectionView!
+  func setCollectionViewInfo(){
+    storeCollectionView.delegate = self
+    storeCollectionView.dataSource = self
+  }
     /*
     // MARK: - Navigation
 
@@ -38,4 +40,42 @@ class SearchViewController: UIViewController {
     }
     */
 
+}
+extension SearchViewController:UICollectionViewDelegate{
+  func numberOfSections(in collectionView: UICollectionView) -> Int {
+    return 1
+  }
+  func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    return 3
+  }
+}
+extension SearchViewController:UICollectionViewDataSource{
+  func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    let storeCell:StoreCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: StoreCollectionViewCell.identifier, for: indexPath) as! StoreCollectionViewCell
+    storeCell.storeImgView.image = UIImage(named: "storeImg1")
+    storeCell.favorateBtn.tag = indexPath.row
+    storeCell.favorateBtn.addTarget(self, action: #selector(favorate(sender:)), for: .touchUpInside)
+    print(storeCell.bounds)
+    storeCell.backgroundColor = UIColor.black
+    if indexPath.row == 2 {
+      storeCell.isUserInteractionEnabled = false
+      storeCell.isStoreOpen = false
+    }
+    storeCell.setStoreView()
+    return storeCell
+  }
+  @objc func favorate(sender: UIButton){
+    print(sender.tag)
+    //Post 즐겨찾기등록
+    //GET 매장 리스트
+    //self.storeCollectionView.reloadData()
+  }
+  func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    print(indexPath)
+  }
+}
+extension SearchViewController:UICollectionViewDelegateFlowLayout{
+  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    return CGSize(width: 414, height: 292.56)
+  }
 }
