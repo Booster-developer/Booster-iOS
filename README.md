@@ -6,7 +6,7 @@
 
 ### Table of Contents
 
-- [Introduction](#:two_men_holding_hands:_introduction)
+- [Introduction](#introduction)
   
   - [Developers](#developers)
   - [Workflow](#workflow)
@@ -54,7 +54,7 @@
 
 ------
 
-### 👨🏻‍🤝‍👨🏼 Introduction
+### Introduction
 
 ####   > BOOSTER - We print convenience rapidly!! <
 
@@ -96,7 +96,7 @@
 
 ------
 
-### 📌 Coding Convention
+### Coding Convention
 
   based on [API Design Guidelines](https://swift.org/documentation/api-design-guidelines/). Some key rules are below.
 
@@ -244,7 +244,7 @@
 
 ------
 
-### 🧑‍💻 Git-Commit Message Convention
+### Git-Commit Message Convention
 
 ####   Commit Type
 
@@ -262,7 +262,7 @@
 
 ------
 
-### 🗂 Foldering
+### Foldering
 
 <img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1ggjlw2thbdj30ew0wch5e.jpg" alt="foldering" style="zoom:50%;" height="700px" width="300px" />
 
@@ -302,7 +302,7 @@ These files can included in resources folder
 
 ------
 
-### 🛠 IDE and Library Used
+### IDE and Library Used
 
 ####   IDE
 
@@ -319,7 +319,7 @@ These files can included in resources folder
 
 ------
 
-### 📱 App Specification
+### App Specification
 
 ####   Splash
 
@@ -382,7 +382,7 @@ These files can included in resources folder
 
 ------
 
-### 🧾 App Functions and Developer Commentaries
+### App Functions and Developer Commentaries
 
 
 
@@ -423,13 +423,13 @@ These files can included in resources folder
 
 ------
 
-### 🏃 Challenges and Something New
+### Challenges and Something New
 
 
 
 ------
 
-### 📬 About
+### About
 
 ####   Copyright Statement
 
