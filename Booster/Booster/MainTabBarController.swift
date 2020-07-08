@@ -40,13 +40,12 @@ class MainTabBarController: UITabBarController ,UITabBarControllerDelegate{
         thirdTab.tabBarItem.image = UIImage(named: "btnTab3")?.withRenderingMode(.alwaysOriginal)
         //thirdTab.tabBarItem.selectedImage = UIImage(named: "btnTab3Active")?.withRenderingMode(.alwaysTemplate)
         
-        let statusStoryboard = UIStoryboard.init(name:"Status",bundle: nil)
-        guard let fourthTab = statusStoryboard.instantiateViewController(identifier: "StatusViewController") as? StatusViewController else{return}
+        let statusStoryboard = UIStoryboard.init(name:"StatusHs",bundle: nil)
+        guard let fourthTab = statusStoryboard.instantiateViewController(identifier: "StatusViewController") as? StatusHsViewController else{return}
         
         fourthTab.tabBarItem.title = ""
         fourthTab.tabBarItem.image = UIImage(named: "btnTab4Inactive")?.withRenderingMode(.alwaysOriginal)
         fourthTab.tabBarItem.selectedImage = UIImage(named: "btnTab4Active")?.withRenderingMode(.alwaysTemplate)
-        print("kkkk")
 
         let myPageStoryboard = UIStoryboard.init(name:"MyPage",bundle: nil)
         guard let fifthTab = myPageStoryboard.instantiateViewController(identifier: "MyPageViewController") as? MyPageViewController else{return}

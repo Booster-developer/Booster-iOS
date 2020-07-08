@@ -40,8 +40,16 @@ class SearchViewController: UIViewController {
     }
     */
   var toggle:Bool = false
-  
-  
+  func popupDetailView(){
+    let detailStoryboard = UIStoryboard.init(name:"SearchHs",bundle: nil)
+
+    guard  let detailView = detailStoryboard.instantiateViewController(identifier: "detailView", creator: nil) as? StoreDetailViewController else {
+      return
+    }
+    detailView.modalPresentationStyle = .fullScreen
+    self.present(detailView, animated: true)
+  }
+
   @IBAction func popupMapView(_ sender: Any) {
     let mapStroyboard = UIStoryboard.init(name:"SearchHs",bundle: nil)
 
@@ -96,8 +104,7 @@ extension SearchViewController:UICollectionViewDataSource{
   }
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
     print(indexPath)
-    print(collectionView.frame.size)
-    
+    self.popupDetailView()
   }
 }
 extension SearchViewController:UICollectionViewDelegateFlowLayout{

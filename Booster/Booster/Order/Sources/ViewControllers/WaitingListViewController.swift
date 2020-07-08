@@ -13,11 +13,18 @@ class WaitingListViewController: UIViewController {
   @IBOutlet weak var waitingListCollectionView: UICollectionView!
   override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setWaitingListCV()
 
         // Do any additional setup after loading the view.
     }
   
+  @IBAction func closeBtn(_ sender: Any) {
+    self.navigationController?.popViewController(animated: true)
+
+  }
+  @IBAction func cangeCurrentStore(_ sender: Any) {
+    self.navigationController?.popViewController(animated: true)
+  }
   @IBAction func goToOptionBtn(_ sender: Any) {
   }
   
@@ -58,25 +65,27 @@ extension WaitingListViewController:UICollectionViewDelegate{
 extension WaitingListViewController:UICollectionViewDataSource{
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     
-    guard let fileAddCell:AddCollectionViewCel = collectionView.dequeueReusableCell(withReuseIdentifier: AddCollectionViewCell.identifier, for: indexPath) as? AddCollectionViewCell else { return UICollectionViewCell()}
-    guard let fileCell:WaitCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: WaitCollectionViewCell.identifier, for:indexPath) as? WaitCollectionViewCell else { return UICollectionViewCell()}
-    
-    if(indexPath.row == 2){
+    guard let fileAddCell:AddCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: AddCollectionViewCell.identifier, for: indexPath) as? AddCollectionViewCell else {return UICollectionViewCell()}
+    guard let fileCell:WaitCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: WaitCollectionViewCell.identifier, for:indexPath) as? WaitCollectionViewCell else {
+      return UICollectionViewCell()}
+    if(indexPath.row == 1){
       return fileAddCell
     }
-    if indexPath.row > 2{
-      orderViewAppear()
-    }
-    return fileCell
+    else{
+      return fileCell}
+//    if indexPath.row >= 2{
+//      orderViewAppear()
+//    }
+
   }
-  func WaitingListViewController(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+  func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
     if indexPath.row == 2{
       print("파일 불러오기")
     }
     print(indexPath)
   }
   
-  func WaitingListViewController(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexpath:IndexPath) ->UICollectionReusableView{
+  func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexpath:IndexPath) ->UICollectionReusableView{
     var header : WaitCollectionViewHeader!
     if kind == UICollectionView.elementKindSectionHeader{
       header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "waitingHeader", for: indexpath) as? WaitCollectionViewHeader

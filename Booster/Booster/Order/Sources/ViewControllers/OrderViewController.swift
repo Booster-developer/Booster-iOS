@@ -14,7 +14,7 @@ class OrderViewController: UIViewController {
 //      print(self.tabBarController?.selectedIndex)
 //      self.tabBarController?.tabBar.isHidden = true
       //self.tabBarController?.tabBar.isHidden = true
-      self.navigationItem.title = "매장찾기"
+      self.navigationItem.title = "매장선택"
       super.viewDidLoad()
       setCollectionVeiw()
         // Do any additional setup after loading the view.

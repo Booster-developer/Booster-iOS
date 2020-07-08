@@ -48,7 +48,7 @@
         <!--Store Detail View Controller-->
         <scene sceneID="DtO-jW-RJf">
             <objects>
-                <viewController id="k03-jQ-lQK" customClass="StoreDetailViewController" customModule="Booster" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="detailView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="k03-jQ-lQK" customClass="StoreDetailViewController" customModule="Booster" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rdX-c9-Opd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -364,6 +364,6 @@
     <resources>
         <image name="storeDetailBtnOrder" width="343" height="50"/>
         <image name="storeDetailIcStarInactive" width="48" height="48"/>
-        <image name="storeDetailImg" width="375" height="221"/>
+        <image name="storeDetailImg" width="375" height="236"/>
     </resources>
 </document>
