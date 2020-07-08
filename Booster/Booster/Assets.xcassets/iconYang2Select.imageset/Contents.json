@@ -1,19 +1,19 @@
 {
   "images" : [
     {
+      "scale" : "1x",
       "filename" : "iconYang2Select.png",
-      "idiom" : "universal",
-      "scale" : "1x"
-    },
-    {
-      "scale" : "2x",
-      "idiom" : "universal",
-      "filename" : "iconYang2Select@2x.png"
+      "idiom" : "universal"
     },
     {
       "idiom" : "universal",
-      "filename" : "iconYang2Select@3x.png",
-      "scale" : "3x"
+      "filename" : "iconYang2Select@2x.png",
+      "scale" : "2x"
+    },
+    {
+      "scale" : "3x",
+      "idiom" : "universal",
+      "filename" : "iconYang2Select@3x.png"
     }
   ],
   "info" : {

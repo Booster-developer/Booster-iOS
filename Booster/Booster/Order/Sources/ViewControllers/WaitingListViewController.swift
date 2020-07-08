@@ -11,6 +11,9 @@ import MobileCoreServices
 import QuickLookThumbnailing
 class WaitingListViewController: UIViewController {
 
+  
+  var tmpImg = UIImage()
+  
   @IBOutlet weak var waitingListCollectionView: UICollectionView!
   override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,20 +43,10 @@ class WaitingListViewController: UIViewController {
   func orderViewDisappear(){
     orderBtnAppear.constant = 0
   }
-  func thumbNailGenerator(_ fileURL:URL, thumbnailSize:CGSize) -> UIImage?{
-    let preview = QLThumbnailGenerator()
-    let request = QLThumbnailGenerator.Request(fileAt: fileURL, size: thumbnailSize, scale: UIScreen.main.scale, representationTypes: .lowQualityThumbnail)
-    var thumbNail = UIImage()
-    preview.generateBestRepresentation(for: request) { (thumbnail, error) in
-      if let error = error {
-        print(error.localizedDescription)
-      }
-      else if let thumb = thumbnail {
-        thumbNail = thumb.uiImage
-      }
-    }
-    return thumbNail
-  }
+
+//  func thumbNailGenerator(_ fileURL:URL, thumbnailSize:CGSize) -> UIImage?{
+//
+//  }
   /*
     // MARK: - Navigation
 
@@ -71,28 +64,51 @@ class WaitingListViewController: UIViewController {
   }
 }
 extension WaitingListViewController:UIDocumentPickerDelegate {
+  
   func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
     guard let selecedFileURL = urls.first else {
       return
     }
-    let dir = FileManager.default.urls(for: .downloadsDirectory, in: .allDomainsMask).first!
+    let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
     let sandboxFileURL = dir.appendingPathComponent(selecedFileURL.lastPathComponent)
-    
     if FileManager.default.fileExists(atPath: sandboxFileURL.path) {
       print("Already exists!")
-    }
+      }
     else {
       do {
         try FileManager.default.copyItem(at: selecedFileURL, to: sandboxFileURL)
       }
       catch {
-        print("error \(error)")
+        print("에러났다이거봐라 : \(error)")
       }
     }
-    let thumbnailWidth = self.view.frame.size.width * (38.0/375.0)
-    let thumbnailSize: CGSize = CGSize(width: thumbnailWidth, height: thumbnailWidth*(51.0/38.0))
-    guard let thumbnail:UIImage = thumbNailGenerator(sandboxFileURL, thumbnailSize: thumbnailSize) else {return}
+//    guard let url = sandboxFileURL else {
+//      assert(false, "The URL can't be nil")
+//      return
+//    }
+//    guard let url = Bundle.main.url(forResource: "test", withExtension: "pdf") else {
+//      return
+//    }
+    let size:CGSize = CGSize(width: 60, height: 90)
+    let scale = UIScreen.main.scale
+    let request = QLThumbnailGenerator.Request(fileAt: sandboxFileURL, size: size, scale: scale, representationTypes: .all)
+    let generator = QLThumbnailGenerator.shared
+    
+    print("local에서 불러온 파일 : ")
     print(sandboxFileURL)
+    print(sandboxFileURL.lastPathComponent)
+    generator.generateRepresentations(for: request) { (thumbnail, type,error) in
+      DispatchQueue.main.async {
+        if thumbnail == nil || error != nil{
+          print("error : \(String(describing: error))")
+        } else {
+          print("썸네일 뿌리기")
+          self.tmpImg = thumbnail?.uiImage as! UIImage
+        }
+      }
+    }
+    guard let test = self.storyboard?.instantiateViewController(withIdentifier: "optionViewTest") else {return}
+    self.present(test,animated: true)
   }
 }
 
@@ -126,6 +142,10 @@ extension WaitingListViewController:UICollectionViewDataSource{
     if indexPath.row == 1{
       print("파일 불러오기")
       getFileFromLocal()
+      
+      
+      
+      
     }
     print(indexPath.row)
   }

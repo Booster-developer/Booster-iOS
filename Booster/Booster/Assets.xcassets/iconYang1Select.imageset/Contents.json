@@ -6,14 +6,14 @@
       "idiom" : "universal"
     },
     {
-      "filename" : "iconYang1Select@2x.png",
       "scale" : "2x",
+      "filename" : "iconYang1Select@2x.png",
       "idiom" : "universal"
     },
     {
-      "scale" : "3x",
+      "idiom" : "universal",
       "filename" : "iconYang1Select@3x.png",
-      "idiom" : "universal"
+      "scale" : "3x"
     }
   ],
   "info" : {

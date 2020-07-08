@@ -11,9 +11,9 @@
       "idiom" : "universal"
     },
     {
-      "filename" : "bgSelect@3x.png",
+      "idiom" : "universal",
       "scale" : "3x",
-      "idiom" : "universal"
+      "filename" : "bgSelect@3x.png"
     }
   ],
   "info" : {

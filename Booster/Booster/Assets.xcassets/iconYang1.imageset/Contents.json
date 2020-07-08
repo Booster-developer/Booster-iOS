@@ -2,17 +2,17 @@
   "images" : [
     {
       "filename" : "iconYang1.png",
-      "scale" : "1x",
-      "idiom" : "universal"
-    },
-    {
-      "filename" : "iconYang1@2x.png",
       "idiom" : "universal",
-      "scale" : "2x"
+      "scale" : "1x"
     },
     {
+      "idiom" : "universal",
+      "scale" : "2x",
+      "filename" : "iconYang1@2x.png"
+    },
+    {
+      "idiom" : "universal",
       "scale" : "3x",
-      "idiom" : "universal",
       "filename" : "iconYang1@3x.png"
     }
   ],

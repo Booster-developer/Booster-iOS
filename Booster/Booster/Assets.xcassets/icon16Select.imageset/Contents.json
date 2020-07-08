@@ -1,9 +1,9 @@
 {
   "images" : [
     {
+      "scale" : "1x",
       "idiom" : "universal",
-      "filename" : "icon16Select.png",
-      "scale" : "1x"
+      "filename" : "icon16Select.png"
     },
     {
       "scale" : "2x",
@@ -11,9 +11,9 @@
       "filename" : "icon16Select@2x.png"
     },
     {
+      "scale" : "3x",
       "idiom" : "universal",
-      "filename" : "icon16Select@3x.png",
-      "scale" : "3x"
+      "filename" : "icon16Select@3x.png"
     }
   ],
   "info" : {

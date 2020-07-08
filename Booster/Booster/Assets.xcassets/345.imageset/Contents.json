@@ -1,13 +1,13 @@
 {
   "images" : [
     {
+      "filename" : "345.png",
       "scale" : "1x",
-      "idiom" : "universal",
-      "filename" : "345.png"
+      "idiom" : "universal"
     },
     {
-      "filename" : "345@2x.png",
       "scale" : "2x",
+      "filename" : "345@2x.png",
       "idiom" : "universal"
     },
     {

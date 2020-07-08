@@ -29,6 +29,7 @@
 		DA2BC40E24AB4BA600013143 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA2BC40C24AB4BA600013143 /* LaunchScreen.storyboard */; };
 		DA2BC41924AB4BA600013143 /* BoosterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2BC41824AB4BA600013143 /* BoosterTests.swift */; };
 		DA2BC42424AB4BA600013143 /* BoosterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2BC42324AB4BA600013143 /* BoosterUITests.swift */; };
+		DA6D64D924B644E200215BE4 /* testViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6D64D824B644E200215BE4 /* testViewController.swift */; };
 		DA95BDA124B2DA7D00BC1F60 /* StoreCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA95BDA024B2DA7D00BC1F60 /* StoreCollectionViewCell.swift */; };
 		DA95BDA324B2FB7300BC1F60 /* univTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA95BDA224B2FB7300BC1F60 /* univTableViewCell.swift */; };
 		DA95BDA524B3623A00BC1F60 /* WaitingListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA95BDA424B3623A00BC1F60 /* WaitingListViewController.swift */; };
@@ -106,6 +107,7 @@
 		DA2BC41F24AB4BA600013143 /* BoosterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BoosterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA2BC42324AB4BA600013143 /* BoosterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoosterUITests.swift; sourceTree = "<group>"; };
 		DA2BC42524AB4BA600013143 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DA6D64D824B644E200215BE4 /* testViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testViewController.swift; sourceTree = "<group>"; };
 		DA95BDA024B2DA7D00BC1F60 /* StoreCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreCollectionViewCell.swift; sourceTree = "<group>"; };
 		DA95BDA224B2FB7300BC1F60 /* univTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = univTableViewCell.swift; sourceTree = "<group>"; };
 		DA95BDA424B3623A00BC1F60 /* WaitingListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingListViewController.swift; sourceTree = "<group>"; };
@@ -523,6 +525,7 @@
 				CC18782A24B60AF700830F0E /* OrderHsViewController.swift */,
 				CC18782C24B61FAA00830F0E /* ChangeRangeViewController.swift */,
 				CC18782E24B63BD800830F0E /* ChangePagesViewController.swift */,
+				DA6D64D824B644E200215BE4 /* testViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -859,6 +862,7 @@
 				DACA38FB24B22A5E0025E230 /* MainTabBarController.swift in Sources */,
 				DAD179A724B5823E009BFECC /* WaitCollectionViewCell.swift in Sources */,
 				DAD179A324B4BF40009BFECC /* OrderCollectionViewHeader.swift in Sources */,
+				DA6D64D924B644E200215BE4 /* testViewController.swift in Sources */,
 				CC1233D524B45F200049F7A4 /* StatusInformation.swift in Sources */,
 				CCE019E724B2D7CA0067F721 /* StoreDetailViewController.swift in Sources */,
 				DACA391C24B2BAEA0025E230 /* UnivSelectViewController.swift in Sources */,
@@ -1029,6 +1033,7 @@
 			baseConfigurationReference = 310FAB17DD96284C91015CD2 /* Pods-Booster.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Booster/BoosterDebug.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7Y3Y9M4N4F;
 				INFOPLIST_FILE = Booster/Info.plist;

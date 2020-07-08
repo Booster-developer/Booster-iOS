@@ -1,8 +1,8 @@
 {
   "images" : [
     {
-      "idiom" : "universal",
       "filename" : "iconColorSelect.png",
+      "idiom" : "universal",
       "scale" : "1x"
     },
     {
