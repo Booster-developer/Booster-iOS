@@ -2,18 +2,18 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "20.png",
+      "filename" : "bgAmount.png",
       "scale" : "1x"
     },
     {
-      "filename" : "20@2x.png",
       "idiom" : "universal",
+      "filename" : "bgAmount@2x.png",
       "scale" : "2x"
     },
     {
-      "filename" : "20@3x.png",
       "idiom" : "universal",
-      "scale" : "3x"
+      "scale" : "3x",
+      "filename" : "bgAmount@3x.png"
     }
   ],
   "info" : {

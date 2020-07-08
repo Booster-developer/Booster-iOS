@@ -24,3 +24,17 @@ struct Options {
     self.numOfDocs = numOfDocs
   }
 }
+
+struct PayFile {
+  var fileName: String
+  var expandName: String
+  var options: String
+  var price: Int
+  
+  init(fileName: String, expandName: String, options: String, price: Int) {
+    self.fileName = fileName
+    self.expandName = expandName
+    self.options = options
+    self.price = price
+  }
+}

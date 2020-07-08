@@ -1,17 +1,17 @@
 {
   "images" : [
     {
+      "scale" : "1x",
       "idiom" : "universal",
-      "filename" : "20.png",
-      "scale" : "1x"
+      "filename" : "payBgPaper.png"
     },
     {
-      "filename" : "20@2x.png",
       "idiom" : "universal",
-      "scale" : "2x"
+      "scale" : "2x",
+      "filename" : "payBgPaper@2x.png"
     },
     {
-      "filename" : "20@3x.png",
+      "filename" : "payBgPaper@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

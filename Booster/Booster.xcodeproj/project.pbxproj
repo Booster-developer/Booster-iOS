@@ -19,6 +19,8 @@
 		CC18782B24B60AF700830F0E /* OrderHsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC18782A24B60AF700830F0E /* OrderHsViewController.swift */; };
 		CC18782D24B61FAA00830F0E /* ChangeRangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC18782C24B61FAA00830F0E /* ChangeRangeViewController.swift */; };
 		CC18782F24B63BD800830F0E /* ChangePagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC18782E24B63BD800830F0E /* ChangePagesViewController.swift */; };
+		CC3AB86024B666F30007662E /* PayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3AB85F24B666F30007662E /* PayTableViewCell.swift */; };
+		CC3AB86224B6671D0007662E /* PayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3AB86124B6671D0007662E /* PayViewController.swift */; };
 		CCE019E324B2D13A0067F721 /* SearchHs.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCE019E224B2D13A0067F721 /* SearchHs.storyboard */; };
 		CCE019E524B2D1CB0067F721 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE019E424B2D1CB0067F721 /* MapViewController.swift */; };
 		CCE019E724B2D7CA0067F721 /* StoreDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE019E624B2D7CA0067F721 /* StoreDetailViewController.swift */; };
@@ -92,6 +94,8 @@
 		CC18782A24B60AF700830F0E /* OrderHsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderHsViewController.swift; sourceTree = "<group>"; };
 		CC18782C24B61FAA00830F0E /* ChangeRangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeRangeViewController.swift; sourceTree = "<group>"; };
 		CC18782E24B63BD800830F0E /* ChangePagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePagesViewController.swift; sourceTree = "<group>"; };
+		CC3AB85F24B666F30007662E /* PayTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayTableViewCell.swift; sourceTree = "<group>"; };
+		CC3AB86124B6671D0007662E /* PayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayViewController.swift; sourceTree = "<group>"; };
 		CCE019E224B2D13A0067F721 /* SearchHs.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchHs.storyboard; sourceTree = "<group>"; };
 		CCE019E424B2D1CB0067F721 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		CCE019E624B2D7CA0067F721 /* StoreDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreDetailViewController.swift; sourceTree = "<group>"; };
@@ -312,6 +316,7 @@
 				DAD179A424B58226009BFECC /* WaitCollectionViewHeader.swift */,
 				DAD179A624B5823E009BFECC /* WaitCollectionViewCell.swift */,
 				DAD179A824B5824E009BFECC /* AddCollectionViewCell.swift */,
+				CC3AB85F24B666F30007662E /* PayTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -526,6 +531,7 @@
 				CC18782C24B61FAA00830F0E /* ChangeRangeViewController.swift */,
 				CC18782E24B63BD800830F0E /* ChangePagesViewController.swift */,
 				DA6D64D824B644E200215BE4 /* testViewController.swift */,
+				CC3AB86124B6671D0007662E /* PayViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -859,11 +865,13 @@
 				DAC4D1CD24B4A8AA0025EC1C /* OrderCollectionViewCell.swift in Sources */,
 				CCE019E524B2D1CB0067F721 /* MapViewController.swift in Sources */,
 				DA2BC40224AB4BA300013143 /* AppDelegate.swift in Sources */,
+				CC3AB86024B666F30007662E /* PayTableViewCell.swift in Sources */,
 				DACA38FB24B22A5E0025E230 /* MainTabBarController.swift in Sources */,
 				DAD179A724B5823E009BFECC /* WaitCollectionViewCell.swift in Sources */,
 				DAD179A324B4BF40009BFECC /* OrderCollectionViewHeader.swift in Sources */,
 				DA6D64D924B644E200215BE4 /* testViewController.swift in Sources */,
 				CC1233D524B45F200049F7A4 /* StatusInformation.swift in Sources */,
+				CC3AB86224B6671D0007662E /* PayViewController.swift in Sources */,
 				CCE019E724B2D7CA0067F721 /* StoreDetailViewController.swift in Sources */,
 				DACA391C24B2BAEA0025E230 /* UnivSelectViewController.swift in Sources */,
 				DA95BDA524B3623A00BC1F60 /* WaitingListViewController.swift in Sources */,
