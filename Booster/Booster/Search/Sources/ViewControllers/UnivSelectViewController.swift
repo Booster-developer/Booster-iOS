@@ -25,9 +25,7 @@ class UnivSelectViewController: UIViewController {
   
   override func viewDidLoad() {
       super.viewDidLoad()
-    setTableView()
-
-      viewSet()
+      setTableView()
       showSelection()
       // Do any additional setup after loading the view.
     let dimmerTap = UITapGestureRecognizer(target: self, action: #selector(dimmerViewTapped(_ :)))
@@ -60,10 +58,12 @@ class UnivSelectViewController: UIViewController {
 
     }
     private func showSelection(){
+      viewSet()
+      let cellHeight:CGFloat = (univTableView.dequeueReusableCell(withIdentifier: univTableViewCell.identifier)?.frame.height)!
       self.view.layoutIfNeeded()
       if let safeAreaHeight = UIApplication.shared.keyWindow?.safeAreaLayoutGuide.layoutFrame.size.height,
           let bottomPadding = UIApplication.shared.keyWindow?.safeAreaInsets.bottom {
-          selectionViewConstraint.constant = safeAreaHeight - 235
+          selectionViewConstraint.constant = safeAreaHeight - (cellHeight * 3)
           
       }
       let showView = UIViewPropertyAnimator(duration: 0.25, curve: .easeIn, animations: {
@@ -112,6 +112,8 @@ class UnivSelectViewController: UIViewController {
   func setTableView(){
     univTableView.delegate = self
     univTableView.dataSource = self
+    
+    
   }
   
     /*
@@ -146,7 +148,7 @@ extension UnivSelectViewController:UITableViewDelegate{
 
   }
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-    return 65.5
+    return (tableView.dequeueReusableCell(withIdentifier: univTableViewCell.identifier)?.frame.height)!
   }
 }
 
