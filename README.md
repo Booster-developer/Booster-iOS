@@ -6,7 +6,7 @@
 
 ### Table of Contents
 
-- [Introduction](#👨🏻‍🤝‍👨🏼_introduction)
+- [Introduction](#:two_men_holding_hands:_introduction)
   
   - [Developers](#developers)
   - [Workflow](#workflow)
