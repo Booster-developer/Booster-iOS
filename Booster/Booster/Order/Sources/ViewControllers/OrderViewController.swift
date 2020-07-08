@@ -31,6 +31,7 @@ class OrderViewController: UIViewController {
   
   @IBOutlet weak var storeCollectionView: UICollectionView!
   func setCollectionVeiw(){
+    selectionBtnHeight.constant = 0
     storeCollectionView.delegate = self
     storeCollectionView.dataSource = self
   }

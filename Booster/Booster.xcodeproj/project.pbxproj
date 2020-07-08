@@ -44,6 +44,9 @@
 		DACA391C24B2BAEA0025E230 /* UnivSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACA391B24B2BAEA0025E230 /* UnivSelectViewController.swift */; };
 		DACA392124B2C0030025E230 /* SnapShotScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACA392024B2C0030025E230 /* SnapShotScreen.swift */; };
 		DAD179A324B4BF40009BFECC /* OrderCollectionViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD179A224B4BF40009BFECC /* OrderCollectionViewHeader.swift */; };
+		DAD179A524B58226009BFECC /* WaitCollectionViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD179A424B58226009BFECC /* WaitCollectionViewHeader.swift */; };
+		DAD179A724B5823E009BFECC /* WaitCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD179A624B5823E009BFECC /* WaitCollectionViewCell.swift */; };
+		DAD179A924B5824E009BFECC /* AddCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD179A824B5824E009BFECC /* AddCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,6 +115,9 @@
 		DACA391B24B2BAEA0025E230 /* UnivSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnivSelectViewController.swift; sourceTree = "<group>"; };
 		DACA392024B2C0030025E230 /* SnapShotScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapShotScreen.swift; sourceTree = "<group>"; };
 		DAD179A224B4BF40009BFECC /* OrderCollectionViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCollectionViewHeader.swift; sourceTree = "<group>"; };
+		DAD179A424B58226009BFECC /* WaitCollectionViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitCollectionViewHeader.swift; sourceTree = "<group>"; };
+		DAD179A624B5823E009BFECC /* WaitCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitCollectionViewCell.swift; sourceTree = "<group>"; };
+		DAD179A824B5824E009BFECC /* AddCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCollectionViewCell.swift; sourceTree = "<group>"; };
 		EA9E906D8C1B39603966245B /* Pods-Booster.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Booster.release.xcconfig"; path = "Target Support Files/Pods-Booster/Pods-Booster.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -288,6 +294,9 @@
 			children = (
 				DAC4D1CC24B4A8AA0025EC1C /* OrderCollectionViewCell.swift */,
 				DAD179A224B4BF40009BFECC /* OrderCollectionViewHeader.swift */,
+				DAD179A424B58226009BFECC /* WaitCollectionViewHeader.swift */,
+				DAD179A624B5823E009BFECC /* WaitCollectionViewCell.swift */,
+				DAD179A824B5824E009BFECC /* AddCollectionViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -813,6 +822,8 @@
 				CC1233D324B363AC0049F7A4 /* StatusHsCell.swift in Sources */,
 				DACA391424B232020025E230 /* MyPageViewController.swift in Sources */,
 				DACA391824B23ADA0025E230 /* LogInViewController.swift in Sources */,
+				DAD179A924B5824E009BFECC /* AddCollectionViewCell.swift in Sources */,
+				DAD179A524B58226009BFECC /* WaitCollectionViewHeader.swift in Sources */,
 				DA95BDA124B2DA7D00BC1F60 /* StoreCollectionViewCell.swift in Sources */,
 				DACA390524B231640025E230 /* SearchViewController.swift in Sources */,
 				CC1233D124B354830049F7A4 /* StatusHsViewController.swift in Sources */,
@@ -822,6 +833,7 @@
 				CCE019E524B2D1CB0067F721 /* MapViewController.swift in Sources */,
 				DA2BC40224AB4BA300013143 /* AppDelegate.swift in Sources */,
 				DACA38FB24B22A5E0025E230 /* MainTabBarController.swift in Sources */,
+				DAD179A724B5823E009BFECC /* WaitCollectionViewCell.swift in Sources */,
 				DAD179A324B4BF40009BFECC /* OrderCollectionViewHeader.swift in Sources */,
 				CC1233D524B45F200049F7A4 /* StatusInformation.swift in Sources */,
 				CCE019E724B2D7CA0067F721 /* StoreDetailViewController.swift in Sources */,
