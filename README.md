@@ -328,7 +328,7 @@ These files can included in resources folder
 
 ##### 	descriptions
 
-- display a store list for user in StoreView using UICollectionView
+- display a store list for user in StoreView using UICollectionView. Back button in navigation bar is linked HomeView whitch is first item of tabbar. and map button in right side of the navigation bar presents mapview the cell is disabled when the store is closed. University selection view present university table view and can be changed by selection of tableview. Every cells are touchable and push navigationcontroller of section 3 below. when the favorate button of collectionviewcell is cliked, client send a boolean value to server and refresh the collectionview.
 - select college option to change current college information and a store list along to it using UITableView
 - display the store details when a store is clicked on the 1st view. favBtn is activated with blue color and post to server that the store is added to a favorite list when the button is clicked. push to the waiting list view of a order function using by UINavigationController when the orderBtn is clicked.
 - display the map view when a map button on the 1st view is clicked using Naver Map API with CocoaPod 'NMapsMap'. This view shows stores nearby the selected college using by NMGLatLng on NMapsMap and a marker. markers become bigger and a information window appear over the marker when marker is clicked. dismiss to presenting view by presenting modally and push to storeDetailView using by UINavigationContoroller when the information window is clicked.
@@ -341,7 +341,7 @@ These files can included in resources folder
 
 ##### 	descriptions
 
-- find stores to order printing service using UITableView
+- third item of tabbar presents Order view. which find stores to order printing service using UITableView. there are three sections, recentStore, favorateStore and nearbyStores. when any cell is selected, the view below appears from bottom and there is a button links to submit view.
 - display submit view when a store is clicked on the 1st view by modifying layout constraints of the view.
 
 ####   Status
