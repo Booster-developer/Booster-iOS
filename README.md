@@ -6,7 +6,7 @@
 
 ### Table of Contents
 
-- [Introduction](#introduction)
+- [Introduction](#👨🏻‍🤝‍👨🏼_introduction)
   
   - [Developers](#developers)
   - [Workflow](#workflow)
