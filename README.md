@@ -2,6 +2,8 @@
 
 # 🚀 We Are BOOSTER iOS🚀
 
+![workflow](https://tva1.sinaimg.cn/large/007S8ZIlgy1ggjqq2rcgjj31hc0u0q6p.jpg)
+
 ### Table of Contents
 
 - [Introduction](#introduction)
@@ -17,6 +19,10 @@
   - [Comment](#comment)
   - [Else](#else)
   
+- [Git-Commit Message Convention](#git-commit_message_convention)
+
+  - 
+
 - [Foldering](#foldering)
   
   - [API_and_Fonts](#api_and_fonts)
@@ -49,7 +55,7 @@
 
 ### Introduction
 
-######   > BOOSTER - We print convenience rapidly!!
+####   > BOOSTER - We print convenience rapidly!! <
 
 > 26th SOPT Appjam team 'BOOSTER'
 >
@@ -59,18 +65,29 @@
 
 ####  Developers
 
-- 김태훈
-- 노한솔
+##### 	Taehoon Kim
+
+- INFP
+- [iAmSomething](#https://github.com/iAmSomething)
+
+#####     Hansol Noh
+
+<img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1ggjql14r81j30u0140am0.jpg" alt="하이" style="zoom:25%;" float="left" height="200px" width="150px" />
+
+- ENTP
+- [hansolnoh95](#https://github.com/hansolnoh95)
 
 ####   Workflow
 
-![workflow](https://tva1.sinaimg.cn/large/007S8ZIlgy1ggjlelvhagj31hc0u012b.jpg)
+![workflow](https://tva1.sinaimg.cn/large/007S8ZIlgy1ggjqqii5ezj30u016harm.jpg)
 
 ####   Core Value
 
-- Faster
-- Easier
-- Together
+- ##### Faster : You don't have to be late on class for long, boring printing process. Go faster and take a look your lecture notes once more!
+
+- ##### Easier : You don't have to consume your energy in front of printing computers and printers anymore! Just upload your files with your mobile phone on the way you go to your school:)
+
+- ##### Together : We know your difficulties of your college life,,, cuz we are students as well. So, why don't we go forward together?! 
 
 ------
 
@@ -348,34 +365,34 @@ These files can included in resources folder
 
 | Primary Function | Details                 | Status | Developer |
 | :--------------- | :---------------------- | :----: | :-------: |
-| Splash           |                         |  Todo  |   태훈    |
-| Login            |                         |  Todo  |   한솔    |
-| Sign In          |                         |  Todo  |   태훈    |
-|                  | double check            |  Todo  |   태훈    |
-|                  | sign in                 |  Todo  |   태훈    |
-| Home             |                         |  Todo  |   태훈    |
-|                  | summary of order status |  Todo  |   태훈    |
-|                  | tabbar                  |  Done  |   태훈    |
+| Splash           |                         |  Todo  |  Taehoon  |
+| Login            |                         |  Todo  |  Hansol   |
+| Sign In          |                         |  Todo  |  Taehoon  |
+|                  | double check            |  Todo  |  Taehoon  |
+|                  | sign in                 |  Todo  |  Taehoon  |
+| Home             |                         |  Todo  |  Taehoon  |
+|                  | summary of order status |  Todo  |  Taehoon  |
+|                  | tabbar                  |  Done  |  Taehoon  |
 | Search           |                         |  Done  |   Both    |
-|                  | display stores          |  Done  |   태훈    |
-|                  | select college          |  Done  |   태훈    |
-|                  | map view                |  Done  |   한솔    |
-|                  | add my favorite         |  Done  |   한솔    |
-|                  | store details view      |  Done  |   한솔    |
+|                  | display stores          |  Done  |  Taehoon  |
+|                  | select college          |  Done  |  Taehoon  |
+|                  | map view                |  Done  |  Hansol   |
+|                  | add my favorite         |  Done  |  Hansol   |
+|                  | store details view      |  Done  |  Hansol   |
 | Order            |                         |        |   Both    |
-|                  | select a store          |  Done  |   태훈    |
-|                  | waiting list            |  Done  |   태훈    |
-|                  | upload files            |  Todo  |   태훈    |
-|                  | select options          | Doing  |   한솔    |
-|                  | pay credits             |  Todo  |   한솔    |
-| Order Status     |                         |        |   한솔    |
-|                  | order status view       |  Done  |   한솔    |
-|                  | order details view      |  Done  |   한솔    |
-| My page          |                         |        |   한솔    |
-|                  | my profile              |  Todo  |   한솔    |
-|                  | logout                  |  Todo  |   한솔    |
-|                  | engine view             |  Todo  |   한솔    |
-|                  | Settings                |  Todo  |   한솔    |
+|                  | select a store          |  Done  |  Taehoon  |
+|                  | waiting list            |  Done  |  Taehoon  |
+|                  | upload files            |  Todo  |  Taehoon  |
+|                  | select options          | Doing  |  Hansol   |
+|                  | pay credits             |  Todo  |  Hansol   |
+| Order Status     |                         |        |  Hansol   |
+|                  | order status view       |  Done  |  Hansol   |
+|                  | order details view      |  Done  |  Hansol   |
+| My page          |                         |        |  Hansol   |
+|                  | my profile              |  Todo  |  Hansol   |
+|                  | logout                  |  Todo  |  Hansol   |
+|                  | engine view             |  Todo  |  Hansol   |
+|                  | Settings                |  Todo  |  Hansol   |
 |                  |                         |        |           |
 |                  |                         |        |           |
 
