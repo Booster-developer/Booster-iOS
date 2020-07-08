@@ -303,7 +303,7 @@ These files can included in resources folder
 
 ##### 	images
 
-<img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1ggjnnpqbtbj30n01ds1kx.jpg" alt="storelist" style="zoom:20%;" align="left" width="20%" margin-right="5px" padding-right="5px"/><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1ggjnpdk2p4j30n01dsk8a.jpg" alt="selectcollege" style="zoom:20%; float:auto;" width="20%" margin-right="5px" padding-right="5px"/><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1ggjnpq7f26j30n01dsdx1.jpg" alt="storedetail-fav" style="zoom:20%; float:auto;" width="20%" margin-right="5px" padding-right="5px"/><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1ggjntaknejj30n01dsqos.jpg" alt="mapview" style="zoom:20%; float:right;" width="20%" margin-right="5"/>
+<img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1ggjnnpqbtbj30n01ds1kx.jpg" alt="storelist" style="zoom:20%; margin-right:10px;" align="left" width="20%" margin-right="5px" padding-right="5px"/><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1ggjnpdk2p4j30n01dsk8a.jpg" alt="selectcollege" style="zoom:20% margin-right:10px; float:auto;" width="20%" margin-right="5px" padding-right="5px"/><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1ggjnpq7f26j30n01dsdx1.jpg" alt="storedetail-fav" style="zoom:20%; float:auto; margin-right:5px;" width="20%" margin-right="5px" padding-right="5px"/><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1ggjntaknejj30n01dsqos.jpg" alt="mapview" style="zoom:20%; float:right;" width="20%" margin-right="5"/>
 
 ##### 	descriptions
 
