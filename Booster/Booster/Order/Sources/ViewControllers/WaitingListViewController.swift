@@ -64,7 +64,7 @@ class WaitingListViewController: UIViewController {
     }
     */
   func getFileFromLocal(){
-    let documentPicker = UIDocumentPickerViewController(documentTypes: [kUTTypeImage as String, kUTTypePDF as String], in: .import)
+    let documentPicker = UIDocumentPickerViewController(documentTypes: ["com.apple.iwork.pages.pages", "com.apple.iwork.numbers.numbers", "com.apple.iwork.keynote.key","public.image", "com.apple.application", "public.item", "public.content", "public.audiovisual-content", "public.movie", "public.audiovisual-content", "public.video", "public.audio", "public.text", "public.data", "public.zip-archive", "com.pkware.zip-archive", "public.composite-content"], in: .import)
     documentPicker.delegate = self
     documentPicker.allowsMultipleSelection = false
     self.present(documentPicker, animated: true)
