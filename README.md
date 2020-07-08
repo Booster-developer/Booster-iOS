@@ -224,7 +224,7 @@
 
 ### Foldering
 
-<img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1ggjlw2thbdj30ew0wch5e.jpg" alt="foldering" style="zoom:50%;" height="20%"  />
+<img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1ggjlw2thbdj30ew0wch5e.jpg" alt="foldering" style="zoom:50%;" height="700px" width="300px" />
 
 #### API_and_Fonts
 Commonly used API and Font related files are managed in this folder
@@ -303,7 +303,7 @@ These files can included in resources folder
 
 ##### 	images
 
-<img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1ggjnnpqbtbj30n01ds1kx.jpg" alt="storelist" style="zoom:20%;" align="left" width="20%" margin="5" right-padding="5"/><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1ggjnpdk2p4j30n01dsk8a.jpg" alt="selectcollege" style="zoom:20%; float:auto;" width="20%" margin="5" right-padding="5"/><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1ggjnpq7f26j30n01dsdx1.jpg" alt="storedetail-fav" style="zoom:20%; float:auto;" width="20%" margin="5" right-padding="5"/><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1ggjntaknejj30n01dsqos.jpg" alt="mapview" style="zoom:20%; float:right;" width="20%" margin="5"/>
+<img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1ggjnnpqbtbj30n01ds1kx.jpg" alt="storelist" style="zoom:20%;" align="left" width="20%" margin-right="5" padding-right="5"/><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1ggjnpdk2p4j30n01dsk8a.jpg" alt="selectcollege" style="zoom:20%; float:auto;" width="20%" margin-right="5" padding-right="5"/><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1ggjnpq7f26j30n01dsdx1.jpg" alt="storedetail-fav" style="zoom:20%; float:auto;" width="20%" margin-right="5" padding-right="5"/><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1ggjntaknejj30n01dsqos.jpg" alt="mapview" style="zoom:20%; float:right;" width="20%" margin-right="5"/>
 
 ##### 	descriptions
 
