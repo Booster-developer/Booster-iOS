@@ -21,7 +21,8 @@
   
 - [Git-Commit Message Convention](#git-commit_message_convention)
 
-  - 
+  - [Commit Style](#commit_style)
+  - [Content](#content)
 
 - [Foldering](#foldering)
   
@@ -53,7 +54,7 @@
 
 ------
 
-### Introduction
+### 👨🏻‍🤝‍👨🏼 Introduction
 
 ####   > BOOSTER - We print convenience rapidly!! <
 
@@ -63,7 +64,7 @@
 >
 > 2020.06 ~ ing
 
-####  Developers
+####   Developers
 
 ##### 	Taehoon Kim
 
@@ -95,7 +96,7 @@
 
 ------
 
-### Coding Convention
+### 📌 Coding Convention
 
   based on [API Design Guidelines](https://swift.org/documentation/api-design-guidelines/). Some key rules are below.
 
@@ -243,7 +244,25 @@
 
 ------
 
-### Foldering
+### 🧑‍💻 Git-Commit Message Convention
+
+####   Commit Type
+
+- feat : add new features
+- fix : modify some errors or bugs
+- docs : modify documents
+- style : format code style or nothing is changed
+
+####   Content
+
+- content should not be over 50 letters and starts with Capital letter.
+- do not use past tense but use present tense.
+  - preferred example : Fix HomeView
+  - not preferred example : Fixed HomeView
+
+------
+
+### 🗂 Foldering
 
 <img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1ggjlw2thbdj30ew0wch5e.jpg" alt="foldering" style="zoom:50%;" height="700px" width="300px" />
 
@@ -283,7 +302,7 @@ These files can included in resources folder
 
 ------
 
-### IDE and Library Used
+### 🛠 IDE and Library Used
 
 ####   IDE
 
@@ -300,7 +319,7 @@ These files can included in resources folder
 
 ------
 
-### App Specification
+### 📱 App Specification
 
 ####   Splash
 
@@ -363,7 +382,7 @@ These files can included in resources folder
 
 ------
 
-### App Functions and Developer Commentaries
+### 🧾 App Functions and Developer Commentaries
 
 
 
@@ -404,13 +423,13 @@ These files can included in resources folder
 
 ------
 
-### Challenges and Something New
+### 🏃 Challenges and Something New
 
 
 
 ------
 
-### About
+### 📬 About
 
 ####   Copyright Statement
 
