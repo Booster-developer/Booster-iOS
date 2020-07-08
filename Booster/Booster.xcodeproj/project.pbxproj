@@ -16,6 +16,9 @@
 		CC1233D724B47FE50049F7A4 /* CancelOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1233D624B47FE50049F7A4 /* CancelOrderViewController.swift */; };
 		CC1233D924B4B0040049F7A4 /* OrderHs.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC1233D824B4B0040049F7A4 /* OrderHs.storyboard */; };
 		CC18782924B6085600830F0E /* StructModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC18782824B6085600830F0E /* StructModels.swift */; };
+		CC18782B24B60AF700830F0E /* OrderHsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC18782A24B60AF700830F0E /* OrderHsViewController.swift */; };
+		CC18782D24B61FAA00830F0E /* ChangeRangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC18782C24B61FAA00830F0E /* ChangeRangeViewController.swift */; };
+		CC18782F24B63BD800830F0E /* ChangePagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC18782E24B63BD800830F0E /* ChangePagesViewController.swift */; };
 		CCE019E324B2D13A0067F721 /* SearchHs.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCE019E224B2D13A0067F721 /* SearchHs.storyboard */; };
 		CCE019E524B2D1CB0067F721 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE019E424B2D1CB0067F721 /* MapViewController.swift */; };
 		CCE019E724B2D7CA0067F721 /* StoreDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE019E624B2D7CA0067F721 /* StoreDetailViewController.swift */; };
@@ -85,6 +88,9 @@
 		CC1233D624B47FE50049F7A4 /* CancelOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelOrderViewController.swift; sourceTree = "<group>"; };
 		CC1233D824B4B0040049F7A4 /* OrderHs.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OrderHs.storyboard; sourceTree = "<group>"; };
 		CC18782824B6085600830F0E /* StructModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StructModels.swift; sourceTree = "<group>"; };
+		CC18782A24B60AF700830F0E /* OrderHsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderHsViewController.swift; sourceTree = "<group>"; };
+		CC18782C24B61FAA00830F0E /* ChangeRangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeRangeViewController.swift; sourceTree = "<group>"; };
+		CC18782E24B63BD800830F0E /* ChangePagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePagesViewController.swift; sourceTree = "<group>"; };
 		CCE019E224B2D13A0067F721 /* SearchHs.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchHs.storyboard; sourceTree = "<group>"; };
 		CCE019E424B2D1CB0067F721 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		CCE019E624B2D7CA0067F721 /* StoreDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreDetailViewController.swift; sourceTree = "<group>"; };
@@ -514,6 +520,9 @@
 			children = (
 				DACA390A24B231970025E230 /* OrderViewController.swift */,
 				DA95BDA424B3623A00BC1F60 /* WaitingListViewController.swift */,
+				CC18782A24B60AF700830F0E /* OrderHsViewController.swift */,
+				CC18782C24B61FAA00830F0E /* ChangeRangeViewController.swift */,
+				CC18782E24B63BD800830F0E /* ChangePagesViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -829,7 +838,9 @@
 				DACA392124B2C0030025E230 /* SnapShotScreen.swift in Sources */,
 				DA95BDA324B2FB7300BC1F60 /* univTableViewCell.swift in Sources */,
 				DACA390E24B231AE0025E230 /* StatusViewController.swift in Sources */,
+				CC18782F24B63BD800830F0E /* ChangePagesViewController.swift in Sources */,
 				CC1233D324B363AC0049F7A4 /* StatusHsCell.swift in Sources */,
+				CC18782D24B61FAA00830F0E /* ChangeRangeViewController.swift in Sources */,
 				DACA391424B232020025E230 /* MyPageViewController.swift in Sources */,
 				DACA391824B23ADA0025E230 /* LogInViewController.swift in Sources */,
 				DAD179A924B5824E009BFECC /* AddCollectionViewCell.swift in Sources */,
@@ -837,6 +848,7 @@
 				DA95BDA124B2DA7D00BC1F60 /* StoreCollectionViewCell.swift in Sources */,
 				DACA390524B231640025E230 /* SearchViewController.swift in Sources */,
 				CC1233D124B354830049F7A4 /* StatusHsViewController.swift in Sources */,
+				CC18782B24B60AF700830F0E /* OrderHsViewController.swift in Sources */,
 				DACA390124B22D410025E230 /* HomeViewController.swift in Sources */,
 				CC18782924B6085600830F0E /* StructModels.swift in Sources */,
 				DACA390B24B231970025E230 /* OrderViewController.swift in Sources */,
