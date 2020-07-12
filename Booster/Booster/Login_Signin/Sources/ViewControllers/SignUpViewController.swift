@@ -23,6 +23,7 @@ class SignUpViewController: UIViewController {
   @IBAction func popUpTerms(_ sender: Any) {
   }
   @IBAction func signUpBtn(_ sender: Any) {
+    //post - 회원가입
   }
   override func viewDidLoad() {
     idCheckFailedLabel.isHidden = true
