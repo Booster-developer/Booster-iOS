@@ -12,6 +12,8 @@ class ChangeRangeViewController: UIViewController {
   
   // MARK: - Vars
   var whichButtonClicked: String = "whole"
+  var isStartPartEmpty: Bool = true
+  var isEndPartEmpty: Bool = true
 
   // MARK: - IBOutlets
   @IBOutlet weak var changeRangeView: UIView!
@@ -40,17 +42,35 @@ class ChangeRangeViewController: UIViewController {
     self.endRangeField.backgroundColor = UIColor.white
     self.endRangeField.isUserInteractionEnabled = true
     self.whichButtonClicked = "part"
+   
+    
   }
   @IBAction func completeBtnClicked(_ sender: Any) {
-    guard let vc = self.presentingViewController as? OrderHsViewController else {return}
+    guard let vc = self.presentingViewController?.children[2] as? OrderHsViewController else {return}
+    if self.startRangeField.text!.isEmpty {
+      isStartPartEmpty = true
+       }
+    else {
+      isStartPartEmpty = false
+    }
+    if self.endRangeField.text!.isEmpty {
+      isEndPartEmpty = true
+       }
+    else {
+      isEndPartEmpty = false
+    }
     if whichButtonClicked == "whole" {
       vc.rangeLabel.text = "전체인쇄"
+      dismiss(animated: false, completion: nil)
     }
-    else {
+    else if (whichButtonClicked == "part") {
+      if !isStartPartEmpty && !isEndPartEmpty {
       vc.rangeLabel.text = "부분인쇄"
+      print(isStartPartEmpty)
+      print(isEndPartEmpty)
+      dismiss(animated: false, completion: nil)
+      }
     }
-    vc.rangeBtn.setImage(UIImage(named: "iconRangeSelect"), for: .normal)
-    dismiss(animated: false, completion: nil)
   }
   @IBAction func backBtnClicked(_ sender: Any) {
     dismiss(animated: false, completion: nil)
@@ -84,4 +104,9 @@ class ChangeRangeViewController: UIViewController {
     }
     */
 
+}
+extension UITextField {
+  var isEmpty: Bool {
+    return text?.isEmpty ?? true
+  }
 }

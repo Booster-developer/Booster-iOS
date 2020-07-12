@@ -40,6 +40,12 @@ class WaitingListViewController: UIViewController {
     guard let payView = orderHsStoryboard.instantiateViewController(identifier: "PayViewController") as? PayViewController else {return}
     self.navigationController?.pushViewController(payView, animated: true)
   }
+  @IBAction func goShowOptionView(_ sender: Any) {
+    let orderHsStoryboard = UIStoryboard.init(name:"OrderHs",bundle: nil)
+    guard let showOptionView = orderHsStoryboard.instantiateViewController(identifier: "showOptionViewController") as? ShowOptionViewController else {return}
+    self.present(showOptionView, animated: false, completion: nil)
+    self.modalPresentationStyle = .overCurrentContext
+  }
   
   func setWaitingListCV(){
     waitingListCollectionView.delegate = self

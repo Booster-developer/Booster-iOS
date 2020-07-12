@@ -172,7 +172,13 @@ class OrderHsViewController: UIViewController {
     
   }
   @IBAction func setOptionsClicked(_ sender: Any) {
+    self.navigationController?.popViewController(animated: true)
   }
+  @IBAction func backBtnClicked(_ sender: Any) {
+    self.navigationController?.popViewController(animated: true)
+  }
+  
+  
   
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -180,6 +186,7 @@ class OrderHsViewController: UIViewController {
       self.autoBtn.setImage(UIImage(named: "iconAutoSelect"), for: .normal)
       self.singleBtn.setImage(UIImage(named: "iconDanSelect"), for: .normal)
       self.oneBtn.setImage(UIImage(named: "icon1Select"), for: .normal)
+      self.navigationController?.isNavigationBarHidden = true
       
         // Do any additional setup after loading the view.
     }

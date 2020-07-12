@@ -19,6 +19,7 @@
 		CC18782B24B60AF700830F0E /* OrderHsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC18782A24B60AF700830F0E /* OrderHsViewController.swift */; };
 		CC18782D24B61FAA00830F0E /* ChangeRangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC18782C24B61FAA00830F0E /* ChangeRangeViewController.swift */; };
 		CC18782F24B63BD800830F0E /* ChangePagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC18782E24B63BD800830F0E /* ChangePagesViewController.swift */; };
+		CC28996124BB212F00F9C822 /* ShowOptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC28996024BB212F00F9C822 /* ShowOptionViewController.swift */; };
 		CC3AB86024B666F30007662E /* PayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3AB85F24B666F30007662E /* PayTableViewCell.swift */; };
 		CC3AB86224B6671D0007662E /* PayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3AB86124B6671D0007662E /* PayViewController.swift */; };
 		CCE019E324B2D13A0067F721 /* SearchHs.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCE019E224B2D13A0067F721 /* SearchHs.storyboard */; };
@@ -97,6 +98,7 @@
 		CC18782A24B60AF700830F0E /* OrderHsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderHsViewController.swift; sourceTree = "<group>"; };
 		CC18782C24B61FAA00830F0E /* ChangeRangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeRangeViewController.swift; sourceTree = "<group>"; };
 		CC18782E24B63BD800830F0E /* ChangePagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePagesViewController.swift; sourceTree = "<group>"; };
+		CC28996024BB212F00F9C822 /* ShowOptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowOptionViewController.swift; sourceTree = "<group>"; };
 		CC3AB85F24B666F30007662E /* PayTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayTableViewCell.swift; sourceTree = "<group>"; };
 		CC3AB86124B6671D0007662E /* PayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayViewController.swift; sourceTree = "<group>"; };
 		CCE019E224B2D13A0067F721 /* SearchHs.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchHs.storyboard; sourceTree = "<group>"; };
@@ -540,6 +542,7 @@
 				CC18782E24B63BD800830F0E /* ChangePagesViewController.swift */,
 				DA6D64D824B644E200215BE4 /* testViewController.swift */,
 				CC3AB86124B6671D0007662E /* PayViewController.swift */,
+				CC28996024BB212F00F9C822 /* ShowOptionViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -863,6 +866,7 @@
 				DACA391424B232020025E230 /* MyPageViewController.swift in Sources */,
 				DACA391824B23ADA0025E230 /* LogInViewController.swift in Sources */,
 				DAD179A924B5824E009BFECC /* AddCollectionViewCell.swift in Sources */,
+				CC28996124BB212F00F9C822 /* ShowOptionViewController.swift in Sources */,
 				DAD179A524B58226009BFECC /* WaitCollectionViewHeader.swift in Sources */,
 				DA95BDA124B2DA7D00BC1F60 /* StoreCollectionViewCell.swift in Sources */,
 				DACA390524B231640025E230 /* SearchViewController.swift in Sources */,

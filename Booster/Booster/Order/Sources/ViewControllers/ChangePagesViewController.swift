@@ -34,10 +34,9 @@ class ChangePagesViewController: UIViewController {
     self.intNum = intValue!
   }
   @IBAction func completeBtnClicked(_ sender: Any) {
-    guard let vc = self.presentingViewController as? OrderHsViewController else {return}
+    guard let vc = self.presentingViewController?.children[2] as? OrderHsViewController else {return}
     vc.pagesLabel.text = self.pagesNum.text!+"부"
     vc.pagesNum = Int(self.pagesNum.text!)!
-    vc.pagesBtn.setImage(UIImage(named: "iconNumSelect"), for: .normal)
     dismiss(animated: false, completion: nil)
   }
   @IBAction func backBtnClicked(_ sender: Any) {
@@ -47,7 +46,7 @@ class ChangePagesViewController: UIViewController {
   
     override func viewDidLoad() {
         super.viewDidLoad()
-      guard let vc = self.presentingViewController as? OrderHsViewController else {return}
+      guard let vc = self.presentingViewController?.children[2] as? OrderHsViewController else {return}
       self.changePagesView.layer.cornerRadius = 10
       self.pagesNum.text = String(vc.pagesNum)
 

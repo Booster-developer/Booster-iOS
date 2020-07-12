@@ -355,6 +355,9 @@
                                                             <rect key="frame" x="247" y="94" width="38" height="24"/>
                                                             <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="10"/>
                                                             <state key="normal" title="옵션 보기"/>
+                                                            <connections>
+                                                                <action selector="goShowOptionView:" destination="k1R-7Z-Ij0" eventType="touchUpInside" id="m6T-GM-rT3"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
