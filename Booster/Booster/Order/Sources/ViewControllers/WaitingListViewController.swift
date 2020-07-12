@@ -29,7 +29,16 @@ class WaitingListViewController: UIViewController {
   @IBAction func cangeCurrentStore(_ sender: Any) {
     self.navigationController?.popViewController(animated: true)
   }
-  @IBAction func goToOptionBtn(_ sender: Any) {
+ 
+  @IBAction func selectOption(_ sender: Any) {
+    let orderHsStoryboard = UIStoryboard.init(name:"OrderHs",bundle: nil)
+    guard let optView = orderHsStoryboard.instantiateViewController(identifier: "OptionViewController") as? OrderHsViewController else {return}
+    self.navigationController?.pushViewController(optView, animated: true)
+  }
+  @IBAction func goPayView(_ sender: Any) {
+    let orderHsStoryboard = UIStoryboard.init(name:"OrderHs",bundle: nil)
+    guard let payView = orderHsStoryboard.instantiateViewController(identifier: "PayViewController") as? PayViewController else {return}
+    self.navigationController?.pushViewController(payView, animated: true)
   }
   
   func setWaitingListCV(){

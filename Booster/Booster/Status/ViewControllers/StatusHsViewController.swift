@@ -21,7 +21,7 @@ class StatusHsViewController: UIViewController {
     let storyBoard = UIStoryboard.init(name: "StatusHs", bundle: nil)
     let cancelOrderVC = storyBoard.instantiateViewController(identifier: "cancelOrderViewController")
     cancelOrderVC.modalPresentationStyle = .overCurrentContext
-    present(cancelOrderVC, animated: false, completion: nil)
+    self.present(cancelOrderVC, animated: false, completion: nil)
   }
   @IBAction func completePickUp(_ sender: Any) {
     changeStatusInformations()

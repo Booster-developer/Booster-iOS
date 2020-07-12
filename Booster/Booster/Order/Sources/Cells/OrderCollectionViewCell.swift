@@ -13,13 +13,17 @@ class OrderCollectionViewCell: UICollectionViewCell {
   @IBOutlet weak var storeThumbNail: UIImageView!
   @IBOutlet weak var storeName: UILabel!
   @IBOutlet weak var storeAddress: UILabel!
+  
+  //static var isSelcted:Bool = false
   static let identifier:String = "orderCollectionCell"
   
-  func itemSelected(){
-    print("hh")
-    backgroundImg.image = UIImage(named: "optionselect")
-  }
-  func itemUnselected(){
-    backgroundImg.image = UIImage(named: "bgStore")
+  func itemSelected(isSelected : Bool){
+    print(isSelected)
+    if isSelected{
+      backgroundImg.image = UIImage(named: "optionselect")
+    }
+    else {
+      backgroundImg.image = UIImage(named: "bgStore")
+    }    
   }
 }

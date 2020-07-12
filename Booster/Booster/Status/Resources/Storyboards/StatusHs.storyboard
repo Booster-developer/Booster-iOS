@@ -271,6 +271,7 @@
                         <outlet property="StatusHsTableView" destination="2Yb-H3-3mG" id="dnN-Hh-plu"/>
                         <outlet property="marginView" destination="PFL-Wl-c1J" id="v5Y-75-CRt"/>
                         <outlet property="marginViewHeight" destination="Kya-nG-LEK" id="kS8-0m-d2N"/>
+                        <outlet property="statusHsTableView" destination="2Yb-H3-3mG" id="yAa-6h-s6g"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CPB-V0-Bc1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -305,7 +306,7 @@
                                             <action selector="dismissToStatusVC:" destination="EvP-QF-1Hb" eventType="touchUpInside" id="ZtJ-yU-dRg"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z9M-om-bak">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" pointerInteraction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Z9M-om-bak">
                                         <rect key="frame" x="163.66666666666663" y="151" width="163.33333333333337" height="48"/>
                                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="17"/>
                                         <state key="normal" title="확인"/>
