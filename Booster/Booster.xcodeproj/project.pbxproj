@@ -29,6 +29,7 @@
 		DA2BC40E24AB4BA600013143 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA2BC40C24AB4BA600013143 /* LaunchScreen.storyboard */; };
 		DA2BC41924AB4BA600013143 /* BoosterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2BC41824AB4BA600013143 /* BoosterTests.swift */; };
 		DA2BC42424AB4BA600013143 /* BoosterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2BC42324AB4BA600013143 /* BoosterUITests.swift */; };
+		DA6897A524BAA3FA009E3BB5 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6897A424BAA3FA009E3BB5 /* SignUpViewController.swift */; };
 		DA6D64D924B644E200215BE4 /* testViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6D64D824B644E200215BE4 /* testViewController.swift */; };
 		DA95BDA124B2DA7D00BC1F60 /* StoreCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA95BDA024B2DA7D00BC1F60 /* StoreCollectionViewCell.swift */; };
 		DA95BDA324B2FB7300BC1F60 /* univTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA95BDA224B2FB7300BC1F60 /* univTableViewCell.swift */; };
@@ -50,6 +51,8 @@
 		DACA391A24B23AEB0025E230 /* LogIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DACA391924B23AEB0025E230 /* LogIn.storyboard */; };
 		DACA391C24B2BAEA0025E230 /* UnivSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACA391B24B2BAEA0025E230 /* UnivSelectViewController.swift */; };
 		DACA392124B2C0030025E230 /* SnapShotScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACA392024B2C0030025E230 /* SnapShotScreen.swift */; };
+		DACB87C524B6C532006E0AED /* APIConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACB87C424B6C532006E0AED /* APIConstraints.swift */; };
+		DACB87C724B6FE2B006E0AED /* EmptyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACB87C624B6FE2B006E0AED /* EmptyCollectionViewCell.swift */; };
 		DAD179A324B4BF40009BFECC /* OrderCollectionViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD179A224B4BF40009BFECC /* OrderCollectionViewHeader.swift */; };
 		DAD179A524B58226009BFECC /* WaitCollectionViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD179A424B58226009BFECC /* WaitCollectionViewHeader.swift */; };
 		DAD179A724B5823E009BFECC /* WaitCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD179A624B5823E009BFECC /* WaitCollectionViewCell.swift */; };
@@ -107,6 +110,7 @@
 		DA2BC41F24AB4BA600013143 /* BoosterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BoosterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA2BC42324AB4BA600013143 /* BoosterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoosterUITests.swift; sourceTree = "<group>"; };
 		DA2BC42524AB4BA600013143 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DA6897A424BAA3FA009E3BB5 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		DA6D64D824B644E200215BE4 /* testViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testViewController.swift; sourceTree = "<group>"; };
 		DA95BDA024B2DA7D00BC1F60 /* StoreCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreCollectionViewCell.swift; sourceTree = "<group>"; };
 		DA95BDA224B2FB7300BC1F60 /* univTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = univTableViewCell.swift; sourceTree = "<group>"; };
@@ -128,6 +132,8 @@
 		DACA391924B23AEB0025E230 /* LogIn.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LogIn.storyboard; sourceTree = "<group>"; };
 		DACA391B24B2BAEA0025E230 /* UnivSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnivSelectViewController.swift; sourceTree = "<group>"; };
 		DACA392024B2C0030025E230 /* SnapShotScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapShotScreen.swift; sourceTree = "<group>"; };
+		DACB87C424B6C532006E0AED /* APIConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstraints.swift; sourceTree = "<group>"; };
+		DACB87C624B6FE2B006E0AED /* EmptyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyCollectionViewCell.swift; sourceTree = "<group>"; };
 		DAD179A224B4BF40009BFECC /* OrderCollectionViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCollectionViewHeader.swift; sourceTree = "<group>"; };
 		DAD179A424B58226009BFECC /* WaitCollectionViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitCollectionViewHeader.swift; sourceTree = "<group>"; };
 		DAD179A624B5823E009BFECC /* WaitCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -284,6 +290,7 @@
 		DA2BC43924AB580500013143 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				DACB87C424B6C532006E0AED /* APIConstraints.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -312,6 +319,7 @@
 				DAD179A424B58226009BFECC /* WaitCollectionViewHeader.swift */,
 				DAD179A624B5823E009BFECC /* WaitCollectionViewCell.swift */,
 				DAD179A824B5824E009BFECC /* AddCollectionViewCell.swift */,
+				DACB87C624B6FE2B006E0AED /* EmptyCollectionViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -570,6 +578,7 @@
 			isa = PBXGroup;
 			children = (
 				DACA391724B23ADA0025E230 /* LogInViewController.swift */,
+				DA6897A424BAA3FA009E3BB5 /* SignUpViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -838,6 +847,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA6897A524BAA3FA009E3BB5 /* SignUpViewController.swift in Sources */,
 				DACA392124B2C0030025E230 /* SnapShotScreen.swift in Sources */,
 				DA95BDA324B2FB7300BC1F60 /* univTableViewCell.swift in Sources */,
 				DACA390E24B231AE0025E230 /* StatusViewController.swift in Sources */,
@@ -852,6 +862,7 @@
 				DACA390524B231640025E230 /* SearchViewController.swift in Sources */,
 				CC1233D124B354830049F7A4 /* StatusHsViewController.swift in Sources */,
 				CC18782B24B60AF700830F0E /* OrderHsViewController.swift in Sources */,
+				DACB87C724B6FE2B006E0AED /* EmptyCollectionViewCell.swift in Sources */,
 				DACA390124B22D410025E230 /* HomeViewController.swift in Sources */,
 				CC18782924B6085600830F0E /* StructModels.swift in Sources */,
 				DACA390B24B231970025E230 /* OrderViewController.swift in Sources */,
@@ -867,6 +878,7 @@
 				CCE019E724B2D7CA0067F721 /* StoreDetailViewController.swift in Sources */,
 				DACA391C24B2BAEA0025E230 /* UnivSelectViewController.swift in Sources */,
 				DA95BDA524B3623A00BC1F60 /* WaitingListViewController.swift in Sources */,
+				DACB87C524B6C532006E0AED /* APIConstraints.swift in Sources */,
 				DA2BC40424AB4BA300013143 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

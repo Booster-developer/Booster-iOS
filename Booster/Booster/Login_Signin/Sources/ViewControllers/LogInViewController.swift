@@ -16,12 +16,20 @@ class LogInViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     @IBAction func logInButtonClicked(_ sender: Any) {
+      
+      
+      
+      
         let tabBarStoryboard = UIStoryboard.init(name: "mainTab", bundle: nil)
         guard let mainTab = tabBarStoryboard.instantiateViewController(identifier: "TabBarController") as? MainTabBarController else { return}
         mainTab.modalPresentationStyle = .fullScreen
         self.present(mainTab, animated: true, completion: nil)
     }
-    
+  @IBAction func signUpBtnClicked(_ sender: Any) {
+    guard let signUp = self.storyboard?.instantiateViewController(identifier: "signUp", creator: nil)as? SignUpViewController else {return}
+    self.present(signUp,animated: true,completion: nil)
+  }
+  
 
     /*
     // MARK: - Navigation

@@ -29,7 +29,22 @@ class SearchViewController: UIViewController {
   func setCollectionViewInfo(){
     storeCollectionView.delegate = self
     storeCollectionView.dataSource = self
+    
+    setStoreInfos()
   }
+  
+  private var storeInformaions:[StoreInformations]=[]
+  func setStoreInfos(){
+    let store1 = StoreInformations(storeName: "1번가게", storeAddress: "서울시 동작구 사당로 뭐시기", storeImgName: .fullImg("10"), isFavorate: false)
+    let store2 = StoreInformations(storeName: "2번가게", storeAddress: "서울시 어딘가",  storeImgName: .fullImg("10"), isFavorate: false)
+  let store3 = StoreInformations(storeName: "3번가게", storeAddress: "서울시 저기",  storeImgName: .fullImg("10"), isFavorate: false)
+  let store4 = StoreInformations(storeName: "4번가게", storeAddress: "서울시 아아아ㅏ",  storeImgName: .fullImg("10"), isFavorate: false)
+
+    self.storeInformaions=[store1,store2,store3,store4]
+  }
+  
+  
+  
     /*
     // MARK: - Navigation
 
@@ -71,18 +86,26 @@ extension SearchViewController:UICollectionViewDelegate{
     return 1
   }
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return 3
+    return storeInformaions.count
   }
 }
 extension SearchViewController:UICollectionViewDataSource{
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let storeCell:StoreCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: StoreCollectionViewCell.identifier, for: indexPath) as! StoreCollectionViewCell
-    storeCell.storeImgView.image = UIImage(named: "storeImg1")
+    storeCell.storeImgView.image = UIImage(named: storeInformaions[indexPath.row].storeImgName.type())
     storeCell.storeImgView.contentMode = .scaleAspectFill
+    storeCell.storeName.text = storeInformaions[indexPath.row].storeName
+    storeCell.storeAddress.text = storeInformaions[indexPath.row].storeAddress
+    storeCell.priceInfo.text = storeInformaions[indexPath.row].price[0]
+    
+    
     storeCell.favorateBtn.tag = indexPath.row
     storeCell.favorateBtn.addTarget(self, action: #selector(favorate(sender:)), for: .touchUpInside)
+    
+    
     //storeCell.backgroundColor = UIColor.black
-    if indexPath.row == 2 {
+    storeInformaions[2].isOpen = false //임시로 하나 닫아봄
+    if storeInformaions[indexPath.row].isOpen == false {
       storeCell.isUserInteractionEnabled = false
       storeCell.isStoreOpen = false
     }
@@ -90,8 +113,8 @@ extension SearchViewController:UICollectionViewDataSource{
     return storeCell
   }
   @objc func favorate(sender: UIButton){
-    toggle = !toggle
-    if(toggle){
+    storeInformaions[sender.tag].isFavorate = !storeInformaions[sender.tag].isFavorate
+    if(storeInformaions[sender.tag].isFavorate){
       sender.setImage(UIImage(named: "storeIcActiveStar1"), for: .normal)
     }
     else {

@@ -108,14 +108,22 @@ class UnivSelectViewController: UIViewController {
     })
     hideView.startAnimation()
   }
+  private var univInformaitons: [UnivInformations] = []
   
   func setTableView(){
     univTableView.delegate = self
     univTableView.dataSource = self
-    
+    setUnivInfos()
     
   }
-  
+  func setUnivInfos(){
+    let univ1 = UnivInformations(univIdx: 0, univName: "숭실대학교",univAddress: "숭실대학교주소", univLine: .line7)
+    let univ2 = UnivInformations(univIdx: 1, univName: "중앙대학교",univAddress: "중앙대주소", univLine: .line9)
+    let univ3 = UnivInformations(univIdx: 2, univName: "서울대학교",univAddress: "서울대주소", univLine: .line2)
+    
+    self.univInformaitons = [univ1,univ2,univ3]
+
+  }
     /*
     // MARK: - Navigation
 
@@ -140,11 +148,19 @@ extension UnivSelectViewController:UITableViewDelegate{
       print("failed")
       return}
     
-    vc.univNameButton.setTitle(cell.univName.text, for: .normal)
-    cell.selectedBox.alpha = 1.0
-    //Post 매장 list
-    //vc.GetstoreInformation()
-    hideSelectionView()
+    for index in 0..<univInformaitons.count{
+      univInformaitons[index].isMyUniv = false
+    }
+    univInformaitons[indexPath.row].isMyUniv = !univInformaitons[indexPath.row].isMyUniv
+    if (univInformaitons[indexPath.row].isMyUniv){
+      cell.selectedBox.image = UIImage(named: "done24Px")
+      cell.selectedBox.alpha = 1.0
+      
+      //Post 매장 list
+      //vc.GetstoreInformation()
+      hideSelectionView()
+    }
+    vc.univNameButton.setTitle(univInformaitons[indexPath.row].univName, for: .normal)
 
   }
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -154,12 +170,14 @@ extension UnivSelectViewController:UITableViewDelegate{
 
 extension UnivSelectViewController:UITableViewDataSource{
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return 3
+    return univInformaitons.count
   }
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     guard let univTableCell = tableView.dequeueReusableCell(withIdentifier: univTableViewCell.identifier, for: indexPath)as? univTableViewCell else {
       return UITableViewCell()
     }
+    univTableCell.univName.text = univInformaitons[indexPath.row].univName
+    univTableCell.subwayLineImg.image = UIImage(named: univInformaitons[indexPath.row].univLine.getLineNum())
     univTableCell.selectedBox.tag = indexPath.row    
     univTableCell.selectedBox.alpha = 0
     if indexPath.row == 0 {

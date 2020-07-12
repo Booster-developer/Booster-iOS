@@ -16,7 +16,6 @@ class ChangePagesViewController: UIViewController {
   // MARK: - IBOutlets
   @IBOutlet weak var changePagesView: UIView!
   @IBOutlet weak var pagesNum: UITextField!
-  
   // MARK: - IBActions
   @IBAction func minusBtnClicked(_ sender: Any) {
     var intValue = Int(self.pagesNum.text!)
