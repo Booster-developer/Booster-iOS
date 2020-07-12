@@ -980,19 +980,19 @@
                                                     <constraint firstAttribute="height" constant="1" id="WBE-vb-srZ"/>
                                                 </constraints>
                                             </imageView>
-                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qQl-R4-dd9">
-                                                <rect key="frame" x="0.0" y="116" width="375" height="644.33333333333337"/>
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qQl-R4-dd9">
+                                                <rect key="frame" x="0.0" y="116" width="375" height="614.33333333333337"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <prototypes>
-                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PayTableViewCell" rowHeight="171" id="gse-rZ-0o4" customClass="PayTableViewCell" customModule="Booster" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="28" width="375" height="171"/>
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PayTableViewCell" rowHeight="164" id="gse-rZ-0o4" customClass="PayTableViewCell" customModule="Booster" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="28" width="375" height="164"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gse-rZ-0o4" id="8ss-CD-BkY">
-                                                            <rect key="frame" x="0.0" y="0.0" width="375" height="171"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="375" height="164"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bgFile" translatesAutoresizingMaskIntoConstraints="NO" id="fHN-nM-dK6">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="171"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="164"/>
                                                                 </imageView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MFX-ka-JWk">
                                                                     <rect key="frame" x="32" y="20" width="0.0" height="19"/>
@@ -1185,7 +1185,7 @@
                                             <constraint firstItem="8cQ-cC-hOJ" firstAttribute="leading" secondItem="rNM-5k-b8d" secondAttribute="leading" constant="16" id="ZEh-VA-IDq"/>
                                             <constraint firstItem="99t-c8-eoV" firstAttribute="top" secondItem="gWm-ly-xkU" secondAttribute="bottom" constant="30" id="ZVy-Rp-4Gk"/>
                                             <constraint firstItem="qQl-R4-dd9" firstAttribute="top" secondItem="eea-il-pon" secondAttribute="bottom" id="bom-Kr-c6Y"/>
-                                            <constraint firstItem="FnZ-OY-cQl" firstAttribute="top" secondItem="qQl-R4-dd9" secondAttribute="bottom" id="eBw-Vw-b4S"/>
+                                            <constraint firstItem="FnZ-OY-cQl" firstAttribute="top" secondItem="qQl-R4-dd9" secondAttribute="bottom" constant="30" id="eBw-Vw-b4S"/>
                                             <constraint firstItem="qQl-R4-dd9" firstAttribute="leading" secondItem="rNM-5k-b8d" secondAttribute="leading" id="f5m-Ny-DPe"/>
                                             <constraint firstAttribute="trailing" secondItem="WSN-No-QjB" secondAttribute="trailing" id="h4l-f2-atc"/>
                                             <constraint firstAttribute="trailing" secondItem="gWm-ly-xkU" secondAttribute="trailing" constant="16" id="n8n-Lh-wpJ"/>
