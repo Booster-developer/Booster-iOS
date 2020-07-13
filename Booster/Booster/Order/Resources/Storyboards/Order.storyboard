@@ -191,6 +191,7 @@
                     <connections>
                         <outlet property="selectionBtnHeight" destination="lwj-V6-Yaz" id="VtZ-Tc-oHj"/>
                         <outlet property="storeCollectionView" destination="VkJ-9K-Uyy" id="uOn-eI-U7B"/>
+                        <outlet property="storeNameInSelection" destination="hqs-ay-nrd" id="g0M-xd-g7b"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wUZ-Y9-ChR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

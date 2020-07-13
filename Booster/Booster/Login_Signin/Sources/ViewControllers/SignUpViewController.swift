@@ -14,11 +14,33 @@ class SignUpViewController: UIViewController {
   @IBOutlet weak var getID: UITextField!
   @IBOutlet weak var getPW: UITextField!
   @IBOutlet weak var checkPW: UITextField!
-  @IBOutlet weak var popUpUnivList: UIButton!
+  @IBOutlet weak var univSelectionAppear: NSLayoutConstraint!
+  
+  @IBOutlet weak var univName: UILabel!
   @IBAction func checkID(_ sender: Any) {
     getID.layer.borderColor = UIColor.red as! CGColor
     idCheckFailedLabel.isHidden = false
   }
+  @IBAction func univSelectBtn(_ sender: Any) {
+    univSelectionAppear.constant = 132
+  }
+  @IBAction func ssBtn(_ sender: Any) {
+    univSelectionAppear.constant = 0
+    univName.text = "숭실대학교"
+  }
+  @IBAction func cuBtn(_ sender: Any) {
+    univSelectionAppear.constant = 0
+    univName.text = "중앙대학교"
+  }
+  @IBAction func snuBtn(_ sender: Any) {
+    univSelectionAppear.constant = 0
+    univName.text = "서울대학교"
+  }
+  
+  
+  
+  
+  
   @IBOutlet weak var idCheckFailedLabel: UILabel!
   @IBAction func popUpTerms(_ sender: Any) {
   }

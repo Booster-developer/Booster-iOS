@@ -5,7 +5,7 @@
 //  Created by 노한솔 on 2020/07/08.
 //  Copyright © 2020 kimtaehoon. All rights reserved.
 //
-
+import UIKit
 struct Options {
   var blackOrColor: String
   var rowOrColumn: String
@@ -150,6 +150,7 @@ struct OrderInformation{
 }
 
 struct FileInformation {
+  var fileImg:UIImage?
   var fileName:String
   var fileColor:String
   var fileRangeStart:Int
@@ -158,6 +159,19 @@ struct FileInformation {
   var fileDirection:String
   var fileCollect:Int
   var fileCopyNum:Int
+  
+  
+  init(fileImg:UIImage?, fileName:String,fileColor:String="",fileRangeStart:Int = 0,fileRangeEnd:Int = 0,fileSideType:String = "",fileDirection:String = "",fileCollect:Int = 0,fileCopyNum:Int = 1){
+    self.fileImg = fileImg
+    self.fileName = fileName
+    self.fileColor = fileColor
+    self.fileRangeStart = fileRangeStart
+    self.fileRangeEnd = fileRangeEnd
+    self.fileSideType = fileSideType
+    self.fileDirection = fileDirection
+    self.fileCollect = fileCollect
+    self.fileCopyNum = fileCopyNum
+  }
   
 }
 

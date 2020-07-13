@@ -13,7 +13,7 @@ class WaitingListViewController: UIViewController {
 
   
   var tmpImg = UIImage()
-  
+  var fileList:[FileInformation] = []
   @IBOutlet weak var waitingListCollectionView: UICollectionView!
   override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,6 +47,7 @@ class WaitingListViewController: UIViewController {
   }
   @IBOutlet weak var orderBtnAppear: NSLayoutConstraint!
   func orderViewAppear(){
+    self.view.layoutIfNeeded()
     orderBtnAppear.constant = 162
   }
   func orderViewDisappear(){
@@ -70,6 +71,7 @@ class WaitingListViewController: UIViewController {
     documentPicker.delegate = self
     documentPicker.allowsMultipleSelection = false
     self.present(documentPicker, animated: true)
+    print(fileList)
   }
 }
 extension WaitingListViewController:UIDocumentPickerDelegate {
@@ -111,13 +113,15 @@ extension WaitingListViewController:UIDocumentPickerDelegate {
         if thumbnail == nil || error != nil{
           print("error : \(String(describing: error))")
         } else {
+          let file = FileInformation(fileImg:thumbnail?.uiImage, fileName: sandboxFileURL.lastPathComponent)
+          self.fileList.append(file)
           print("썸네일 뿌리기")
           self.tmpImg = thumbnail?.uiImage as! UIImage
         }
       }
     }
-    guard let test = self.storyboard?.instantiateViewController(withIdentifier: "optionViewTest") else {return}
-    self.present(test,animated: true)
+//    guard let test = self.storyboard?.instantiateViewController(withIdentifier: "optionViewTest") else {return}
+//    self.present(test,animated: true)
   }
 }
 
@@ -126,34 +130,37 @@ extension WaitingListViewController:UICollectionViewDelegate{
     return 1
   }
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return 2
+    return fileList.count + 1
   }
   
 }
 
 extension WaitingListViewController:UICollectionViewDataSource{
+  
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    
+    print(fileList)
+
     guard let fileAddCell:AddCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: AddCollectionViewCell.identifier, for: indexPath) as? AddCollectionViewCell else {return UICollectionViewCell()}
     guard let fileCell:WaitCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: WaitCollectionViewCell.identifier, for:indexPath) as? WaitCollectionViewCell else {
       return UICollectionViewCell()}
-    if(indexPath.row == 1){
+    if(indexPath.row == fileList.count){
       return fileAddCell
     }
     else{
-      return fileCell}
+      fileCell.fileName.text = fileList[indexPath.row].fileName
+      fileCell.preViewImg.image = fileList[indexPath.row].fileImg
+      return fileCell
+    }
 //    if indexPath.row >= 2{
 //      orderViewAppear()
 //    }
 
   }
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-    if indexPath.row == 1{
+    if indexPath.row == (fileList.count){
       print("파일 불러오기")
       getFileFromLocal()
-      
-      
-      
+      collectionView.reloadItems(at: collectionView.indexPathsForVisibleItems)
       
     }
     print(indexPath.row)
