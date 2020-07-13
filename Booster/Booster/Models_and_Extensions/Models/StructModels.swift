@@ -159,6 +159,7 @@ struct FileInformation {
   var fileDirection:String
   var fileCollect:Int
   var fileCopyNum:Int
+  //var fileOption:Options
   
   
   init(fileImg:UIImage?, fileName:String,fileColor:String="",fileRangeStart:Int = 0,fileRangeEnd:Int = 0,fileSideType:String = "",fileDirection:String = "",fileCollect:Int = 0,fileCopyNum:Int = 1){
