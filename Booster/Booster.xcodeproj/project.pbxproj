@@ -29,6 +29,9 @@
 		CCE019E524B2D1CB0067F721 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE019E424B2D1CB0067F721 /* MapViewController.swift */; };
 		CCE019E724B2D7CA0067F721 /* StoreDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE019E624B2D7CA0067F721 /* StoreDetailViewController.swift */; };
 		D37338012F3166BBDF741F1C /* Pods_BoosterTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF5F3976B85D8FEDD0677FC6 /* Pods_BoosterTests.framework */; };
+		DA12557124BC5FDE00520138 /* AddFileCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA12557024BC5FDE00520138 /* AddFileCollectionViewCell.swift */; };
+		DA12557324BC8FA700520138 /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA12557224BC8FA700520138 /* AlertViewController.swift */; };
+		DA12557624BC938600520138 /* AlertCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA12557524BC938600520138 /* AlertCollectionViewCell.swift */; };
 		DA2BC40224AB4BA300013143 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2BC40124AB4BA300013143 /* AppDelegate.swift */; };
 		DA2BC40424AB4BA300013143 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2BC40324AB4BA300013143 /* SceneDelegate.swift */; };
 		DA2BC40B24AB4BA600013143 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA2BC40A24AB4BA600013143 /* Assets.xcassets */; };
@@ -62,7 +65,6 @@
 		DAD179A324B4BF40009BFECC /* OrderCollectionViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD179A224B4BF40009BFECC /* OrderCollectionViewHeader.swift */; };
 		DAD179A524B58226009BFECC /* WaitCollectionViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD179A424B58226009BFECC /* WaitCollectionViewHeader.swift */; };
 		DAD179A724B5823E009BFECC /* WaitCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD179A624B5823E009BFECC /* WaitCollectionViewCell.swift */; };
-		DAD179A924B5824E009BFECC /* AddCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD179A824B5824E009BFECC /* AddCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,6 +112,9 @@
 		CCE019E224B2D13A0067F721 /* SearchHs.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchHs.storyboard; sourceTree = "<group>"; };
 		CCE019E424B2D1CB0067F721 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		CCE019E624B2D7CA0067F721 /* StoreDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreDetailViewController.swift; sourceTree = "<group>"; };
+		DA12557024BC5FDE00520138 /* AddFileCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFileCollectionViewCell.swift; sourceTree = "<group>"; };
+		DA12557224BC8FA700520138 /* AlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
+		DA12557524BC938600520138 /* AlertCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertCollectionViewCell.swift; sourceTree = "<group>"; };
 		DA2BC3FE24AB4BA300013143 /* Booster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Booster.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA2BC40124AB4BA300013143 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DA2BC40324AB4BA300013143 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -149,7 +154,6 @@
 		DAD179A224B4BF40009BFECC /* OrderCollectionViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCollectionViewHeader.swift; sourceTree = "<group>"; };
 		DAD179A424B58226009BFECC /* WaitCollectionViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitCollectionViewHeader.swift; sourceTree = "<group>"; };
 		DAD179A624B5823E009BFECC /* WaitCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitCollectionViewCell.swift; sourceTree = "<group>"; };
-		DAD179A824B5824E009BFECC /* AddCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCollectionViewCell.swift; sourceTree = "<group>"; };
 		EA9E906D8C1B39603966245B /* Pods-Booster.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Booster.release.xcconfig"; path = "Target Support Files/Pods-Booster/Pods-Booster.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -202,6 +206,14 @@
 				BF5F3976B85D8FEDD0677FC6 /* Pods_BoosterTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DA12557424BC937200520138 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				DA12557524BC938600520138 /* AlertCollectionViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		DA2BC3F524AB4BA300013143 = {
@@ -330,9 +342,9 @@
 				DAD179A224B4BF40009BFECC /* OrderCollectionViewHeader.swift */,
 				DAD179A424B58226009BFECC /* WaitCollectionViewHeader.swift */,
 				DAD179A624B5823E009BFECC /* WaitCollectionViewCell.swift */,
-				DAD179A824B5824E009BFECC /* AddCollectionViewCell.swift */,
 				CC3AB85F24B666F30007662E /* PayTableViewCell.swift */,
 				DACB87C624B6FE2B006E0AED /* EmptyCollectionViewCell.swift */,
+				DA12557024BC5FDE00520138 /* AddFileCollectionViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -463,6 +475,7 @@
 		DACA38ED24B2264E0025E230 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				DA12557424BC937200520138 /* Cells */,
 				DACA38FC24B22CA00025E230 /* ViewControllers */,
 			);
 			path = Sources;
@@ -560,6 +573,7 @@
 			isa = PBXGroup;
 			children = (
 				DACA390024B22D410025E230 /* HomeViewController.swift */,
+				DA12557224BC8FA700520138 /* AlertViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -866,6 +880,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA12557624BC938600520138 /* AlertCollectionViewCell.swift in Sources */,
 				DA6897A524BAA3FA009E3BB5 /* SignUpViewController.swift in Sources */,
 				DACA392124B2C0030025E230 /* SnapShotScreen.swift in Sources */,
 				DA95BDA324B2FB7300BC1F60 /* univTableViewCell.swift in Sources */,
@@ -883,6 +898,7 @@
 				DACA390524B231640025E230 /* SearchViewController.swift in Sources */,
 				CC1233D124B354830049F7A4 /* StatusHsViewController.swift in Sources */,
 				CC18782B24B60AF700830F0E /* OrderHsViewController.swift in Sources */,
+				DA12557124BC5FDE00520138 /* AddFileCollectionViewCell.swift in Sources */,
 				DACB87C724B6FE2B006E0AED /* EmptyCollectionViewCell.swift in Sources */,
 				DACA390124B22D410025E230 /* HomeViewController.swift in Sources */,
 				CC18782924B6085600830F0E /* StructModels.swift in Sources */,
@@ -900,6 +916,7 @@
 				CC1233D524B45F200049F7A4 /* StatusInformation.swift in Sources */,
 				CC3AB86224B6671D0007662E /* PayViewController.swift in Sources */,
 				CCE019E724B2D7CA0067F721 /* StoreDetailViewController.swift in Sources */,
+				DA12557324BC8FA700520138 /* AlertViewController.swift in Sources */,
 				DACA391C24B2BAEA0025E230 /* UnivSelectViewController.swift in Sources */,
 				DA95BDA524B3623A00BC1F60 /* WaitingListViewController.swift in Sources */,
 				DACB87C524B6C532006E0AED /* APIConstraints.swift in Sources */,

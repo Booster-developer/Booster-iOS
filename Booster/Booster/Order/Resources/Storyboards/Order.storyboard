@@ -191,6 +191,7 @@
                     <connections>
                         <outlet property="selectionBtnHeight" destination="lwj-V6-Yaz" id="VtZ-Tc-oHj"/>
                         <outlet property="storeCollectionView" destination="VkJ-9K-Uyy" id="uOn-eI-U7B"/>
+                        <outlet property="storeNameInSelection" destination="hqs-ay-nrd" id="g0M-xd-g7b"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wUZ-Y9-ChR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -297,7 +298,7 @@
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="dcr-kT-kUm">
                                 <rect key="frame" x="0.0" y="193" width="375" height="1085"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="b1F-sy-aUH">
                                     <size key="itemSize" width="375" height="128"/>
                                     <size key="headerReferenceSize" width="50" height="66"/>
@@ -305,8 +306,35 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="waitCell" id="lRk-Yt-S7Q" customClass="WaitCollectionViewCell" customModule="Booster" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="addFile" reuseIdentifier="addFile" id="OtV-va-9VV" customClass="AddFileCollectionViewCell" customModule="Booster" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="66" width="375" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="4a2-OQ-5KA">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ofR-vw-SmS">
+                                                    <rect key="frame" x="16" y="0.0" width="343" height="128"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="ofR-vw-SmS" secondAttribute="height" multiplier="343:128" id="XNw-zu-hcn"/>
+                                                    </constraints>
+                                                    <state key="normal" image="btnAddfile"/>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="ofR-vw-SmS" firstAttribute="top" secondItem="4a2-OQ-5KA" secondAttribute="top" id="Pvm-96-7FQ"/>
+                                                <constraint firstAttribute="bottom" secondItem="ofR-vw-SmS" secondAttribute="bottom" id="X2O-Sc-KQg"/>
+                                                <constraint firstAttribute="trailing" secondItem="ofR-vw-SmS" secondAttribute="trailing" constant="16" id="jjQ-Bb-iQp"/>
+                                                <constraint firstItem="ofR-vw-SmS" firstAttribute="leading" secondItem="4a2-OQ-5KA" secondAttribute="leading" constant="16" id="xBE-rT-fJu"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <connections>
+                                            <outlet property="addFileBtn" destination="ofR-vw-SmS" id="IMT-NZ-ZZL"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="waitCell" id="lRk-Yt-S7Q" customClass="WaitCollectionViewCell" customModule="Booster" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="204" width="375" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Z7g-w8-CyG">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="128"/>
@@ -397,26 +425,6 @@
                                             <outlet property="preViewImg" destination="lXB-b5-ELF" id="yeX-2f-Gam"/>
                                         </connections>
                                     </collectionViewCell>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="addCell" reuseIdentifier="addCell" id="DQs-wW-CPu" customClass="AddCollectionViewCell" customModule="Booster" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="204" width="375" height="128"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="A5e-gk-XOH">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="128"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="btnAddfile" translatesAutoresizingMaskIntoConstraints="NO" id="t3C-f5-xCU">
-                                                    <rect key="frame" x="16" y="0.0" width="343" height="128"/>
-                                                </imageView>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="t3C-f5-xCU" secondAttribute="bottom" id="Bro-AF-kYn"/>
-                                                <constraint firstAttribute="trailing" secondItem="t3C-f5-xCU" secondAttribute="trailing" constant="16" id="MrJ-BM-7wg"/>
-                                                <constraint firstItem="t3C-f5-xCU" firstAttribute="top" secondItem="A5e-gk-XOH" secondAttribute="top" id="YOc-uV-ULg"/>
-                                                <constraint firstItem="t3C-f5-xCU" firstAttribute="leading" secondItem="A5e-gk-XOH" secondAttribute="leading" constant="16" id="zR5-Uc-SXu"/>
-                                            </constraints>
-                                        </collectionViewCellContentView>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                    </collectionViewCell>
                                 </cells>
                                 <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="waitingHeader" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="waitingHeader" id="yct-pI-vh5" customClass="WaitCollectionViewHeader" customModule="Booster" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="66"/>
@@ -444,7 +452,8 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="dcr-kT-kUm" firstAttribute="top" secondItem="Hqh-5t-5l3" secondAttribute="bottom" id="712-Lo-8VS"/>
-                            <constraint firstItem="5wk-J2-fHm" firstAttribute="top" secondItem="dcr-kT-kUm" secondAttribute="bottom" id="Gh2-DG-up4"/>
+                            <constraint firstItem="dcr-kT-kUm" firstAttribute="top" secondItem="Hqh-5t-5l3" secondAttribute="bottom" id="ER6-3I-t2M"/>
+                            <constraint firstItem="5wk-J2-fHm" firstAttribute="top" secondItem="dcr-kT-kUm" secondAttribute="bottom" id="LOj-uF-nwV"/>
                             <constraint firstItem="Hqh-5t-5l3" firstAttribute="leading" secondItem="lfD-pl-wwe" secondAttribute="leading" id="Mct-F7-5bA"/>
                             <constraint firstItem="5wk-J2-fHm" firstAttribute="leading" secondItem="lfD-pl-wwe" secondAttribute="leading" id="NJN-iS-dYT"/>
                             <constraint firstItem="lfD-pl-wwe" firstAttribute="trailing" secondItem="Hqh-5t-5l3" secondAttribute="trailing" id="Y4K-qN-z58"/>
@@ -466,6 +475,7 @@
                     <size key="freeformSize" width="375" height="1440"/>
                     <connections>
                         <outlet property="orderBtnAppear" destination="Gh9-kX-qvk" id="qUm-1I-aSV"/>
+                        <outlet property="priceLabel" destination="VQb-of-2cX" id="vW2-bO-pfX"/>
                         <outlet property="waitingListCollectionView" destination="dcr-kT-kUm" id="sqY-1B-1rN"/>
                     </connections>
                 </viewController>

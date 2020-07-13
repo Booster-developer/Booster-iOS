@@ -25,6 +25,9 @@ class UnivSelectViewController: UIViewController {
   
   override func viewDidLoad() {
       super.viewDidLoad()
+
+    
+    print(univInformaitons)
       setTableView()
       showSelection()
       // Do any additional setup after loading the view.
@@ -108,22 +111,15 @@ class UnivSelectViewController: UIViewController {
     })
     hideView.startAnimation()
   }
-  private var univInformaitons: [UnivInformations] = []
+  var univInformaitons: [UnivInformations] = []
   
   func setTableView(){
     univTableView.delegate = self
     univTableView.dataSource = self
-    setUnivInfos()
-    
   }
-  func setUnivInfos(){
-    let univ1 = UnivInformations(univIdx: 0, univName: "숭실대학교",univAddress: "숭실대학교주소", univLine: .line7)
-    let univ2 = UnivInformations(univIdx: 1, univName: "중앙대학교",univAddress: "중앙대주소", univLine: .line9)
-    let univ3 = UnivInformations(univIdx: 2, univName: "서울대학교",univAddress: "서울대주소", univLine: .line2)
-    
-    self.univInformaitons = [univ1,univ2,univ3]
-
-  }
+    //vc.setUnivInfos()
+    //print(vc.univInformations)
+    //self.univInformaitons = vc.univInformations
     /*
     // MARK: - Navigation
 
@@ -137,12 +133,6 @@ class UnivSelectViewController: UIViewController {
 }
 extension UnivSelectViewController:UITableViewDelegate{
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
-  let preVC = self.presentingViewController?.children[1] // 탭바의 두번째 뷰가 서치뷰
-  guard let vc = preVC as? SearchViewController else {
-        print("failed")
-        return
-  }
     print(indexPath)
     guard let cell = tableView.dequeueReusableCell(withIdentifier: univTableViewCell.identifier, for: indexPath) as? univTableViewCell else {
       print("failed")
@@ -151,13 +141,19 @@ extension UnivSelectViewController:UITableViewDelegate{
     for index in 0..<univInformaitons.count{
       univInformaitons[index].isMyUniv = false
     }
+    let preVC = self.presentingViewController?.children[1] // 탭바의 두번째 뷰가 서치뷰
+    guard let vc = preVC as? SearchViewController else {
+          print("failed")
+          return
+    }
     univInformaitons[indexPath.row].isMyUniv = !univInformaitons[indexPath.row].isMyUniv
     if (univInformaitons[indexPath.row].isMyUniv){
-      cell.selectedBox.image = UIImage(named: "done24Px")
-      cell.selectedBox.alpha = 1.0
-      
+      cell.selectedBox.image = UIImage(named: "storeUnivIcCheck")
+      cell.selectedBox.isHidden = false
+      self.univTableView.reloadData()
       //Post 매장 list
       //vc.GetstoreInformation()
+      vc.univInformations = univInformaitons
       hideSelectionView()
     }
     vc.univNameButton.setTitle(univInformaitons[indexPath.row].univName, for: .normal)
@@ -178,11 +174,16 @@ extension UnivSelectViewController:UITableViewDataSource{
     }
     univTableCell.univName.text = univInformaitons[indexPath.row].univName
     univTableCell.subwayLineImg.image = UIImage(named: univInformaitons[indexPath.row].univLine.getLineNum())
-    univTableCell.selectedBox.tag = indexPath.row    
-    univTableCell.selectedBox.alpha = 0
-    if indexPath.row == 0 {
-      univTableCell.selectedBox.alpha = 1
+    univTableCell.selectedBox.tag = indexPath.row
+    univTableCell.selectedBox.image = UIImage(named: "storeUnivIcCheck")
+
+    if univInformaitons[indexPath.row].isMyUniv{
+      univTableCell.selectedBox.isHidden = false
     }
+    else{
+      univTableCell.selectedBox.isHidden = true
+    }
+
     return univTableCell
   }
 }

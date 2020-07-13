@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -22,6 +23,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D13-os-2o2">
+                                <rect key="frame" x="199" y="504" width="52" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="알람뷰로"/>
+                                <connections>
+                                    <segue destination="l1o-Ho-duy" kind="show" id="wqf-Dx-sNm"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="ALX-jU-QDs"/>
@@ -31,5 +40,151 @@
             </objects>
             <point key="canvasLocation" x="-7" y="-186"/>
         </scene>
+        <!--Alert View Controller-->
+        <scene sceneID="Hqm-UV-1aV">
+            <objects>
+                <viewController storyboardIdentifier="alertView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="l1o-Ho-duy" customClass="AlertViewController" customModule="Booster" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="krN-5y-Rxl">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oeg-kJ-Ltq">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bdL-00-J5F">
+                                        <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="ROi-Sg-bhZ"/>
+                                            <constraint firstAttribute="width" constant="44" id="bUb-nO-qxU"/>
+                                        </constraints>
+                                        <state key="normal" image="processBackBtn"/>
+                                        <connections>
+                                            <action selector="goBackToHome:" destination="l1o-Ho-duy" eventType="touchUpInside" id="0Of-nb-mOo"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="bdL-00-J5F" secondAttribute="bottom" id="FKd-vZ-dve"/>
+                                    <constraint firstItem="bdL-00-J5F" firstAttribute="top" secondItem="oeg-kJ-Ltq" secondAttribute="top" id="IVI-19-RZO"/>
+                                    <constraint firstItem="bdL-00-J5F" firstAttribute="leading" secondItem="oeg-kJ-Ltq" secondAttribute="leading" id="JtE-at-iNh"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gjP-Y0-bhn">
+                                <rect key="frame" x="0.0" y="44" width="414" height="55.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="알림" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fTg-vx-uip">
+                                        <rect key="frame" x="16" y="12" width="45" height="31.5"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="26"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="fTg-vx-uip" firstAttribute="leading" secondItem="gjP-Y0-bhn" secondAttribute="leading" constant="16" id="Hzp-Jg-qbU"/>
+                                    <constraint firstItem="fTg-vx-uip" firstAttribute="top" secondItem="gjP-Y0-bhn" secondAttribute="top" constant="12" id="T7o-R1-pCX"/>
+                                    <constraint firstAttribute="bottom" secondItem="fTg-vx-uip" secondAttribute="bottom" constant="12" id="WZB-eQ-xEl"/>
+                                </constraints>
+                            </view>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="sWX-vD-kDf">
+                                <rect key="frame" x="0.0" y="99.5" width="414" height="708.5"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Nz3-d8-LS6">
+                                    <size key="itemSize" width="414" height="111"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="alertCell" reuseIdentifier="alertCell" id="dGT-vs-qdK" customClass="AlertCollectionViewCell" customModule="Booster" customModuleProvider="target">
+                                        <rect key="frame" x="18.5" y="0.0" width="377.5" height="98"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="kbI-QH-lKY">
+                                            <rect key="frame" x="0.0" y="0.0" width="377.5" height="98"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bgOrder1" translatesAutoresizingMaskIntoConstraints="NO" id="dpr-3v-OTb">
+                                                    <rect key="frame" x="0.0" y="0.0" width="377.5" height="98"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="dpr-3v-OTb" secondAttribute="height" multiplier="343:89" id="Iiu-lp-Nyq"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="noticeIc1" translatesAutoresizingMaskIntoConstraints="NO" id="xpt-L2-lJu">
+                                                    <rect key="frame" x="14" y="33" width="26.5" height="32"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="xpt-L2-lJu" secondAttribute="height" multiplier="19:23" id="By2-Xx-dl9"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="주문 번호" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kDX-zp-MN3">
+                                                    <rect key="frame" x="61.5" y="11" width="45" height="14.5"/>
+                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="12"/>
+                                                    <color key="textColor" red="0.48630654810000001" green="0.49018782379999998" blue="0.49019646639999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2020.07.17" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8c5-iH-MU9">
+                                                    <rect key="frame" x="61.5" y="62" width="57" height="15"/>
+                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="12"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xMf-Vk-BDf">
+                                                    <rect key="frame" x="61.5" y="25.5" width="264.5" height="31.5"/>
+                                                    <string key="text">복사왕 김제본에서 주문하신 인쇄가 완료되었습니다.
+픽업 완료 버튼을 눌러주세요.</string>
+                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="13"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="dpr-3v-OTb" secondAttribute="bottom" id="7AV-oa-21g"/>
+                                                <constraint firstItem="dpr-3v-OTb" firstAttribute="leading" secondItem="kbI-QH-lKY" secondAttribute="leading" id="9Ut-sK-83d"/>
+                                                <constraint firstItem="xMf-Vk-BDf" firstAttribute="leading" secondItem="kDX-zp-MN3" secondAttribute="leading" id="ACB-iH-0al"/>
+                                                <constraint firstItem="xMf-Vk-BDf" firstAttribute="leading" secondItem="xpt-L2-lJu" secondAttribute="trailing" constant="21" id="Jyr-6w-H04"/>
+                                                <constraint firstItem="dpr-3v-OTb" firstAttribute="bottom" secondItem="xpt-L2-lJu" secondAttribute="bottom" constant="33" id="K36-b8-W5p"/>
+                                                <constraint firstItem="xpt-L2-lJu" firstAttribute="leading" secondItem="dpr-3v-OTb" secondAttribute="leading" constant="14" id="OOA-Zr-Bhu"/>
+                                                <constraint firstItem="8c5-iH-MU9" firstAttribute="top" secondItem="xMf-Vk-BDf" secondAttribute="bottom" constant="5" id="PYy-Dy-3vH"/>
+                                                <constraint firstItem="kDX-zp-MN3" firstAttribute="top" secondItem="kbI-QH-lKY" secondAttribute="top" constant="11" id="RPe-yv-ebt"/>
+                                                <constraint firstItem="xpt-L2-lJu" firstAttribute="top" secondItem="dpr-3v-OTb" secondAttribute="top" constant="33" id="aIT-CT-B2f"/>
+                                                <constraint firstItem="dpr-3v-OTb" firstAttribute="top" secondItem="kbI-QH-lKY" secondAttribute="top" id="gfR-hJ-ZiF"/>
+                                                <constraint firstAttribute="trailing" secondItem="dpr-3v-OTb" secondAttribute="trailing" id="gyO-Ly-dQG"/>
+                                                <constraint firstItem="xMf-Vk-BDf" firstAttribute="top" secondItem="kDX-zp-MN3" secondAttribute="bottom" id="v1p-eN-0TI"/>
+                                                <constraint firstItem="xMf-Vk-BDf" firstAttribute="leading" secondItem="8c5-iH-MU9" secondAttribute="leading" id="wSd-To-V3O"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="sWX-vD-kDf" firstAttribute="top" secondItem="gjP-Y0-bhn" secondAttribute="bottom" id="3Tl-BF-Um7"/>
+                            <constraint firstItem="zlL-7S-P2C" firstAttribute="bottom" secondItem="sWX-vD-kDf" secondAttribute="bottom" id="7V4-mJ-jOA"/>
+                            <constraint firstItem="gjP-Y0-bhn" firstAttribute="top" secondItem="oeg-kJ-Ltq" secondAttribute="bottom" id="SFK-hs-Z3X"/>
+                            <constraint firstItem="zlL-7S-P2C" firstAttribute="trailing" secondItem="sWX-vD-kDf" secondAttribute="trailing" id="YQj-aa-kU2"/>
+                            <constraint firstItem="oeg-kJ-Ltq" firstAttribute="top" secondItem="zlL-7S-P2C" secondAttribute="top" id="dM9-it-VOH"/>
+                            <constraint firstItem="sWX-vD-kDf" firstAttribute="leading" secondItem="zlL-7S-P2C" secondAttribute="leading" id="k9z-Ee-jsn"/>
+                            <constraint firstItem="zlL-7S-P2C" firstAttribute="trailing" secondItem="oeg-kJ-Ltq" secondAttribute="trailing" id="mXq-Q7-bZB"/>
+                            <constraint firstItem="gjP-Y0-bhn" firstAttribute="leading" secondItem="zlL-7S-P2C" secondAttribute="leading" id="szp-bv-IXv"/>
+                            <constraint firstItem="zlL-7S-P2C" firstAttribute="trailing" secondItem="gjP-Y0-bhn" secondAttribute="trailing" id="t4M-xf-bwl"/>
+                            <constraint firstItem="oeg-kJ-Ltq" firstAttribute="leading" secondItem="zlL-7S-P2C" secondAttribute="leading" id="zfZ-4F-R9J"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="zlL-7S-P2C"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="yPh-ve-lm1"/>
+                    <connections>
+                        <outlet property="alertCollectionView" destination="sWX-vD-kDf" id="8cJ-wY-NCT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0Dd-5a-o8T" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="653.62318840579712" y="-213.61607142857142"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="bgOrder1" width="352" height="98"/>
+        <image name="noticeIc1" width="19" height="23"/>
+        <image name="processBackBtn" width="44" height="44"/>
+    </resources>
 </document>

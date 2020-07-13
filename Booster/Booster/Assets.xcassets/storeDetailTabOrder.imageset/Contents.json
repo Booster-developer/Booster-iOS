@@ -2,18 +2,7 @@
   "images" : [
     {
       "idiom" : "universal",
-      "scale" : "1x",
-      "filename" : "storeDetailTabOrder.png"
-    },
-    {
-      "idiom" : "universal",
-      "scale" : "2x",
-      "filename" : "storeDetailTabOrder@2x.png"
-    },
-    {
-      "idiom" : "universal",
-      "scale" : "3x",
-      "filename" : "storeDetailTabOrder@3x.png"
+      "filename" : "storeDetailTabOrder.pdf"
     }
   ],
   "info" : {

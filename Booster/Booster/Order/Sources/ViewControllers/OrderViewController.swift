@@ -9,10 +9,11 @@
 import UIKit
 
 class OrderViewController: UIViewController {
-  var selectionStatus:Bool = false
-  var selectionBool:Bool = false
-  var oldIdxPath:IndexPath = [1,0]
+  var _selectedIndexPath : IndexPath? = nil
+
+  @IBOutlet weak var storeNameInSelection: UILabel!
   override func viewDidLoad() {
+    
 //      print(self.tabBarController?.selectedIndex)
 //      self.tabBarController?.tabBar.isHidden = true
       //self.tabBarController?.tabBar.isHidden = true
@@ -23,6 +24,7 @@ class OrderViewController: UIViewController {
     }
   let testboolean:[Bool] = [true,true,false,true]
   @IBAction func goBackToHomeView(_ sender: Any) {
+    clearAllSelections()
     self.tabBarController?.selectedIndex = 0
     self.tabBarController?.tabBar.isHidden = false
   }
@@ -65,12 +67,25 @@ class OrderViewController: UIViewController {
   }
   @IBOutlet weak var selectionBtnHeight: NSLayoutConstraint!
   func selectionBtnAppear(){
+    
+    self.view.layoutIfNeeded()
     selectionBtnHeight.constant = 146
+    let appearAnimation = UIViewPropertyAnimator(duration: 0.25, curve: .linear, animations: {
+      self.view.layoutIfNeeded()
+    })
+    appearAnimation.startAnimation()
   }
   func selectionBtnHide(){
+    self.view.layoutIfNeeded()
     selectionBtnHeight.constant = 0
+    let disappearAnimation = UIViewPropertyAnimator(duration: 0.25, curve: .linear, animations: {
+      self.view.layoutIfNeeded()
+    })
+    disappearAnimation.startAnimation()
   }
   
+  
+
   
   
   
@@ -116,6 +131,17 @@ extension OrderViewController:UICollectionViewDelegate{
 extension OrderViewController:UICollectionViewDataSource{
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     guard let storeCell:OrderCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: OrderCollectionViewCell.identifier, for: indexPath) as? OrderCollectionViewCell else {return UICollectionViewCell()}
+    if _selectedIndexPath == indexPath {
+      storeCell.isSelected = true
+      storeCell.backgroundImg.image = UIImage(named: "bgStore")
+    }
+    else {
+      storeCell.isSelected = false
+      storeCell.backgroundImg.image = UIImage(named: "optionselect")
+    }
+    
+    
+    
     switch indexPath.section{
     case 0:
       if recentlyUsedStore.isEmpty{
@@ -150,7 +176,6 @@ extension OrderViewController:UICollectionViewDataSource{
     
     //print(indexPath)
     //storeCell.storeThumbNail.image = UIImage(named : storeInformations[0].storeImgName.type())
-    storeCell.backgroundImg.image = UIImage(named: "bgStore")
     //storeCell.storeName.text = storeInformations[indexPath.row].storeName
     //storeCell.storeAddress.text = storeInformations[indexPath.row].storeAddress
     
@@ -160,16 +185,46 @@ extension OrderViewController:UICollectionViewDataSource{
     //guard let cell:OrderCollectionViewCell=collectionView.dequeueReusableCell(withReuseIdentifier: OrderCollectionViewCell.identifier, for: indexPath) as? OrderCollectionViewCell else{return}
 //    //cell.itemSelected()
     //print(indexPath)
-    if(oldIdxPath == indexPath){
-      clearAllSelections()
-      selectionBtnHide()
-      oldIdxPath = [0,0]
-      collectionView.reloadItems(at: [indexPath])
+    
+    
+    if ((_selectedIndexPath) != nil){
+      if indexPath.compare(_selectedIndexPath!) == ComparisonResult.orderedSame{
+        _selectedIndexPath = nil
+        clearAllSelections()
+        selectionBtnHide()
+      }
+      else {
+        selectionBtnAppear()
+        print("now")
+        switch indexPath.section {
+        case 0:
+          recentlyUsedStore[indexPath.row].isSelected = true
+        case 1:
+          favorateStore[indexPath.row].isSelected = true
+        case 2:
+          defaultStore[indexPath.row].isSelected = true
+        default:
+          clearAllSelections()
+        }
+        //collectionView.reloadItems(at: [indexPath])
 
+        print("old")
+        switch _selectedIndexPath!.section {
+        case 0:
+          recentlyUsedStore[_selectedIndexPath!.row].isSelected = false
+        case 1:
+          favorateStore[_selectedIndexPath!.row].isSelected = false
+        case 2:
+          defaultStore[_selectedIndexPath!.row].isSelected = false
+        default:
+          clearAllSelections()
+        }
+        _selectedIndexPath = indexPath
+        //collectionView.reloadItems(at: [oldIdxPath])
+      }
     }
-    else if(oldIdxPath != indexPath){
+    else {
       selectionBtnAppear()
-      print(oldIdxPath)
       print("now")
       switch indexPath.section {
       case 0:
@@ -181,23 +236,9 @@ extension OrderViewController:UICollectionViewDataSource{
       default:
         clearAllSelections()
       }
-      collectionView.reloadItems(at: [indexPath])
-
-      print("old")
-      switch oldIdxPath.section {
-      case 0:
-        recentlyUsedStore[oldIdxPath.row].isSelected = false
-      case 1:
-        favorateStore[oldIdxPath.row].isSelected = false
-      case 2:
-        defaultStore[oldIdxPath.row].isSelected = false
-      default:
-        clearAllSelections()
-      }
-      oldIdxPath = indexPath
-      collectionView.reloadItems(at: [oldIdxPath])
-
+      _selectedIndexPath = indexPath
     }
+    collectionView.reloadItems(at: collectionView.indexPathsForVisibleItems)
 
 
   }
