@@ -13,6 +13,22 @@ class MyPageHsViewController: UIViewController {
   // MARK: - IBOutlets
   @IBOutlet weak var popUpSwitch: UISwitch!
   
+  // MARK: - IBActions
+  @IBAction func showEngineList(_ sender: Any) {
+    guard let engineVC = self.storyboard?.instantiateViewController(identifier: "EngineListViewController") as? EngineListViewController else {return }
+    engineVC.modalPresentationStyle = .fullScreen
+    present(engineVC, animated: false, completion: nil)
+  }
+  @IBAction func backBtnClicked(_ sender: Any) {
+    self.tabBarController?.selectedIndex = 0
+  }
+  @IBAction func editBtnClicked(_ sender: Any) {
+    guard let editVC = self.storyboard?.instantiateViewController(identifier: "EditViewController") as? EditViewController else {return}
+    editVC.modalPresentationStyle = .fullScreen
+    present(editVC, animated: false, completion: nil)
+  }
+  
+  
   // MARK: - Vars
   let identifier: String = "MyPageHsViewController"
 

@@ -41,45 +41,45 @@ class OrderHsViewController: UIViewController {
   
   // MARK: - IBActions
   @IBAction func blackClicked(_ sender: Any) {
-    self.blackBtn.setImage(UIImage(named: "iconMonoSelect"), for: .normal)
+    self.blackBtn.setImage(UIImage(named: "iconMonoSelected"), for: .normal)
     self.colorBtn.setImage(UIImage(named: "iconColor"), for: .normal)
   }
   @IBAction func colorClicked(_ sender: Any) {
     self.blackBtn.setImage(UIImage(named: "iconMono"), for: .normal)
-    self.colorBtn.setImage(UIImage(named: "iconColorSelect"), for: .normal)
+    self.colorBtn.setImage(UIImage(named: "iconColorSelected"), for: .normal)
   }
   @IBAction func autoClicked(_ sender: Any) {
-    self.autoBtn.setImage(UIImage(named: "iconAutoSelect"), for: .normal)
+    self.autoBtn.setImage(UIImage(named: "iconAutoSelected"), for: .normal)
     self.colBtn.setImage(UIImage(named: "iconHeight"), for: .normal)
     self.rowBtn.setImage(UIImage(named: "iconWidth"), for: .normal)
   }
   @IBAction func colClicked(_ sender: Any) {
     self.autoBtn.setImage(UIImage(named: "iconAuto"), for: .normal)
-    self.colBtn.setImage(UIImage(named: "iconHeightSelect"), for: .normal)
+    self.colBtn.setImage(UIImage(named: "iconHeightSelected"), for: .normal)
     self.rowBtn.setImage(UIImage(named: "iconWidth"), for: .normal)
   }
   @IBAction func rowClicked(_ sender: Any) {
     self.autoBtn.setImage(UIImage(named: "iconAuto"), for: .normal)
     self.colBtn.setImage(UIImage(named: "iconHeight"), for: .normal)
-    self.rowBtn.setImage(UIImage(named: "iconWidthSelect"), for: .normal)
+    self.rowBtn.setImage(UIImage(named: "iconWidthSelected"), for: .normal)
   }
   @IBAction func singleClicked(_ sender: Any) {
-    self.singleBtn.setImage(UIImage(named: "iconDanSelect"), for: .normal)
+    self.singleBtn.setImage(UIImage(named: "iconDanSelected"), for: .normal)
     self.doubleRowBtn.setImage(UIImage(named: "iconYang1"), for: .normal)
     self.doubleColBtn.setImage(UIImage(named: "iconYang2"), for: .normal)
   }
   @IBAction func doubleRowClicked(_ sender: Any) {
     self.singleBtn.setImage(UIImage(named: "iconDan"), for: .normal)
-    self.doubleRowBtn.setImage(UIImage(named: "iconYang1Select"), for: .normal)
+    self.doubleRowBtn.setImage(UIImage(named: "iconYang1Selected"), for: .normal)
     self.doubleColBtn.setImage(UIImage(named: "iconYang2"), for: .normal)
   }
   @IBAction func doubleColClicked(_ sender: Any) {
     self.singleBtn.setImage(UIImage(named: "iconDan"), for: .normal)
     self.doubleRowBtn.setImage(UIImage(named: "iconYang1"), for: .normal)
-    self.doubleColBtn.setImage(UIImage(named: "iconYang2Select"), for: .normal)
+    self.doubleColBtn.setImage(UIImage(named: "iconYang2Selected"), for: .normal)
   }
   @IBAction func oneClicked(_ sender: Any) {
-    self.oneBtn.setImage(UIImage(named: "icon1Select"), for: .normal)
+    self.oneBtn.setImage(UIImage(named: "icon1Selected"), for: .normal)
     self.twoBtn.setImage(UIImage(named: "icon2"), for: .normal)
     self.threeBtn.setImage(UIImage(named: "icon3"), for: .normal)
     self.fourBtn.setImage(UIImage(named: "icon4"), for: .normal)
@@ -90,7 +90,7 @@ class OrderHsViewController: UIViewController {
   }
   @IBAction func twoClicked(_ sender: Any) {
     self.oneBtn.setImage(UIImage(named: "icon1"), for: .normal)
-    self.twoBtn.setImage(UIImage(named: "icon2Select"), for: .normal)
+    self.twoBtn.setImage(UIImage(named: "icon2Selected"), for: .normal)
     self.threeBtn.setImage(UIImage(named: "icon3"), for: .normal)
     self.fourBtn.setImage(UIImage(named: "icon4"), for: .normal)
     self.sixBtn.setImage(UIImage(named: "icon6"), for: .normal)
@@ -101,7 +101,7 @@ class OrderHsViewController: UIViewController {
   @IBAction func threeClicked(_ sender: Any) {
     self.oneBtn.setImage(UIImage(named: "icon1"), for: .normal)
     self.twoBtn.setImage(UIImage(named: "icon2"), for: .normal)
-    self.threeBtn.setImage(UIImage(named: "icon3Select"), for: .normal)
+    self.threeBtn.setImage(UIImage(named: "icon3Selected"), for: .normal)
     self.fourBtn.setImage(UIImage(named: "icon4"), for: .normal)
     self.sixBtn.setImage(UIImage(named: "icon6"), for: .normal)
     self.eightBtn.setImage(UIImage(named: "icon8"), for: .normal)
@@ -112,7 +112,7 @@ class OrderHsViewController: UIViewController {
     self.oneBtn.setImage(UIImage(named: "icon1"), for: .normal)
     self.twoBtn.setImage(UIImage(named: "icon2"), for: .normal)
     self.threeBtn.setImage(UIImage(named: "icon3"), for: .normal)
-    self.fourBtn.setImage(UIImage(named: "icon4Select"), for: .normal)
+    self.fourBtn.setImage(UIImage(named: "icon4Selected"), for: .normal)
     self.sixBtn.setImage(UIImage(named: "icon6"), for: .normal)
     self.eightBtn.setImage(UIImage(named: "icon8"), for: .normal)
     self.nineBtn.setImage(UIImage(named: "icon9"), for: .normal)
@@ -123,7 +123,7 @@ class OrderHsViewController: UIViewController {
     self.twoBtn.setImage(UIImage(named: "icon2"), for: .normal)
     self.threeBtn.setImage(UIImage(named: "icon3"), for: .normal)
     self.fourBtn.setImage(UIImage(named: "icon4"), for: .normal)
-    self.sixBtn.setImage(UIImage(named: "icon6Select"), for: .normal)
+    self.sixBtn.setImage(UIImage(named: "icon6Selected"), for: .normal)
     self.eightBtn.setImage(UIImage(named: "icon8"), for: .normal)
     self.nineBtn.setImage(UIImage(named: "icon9"), for: .normal)
     self.sixteenBtn.setImage(UIImage(named: "icon16"), for: .normal)
@@ -134,7 +134,7 @@ class OrderHsViewController: UIViewController {
     self.threeBtn.setImage(UIImage(named: "icon3"), for: .normal)
     self.fourBtn.setImage(UIImage(named: "icon4"), for: .normal)
     self.sixBtn.setImage(UIImage(named: "icon6"), for: .normal)
-    self.eightBtn.setImage(UIImage(named: "icon8Select"), for: .normal)
+    self.eightBtn.setImage(UIImage(named: "icon8Selected"), for: .normal)
     self.nineBtn.setImage(UIImage(named: "icon9"), for: .normal)
     self.sixteenBtn.setImage(UIImage(named: "icon16"), for: .normal)
   }
@@ -145,7 +145,7 @@ class OrderHsViewController: UIViewController {
     self.fourBtn.setImage(UIImage(named: "icon4"), for: .normal)
     self.sixBtn.setImage(UIImage(named: "icon6"), for: .normal)
     self.eightBtn.setImage(UIImage(named: "icon8"), for: .normal)
-    self.nineBtn.setImage(UIImage(named: "icon9Select"), for: .normal)
+    self.nineBtn.setImage(UIImage(named: "icon9Selected"), for: .normal)
     self.sixteenBtn.setImage(UIImage(named: "icon16"), for: .normal)
   }
   @IBAction func sixteenClicked(_ sender: Any) {
@@ -156,7 +156,7 @@ class OrderHsViewController: UIViewController {
     self.sixBtn.setImage(UIImage(named: "icon6"), for: .normal)
     self.eightBtn.setImage(UIImage(named: "icon8"), for: .normal)
     self.nineBtn.setImage(UIImage(named: "icon9"), for: .normal)
-    self.sixteenBtn.setImage(UIImage(named: "icon16Select"), for: .normal)
+    self.sixteenBtn.setImage(UIImage(named: "icon16Selected"), for: .normal)
   }
   @IBAction func rangeClicked(_ sender: Any) {
     let storyBoard = UIStoryboard.init(name: "OrderHs", bundle: nil)
@@ -182,10 +182,10 @@ class OrderHsViewController: UIViewController {
   
     override func viewDidLoad() {
         super.viewDidLoad()
-      self.blackBtn.setImage(UIImage(named: "iconMonoSelect"), for: .normal)
-      self.autoBtn.setImage(UIImage(named: "iconAutoSelect"), for: .normal)
-      self.singleBtn.setImage(UIImage(named: "iconDanSelect"), for: .normal)
-      self.oneBtn.setImage(UIImage(named: "icon1Select"), for: .normal)
+      self.blackBtn.setImage(UIImage(named: "iconMonoSelected"), for: .normal)
+      self.autoBtn.setImage(UIImage(named: "iconAutoSelected"), for: .normal)
+      self.singleBtn.setImage(UIImage(named: "iconDanSelecedt"), for: .normal)
+      self.oneBtn.setImage(UIImage(named: "icon1Selected"), for: .normal)
       self.navigationController?.isNavigationBarHidden = true
       
         // Do any additional setup after loading the view.

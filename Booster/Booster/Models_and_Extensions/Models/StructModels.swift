@@ -175,6 +175,18 @@ struct FileInformation {
   
 }
 
-
+struct EngineInformation {
+  var date: String
+  var store: String
+  var engine: Int
+  var sign: Bool
+  
+  init (date: String, store: String, engine: Int, sign: Bool) {
+    self.date = date
+    self.store = store
+    self.engine = engine
+    self.sign = sign
+  }
+}
 
 
