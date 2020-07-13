@@ -22,7 +22,7 @@ class WaitingListViewController: UIViewController {
         // Do any additional setup after loading the view.
     setWaitingListCV()
 
-
+   
   }
   func goBackToStoreSelection(){
     for i in 0..<fileList.count{
@@ -75,10 +75,8 @@ class WaitingListViewController: UIViewController {
      let curDirectory = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
 
      let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
-     print(dir)
-     print(curDirectory)
+     
      let file = dir.appendingPathComponent(filename)
-     print(file)
      if FileManager.default.fileExists(atPath: dir.path){
        print("파일이 있다네요")
        do {
@@ -108,7 +106,7 @@ class WaitingListViewController: UIViewController {
     documentPicker.allowsMultipleSelection = false
     self.present(documentPicker, animated: true)
     
-    print(fileList)
+//    print(fileList)
   }
 }
 extension WaitingListViewController:UIDocumentPickerDelegate {
@@ -136,28 +134,31 @@ extension WaitingListViewController:UIDocumentPickerDelegate {
       //여기서 파일 서버에 업로드
       let size:CGSize = CGSize(width: 38, height: 51)
       let scale = UIScreen.main.scale
-      let request = QLThumbnailGenerator.Request(fileAt: sandboxFileURL, size: size, scale: scale, representationTypes: .all)
+      let request = QLThumbnailGenerator.Request(fileAt: sandboxFileURL, size: size, scale: scale, representationTypes: .thumbnail)
       let generator = QLThumbnailGenerator.shared
       var cnt:Int = 0
+      var thumbNail = UIImage()
       print("local에서 불러온 파일 : ")
-      print(sandboxFileURL)
+//      print(sandboxFileURL)
       print(sandboxFileURL.lastPathComponent)
       generator.generateRepresentations(for: request) { (thumbnail, _, error) in
         DispatchQueue.main.async {
-          if thumbnail == nil || error != nil{
-            print("error : \(String(describing: error))")
-          } else if thumbnail != nil{
-            cnt = cnt + 1
-            if cnt == 2{
-            let file = FileInformation(fileImg:thumbnail?.uiImage, fileName: sandboxFileURL.lastPathComponent)
-            self.fileList.append(file)
-            print("썸네일 뿌리기")
+          if thumbnail != nil{
+
+              thumbNail = thumbnail!.uiImage
+              print("썸네일 있는 파일")
+              self.fileList.append(FileInformation(fileImg: thumbNail, fileName: sandboxFileURL.lastPathComponent))
+              self.waitingListCollectionView.reloadData()
             
-            
-            print(self.fileList.count)
-            self.waitingListCollectionView.reloadData()
+          }
+          else if  thumbnail == nil || error != nil{
+
+              print("썸네일 없는 파일")
+              print("error : \(String(describing: error))")
+              self.fileList.append(FileInformation(fileImg: thumbNail, fileName: sandboxFileURL.lastPathComponent))
+              self.waitingListCollectionView.reloadData()
             //self.tmpImg = thumbnail?.uiImage as! UIImage
-            }
+            
           }
         }
       }
@@ -190,7 +191,6 @@ extension WaitingListViewController:UICollectionViewDelegate{
 extension WaitingListViewController:UICollectionViewDataSource{
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    print(indexPath)
 
     
     
@@ -217,7 +217,8 @@ extension WaitingListViewController:UICollectionViewDataSource{
           return UICollectionViewCell()}
 
         fileCell.fileName.text = fileList[indexPath.row].fileName
-        fileCell.preViewImg.image = fileList[indexPath.row].fileImg
+      fileCell.preViewImg.setImage(fileList[indexPath.row].fileImg, for: .normal)
+      
         fileCell.deleteCell.tag = indexPath.row
         fileCell.deleteCell.addTarget(self, action: #selector(deleteCell(sender:)), for: .touchUpInside)
       return fileCell
@@ -252,7 +253,6 @@ extension WaitingListViewController:UICollectionViewDataSource{
       //collectionView.insertItems(at: [indexPath])
       //collectionView.reloadItems(at:collectionView.indexPathsForVisibleItems)
       //collectionView.reloadData()
-    print(indexPath.row)
 
     if indexPath.row == fileList.count {
       getFileFromLocal()

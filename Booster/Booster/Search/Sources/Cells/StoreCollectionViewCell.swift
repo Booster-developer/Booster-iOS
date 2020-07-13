@@ -23,11 +23,9 @@ class StoreCollectionViewCell: UICollectionViewCell {
   
   
   func setStoreView(){
-    
-    print("cell width 이거임")
-    print(self.frame.size.width)
+
     //storeView.bounds = CGRect(x: 0, y: 0, width: 414, height: (414.0/375.0)*265.0)
-    storeClosedView.alpha = 0
+    storeClosedView.isHidden = true
     storeView.clipsToBounds = true
     storeImgView.layer.cornerRadius = 10.0
     storeClosedView.layer.cornerRadius = 10.0
@@ -36,7 +34,10 @@ class StoreCollectionViewCell: UICollectionViewCell {
 //    storeView.layer.masksToBounds = true
 
     if (!isStoreOpen){
-      storeClosedView.alpha = 0.7
+      storeClosedView.isHidden = false
+    }
+    else {
+      storeClosedView.isHidden = true 
     }
     print(storeView.bounds)
   }

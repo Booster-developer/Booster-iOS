@@ -40,6 +40,8 @@
 		DA2BC42424AB4BA600013143 /* BoosterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2BC42324AB4BA600013143 /* BoosterUITests.swift */; };
 		DA6897A524BAA3FA009E3BB5 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6897A424BAA3FA009E3BB5 /* SignUpViewController.swift */; };
 		DA6D64D924B644E200215BE4 /* testViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6D64D824B644E200215BE4 /* testViewController.swift */; };
+		DA93D6E824BCCC8400DE370F /* StatusDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA93D6E724BCCC8400DE370F /* StatusDetailViewController.swift */; };
+		DA93D6EB24BCCD4800DE370F /* FileListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA93D6EA24BCCD4800DE370F /* FileListCollectionViewCell.swift */; };
 		DA95BDA124B2DA7D00BC1F60 /* StoreCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA95BDA024B2DA7D00BC1F60 /* StoreCollectionViewCell.swift */; };
 		DA95BDA324B2FB7300BC1F60 /* univTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA95BDA224B2FB7300BC1F60 /* univTableViewCell.swift */; };
 		DA95BDA524B3623A00BC1F60 /* WaitingListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA95BDA424B3623A00BC1F60 /* WaitingListViewController.swift */; };
@@ -129,6 +131,8 @@
 		DA2BC42524AB4BA600013143 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DA6897A424BAA3FA009E3BB5 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		DA6D64D824B644E200215BE4 /* testViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testViewController.swift; sourceTree = "<group>"; };
+		DA93D6E724BCCC8400DE370F /* StatusDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusDetailViewController.swift; sourceTree = "<group>"; };
+		DA93D6EA24BCCD4800DE370F /* FileListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileListCollectionViewCell.swift; sourceTree = "<group>"; };
 		DA95BDA024B2DA7D00BC1F60 /* StoreCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreCollectionViewCell.swift; sourceTree = "<group>"; };
 		DA95BDA224B2FB7300BC1F60 /* univTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = univTableViewCell.swift; sourceTree = "<group>"; };
 		DA95BDA424B3623A00BC1F60 /* WaitingListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingListViewController.swift; sourceTree = "<group>"; };
@@ -326,6 +330,14 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		DA93D6E924BCCD2400DE370F /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				DA93D6EA24BCCD4800DE370F /* FileListCollectionViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		DA95BD9F24B2DA5300BC1F60 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -422,6 +434,7 @@
 		DACA38E724B21ACD0025E230 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				DA93D6E924BCCD2400DE370F /* Cells */,
 				DACA38F124B2268A0025E230 /* ViewControllers */,
 				CC1233D224B363AC0049F7A4 /* StatusHsCell.swift */,
 				CC1233D424B45F200049F7A4 /* StatusInformation.swift */,
@@ -511,6 +524,7 @@
 				DACA390D24B231AE0025E230 /* StatusViewController.swift */,
 				CC1233D024B354830049F7A4 /* StatusHsViewController.swift */,
 				CC1233D624B47FE50049F7A4 /* CancelOrderViewController.swift */,
+				DA93D6E724BCCC8400DE370F /* StatusDetailViewController.swift */,
 			);
 			name = ViewControllers;
 			path = ../ViewControllers;
@@ -890,9 +904,10 @@
 				CC1233D324B363AC0049F7A4 /* StatusHsCell.swift in Sources */,
 				CC18782D24B61FAA00830F0E /* ChangeRangeViewController.swift in Sources */,
 				DACA391424B232020025E230 /* MyPageViewController.swift in Sources */,
+				DA93D6EB24BCCD4800DE370F /* FileListCollectionViewCell.swift in Sources */,
 				DACA391824B23ADA0025E230 /* LogInViewController.swift in Sources */,
-				DAD179A924B5824E009BFECC /* AddCollectionViewCell.swift in Sources */,
 				CC28996124BB212F00F9C822 /* ShowOptionViewController.swift in Sources */,
+				DA93D6E824BCCC8400DE370F /* StatusDetailViewController.swift in Sources */,
 				DAD179A524B58226009BFECC /* WaitCollectionViewHeader.swift in Sources */,
 				DA95BDA124B2DA7D00BC1F60 /* StoreCollectionViewCell.swift in Sources */,
 				DACA390524B231640025E230 /* SearchViewController.swift in Sources */,

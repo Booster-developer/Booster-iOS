@@ -13,7 +13,9 @@ class OrderViewController: UIViewController {
 
   @IBOutlet weak var storeNameInSelection: UILabel!
   override func viewDidLoad() {
-    
+    clearInternalFile()
+    clearAllSelections()
+
 //      print(self.tabBarController?.selectedIndex)
 //      self.tabBarController?.tabBar.isHidden = true
       //self.tabBarController?.tabBar.isHidden = true
@@ -22,9 +24,27 @@ class OrderViewController: UIViewController {
       setCollectionVeiw()
         // Do any additional setup after loading the view.
     }
+  func clearInternalFile(){
+    let documentsUrl =  FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+
+    do {
+        let fileURLs = try FileManager.default.contentsOfDirectory(at: documentsUrl,
+                                                                   includingPropertiesForKeys: nil,
+                                                                   options: [.skipsHiddenFiles, .skipsSubdirectoryDescendants])
+        for fileURL in fileURLs {
+              try FileManager.default.removeItem(at: fileURL)
+        }
+    }
+    catch  { print(error) }
+  }
+  
+  
+  
   let testboolean:[Bool] = [true,true,false,true]
   @IBAction func goBackToHomeView(_ sender: Any) {
     clearAllSelections()
+    storeCollectionView.reloadData()
+    selectionBtnHide()
     self.tabBarController?.selectedIndex = 0
     self.tabBarController?.tabBar.isHidden = false
   }
@@ -146,6 +166,7 @@ extension OrderViewController:UICollectionViewDataSource{
     case 0:
       if recentlyUsedStore.isEmpty{
         collectionView.deleteSections(NSIndexSet(index: indexPath.section) as IndexSet)
+        collectionView.reloadData()
       }
       else{
         storeCell.storeThumbNail.image = UIImage(named: recentlyUsedStore[indexPath.row].storeImgName.type())

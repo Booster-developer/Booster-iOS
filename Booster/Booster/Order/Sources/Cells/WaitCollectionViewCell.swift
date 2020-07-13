@@ -10,7 +10,7 @@ import UIKit
 
 class WaitCollectionViewCell: UICollectionViewCell {
 
-  @IBOutlet weak var preViewImg: UIImageView!
+  @IBOutlet weak var preViewImg: UIButton!
   @IBOutlet weak var fileName: UILabel!
   
   @IBOutlet weak var checkOption: UIButton!

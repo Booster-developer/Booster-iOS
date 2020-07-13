@@ -111,11 +111,11 @@ extension SearchViewController:UICollectionViewDataSource{
     storeCell.priceInfo.text = storeInformaions[indexPath.row].price[0]
     storeCell.favorateBtn.tag = indexPath.row
     storeCell.favorateBtn.addTarget(self, action: #selector(favorate(sender:)), for: .touchUpInside)
-    
+    print(indexPath)
     
     //storeCell.backgroundColor = UIColor.black
-    storeInformaions[2].isOpen = false //임시로 하나 닫아봄
-    if storeInformaions[indexPath.row].isOpen == false {
+    //storeInformaions[2].isOpen = false //임시로 하나 닫아봄
+    if !storeInformaions[indexPath.row].isOpen {
       storeCell.isUserInteractionEnabled = false
       storeCell.isStoreOpen = false
     }
@@ -123,6 +123,7 @@ extension SearchViewController:UICollectionViewDataSource{
     return storeCell
   }
   @objc func favorate(sender: UIButton){
+    
     storeInformaions[sender.tag].isFavorate = !storeInformaions[sender.tag].isFavorate
     if(storeInformaions[sender.tag].isFavorate){
       sender.setImage(UIImage(named: "storeIcActiveStar1"), for: .normal)
@@ -130,7 +131,7 @@ extension SearchViewController:UICollectionViewDataSource{
     else {
       sender.setImage(UIImage(named: "storeIcInactiveStar2"), for: .normal)
     }
-    self.storeCollectionView.reloadData()
+    //self.storeCollectionView.reloadData()
     //print(sender.tag)
     //Post 즐겨찾기등록
     //GET 매장 리스트
