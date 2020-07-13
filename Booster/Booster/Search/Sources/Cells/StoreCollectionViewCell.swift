@@ -20,7 +20,10 @@ class StoreCollectionViewCell: UICollectionViewCell {
   var isStoreOpen:Bool = true
   static let identifier:String = "storeCell"
   
+  
+  
   func setStoreView(){
+    
     print("cell width 이거임")
     print(self.frame.size.width)
     //storeView.bounds = CGRect(x: 0, y: 0, width: 414, height: (414.0/375.0)*265.0)

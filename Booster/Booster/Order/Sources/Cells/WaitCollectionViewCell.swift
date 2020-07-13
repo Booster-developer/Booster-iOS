@@ -16,5 +16,6 @@ class WaitCollectionViewCell: UICollectionViewCell {
   @IBOutlet weak var checkOption: UIButton!
   @IBOutlet weak var deleteCell: UIButton!
   @IBOutlet weak var changeOption: UIButton!
+  
   static let identifier:String = "waitCell"
 }

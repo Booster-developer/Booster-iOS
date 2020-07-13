@@ -16,11 +16,13 @@ class SearchViewController: UIViewController {
         
         univSelect.backgroundImg = self.tabBarController?.view.asImage()
         self.present(univSelect,animated: false, completion: nil)
+    univSelect.univInformaitons = self.univInformations
     }
   
     override func viewDidLoad() {
       super.viewDidLoad()
       setCollectionViewInfo()
+      setUnivInfos()
       print(self.view.bounds)
 
         // Do any additional setup after loading the view.
@@ -43,6 +45,16 @@ class SearchViewController: UIViewController {
     self.storeInformaions=[store1,store2,store3,store4]
   }
   
+  
+  var univInformations:[UnivInformations] = []
+  func setUnivInfos(){
+    var univ1 = UnivInformations(univIdx: 0, univName: "숭실대학교",univAddress: "숭실대학교주소", univLine: .line7)
+    univ1.isMyUniv = true
+    let univ2 = UnivInformations(univIdx: 1, univName: "중앙대학교",univAddress: "중앙대주소", univLine: .line9)
+    let univ3 = UnivInformations(univIdx: 2, univName: "서울대학교",univAddress: "서울대주소", univLine: .line2)
+    
+    self.univInformations = [univ1,univ2,univ3]
+  }
   
   
     /*
@@ -97,8 +109,6 @@ extension SearchViewController:UICollectionViewDataSource{
     storeCell.storeName.text = storeInformaions[indexPath.row].storeName
     storeCell.storeAddress.text = storeInformaions[indexPath.row].storeAddress
     storeCell.priceInfo.text = storeInformaions[indexPath.row].price[0]
-    
-    
     storeCell.favorateBtn.tag = indexPath.row
     storeCell.favorateBtn.addTarget(self, action: #selector(favorate(sender:)), for: .touchUpInside)
     
@@ -120,7 +130,8 @@ extension SearchViewController:UICollectionViewDataSource{
     else {
       sender.setImage(UIImage(named: "storeIcInactiveStar2"), for: .normal)
     }
-    print(sender.tag)
+    self.storeCollectionView.reloadData()
+    //print(sender.tag)
     //Post 즐겨찾기등록
     //GET 매장 리스트
     //self.storeCollectionView.reloadData()

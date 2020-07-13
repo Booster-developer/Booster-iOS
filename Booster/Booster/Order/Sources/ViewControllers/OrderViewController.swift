@@ -13,6 +13,7 @@ class OrderViewController: UIViewController {
 
   @IBOutlet weak var storeNameInSelection: UILabel!
   override func viewDidLoad() {
+    
 //      print(self.tabBarController?.selectedIndex)
 //      self.tabBarController?.tabBar.isHidden = true
       //self.tabBarController?.tabBar.isHidden = true
@@ -23,6 +24,7 @@ class OrderViewController: UIViewController {
     }
   let testboolean:[Bool] = [true,true,false,true]
   @IBAction func goBackToHomeView(_ sender: Any) {
+    clearAllSelections()
     self.tabBarController?.selectedIndex = 0
     self.tabBarController?.tabBar.isHidden = false
   }
@@ -68,7 +70,7 @@ class OrderViewController: UIViewController {
     
     self.view.layoutIfNeeded()
     selectionBtnHeight.constant = 146
-    let appearAnimation = UIViewPropertyAnimator(duration: 0.25, curve: .easeIn, animations: {
+    let appearAnimation = UIViewPropertyAnimator(duration: 0.25, curve: .linear, animations: {
       self.view.layoutIfNeeded()
     })
     appearAnimation.startAnimation()
@@ -76,12 +78,14 @@ class OrderViewController: UIViewController {
   func selectionBtnHide(){
     self.view.layoutIfNeeded()
     selectionBtnHeight.constant = 0
-    let disappearAnimation = UIViewPropertyAnimator(duration: 0.25, curve: .easeIn, animations: {
+    let disappearAnimation = UIViewPropertyAnimator(duration: 0.25, curve: .linear, animations: {
       self.view.layoutIfNeeded()
     })
     disappearAnimation.startAnimation()
   }
   
+  
+
   
   
   
