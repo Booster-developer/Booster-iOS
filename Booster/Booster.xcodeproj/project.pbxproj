@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		099603BCE0EEA53B9D20DA32 /* Pods_Booster.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 914771C07D11C5A5E6DFC8B4 /* Pods_Booster.framework */; };
 		8DEDC2D64F3E1358A5920590 /* Pods_Booster_BoosterUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D3D2ACB3821194FDEE7982B /* Pods_Booster_BoosterUITests.framework */; };
+		CC0C4F9E24BC991A00CD83F9 /* EngineListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0C4F9D24BC991A00CD83F9 /* EngineListViewController.swift */; };
 		CC1233CF24B3544D0049F7A4 /* StatusHs.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC1233CE24B3544D0049F7A4 /* StatusHs.storyboard */; };
 		CC1233D124B354830049F7A4 /* StatusHsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1233D024B354830049F7A4 /* StatusHsViewController.swift */; };
 		CC1233D324B363AC0049F7A4 /* StatusHsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1233D224B363AC0049F7A4 /* StatusHsCell.swift */; };
@@ -20,6 +21,8 @@
 		CC18782D24B61FAA00830F0E /* ChangeRangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC18782C24B61FAA00830F0E /* ChangeRangeViewController.swift */; };
 		CC18782F24B63BD800830F0E /* ChangePagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC18782E24B63BD800830F0E /* ChangePagesViewController.swift */; };
 		CC28996124BB212F00F9C822 /* ShowOptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC28996024BB212F00F9C822 /* ShowOptionViewController.swift */; };
+		CC28996324BC234B00F9C822 /* MyPageHs.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC28996224BC234B00F9C822 /* MyPageHs.storyboard */; };
+		CC28996524BC235D00F9C822 /* MyPageHsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC28996424BC235D00F9C822 /* MyPageHsViewController.swift */; };
 		CC3AB86024B666F30007662E /* PayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3AB85F24B666F30007662E /* PayTableViewCell.swift */; };
 		CC3AB86224B6671D0007662E /* PayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3AB86124B6671D0007662E /* PayViewController.swift */; };
 		CCE019E324B2D13A0067F721 /* SearchHs.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCE019E224B2D13A0067F721 /* SearchHs.storyboard */; };
@@ -88,6 +91,7 @@
 		A60AF9142B5D7975299C506E /* Pods-Booster-BoosterUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Booster-BoosterUITests.release.xcconfig"; path = "Target Support Files/Pods-Booster-BoosterUITests/Pods-Booster-BoosterUITests.release.xcconfig"; sourceTree = "<group>"; };
 		B4FE09C82524C313ED6A8771 /* Pods-BoosterTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BoosterTests.release.xcconfig"; path = "Target Support Files/Pods-BoosterTests/Pods-BoosterTests.release.xcconfig"; sourceTree = "<group>"; };
 		BF5F3976B85D8FEDD0677FC6 /* Pods_BoosterTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BoosterTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC0C4F9D24BC991A00CD83F9 /* EngineListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EngineListViewController.swift; path = Booster/Mypage/Resources/Storyboards/EngineListViewController.swift; sourceTree = SOURCE_ROOT; };
 		CC1233CE24B3544D0049F7A4 /* StatusHs.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StatusHs.storyboard; sourceTree = "<group>"; };
 		CC1233D024B354830049F7A4 /* StatusHsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusHsViewController.swift; sourceTree = "<group>"; };
 		CC1233D224B363AC0049F7A4 /* StatusHsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusHsCell.swift; sourceTree = "<group>"; };
@@ -99,6 +103,8 @@
 		CC18782C24B61FAA00830F0E /* ChangeRangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeRangeViewController.swift; sourceTree = "<group>"; };
 		CC18782E24B63BD800830F0E /* ChangePagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePagesViewController.swift; sourceTree = "<group>"; };
 		CC28996024BB212F00F9C822 /* ShowOptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowOptionViewController.swift; sourceTree = "<group>"; };
+		CC28996224BC234B00F9C822 /* MyPageHs.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyPageHs.storyboard; sourceTree = "<group>"; };
+		CC28996424BC235D00F9C822 /* MyPageHsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MyPageHsViewController.swift; path = Booster/Mypage/Resources/Storyboards/MyPageHsViewController.swift; sourceTree = SOURCE_ROOT; };
 		CC3AB85F24B666F30007662E /* PayTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayTableViewCell.swift; sourceTree = "<group>"; };
 		CC3AB86124B6671D0007662E /* PayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayViewController.swift; sourceTree = "<group>"; };
 		CCE019E224B2D13A0067F721 /* SearchHs.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchHs.storyboard; sourceTree = "<group>"; };
@@ -501,6 +507,7 @@
 			isa = PBXGroup;
 			children = (
 				DACA391124B231F40025E230 /* MyPage.storyboard */,
+				CC28996224BC234B00F9C822 /* MyPageHs.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -518,6 +525,8 @@
 			isa = PBXGroup;
 			children = (
 				DACA391324B232020025E230 /* MyPageViewController.swift */,
+				CC28996424BC235D00F9C822 /* MyPageHsViewController.swift */,
+				CC0C4F9D24BC991A00CD83F9 /* EngineListViewController.swift */,
 			);
 			name = ViewControllers;
 			path = ../../Status/Sources/ViewControllers;
@@ -726,6 +735,7 @@
 				DACA390924B231880025E230 /* Order.storyboard in Resources */,
 				DACA390724B231710025E230 /* Search.storyboard in Resources */,
 				DACA391A24B23AEB0025E230 /* LogIn.storyboard in Resources */,
+				CC28996324BC234B00F9C822 /* MyPageHs.storyboard in Resources */,
 				DACA38F924B229650025E230 /* mainTab.storyboard in Resources */,
 				CC1233CF24B3544D0049F7A4 /* StatusHs.storyboard in Resources */,
 				CCE019E324B2D13A0067F721 /* SearchHs.storyboard in Resources */,
@@ -860,6 +870,7 @@
 				DACA392124B2C0030025E230 /* SnapShotScreen.swift in Sources */,
 				DA95BDA324B2FB7300BC1F60 /* univTableViewCell.swift in Sources */,
 				DACA390E24B231AE0025E230 /* StatusViewController.swift in Sources */,
+				CC0C4F9E24BC991A00CD83F9 /* EngineListViewController.swift in Sources */,
 				CC18782F24B63BD800830F0E /* ChangePagesViewController.swift in Sources */,
 				CC1233D324B363AC0049F7A4 /* StatusHsCell.swift in Sources */,
 				CC18782D24B61FAA00830F0E /* ChangeRangeViewController.swift in Sources */,
@@ -885,6 +896,7 @@
 				DAD179A724B5823E009BFECC /* WaitCollectionViewCell.swift in Sources */,
 				DAD179A324B4BF40009BFECC /* OrderCollectionViewHeader.swift in Sources */,
 				DA6D64D924B644E200215BE4 /* testViewController.swift in Sources */,
+				CC28996524BC235D00F9C822 /* MyPageHsViewController.swift in Sources */,
 				CC1233D524B45F200049F7A4 /* StatusInformation.swift in Sources */,
 				CC3AB86224B6671D0007662E /* PayViewController.swift in Sources */,
 				CCE019E724B2D7CA0067F721 /* StoreDetailViewController.swift in Sources */,

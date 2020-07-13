@@ -47,8 +47,8 @@ class MainTabBarController: UITabBarController ,UITabBarControllerDelegate{
         fourthTab.tabBarItem.image = UIImage(named: "btnTab4Inactive")?.withRenderingMode(.alwaysOriginal)
         fourthTab.tabBarItem.selectedImage = UIImage(named: "btnTab4Active")?.withRenderingMode(.alwaysTemplate)
 
-        let myPageStoryboard = UIStoryboard.init(name:"MyPage",bundle: nil)
-        guard let fifthTab = myPageStoryboard.instantiateViewController(identifier: "MyPageViewController") as? MyPageViewController else{return}
+        let myPageStoryboard = UIStoryboard.init(name:"MyPageHs",bundle: nil)
+        guard let fifthTab = myPageStoryboard.instantiateViewController(identifier: "MyPageHsViewController") as? MyPageHsViewController else{return}
 
         fifthTab.tabBarItem.title = ""
         fifthTab.tabBarItem.image = UIImage(named: "btnTab5Inactive")?.withRenderingMode(.alwaysOriginal)

@@ -43,8 +43,9 @@ class WaitingListViewController: UIViewController {
   @IBAction func goShowOptionView(_ sender: Any) {
     let orderHsStoryboard = UIStoryboard.init(name:"OrderHs",bundle: nil)
     guard let showOptionView = orderHsStoryboard.instantiateViewController(identifier: "showOptionViewController") as? ShowOptionViewController else {return}
-    self.present(showOptionView, animated: false, completion: nil)
-    self.modalPresentationStyle = .overCurrentContext
+    showOptionView.modalPresentationStyle = .overCurrentContext
+    present(showOptionView, animated: false, completion: nil)
+    
   }
   
   func setWaitingListCV(){

@@ -21,9 +21,10 @@ class PayViewController: UIViewController {
     let payFile2 = PayFile(fileName: "일파일파일파일파일파일파일파", expandName: ".pdf", options: "컬러/자동/양면-세로넘김/2개/2~9p/3부", price: 6000)
     payFileInformations = [payFile1, payFile2]
   }
+  
   func updateCharacterCount() {
-    var count = String(self.requestTextField.text!.count)
-    self.textFieldTextCount.text = "("+count+"/50"
+    var count = self.requestTextField.text?.count ?? 0
+    self.textFieldTextCount.text = "(\(count) /50)"
   }
   
   // MARK: - IBOutlets
@@ -31,10 +32,12 @@ class PayViewController: UIViewController {
   @IBOutlet weak var requestTextField: UITextField!
   @IBOutlet weak var textFieldTextCount: UILabel!
   
+  
   // MARK: - IBActions
   @IBAction func backBtnClicked(_ sender: Any) {
     self.navigationController?.popViewController(animated: true)
   }
+
   
   
     override func viewDidLoad() {
@@ -42,8 +45,11 @@ class PayViewController: UIViewController {
       setPayFileInformation()
       payFileTableView.delegate = self
       payFileTableView.dataSource = self
+      requestTextField.delegate = self
       self.navigationController?.isNavigationBarHidden = true
       self.requestTextField.attributedPlaceholder = NSAttributedString(string: "사장님께 요청사항을 작성해주세요.", attributes: [NSAttributedString.Key.foregroundColor:textFieldColor])
+      self.updateCharacterCount()
+      
       
       
         // Do any additional setup after loading the view.
@@ -59,7 +65,7 @@ class PayViewController: UIViewController {
   override func viewDidLayoutSubviews() {
     super.viewDidLayoutSubviews()
     payFileTableView.translatesAutoresizingMaskIntoConstraints = false
-    payFileTableView.heightAnchor.constraint(equalToConstant: CGFloat(115 * payFileInformations.count)).isActive = true
+    payFileTableView.heightAnchor.constraint(equalToConstant: CGFloat(103 * payFileInformations.count)).isActive = true
     
   }
     
@@ -89,7 +95,7 @@ extension PayViewController: UITableViewDataSource {
 }
 extension PayViewController: UITableViewDelegate {
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-    return 115
+    return 103
   }
   
 }
