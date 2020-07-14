@@ -16,6 +16,8 @@ class StoreCollectionViewCell: UICollectionViewCell {
   @IBOutlet weak var priceInfo: UILabel!
   @IBOutlet weak var storeClosedView: UIView!
   @IBOutlet weak var favorateBtn: UIButton!
+  @IBOutlet weak var grayPrice: UILabel!
+  @IBOutlet weak var colorPrice: UILabel!
   
   var isStoreOpen:Bool = true
   static let identifier:String = "storeCell"

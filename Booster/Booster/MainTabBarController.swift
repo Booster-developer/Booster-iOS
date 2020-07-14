@@ -9,11 +9,12 @@
 import UIKit
 
 class MainTabBarController: UITabBarController ,UITabBarControllerDelegate{
-
+  var univIdx:Int?
     override func viewDidLoad() {
-        super.viewDidLoad()
+      super.viewDidLoad()
       self.delegate = self
-        setTabBar()
+      setTabBar()
+      print(univIdx)
         // Do any additional setup after loading the view.
     }
     func setTabBar() {
@@ -40,7 +41,7 @@ class MainTabBarController: UITabBarController ,UITabBarControllerDelegate{
         
         let searchStoryboard = UIStoryboard.init(name:"Search",bundle: nil)
         guard let secondTab = searchStoryboard.instantiateViewController(identifier: "SearchViewController") as? SearchViewController else{return}
-
+      secondTab.univIdx = univIdx
         secondTab.tabBarItem.title = ""
       secondTab.tabBarItem.image = UIImage(named: "iconStoreInact")?.withRenderingMode(.automatic)
       

@@ -22,12 +22,32 @@ class UnivSelectViewController: UIViewController {
   
   
   @IBOutlet weak var univTableView: UITableView!
-  
   override func viewDidLoad() {
       super.viewDidLoad()
+    univListService.shared.getUnivList(){
+      networkResult in
+        switch networkResult{
+        case .success(let data):
+          guard let data = data as? [univData] else {return}
+          for i in 0..<data.count{
+            self.univInfos.append(univData(univ_idx: data[i].univ_idx, univ_name: data[i].univ_name, univ_address: data[i].univ_address, univ_line: data[i].univ_line))
+          }
+          
+        case .requestErr(let message):
+          guard let message = message as? String else { return }
+          let alertViewController = UIAlertController(title: "매장 리스트 불러오기 실패", message: message, preferredStyle: .alert)
+          let action = UIAlertAction(title: "확인", style: .cancel, handler: nil)
+          alertViewController.addAction(action)
+          self.present(alertViewController, animated: true, completion: nil)
+          self.tabBarController?.selectedIndex = 0
+        case .pathErr : print("pathErr")
+        case .serverErr : print("serverErr")
+        case .networkFail: print("networkFail")
+        }
+      }
+    
 
     
-    print(univInformaitons)
       setTableView()
       showSelection()
       // Do any additional setup after loading the view.
@@ -112,7 +132,7 @@ class UnivSelectViewController: UIViewController {
     hideView.startAnimation()
   }
   var univInformaitons: [UnivInformations] = []
-  
+  var univInfos:[univData] = []
   func setTableView(){
     univTableView.delegate = self
     univTableView.dataSource = self
@@ -166,13 +186,13 @@ extension UnivSelectViewController:UITableViewDelegate{
 
 extension UnivSelectViewController:UITableViewDataSource{
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return univInformaitons.count
+    return univInfos.count
   }
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     guard let univTableCell = tableView.dequeueReusableCell(withIdentifier: univTableViewCell.identifier, for: indexPath)as? univTableViewCell else {
       return UITableViewCell()
     }
-    univTableCell.univName.text = univInformaitons[indexPath.row].univName
+    univTableCell.univName.text = univInfos[indexPath.row].univ_name
     univTableCell.subwayLineImg.image = UIImage(named: univInformaitons[indexPath.row].univLine.getLineNum())
     univTableCell.selectedBox.tag = indexPath.row
     univTableCell.selectedBox.image = UIImage(named: "storeUnivIcCheck")

@@ -39,7 +39,7 @@ func isUser(by data: Data) -> NetworkResult<Any> {
   let decoder = JSONDecoder()
   guard let decodedData = try? decoder.decode(LogInData.self, from: data) else { return .pathErr }
   guard let tokenData = decodedData.data else { return .requestErr(decodedData.message) }
-  return .success(tokenData.accessToken)
+  return .success(tokenData)
 }
 func judge(by statusCode: Int, _ data: Data) -> NetworkResult<Any> {
   switch statusCode {
@@ -126,6 +126,85 @@ struct SignUpService {
           }
         case 400: networkResult = .pathErr
         case 500: networkResult = .serverErr
+        default: networkResult = .networkFail
+        }
+        completion(networkResult!)
+      case .failure : completion(.networkFail)
+      }
+    }
+  }
+}
+
+struct storeListService{
+  static let shared = storeListService()
+  
+  func getStoreList(_ univIdx:Int, completion : @escaping (NetworkResult<Any>) -> Void){
+    let header:HTTPHeaders = ["token" : UserDefaults.standard.string(forKey: "token")!]
+    let url = APIConstraints.storeRequest + APIIndex.init(index: .univIdx(univIdx)).index.getIdx()+APIConstraints.list
+
+    
+    let dataRequest = Alamofire.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: header)
+    dataRequest.responseData {
+      dataResponse in
+      switch dataResponse.result {
+      case .success:
+        guard let statusCode = dataResponse.response?.statusCode else{return}
+        guard let value = dataResponse.result.value else {return}
+        var networkResult:NetworkResult<Any>?
+        switch statusCode{
+        case 200 :
+          let decoder = JSONDecoder()
+          guard let decodedData = try? decoder.decode(StoreListData.self, from: value) else { return networkResult = .pathErr }
+          if decodedData.status == 200 && decodedData.success{
+            networkResult = .success(decodedData.data!)
+          }
+          else if decodedData.status == 400{
+             networkResult = .requestErr(decodedData.message)
+           }
+           else {
+             networkResult = .serverErr
+           }
+        case 400 : networkResult = .pathErr
+        case 500 : networkResult = .serverErr
+        default: networkResult = .networkFail
+        }
+        completion(networkResult!)
+      case .failure : completion(.networkFail)
+      }
+    }
+  }
+}
+
+
+
+struct univListService{
+  static let shared = univListService()
+  
+  func getUnivList(completion : @escaping (NetworkResult<Any>) -> Void){
+    let url = APIConstraints.univList
+    let dataRequest = Alamofire.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil)
+    dataRequest.responseData {
+      dataResponse in
+      switch dataResponse.result {
+      case .success:
+        guard let statusCode = dataResponse.response?.statusCode else{return}
+        guard let value = dataResponse.result.value else {return}
+        var networkResult:NetworkResult<Any>?
+        switch statusCode{
+        case 200 :
+          let decoder = JSONDecoder()
+          guard let decodedData = try? decoder.decode(univListData.self, from: value) else { return networkResult = .pathErr }
+          if decodedData.status == 200 && decodedData.success{
+            networkResult = .success(decodedData.data!)
+          }
+          else if decodedData.status == 400{
+             networkResult = .requestErr(decodedData.message)
+           }
+           else {
+             networkResult = .serverErr
+           }
+        case 400 : networkResult = .pathErr
+        case 500 : networkResult = .serverErr
         default: networkResult = .networkFail
         }
         completion(networkResult!)

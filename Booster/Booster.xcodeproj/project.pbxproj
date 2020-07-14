@@ -28,7 +28,6 @@
 		CC862D8F24BCA09B008BBF04 /* EngineListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC862D8E24BCA09B008BBF04 /* EngineListCell.swift */; };
 		CC862D9124BCB488008BBF04 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC862D9024BCB488008BBF04 /* EditViewController.swift */; };
 		CC862D9524BD8CBB008BBF04 /* EngineData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC862D9424BD8CBB008BBF04 /* EngineData.swift */; };
-		CCB2C53724BD8E3C00F3200A /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB2C53624BD8E3C00F3200A /* NetworkResult.swift */; };
 		CCB2C53924BD8E8200F3200A /* EngineService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB2C53824BD8E8200F3200A /* EngineService.swift */; };
 		CCE019E324B2D13A0067F721 /* SearchHs.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCE019E224B2D13A0067F721 /* SearchHs.storyboard */; };
 		CCE019E524B2D1CB0067F721 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE019E424B2D1CB0067F721 /* MapViewController.swift */; };
@@ -122,7 +121,6 @@
 		CC862D8E24BCA09B008BBF04 /* EngineListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngineListCell.swift; sourceTree = "<group>"; };
 		CC862D9024BCB488008BBF04 /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
 		CC862D9424BD8CBB008BBF04 /* EngineData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngineData.swift; sourceTree = "<group>"; };
-		CCB2C53624BD8E3C00F3200A /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
 		CCB2C53824BD8E8200F3200A /* EngineService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngineService.swift; sourceTree = "<group>"; };
 		CCE019E224B2D13A0067F721 /* SearchHs.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchHs.storyboard; sourceTree = "<group>"; };
 		CCE019E424B2D1CB0067F721 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -329,7 +327,6 @@
 			children = (
 				CC18782824B6085600830F0E /* StructModels.swift */,
 				CC862D9424BD8CBB008BBF04 /* EngineData.swift */,
-				CCB2C53624BD8E3C00F3200A /* NetworkResult.swift */,
 				CCB2C53824BD8E8200F3200A /* EngineService.swift */,
 			);
 			path = Models;
@@ -961,7 +958,6 @@
 				CCE019E524B2D1CB0067F721 /* MapViewController.swift in Sources */,
 				DA2BC40224AB4BA300013143 /* AppDelegate.swift in Sources */,
 				CC3AB86024B666F30007662E /* PayTableViewCell.swift in Sources */,
-				CCB2C53724BD8E3C00F3200A /* NetworkResult.swift in Sources */,
 				DACA38FB24B22A5E0025E230 /* MainTabBarController.swift in Sources */,
 				DAD179A724B5823E009BFECC /* WaitCollectionViewCell.swift in Sources */,
 				DAD179A324B4BF40009BFECC /* OrderCollectionViewHeader.swift in Sources */,

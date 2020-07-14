@@ -55,7 +55,7 @@ struct APIConstraints{
   
   //마이페이지
   static let modifyProfile = APIConstraints.baseURL + "/mypage/profile"   //put
-  static let myEngineList = APIConstraints.baseURL + "/mypage/engine"     //get
+  static let myEngineList = APIConstraints.baseURL + "/mypage/engine/history"     //get
   static let notiList = APIConstraints.baseURL + "/mypage/notice"         //get
 }
 
@@ -72,14 +72,17 @@ struct APIIndex{
     func getIdx() -> String{
       switch self {
       case .univIdx(let idx):
-        return "/:" + String(idx)
+        return "/" + String(idx)
       case .orderIdx(let idx):
-        return "/:" + String(idx)
+        return "/" + String(idx)
       case .storeIdx(let idx):
-        return "/:" + String(idx)
+        return "/" + String(idx)
       case .fileIdx(let idx):
-        return "/:" + String(idx)
+        return "/" + String(idx)
       }
     }
   }
 }
+//let a = APIIndex.init(index: .fileIdx(숫자)).index.getIdx()
+
+
