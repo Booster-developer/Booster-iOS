@@ -1,5 +1,5 @@
 //
-//  engineData.swift
+//  OptionData.swift
 //  Booster
 //
 //  Created by 노한솔 on 2020/07/14.
@@ -9,11 +9,11 @@
 import Foundation
 import Alamofire
 
-struct EngineData: Codable {
+struct OptionData: Codable {
   var status: Int
   var success: Bool
   var message: String
-  var data: engineList
+  var data: OptionList
   
   enum CodingKeys: String, CodingKey {
     case status = "status"
@@ -21,32 +21,20 @@ struct EngineData: Codable {
     case message = "message"
     case data = "data"
   }
-  
   init(from decoder: Decoder) throws {
     let values = try decoder.container(keyedBy: CodingKeys.self)
     status = (try? values.decode(Int.self, forKey: .status)) ?? -1
     success = (try? values.decode(Bool.self, forKey: .success)) ?? false
     message = (try? values.decode(String.self, forKey: .message)) ?? ""
-    data = (try? values.decode(engineList.self, forKey: .data)) ?? engineList.init(engine_point: 0,
-                                                                                   engine_list: [engines.init()])
+    data = (try? values.decode(OptionList.self, forKey: .data)) ?? OptionList.init(file_color: "흑백", file_direction: "세로", file_sided_type: "단면", file_collect: 1, file_range: "전체 페이지", file_copy: 1)
   }
 }
 
-struct engineList: Codable {
-  var engine_point: Int
-  var engine_list: [engines]
-}
-
-struct engines: Codable {
-  var engine_sign: Int
-  var engine_cost: Int
-  var engine_time: String
-  var engine_store_name: String
-  
-  init() {
-    self.engine_sign = 0
-    self.engine_cost = 0
-    self.engine_time = " "
-    self.engine_store_name = " "
-  }
+struct OptionList: Codable {
+  var file_color : String
+  var file_direction: String
+  var file_sided_type: String
+  var file_collect: Int
+  var file_range: String
+  var file_copy: Int
 }

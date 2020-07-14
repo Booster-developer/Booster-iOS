@@ -186,9 +186,9 @@ struct EngineInformation {
   var date: String
   var store: String
   var engine: Int
-  var sign: Bool
+  var sign: Int
   
-  init (date: String, store: String, engine: Int, sign: Bool) {
+  init (date: String, store: String, engine: Int, sign: Int) {
     self.date = date
     self.store = store
     self.engine = engine

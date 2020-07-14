@@ -15,9 +15,7 @@ class MyPageHsViewController: UIViewController {
   
   // MARK: - IBActions
   @IBAction func showEngineList(_ sender: Any) {
-    guard let engineVC = self.storyboard?.instantiateViewController(identifier: "EngineListViewController") as? EngineListViewController else {return }
-    engineVC.modalPresentationStyle = .fullScreen
-    present(engineVC, animated: false, completion: nil)
+    
     
     EngineService.shared.getEngine() {networkResult in
       switch networkResult {

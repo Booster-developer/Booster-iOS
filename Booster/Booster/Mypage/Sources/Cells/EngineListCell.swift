@@ -30,10 +30,10 @@ class EngineListCell: UITableViewCell {
         // Configure the view for the selected state
     }
   
-  func setEngineListInformation(date: String, store: String, engine: Int, sign: Bool) {
+  func setEngineListInformation(date: String, store: String, engine: Int, sign: Int) {
     dateLabel.text = date
     storeLabel.text = store
-    if sign {
+    if sign == 1 {
       engineLabel.text = "+"+String(engine)+"P"
       engineLabel.textColor = UIColor(red: 255/255, green: 18/255, blue: 0, alpha: 1)
     }

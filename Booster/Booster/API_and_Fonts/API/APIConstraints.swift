@@ -28,6 +28,7 @@ struct APIConstraints{
   static let pickUp = "/pickup"
   static let request = "/request"
   
+  
   static let storeRequest = APIConstraints.baseURL +  "/stores"
   static let orderRequest = APIConstraints.baseURL + "/orders"
   static let progressRequest = APIConstraints.baseURL + "/progress"
