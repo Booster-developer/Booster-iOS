@@ -18,6 +18,33 @@ class MyPageHsViewController: UIViewController {
     guard let engineVC = self.storyboard?.instantiateViewController(identifier: "EngineListViewController") as? EngineListViewController else {return }
     engineVC.modalPresentationStyle = .fullScreen
     present(engineVC, animated: false, completion: nil)
+    
+    EngineService.shared.getEngine() {networkResult in
+      switch networkResult {
+      case .success(let engineList):
+        guard let engineList = engineList as? engineList else {return}
+        guard let engineVC = self.storyboard?.instantiateViewController(identifier: "EngineListViewController") as? EngineListViewController else {return }
+        engineVC.modalPresentationStyle = .fullScreen
+        self.present(engineVC, animated: false, completion: nil)
+        engineVC.engineLabel.text = String(engineList.engine_point)
+        for i in 0..<engineList.engine_list.count {
+          let engineInfo = EngineInformation.init(date: engineList.engine_list[i].engine_time, store: engineList.engine_list[i].engine_store_name, engine: engineList.engine_list[i].engine_cost, sign: engineList.engine_list[i].engine_sign)
+          engineVC.engineInformations.append(engineInfo)
+          print(engineInfo)
+        }
+      case .requestErr(let message):
+        guard let message = message as? String else {return}
+        let alertViewController = UIAlertController(title: "로그인 실패", message: message,
+        preferredStyle: .alert)
+        let action = UIAlertAction(title: "확인", style: .cancel, handler: nil)
+        alertViewController.addAction(action)
+        self.present(alertViewController, animated: true, completion: nil)
+      case .pathErr: print("path")
+      case .serverErr: print("serverErr")
+      case .networkFail: print("networkFail")
+      }
+    }
+    
   }
   @IBAction func backBtnClicked(_ sender: Any) {
     self.tabBarController?.selectedIndex = 0

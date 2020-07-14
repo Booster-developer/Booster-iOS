@@ -11,7 +11,7 @@ import Foundation
 struct APIConstraints{
   
   //로그인
-  static let baseURL = "52.79.218.88:3000"
+  static let baseURL = "http://52.79.218.88:3000"
   static let idCheck = APIConstraints.baseURL + "/users/idcheck" //post
   static let signUp = APIConstraints.baseURL + "/users/signup"   //post
   static let logIn = APIConstraints.baseURL + "/users/signin"    //post

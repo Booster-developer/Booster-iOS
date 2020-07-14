@@ -27,6 +27,9 @@
 		CC3AB86224B6671D0007662E /* PayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3AB86124B6671D0007662E /* PayViewController.swift */; };
 		CC862D8F24BCA09B008BBF04 /* EngineListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC862D8E24BCA09B008BBF04 /* EngineListCell.swift */; };
 		CC862D9124BCB488008BBF04 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC862D9024BCB488008BBF04 /* EditViewController.swift */; };
+		CC862D9524BD8CBB008BBF04 /* EngineData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC862D9424BD8CBB008BBF04 /* EngineData.swift */; };
+		CCB2C53724BD8E3C00F3200A /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB2C53624BD8E3C00F3200A /* NetworkResult.swift */; };
+		CCB2C53924BD8E8200F3200A /* EngineService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB2C53824BD8E8200F3200A /* EngineService.swift */; };
 		CCE019E324B2D13A0067F721 /* SearchHs.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCE019E224B2D13A0067F721 /* SearchHs.storyboard */; };
 		CCE019E524B2D1CB0067F721 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE019E424B2D1CB0067F721 /* MapViewController.swift */; };
 		CCE019E724B2D7CA0067F721 /* StoreDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE019E624B2D7CA0067F721 /* StoreDetailViewController.swift */; };
@@ -115,6 +118,9 @@
 		CC3AB86124B6671D0007662E /* PayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayViewController.swift; sourceTree = "<group>"; };
 		CC862D8E24BCA09B008BBF04 /* EngineListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngineListCell.swift; sourceTree = "<group>"; };
 		CC862D9024BCB488008BBF04 /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
+		CC862D9424BD8CBB008BBF04 /* EngineData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngineData.swift; sourceTree = "<group>"; };
+		CCB2C53624BD8E3C00F3200A /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
+		CCB2C53824BD8E8200F3200A /* EngineService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngineService.swift; sourceTree = "<group>"; };
 		CCE019E224B2D13A0067F721 /* SearchHs.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchHs.storyboard; sourceTree = "<group>"; };
 		CCE019E424B2D1CB0067F721 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		CCE019E624B2D7CA0067F721 /* StoreDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreDetailViewController.swift; sourceTree = "<group>"; };
@@ -266,8 +272,8 @@
 				DACA38E324B217400025E230 /* Status */,
 				DACA38E424B2174A0025E230 /* Mypage */,
 				DACA38DF24B216E10025E230 /* Login_Signin */,
-				DA2BC40F24AB4BA600013143 /* Info.plist */,
 				DA2BC40C24AB4BA600013143 /* LaunchScreen.storyboard */,
+				DA2BC40F24AB4BA600013143 /* Info.plist */,
 				DACA38F824B229650025E230 /* mainTab.storyboard */,
 				DACA38FA24B22A5E0025E230 /* MainTabBarController.swift */,
 			);
@@ -316,6 +322,9 @@
 			isa = PBXGroup;
 			children = (
 				CC18782824B6085600830F0E /* StructModels.swift */,
+				CC862D9424BD8CBB008BBF04 /* EngineData.swift */,
+				CCB2C53624BD8E3C00F3200A /* NetworkResult.swift */,
+				CCB2C53824BD8E8200F3200A /* EngineService.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -920,6 +929,7 @@
 				DACA391424B232020025E230 /* MyPageViewController.swift in Sources */,
 				DA93D6EB24BCCD4800DE370F /* FileListCollectionViewCell.swift in Sources */,
 				DACA391824B23ADA0025E230 /* LogInViewController.swift in Sources */,
+				CCB2C53924BD8E8200F3200A /* EngineService.swift in Sources */,
 				CC28996124BB212F00F9C822 /* ShowOptionViewController.swift in Sources */,
 				DA93D6E824BCCC8400DE370F /* StatusDetailViewController.swift in Sources */,
 				DAD179A524B58226009BFECC /* WaitCollectionViewHeader.swift in Sources */,
@@ -932,12 +942,14 @@
 				DACA390124B22D410025E230 /* HomeViewController.swift in Sources */,
 				CC862D9124BCB488008BBF04 /* EditViewController.swift in Sources */,
 				CC18782924B6085600830F0E /* StructModels.swift in Sources */,
+				CC862D9524BD8CBB008BBF04 /* EngineData.swift in Sources */,
 				DACA390B24B231970025E230 /* OrderViewController.swift in Sources */,
 				CC1233D724B47FE50049F7A4 /* CancelOrderViewController.swift in Sources */,
 				DAC4D1CD24B4A8AA0025EC1C /* OrderCollectionViewCell.swift in Sources */,
 				CCE019E524B2D1CB0067F721 /* MapViewController.swift in Sources */,
 				DA2BC40224AB4BA300013143 /* AppDelegate.swift in Sources */,
 				CC3AB86024B666F30007662E /* PayTableViewCell.swift in Sources */,
+				CCB2C53724BD8E3C00F3200A /* NetworkResult.swift in Sources */,
 				DACA38FB24B22A5E0025E230 /* MainTabBarController.swift in Sources */,
 				DAD179A724B5823E009BFECC /* WaitCollectionViewCell.swift in Sources */,
 				DAD179A324B4BF40009BFECC /* OrderCollectionViewHeader.swift in Sources */,

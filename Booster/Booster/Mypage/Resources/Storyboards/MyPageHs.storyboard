@@ -478,6 +478,7 @@
                     </view>
                     <size key="freeformSize" width="375" height="1500"/>
                     <connections>
+                        <outlet property="engineLabel" destination="7Kg-m4-A5G" id="PnT-Zn-H5k"/>
                         <outlet property="engineListTableView" destination="gEZ-d8-Cdl" id="tzE-RC-mLB"/>
                     </connections>
                 </viewController>

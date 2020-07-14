@@ -184,7 +184,7 @@ class OrderHsViewController: UIViewController {
         super.viewDidLoad()
       self.blackBtn.setImage(UIImage(named: "iconMonoSelected"), for: .normal)
       self.autoBtn.setImage(UIImage(named: "iconAutoSelected"), for: .normal)
-      self.singleBtn.setImage(UIImage(named: "iconDanSelecedt"), for: .normal)
+      self.singleBtn.setImage(UIImage(named: "iconDanSelected"), for: .normal)
       self.oneBtn.setImage(UIImage(named: "icon1Selected"), for: .normal)
       self.navigationController?.isNavigationBarHidden = true
       
