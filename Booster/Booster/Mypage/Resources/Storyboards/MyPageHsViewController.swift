@@ -15,8 +15,6 @@ class MyPageHsViewController: UIViewController {
   
   // MARK: - IBActions
   @IBAction func showEngineList(_ sender: Any) {
-    
-    
     EngineService.shared.getEngine() {networkResult in
       switch networkResult {
       case .success(let engineList):
@@ -28,7 +26,7 @@ class MyPageHsViewController: UIViewController {
         for i in 0..<engineList.engine_list.count {
           let engineInfo = EngineInformation.init(date: engineList.engine_list[i].engine_time, store: engineList.engine_list[i].engine_store_name, engine: engineList.engine_list[i].engine_cost, sign: engineList.engine_list[i].engine_sign)
           engineVC.engineInformations.append(engineInfo)
-          print(engineInfo)
+          
         }
       case .requestErr(let message):
         guard let message = message as? String else {return}

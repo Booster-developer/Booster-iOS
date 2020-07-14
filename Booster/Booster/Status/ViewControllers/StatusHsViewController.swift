@@ -9,12 +9,13 @@
 import UIKit
 
 class StatusHsViewController: UIViewController {
-
+  
   // MARK: - IBOutlets
   @IBOutlet weak var statusHsTableView: UITableView!
   @IBOutlet weak var marginView: UIView!
   @IBOutlet weak var marginViewHeight: NSLayoutConstraint!
-
+  @IBOutlet weak var countLabel: UILabel!
+  
   
   // MARK: - IBActions
   @IBAction func presentCancelOrderViewController(_ sender: Any) {
@@ -24,61 +25,63 @@ class StatusHsViewController: UIViewController {
     self.present(cancelOrderVC, animated: false, completion: nil)
   }
   @IBAction func completePickUp(_ sender: Any) {
-    changeStatusInformations()
+    
     statusHsTableView.reloadData()
   }
   
   // MARK: - Vars
-  private var statusInformations: [StatusInformation] = []
+  var statusInformations: [StatusInformation] = []
   private var marginViewHeightConstraint : NSLayoutConstraint!
   private var toggle: Bool = true
   
-    override func viewDidLoad() {
-      super.viewDidLoad()
-      setStatusInformations()
-      statusHsTableView.dataSource = self
-      statusHsTableView.delegate = self
-        // Do any additional setup after loading the view.
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    statusHsTableView.dataSource = self
+    statusHsTableView.delegate = self
+    
+    StatusService.shared.getStatus() { networkResult in
+      switch networkResult {
+      case .success(let statusList) :
+        
+        guard let statusList = statusList as? StatusList else {return}
+        for i in 0..<statusList.order_list.count {
+          let statusInfo = StatusInformation.init(orderNum: statusList.order_list[i].order_idx, storeName: statusList.order_list[i].order_store_name, date: statusList.order_list[i].order_time, docsName: statusList.order_list[i].order_title, status: statusList.order_list[i].order_state)
+          self.statusInformations.append(statusInfo)
+          print(self.statusInformations)
+        }
+        self.statusHsTableView.reloadData()
+      case .requestErr(let message):
+        guard let message = message as? String else {return}
+        let alertViewController = UIAlertController(title: "로그인 실패", message: message,
+                                                    preferredStyle: .alert)
+        let action = UIAlertAction(title: "확인", style: .cancel, handler: nil)
+        alertViewController.addAction(action)
+        self.present(alertViewController, animated: true, completion: nil)
+      case .pathErr: print("path")
+      case .serverErr: print("serverErr")
+      case .networkFail: print("networkFail")
+        
+      }
     }
     
-  // MARK: - Functions
-  private func setStatusInformations() {
-    let status1 = StatusInformation(orderNum: 1, storeName: "복사왕 김제본", date: "2020-07-05",
-                                    docsName: "보고서.pdf", status: .order)
-    let status2 = StatusInformation(orderNum: 1, storeName: "복사왕 김제본", date: "2020-07-05",
-                                    docsName: "보고서.pdf", status: .printing)
-    let status3 = StatusInformation(orderNum: 1, storeName: "복사왕 김제본", date: "2020-07-05",
-                                    docsName: "보고서.pdf", status: .done)
-    let status4 = StatusInformation(orderNum: 1, storeName: "복사왕 김제본", date: "2020-07-05",
-                                    docsName: "보고서.pdf", status: .order)
-    let status5 = StatusInformation(orderNum: 1, storeName: "복사왕 김제본", date: "2020-07-05",
-                                    docsName: "보고서.pdf", status: .done)
-    statusInformations = [status1, status2, status3, status4, status5]
+  
+    // Do any additional setup after loading the view.
   }
   
-  func changeStatusInformations() {
-   let status2 = StatusInformation(orderNum: 1, storeName: "복사왕 김제본", date: "2020-07-05",
-                                   docsName: "보고서.pdf", status: .printing)
-   let status3 = StatusInformation(orderNum: 1, storeName: "복사왕 김제본", date: "2020-07-05",
-                                   docsName: "보고서.pdf", status: .done)
-   let status4 = StatusInformation(orderNum: 1, storeName: "복사왕 김제본", date: "2020-07-05",
-                                   docsName: "보고서.pdf", status: .order)
-   let status5 = StatusInformation(orderNum: 1, storeName: "복사왕 김제본", date: "2020-07-05",
-                                   docsName: "보고서.pdf", status: .done)
-    
-    statusInformations = [status2, status3, status4, status5]
-  }
+  // MARK: - Functions
+  
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+  
+  /*
+   // MARK: - Navigation
+   
+   // In a storyboard-based application, you will often want to do a little preparation before navigation
+   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+   // Get the new view controller using segue.destination.
+   // Pass the selected object to the new view controller.
+   }
+   */
+  
 }
 
 extension StatusHsViewController: UITableViewDataSource {
@@ -90,10 +93,11 @@ extension StatusHsViewController: UITableViewDataSource {
                                                            for: indexPath) as? StatusHsCell else
     { return UITableViewCell() }
     statusHsCell.setStatusInformation(num: statusInformations[indexPath.row].orderNum, storeName: statusInformations[indexPath.row].storeName, date: statusInformations[indexPath.row].date, docsName: statusInformations[indexPath.row].docsName,
-                                      imageName: statusInformations[indexPath.row].status.getImageName())
+                                      imageName: statusInformations[indexPath.row].getImageName())
     
-    statusHsCell.setBtnImg(imgName: statusInformations[indexPath.row].status.getImageName())
+    statusHsCell.setBtnImg(imgName: statusInformations[indexPath.row].getImageName())
     return statusHsCell
+    
     
     
   }
@@ -111,7 +115,7 @@ extension StatusHsViewController: UITableViewDelegate {
       toggle = !toggle
     }
   }
- 
+  
 }
 extension NSLayoutConstraint {
   func constraintWithMultiplier(_ multiplier: CGFloat) -> NSLayoutConstraint {

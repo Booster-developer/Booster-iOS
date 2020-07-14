@@ -11,28 +11,24 @@ struct StatusInformation {
   var storeName: String
   var date: String
   var docsName: String
-  var status : Status
+  var status : Int
   
-  init(orderNum: Int, storeName: String, date: String, docsName: String, status: Status) {
+  init(orderNum: Int, storeName: String, date: String, docsName: String, status: Int) {
     self.orderNum = orderNum
     self.storeName = storeName
     self.date = date
     self.docsName = docsName
     self.status = status
   }
-}
-
-enum Status {
-  case order
-  case printing
-  case done
-  
   func getImageName() -> String {
-    switch self {
-    case .order: return "progressSlider1"
-    case .printing: return "progressSlider2"
-    case .done: return "progressSlider3"
+    switch self.status {
+    case 1: return "progressSlider1"
+    case 2: return "progressSlider2"
+    case 3: return "progressSlider3"
+    default: return "progressSlider1"
     }
+    
   }
 }
+
 

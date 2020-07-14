@@ -31,6 +31,8 @@
 		CCB2C53924BD8E8200F3200A /* EngineService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB2C53824BD8E8200F3200A /* EngineService.swift */; };
 		CCB2C53B24BDF68900F3200A /* OptionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB2C53A24BDF68900F3200A /* OptionData.swift */; };
 		CCB2C53D24BDF80800F3200A /* OptionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB2C53C24BDF80800F3200A /* OptionService.swift */; };
+		CCB2C53F24BE0BED00F3200A /* StatusData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB2C53E24BE0BED00F3200A /* StatusData.swift */; };
+		CCB2C54124BE0D9F00F3200A /* StatusService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB2C54024BE0D9F00F3200A /* StatusService.swift */; };
 		CCE019E324B2D13A0067F721 /* SearchHs.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCE019E224B2D13A0067F721 /* SearchHs.storyboard */; };
 		CCE019E524B2D1CB0067F721 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE019E424B2D1CB0067F721 /* MapViewController.swift */; };
 		CCE019E724B2D7CA0067F721 /* StoreDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE019E624B2D7CA0067F721 /* StoreDetailViewController.swift */; };
@@ -126,6 +128,8 @@
 		CCB2C53824BD8E8200F3200A /* EngineService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngineService.swift; sourceTree = "<group>"; };
 		CCB2C53A24BDF68900F3200A /* OptionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionData.swift; sourceTree = "<group>"; };
 		CCB2C53C24BDF80800F3200A /* OptionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionService.swift; sourceTree = "<group>"; };
+		CCB2C53E24BE0BED00F3200A /* StatusData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusData.swift; sourceTree = "<group>"; };
+		CCB2C54024BE0D9F00F3200A /* StatusService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusService.swift; sourceTree = "<group>"; };
 		CCE019E224B2D13A0067F721 /* SearchHs.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchHs.storyboard; sourceTree = "<group>"; };
 		CCE019E424B2D1CB0067F721 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		CCE019E624B2D7CA0067F721 /* StoreDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreDetailViewController.swift; sourceTree = "<group>"; };
@@ -334,6 +338,8 @@
 				CCB2C53824BD8E8200F3200A /* EngineService.swift */,
 				CCB2C53A24BDF68900F3200A /* OptionData.swift */,
 				CCB2C53C24BDF80800F3200A /* OptionService.swift */,
+				CCB2C53E24BE0BED00F3200A /* StatusData.swift */,
+				CCB2C54024BE0D9F00F3200A /* StatusService.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -957,6 +963,7 @@
 				DA6718F324BD7EE600B9CD86 /* NetworkResult.swift in Sources */,
 				DACA390124B22D410025E230 /* HomeViewController.swift in Sources */,
 				CC862D9124BCB488008BBF04 /* EditViewController.swift in Sources */,
+				CCB2C54124BE0D9F00F3200A /* StatusService.swift in Sources */,
 				CC18782924B6085600830F0E /* StructModels.swift in Sources */,
 				CC862D9524BD8CBB008BBF04 /* EngineData.swift in Sources */,
 				DACA390B24B231970025E230 /* OrderViewController.swift in Sources */,
@@ -966,6 +973,7 @@
 				DA2BC40224AB4BA300013143 /* AppDelegate.swift in Sources */,
 				CC3AB86024B666F30007662E /* PayTableViewCell.swift in Sources */,
 				DACA38FB24B22A5E0025E230 /* MainTabBarController.swift in Sources */,
+				CCB2C53F24BE0BED00F3200A /* StatusData.swift in Sources */,
 				DAD179A724B5823E009BFECC /* WaitCollectionViewCell.swift in Sources */,
 				DAD179A324B4BF40009BFECC /* OrderCollectionViewHeader.swift in Sources */,
 				DA6D64D924B644E200215BE4 /* testViewController.swift in Sources */,

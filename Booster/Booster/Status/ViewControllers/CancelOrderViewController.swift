@@ -19,7 +19,7 @@ class CancelOrderViewController: UIViewController {
   }
   @IBAction func dismissAndCancelOrder(_ sender: Any) {
     guard let vc = self.presentingViewController?.children[3] as? StatusHsViewController else {return}
-    vc.changeStatusInformations()
+    
     vc.statusHsTableView.reloadData()
     self.dismiss(animated: false, completion: nil)
   }
