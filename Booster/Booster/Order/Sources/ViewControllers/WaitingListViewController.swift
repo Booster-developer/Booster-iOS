@@ -232,6 +232,10 @@ extension WaitingListViewController:UICollectionViewDataSource{
 
   }
   @objc func deleteCell(sender: UIButton){
+    
+    
+    
+    
     let alert = UIAlertController(title: "", message: "파일을 삭제하겠습니까?", preferredStyle: UIAlertController.Style.alert)
     let no = UIAlertAction(title: "Cancel", style: .default, handler : nil)
     let yes = UIAlertAction(title: "OK", style: .default) { (action) in

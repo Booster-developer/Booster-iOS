@@ -570,7 +570,7 @@
                                 <rect key="frame" x="0.0" y="1018.3333333333334" width="375" height="147.66666666666663"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Kq-vt-R03">
-                                        <rect key="frame" x="16" y="39.666666666666629" width="343" height="68"/>
+                                        <rect key="frame" x="16" y="48.666666666666629" width="343" height="50"/>
                                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="20"/>
                                         <state key="normal" title="선택완료" backgroundImage="btnSelect">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -727,7 +727,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mwY-cp-rOA">
-                                        <rect key="frame" x="0.0" y="192" width="217" height="40"/>
+                                        <rect key="frame" x="0.0" y="188" width="217" height="44"/>
                                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="14"/>
                                         <state key="normal" title="완료" backgroundImage="optionPopupbtnFin">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -848,7 +848,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yiS-Ut-ngT">
-                                        <rect key="frame" x="0.0" y="100" width="217" height="40"/>
+                                        <rect key="frame" x="0.0" y="96" width="217" height="44"/>
                                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="14"/>
                                         <state key="normal" title="완료" backgroundImage="optionPopupbtnFin">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1530,7 +1530,7 @@
         <image name="btnMinus" width="20" height="20"/>
         <image name="btnPay" width="343" height="50"/>
         <image name="btnPlus" width="20" height="20"/>
-        <image name="btnSelect" width="361" height="68"/>
+        <image name="btnSelect" width="343" height="50"/>
         <image name="icon1" width="69" height="69"/>
         <image name="icon16" width="69" height="69"/>
         <image name="icon2" width="69" height="69"/>
@@ -1544,14 +1544,14 @@
         <image name="iconDan" width="69" height="69"/>
         <image name="iconHeight" width="69" height="69"/>
         <image name="iconMono" width="69" height="69"/>
-        <image name="iconNumBlue" width="73" height="73"/>
+        <image name="iconNumBlue" width="161" height="73"/>
         <image name="iconPart" width="52" height="52"/>
-        <image name="iconRangeBlue" width="73" height="73"/>
+        <image name="iconRangeBlue" width="161" height="73"/>
         <image name="iconWhole" width="52" height="52"/>
         <image name="iconWidth" width="69" height="69"/>
         <image name="iconYang1" width="69" height="69"/>
         <image name="iconYang2" width="69" height="69"/>
-        <image name="optionPopupbtnFin" width="217" height="40"/>
+        <image name="optionPopupbtnFin" width="240" height="44"/>
         <image name="payWave" width="378" height="50.666667938232422"/>
         <image name="processBackBtn" width="44" height="44"/>
     </resources>

@@ -25,6 +25,12 @@ struct Options {
   }
 }
 
+struct UserInfo {
+  var userName:String
+  var userID:String
+  var userPW:String
+  var userUniv:Int
+}
 
 struct PayFile {
   var fileName: String
