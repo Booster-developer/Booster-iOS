@@ -12,24 +12,51 @@ class LogInViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+      logInPWTextField.delegate = self
+      logInIdTextField.delegate = self
 
         // Do any additional setup after loading the view.
     }
-    @IBAction func logInButtonClicked(_ sender: Any) {
-      
-      
-      
-      
-        let tabBarStoryboard = UIStoryboard.init(name: "mainTab", bundle: nil)
-        guard let mainTab = tabBarStoryboard.instantiateViewController(identifier: "TabBarController") as? MainTabBarController else { return}
-        mainTab.modalPresentationStyle = .fullScreen
-        self.present(mainTab, animated: true, completion: nil)
+  @IBOutlet weak var logInIdTextField: UITextField!
+  @IBOutlet weak var logInPWTextField: UITextField!
+  @IBAction func logInButtonClicked(_ sender: Any) {
+    logInIdTextField.text = "daeun"
+    logInPWTextField.text = "1234"
+    if (!logInIdTextField.isEmpty && !logInPWTextField.isEmpty){
+      let logInId:String = logInIdTextField.text!
+      let logInPW:String = logInPWTextField.text!
+      LoginService.shared.login(id: logInId, pwd: logInPW) { networkResult in
+        switch networkResult{
+        case .success(let token):
+          guard let token = token as? String else {return}
+          UserDefaults.standard.set(token, forKey: "token")
+          let tabBarStoryboard = UIStoryboard.init(name: "mainTab", bundle: nil)
+          guard let mainTab = tabBarStoryboard.instantiateViewController(identifier: "TabBarController") as? MainTabBarController else { return}
+          mainTab.modalPresentationStyle = .fullScreen
+          self.present(mainTab, animated: true, completion: nil)
+          
+        case .requestErr(let message):
+          guard let message = message as? String else { return }
+          let alertViewController = UIAlertController(title: "로그인 실패", message: message, preferredStyle: .alert)
+          let action = UIAlertAction(title: "확인", style: .cancel, handler: nil)
+          alertViewController.addAction(action)
+          self.present(alertViewController, animated: true, completion: nil)
+        case .pathErr : print("pathErr")
+        case .serverErr : print("serverErr")
+        case .networkFail: print("networkFail")
+        }
+      }
     }
+  }
   @IBAction func signUpBtnClicked(_ sender: Any) {
     guard let signUp = self.storyboard?.instantiateViewController(identifier: "signUp", creator: nil)as? SignUpViewController else {return}
     self.present(signUp,animated: true,completion: nil)
   }
   
+  override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    view.endEditing(true)
+  }
+
 
     /*
     // MARK: - Navigation
@@ -41,4 +68,11 @@ class LogInViewController: UIViewController {
     }
     */
 
+}
+extension LogInViewController:UITextFieldDelegate{
+  func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+     textField.resignFirstResponder()
+     return true
+   }
+  
 }

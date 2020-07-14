@@ -725,7 +725,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mwY-cp-rOA">
-                                        <rect key="frame" x="0.0" y="192" width="217" height="40"/>
+                                        <rect key="frame" x="0.0" y="188" width="217" height="44"/>
                                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="14"/>
                                         <state key="normal" title="완료" backgroundImage="optionPopupbtnFin">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -846,7 +846,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yiS-Ut-ngT">
-                                        <rect key="frame" x="0.0" y="100" width="217" height="40"/>
+                                        <rect key="frame" x="0.0" y="96" width="217" height="44"/>
                                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="14"/>
                                         <state key="normal" title="완료" backgroundImage="optionPopupbtnFin">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1549,7 +1549,7 @@
         <image name="iconWidth" width="69" height="69"/>
         <image name="iconYang1" width="69" height="69"/>
         <image name="iconYang2" width="69" height="69"/>
-        <image name="optionPopupbtnFin" width="217" height="40"/>
+        <image name="optionPopupbtnFin" width="240" height="44"/>
         <image name="payWave" width="378" height="50.666667938232422"/>
         <image name="processBackBtn" width="44" height="44"/>
     </resources>

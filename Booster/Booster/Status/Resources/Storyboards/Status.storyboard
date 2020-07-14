@@ -197,34 +197,76 @@
                                                                     </constraints>
                                                                 </imageView>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9NN-oI-xym">
-                                                                    <rect key="frame" x="24" y="8" width="46" height="54"/>
-                                                                    <state key="normal" title="Button"/>
+                                                                    <rect key="frame" x="32" y="8" width="40" height="54"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" secondItem="9NN-oI-xym" secondAttribute="height" multiplier="38:51" id="9UQ-wp-5Kl"/>
+                                                                    </constraints>
+                                                                </button>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="파일이름" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6pZ-IL-J2W">
+                                                                    <rect key="frame" x="83" y="14" width="56" height="20"/>
+                                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="16"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="결제금액" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AZc-28-pUV">
+                                                                    <rect key="frame" x="83" y="39" width="42" height="15"/>
+                                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="12"/>
+                                                                    <color key="textColor" red="0.48630654810000001" green="0.49018782379999998" blue="0.49019646639999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wnZ-vA-doH">
+                                                                    <rect key="frame" x="130" y="39" width="27" height="15"/>
+                                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="12"/>
+                                                                    <color key="textColor" red="0.48630654810000001" green="0.49018782379999998" blue="0.49019646639999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GKU-NE-NWt">
+                                                                    <rect key="frame" x="321.5" y="40" width="35" height="24"/>
+                                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="10"/>
+                                                                    <state key="normal" title="옵션보기"/>
                                                                 </button>
                                                             </subviews>
                                                             <constraints>
                                                                 <constraint firstItem="9NN-oI-xym" firstAttribute="top" secondItem="q1t-NJ-hKO" secondAttribute="top" constant="8" id="6p6-Si-XsF"/>
                                                                 <constraint firstItem="kGo-aA-IIA" firstAttribute="leading" secondItem="q1t-NJ-hKO" secondAttribute="leading" constant="16" id="FWT-gN-B5x"/>
+                                                                <constraint firstItem="AZc-28-pUV" firstAttribute="top" secondItem="6pZ-IL-J2W" secondAttribute="bottom" constant="5" id="KfD-E1-aqw"/>
+                                                                <constraint firstAttribute="bottom" secondItem="GKU-NE-NWt" secondAttribute="bottom" constant="6" id="NCZ-Au-x1B"/>
+                                                                <constraint firstItem="kGo-aA-IIA" firstAttribute="trailing" secondItem="GKU-NE-NWt" secondAttribute="trailing" constant="18" id="RxC-RR-f4Y"/>
                                                                 <constraint firstAttribute="bottom" secondItem="9NN-oI-xym" secondAttribute="bottom" constant="8" id="VT5-Vl-c7c"/>
+                                                                <constraint firstItem="wnZ-vA-doH" firstAttribute="leading" secondItem="AZc-28-pUV" secondAttribute="trailing" constant="5" id="WS6-yz-rec"/>
+                                                                <constraint firstItem="6pZ-IL-J2W" firstAttribute="top" secondItem="q1t-NJ-hKO" secondAttribute="top" constant="14" id="Z8b-nu-de0"/>
+                                                                <constraint firstItem="6pZ-IL-J2W" firstAttribute="leading" secondItem="9NN-oI-xym" secondAttribute="trailing" constant="11" id="ahc-fV-Bec"/>
                                                                 <constraint firstItem="kGo-aA-IIA" firstAttribute="top" secondItem="q1t-NJ-hKO" secondAttribute="top" id="f1Q-lC-kyg"/>
-                                                                <constraint firstItem="9NN-oI-xym" firstAttribute="leading" secondItem="kGo-aA-IIA" secondAttribute="leading" constant="8" id="po7-8a-hPa"/>
+                                                                <constraint firstItem="9NN-oI-xym" firstAttribute="leading" secondItem="kGo-aA-IIA" secondAttribute="leading" constant="16" id="po7-8a-hPa"/>
+                                                                <constraint firstItem="wnZ-vA-doH" firstAttribute="centerY" secondItem="AZc-28-pUV" secondAttribute="centerY" id="suO-qt-MYa"/>
                                                                 <constraint firstAttribute="bottom" secondItem="kGo-aA-IIA" secondAttribute="bottom" id="uSm-E2-weX"/>
                                                                 <constraint firstAttribute="trailing" secondItem="kGo-aA-IIA" secondAttribute="trailing" constant="16" id="uZG-Qp-jF8"/>
+                                                                <constraint firstItem="AZc-28-pUV" firstAttribute="leading" secondItem="9NN-oI-xym" secondAttribute="trailing" constant="11" id="vwV-Xo-NfG"/>
                                                             </constraints>
                                                         </collectionViewCellContentView>
+                                                        <connections>
+                                                            <outlet property="fileName" destination="6pZ-IL-J2W" id="WJG-4s-zjw"/>
+                                                            <outlet property="filePrice" destination="wnZ-vA-doH" id="UOq-Kb-I77"/>
+                                                            <outlet property="optionCheck" destination="GKU-NE-NWt" id="omx-IJ-y1A"/>
+                                                            <outlet property="preViewImg" destination="9NN-oI-xym" id="Tpi-On-KQA"/>
+                                                        </connections>
                                                     </collectionViewCell>
                                                 </cells>
                                                 <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Ps7-87-arT">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="파일 목록" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TNk-kI-bl1">
-                                                            <rect key="frame" x="25" y="14" width="64" height="21"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="textColor"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="파일 목록" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TNk-kI-bl1">
+                                                            <rect key="frame" x="24" y="17" width="48.5" height="16"/>
+                                                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="13"/>
+                                                            <color key="textColor" red="0.32897466419999999" green="0.49100458619999998" blue="0.96867436169999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="TNk-kI-bl1" firstAttribute="centerY" secondItem="Ps7-87-arT" secondAttribute="centerY" id="Vof-L5-LWl"/>
+                                                        <constraint firstItem="TNk-kI-bl1" firstAttribute="leading" secondItem="Ps7-87-arT" secondAttribute="leadingMargin" constant="16" id="aNu-x9-SP1"/>
+                                                    </constraints>
                                                 </collectionReusableView>
                                             </collectionView>
                                         </subviews>
@@ -266,6 +308,15 @@
                         <viewLayoutGuide key="safeArea" id="hNb-OO-iQL"/>
                     </view>
                     <size key="freeformSize" width="375" height="977"/>
+                    <connections>
+                        <outlet property="fileDetailCollectionView" destination="Xpr-GU-M28" id="p0g-zy-zMt"/>
+                        <outlet property="orderDate" destination="vtP-sT-0zq" id="wjy-z5-CWl"/>
+                        <outlet property="orderNumber" destination="cfS-j8-c9K" id="o0b-7E-FPX"/>
+                        <outlet property="orderPrice" destination="PUQ-5Y-H8J" id="x6g-du-Pdi"/>
+                        <outlet property="orderRequest" destination="S73-kn-lK2" id="VM0-ls-8Ee"/>
+                        <outlet property="orderStatus" destination="Nov-iq-Y9u" id="CM7-mw-diW"/>
+                        <outlet property="storeName" destination="xfs-vR-kdr" id="DVQ-YV-KkG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nkB-aB-HQj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -43,6 +43,9 @@
 		DA2BC40E24AB4BA600013143 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA2BC40C24AB4BA600013143 /* LaunchScreen.storyboard */; };
 		DA2BC41924AB4BA600013143 /* BoosterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2BC41824AB4BA600013143 /* BoosterTests.swift */; };
 		DA2BC42424AB4BA600013143 /* BoosterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2BC42324AB4BA600013143 /* BoosterUITests.swift */; };
+		DA6718F324BD7EE600B9CD86 /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6718F224BD7EE600B9CD86 /* NetworkResult.swift */; };
+		DA6718F524BD806500B9CD86 /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6718F424BD806500B9CD86 /* Services.swift */; };
+		DA6718F724BD87EA00B9CD86 /* Datas.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6718F624BD87EA00B9CD86 /* Datas.swift */; };
 		DA6897A524BAA3FA009E3BB5 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6897A424BAA3FA009E3BB5 /* SignUpViewController.swift */; };
 		DA6D64D924B644E200215BE4 /* testViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6D64D824B644E200215BE4 /* testViewController.swift */; };
 		DA93D6E824BCCC8400DE370F /* StatusDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA93D6E724BCCC8400DE370F /* StatusDetailViewController.swift */; };
@@ -139,6 +142,9 @@
 		DA2BC41F24AB4BA600013143 /* BoosterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BoosterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA2BC42324AB4BA600013143 /* BoosterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoosterUITests.swift; sourceTree = "<group>"; };
 		DA2BC42524AB4BA600013143 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DA6718F224BD7EE600B9CD86 /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
+		DA6718F424BD806500B9CD86 /* Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
+		DA6718F624BD87EA00B9CD86 /* Datas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Datas.swift; sourceTree = "<group>"; };
 		DA6897A424BAA3FA009E3BB5 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		DA6D64D824B644E200215BE4 /* testViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testViewController.swift; sourceTree = "<group>"; };
 		DA93D6E724BCCC8400DE370F /* StatusDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusDetailViewController.swift; sourceTree = "<group>"; };
@@ -340,6 +346,9 @@
 			isa = PBXGroup;
 			children = (
 				DACB87C424B6C532006E0AED /* APIConstraints.swift */,
+				DA6718F224BD7EE600B9CD86 /* NetworkResult.swift */,
+				DA6718F424BD806500B9CD86 /* Services.swift */,
+				DA6718F624BD87EA00B9CD86 /* Datas.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -935,10 +944,13 @@
 				DAD179A524B58226009BFECC /* WaitCollectionViewHeader.swift in Sources */,
 				DA95BDA124B2DA7D00BC1F60 /* StoreCollectionViewCell.swift in Sources */,
 				DACA390524B231640025E230 /* SearchViewController.swift in Sources */,
+				DA6718F724BD87EA00B9CD86 /* Datas.swift in Sources */,
 				CC1233D124B354830049F7A4 /* StatusHsViewController.swift in Sources */,
 				CC18782B24B60AF700830F0E /* OrderHsViewController.swift in Sources */,
 				DA12557124BC5FDE00520138 /* AddFileCollectionViewCell.swift in Sources */,
 				DACB87C724B6FE2B006E0AED /* EmptyCollectionViewCell.swift in Sources */,
+				DA6718F524BD806500B9CD86 /* Services.swift in Sources */,
+				DA6718F324BD7EE600B9CD86 /* NetworkResult.swift in Sources */,
 				DACA390124B22D410025E230 /* HomeViewController.swift in Sources */,
 				CC862D9124BCB488008BBF04 /* EditViewController.swift in Sources */,
 				CC18782924B6085600830F0E /* StructModels.swift in Sources */,
