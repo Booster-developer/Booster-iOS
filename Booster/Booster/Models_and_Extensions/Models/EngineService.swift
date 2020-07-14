@@ -27,8 +27,6 @@ struct EngineService {
         guard let value = dataResponse.result.value else { return }
         var networkResult: NetworkResult<Any>?
         
-        print(statusCode)
-        
         switch statusCode {
         case 200:
           let decoder = JSONDecoder()

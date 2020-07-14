@@ -26,7 +26,7 @@ struct OptionData: Codable {
     status = (try? values.decode(Int.self, forKey: .status)) ?? -1
     success = (try? values.decode(Bool.self, forKey: .success)) ?? false
     message = (try? values.decode(String.self, forKey: .message)) ?? ""
-    data = (try? values.decode(OptionList.self, forKey: .data)) ?? OptionList.init(file_color: "흑백", file_direction: "세로", file_sided_type: "단면", file_collect: 1, file_range: "전체 페이지", file_copy: 1)
+    data = (try? values.decode(OptionList.self, forKey: .data)) ?? OptionList.init(file_color: "흑백", file_direction: "세로", file_sided_type: "단면", file_collect: 1, file_copy_number: 1, file_range: "전체 페이지")
   }
 }
 
@@ -35,6 +35,7 @@ struct OptionList: Codable {
   var file_direction: String
   var file_sided_type: String
   var file_collect: Int
+  var file_copy_number: Int
   var file_range: String
-  var file_copy: Int
+  
 }

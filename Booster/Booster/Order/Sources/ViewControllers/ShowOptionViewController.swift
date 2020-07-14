@@ -12,6 +12,13 @@ class ShowOptionViewController: UIViewController {
   
   //MARK: - IBOutlets
   @IBOutlet weak var showOptionView: UIView!
+  @IBOutlet weak var fileColor: UILabel!
+  @IBOutlet weak var fileDirection: UILabel!
+  @IBOutlet weak var fileSidedType: UILabel!
+  @IBOutlet weak var fileCollect: UILabel!
+  @IBOutlet weak var fileRange: UILabel!
+  @IBOutlet weak var fileCopyNumber: UILabel!
+  
   
   // MARK: - IBActions
   @IBAction func backBtnClicked(_ sender: Any) {

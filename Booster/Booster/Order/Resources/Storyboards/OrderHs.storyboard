@@ -1507,6 +1507,12 @@
                         <viewLayoutGuide key="safeArea" id="Ngw-JH-hlo"/>
                     </view>
                     <connections>
+                        <outlet property="fileCollect" destination="Su1-vh-RbR" id="6zY-Wr-Hnd"/>
+                        <outlet property="fileColor" destination="Bfh-Ny-Blb" id="CMl-7M-QGq"/>
+                        <outlet property="fileCopyNumber" destination="2Sm-ZU-QF9" id="Art-HC-gTc"/>
+                        <outlet property="fileDirection" destination="iw9-GF-6vh" id="ECZ-jc-O2a"/>
+                        <outlet property="fileRange" destination="EyH-DP-TwM" id="1db-aO-fhd"/>
+                        <outlet property="fileSidedType" destination="Sp9-Ed-X2e" id="HsO-oC-Zcy"/>
                         <outlet property="showOptionView" destination="itZ-BV-Qoj" id="M70-PZ-b50"/>
                     </connections>
                 </viewController>

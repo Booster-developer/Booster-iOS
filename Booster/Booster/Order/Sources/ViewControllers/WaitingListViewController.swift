@@ -10,7 +10,7 @@ import UIKit
 import MobileCoreServices
 import QuickLookThumbnailing
 class WaitingListViewController: UIViewController {
-
+  
   
   var tmpImg = UIImage()
   var fileList:[FileInformation] = []
@@ -18,23 +18,23 @@ class WaitingListViewController: UIViewController {
   @IBOutlet weak var priceLabel: UILabel!
   @IBOutlet weak var waitingListCollectionView: UICollectionView!
   override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
+    super.viewDidLoad()
+    // Do any additional setup after loading the view.
     setWaitingListCV()
-
-   
+    
+    
   }
   func goBackToStoreSelection(){
     for i in 0..<fileList.count{
       clearFileDir(filename: fileList[i].fileName)
     }
     self.navigationController?.popViewController(animated: true)
-
+    
   }
   
   @IBAction func closeBtn(_ sender: Any) {
     goBackToStoreSelection()
-
+    
   }
   @IBAction func cangeCurrentStore(_ sender: Any) {
     goBackToStoreSelection()
@@ -50,10 +50,35 @@ class WaitingListViewController: UIViewController {
     self.navigationController?.pushViewController(payView, animated: true)
   }
   @IBAction func goShowOptionView(_ sender: Any) {
-    let orderHsStoryboard = UIStoryboard.init(name:"OrderHs",bundle: nil)
-    guard let showOptionView = orderHsStoryboard.instantiateViewController(identifier: "showOptionViewController") as? ShowOptionViewController else {return}
-    showOptionView.modalPresentationStyle = .overCurrentContext
-    present(showOptionView, animated: false, completion: nil)
+    OptionService.shared.getOption() {networkResult in
+      
+      switch networkResult {
+      case .success(let optionList):
+        guard let optionList = optionList as? OptionList else {return}
+        let orderHsStoryBoard = UIStoryboard.init(name: "OrderHs", bundle: nil)
+        guard let showOptionView = orderHsStoryBoard.instantiateViewController(identifier: "showOptionViewController") as? ShowOptionViewController else {return}
+        showOptionView.modalPresentationStyle = .overCurrentContext
+        self.present(showOptionView, animated: false, completion: nil)
+        print(optionList)
+        showOptionView.fileColor.text = optionList.file_color
+        showOptionView.fileDirection.text = optionList.file_direction
+        showOptionView.fileSidedType.text = optionList.file_sided_type
+        showOptionView.fileCollect.text = String(optionList.file_collect)
+        showOptionView.fileRange.text = optionList.file_range
+        showOptionView.fileCopyNumber.text = String(optionList.file_copy_number)
+        
+      case .requestErr(let message):
+        guard let message = message as? String else {return}
+        let alertViewController = UIAlertController(title: "로그인 실패", message: message,
+                                                    preferredStyle: .alert)
+        let action = UIAlertAction(title: "확인", style: .cancel, handler: nil)
+        alertViewController.addAction(action)
+        self.present(alertViewController, animated: true, completion: nil)
+      case .pathErr: print("path")
+      case .serverErr: print("serverErr")
+      case .networkFail: print("networkFail")
+      }
+    }
     
   }
   
@@ -71,42 +96,42 @@ class WaitingListViewController: UIViewController {
   }
   
   func clearFileDir(filename:String){
-     
-     let curDirectory = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
-
-     let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
-     
-     let file = dir.appendingPathComponent(filename)
-     if FileManager.default.fileExists(atPath: dir.path){
-       print("파일이 있다네요")
-       do {
-         try FileManager.default.removeItem(at: file)
-       }
-       catch {
-         print("삭제가 안되나요")
-       }
-     }
-   }
-
-//  func thumbNailGenerator(_ fileURL:URL, thumbnailSize:CGSize) -> UIImage?{
-//
-//  }
-  /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    let curDirectory = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
+    
+    let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+    
+    let file = dir.appendingPathComponent(filename)
+    if FileManager.default.fileExists(atPath: dir.path){
+      print("파일이 있다네요")
+      do {
+        try FileManager.default.removeItem(at: file)
+      }
+      catch {
+        print("삭제가 안되나요")
+      }
     }
-    */
+  }
+  
+  //  func thumbNailGenerator(_ fileURL:URL, thumbnailSize:CGSize) -> UIImage?{
+  //
+  //  }
+  /*
+   // MARK: - Navigation
+   
+   // In a storyboard-based application, you will often want to do a little preparation before navigation
+   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+   // Get the new view controller using segue.destination.
+   // Pass the selected object to the new view controller.
+   }
+   */
   func getFileFromLocal(){
     let documentPicker = UIDocumentPickerViewController(documentTypes: ["com.apple.iwork.pages.pages", "com.apple.iwork.numbers.numbers", "com.apple.iwork.keynote.key","public.image", "com.apple.application", "public.item", "public.content", "public.audiovisual-content", "public.movie", "public.audiovisual-content", "public.video", "public.audio", "public.text", "public.data", "public.zip-archive", "com.pkware.zip-archive", "public.composite-content"], in: .import)
     documentPicker.delegate = self
     documentPicker.allowsMultipleSelection = false
     self.present(documentPicker, animated: true)
     
-//    print(fileList)
+    //    print(fileList)
   }
 }
 extension WaitingListViewController:UIDocumentPickerDelegate {
@@ -119,11 +144,11 @@ extension WaitingListViewController:UIDocumentPickerDelegate {
     if FileManager.default.fileExists(atPath: sandboxFileURL.path) {
       print("Already exists!")
       let alert = UIAlertController(title: "", message: "이미 가져온 파일입니다.", preferredStyle: UIAlertController.Style.alert)
-        let confirm = UIAlertAction(title: "확인", style: .default, handler : nil)
+      let confirm = UIAlertAction(title: "확인", style: .default, handler : nil)
       
       alert.addAction(confirm)
       present(alert,animated: true)
-      }
+    }
     else {
       do {
         try FileManager.default.copyItem(at: selectedFileURL, to: sandboxFileURL)
@@ -139,42 +164,42 @@ extension WaitingListViewController:UIDocumentPickerDelegate {
       var cnt:Int = 0
       var thumbNail = UIImage()
       print("local에서 불러온 파일 : ")
-//      print(sandboxFileURL)
+      //      print(sandboxFileURL)
       print(sandboxFileURL.lastPathComponent)
       generator.generateRepresentations(for: request) { (thumbnail, _, error) in
         DispatchQueue.main.async {
           if thumbnail != nil{
-
-              thumbNail = thumbnail!.uiImage
-              print("썸네일 있는 파일")
-              self.fileList.append(FileInformation(fileImg: thumbNail, fileName: sandboxFileURL.lastPathComponent))
-              self.waitingListCollectionView.reloadData()
+            
+            thumbNail = thumbnail!.uiImage
+            print("썸네일 있는 파일")
+            self.fileList.append(FileInformation(fileImg: thumbNail, fileName: sandboxFileURL.lastPathComponent))
+            self.waitingListCollectionView.reloadData()
             
           }
           else if  thumbnail == nil || error != nil{
-
-              print("썸네일 없는 파일")
-              print("error : \(String(describing: error))")
-              self.fileList.append(FileInformation(fileImg: thumbNail, fileName: sandboxFileURL.lastPathComponent))
-              self.waitingListCollectionView.reloadData()
+            
+            print("썸네일 없는 파일")
+            print("error : \(String(describing: error))")
+            self.fileList.append(FileInformation(fileImg: thumbNail, fileName: sandboxFileURL.lastPathComponent))
+            self.waitingListCollectionView.reloadData()
             //self.tmpImg = thumbnail?.uiImage as! UIImage
             
           }
         }
       }
     }
-
-//    guard let url = sandboxFileURL else {
-//      assert(false, "The URL can't be nil")
-//      return
-//    }
-//    guard let url = Bundle.main.url(forResource: "test", withExtension: "pdf") else {
-//      return
-//    }
     
-
-//    guard let test = self.storyboard?.instantiateViewController(withIdentifier: "optionViewTest") else {return}
-//    self.present(test,animated: true)
+    //    guard let url = sandboxFileURL else {
+    //      assert(false, "The URL can't be nil")
+    //      return
+    //    }
+    //    guard let url = Bundle.main.url(forResource: "test", withExtension: "pdf") else {
+    //      return
+    //    }
+    
+    
+    //    guard let test = self.storyboard?.instantiateViewController(withIdentifier: "optionViewTest") else {return}
+    //    self.present(test,animated: true)
   }
 }
 
@@ -191,11 +216,11 @@ extension WaitingListViewController:UICollectionViewDelegate{
 extension WaitingListViewController:UICollectionViewDataSource{
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-
+    
     
     
     if fileList.count == 0 {
-       orderViewDisappear()
+      orderViewDisappear()
     }
     else {
       orderViewAppear()
@@ -214,22 +239,22 @@ extension WaitingListViewController:UICollectionViewDataSource{
     }
     else{
       guard let fileCell:WaitCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: WaitCollectionViewCell.identifier, for:indexPath) as? WaitCollectionViewCell else {
-          return UICollectionViewCell()}
-
-        fileCell.fileName.text = fileList[indexPath.row].fileName
+        return UICollectionViewCell()}
+      
+      fileCell.fileName.text = fileList[indexPath.row].fileName
       fileCell.preViewImg.setImage(fileList[indexPath.row].fileImg, for: .normal)
       
-        fileCell.deleteCell.tag = indexPath.row
-        fileCell.deleteCell.addTarget(self, action: #selector(deleteCell(sender:)), for: .touchUpInside)
+      fileCell.deleteCell.tag = indexPath.row
+      fileCell.deleteCell.addTarget(self, action: #selector(deleteCell(sender:)), for: .touchUpInside)
       return fileCell
-
+      
     }
     
-
+    
   }
   @objc func getFile(sender:UIButton){
     getFileFromLocal()
-
+    
   }
   @objc func deleteCell(sender: UIButton){
     
@@ -249,15 +274,15 @@ extension WaitingListViewController:UICollectionViewDataSource{
     present(alert,animated: true, completion: nil)
   }
   
-
+  
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-
-      //print("파일 불러오기")
-
-      //collectionView.insertItems(at: [indexPath])
-      //collectionView.reloadItems(at:collectionView.indexPathsForVisibleItems)
-      //collectionView.reloadData()
-
+    
+    //print("파일 불러오기")
+    
+    //collectionView.insertItems(at: [indexPath])
+    //collectionView.reloadItems(at:collectionView.indexPathsForVisibleItems)
+    //collectionView.reloadData()
+    
     if indexPath.row == fileList.count {
       getFileFromLocal()
     }
@@ -268,7 +293,7 @@ extension WaitingListViewController:UICollectionViewDataSource{
     if kind == UICollectionView.elementKindSectionHeader{
       header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "waitingHeader", for: indexpath) as? WaitCollectionViewHeader
       header.waitingHeaderTitle.text = "파일 목록"
-
+      
     }
     return header
     
@@ -280,13 +305,13 @@ extension WaitingListViewController:UICollectionViewDelegateFlowLayout{
       , height:self.view.frame.size.width * 73.0 / 375.0)
   }
   func collectionView(_ collectionView: UICollectionView,
-  layout collectionViewLayout: UICollectionViewLayout,
-  insetForSectionAt section: Int) -> UIEdgeInsets{
+                      layout collectionViewLayout: UICollectionViewLayout,
+                      insetForSectionAt section: Int) -> UIEdgeInsets{
     if section == 0 {
-    return UIEdgeInsets(top: 0, left: 0, bottom: 8, right: 0)
+      return UIEdgeInsets(top: 0, left: 0, bottom: 8, right: 0)
     }
     else{
-    return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+      return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
     }
   }
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {

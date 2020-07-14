@@ -73,13 +73,13 @@ struct APIIndex{
     func getIdx() -> String{
       switch self {
       case .univIdx(let idx):
-        return "/:" + String(idx)
+        return "/" + String(idx)
       case .orderIdx(let idx):
-        return "/:" + String(idx)
+        return "/" + String(idx)
       case .storeIdx(let idx):
-        return "/:" + String(idx)
+        return "/" + String(idx)
       case .fileIdx(let idx):
-        return "/:" + String(idx)
+        return "/" + String(idx)
       }
     }
   }
