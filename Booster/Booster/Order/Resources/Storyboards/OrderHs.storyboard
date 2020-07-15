@@ -1183,6 +1183,60 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="현재 내 엔진" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Z9-Bl-oQw">
+                                                <rect key="frame" x="31.999999999999993" y="860.33333333333337" width="87.333333333333314" height="21"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="21" id="Zo8-CK-XIO"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="18"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="총 결제금액" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FBX-Pm-VJm">
+                                                <rect key="frame" x="32.000000000000007" y="931.33333333333337" width="82.666666666666686" height="21"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="21" id="SKz-Q3-o3r"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="18"/>
+                                                <color key="textColor" red="0.27450980392156865" green="0.49803921568627452" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="결제 후 엔진" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ibm-wg-Gcl">
+                                                <rect key="frame" x="31.999999999999993" y="1015.3333333333333" width="87.333333333333314" height="21"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="21" id="GIW-Ub-xeA"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="18"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gRO-Hf-bfE">
+                                                <rect key="frame" x="301.66666666666669" y="860.33333333333337" width="41.333333333333314" height="21"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="21" id="T3f-7T-OZx"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="18"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KOZ-fA-z5v">
+                                                <rect key="frame" x="301.66666666666669" y="931.33333333333337" width="41.333333333333314" height="21"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="21" id="j9V-CR-nht"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="18"/>
+                                                <color key="textColor" red="0.27450980390000002" green="0.49803921569999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6XK-2c-Dy8">
+                                                <rect key="frame" x="301.66666666666669" y="1015.3333333333333" width="41.333333333333314" height="21"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="21" id="rK1-RF-LvT"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="18"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
@@ -1192,6 +1246,8 @@
                                             <constraint firstItem="WSN-No-QjB" firstAttribute="leading" secondItem="rNM-5k-b8d" secondAttribute="leading" id="7Ug-ge-weK"/>
                                             <constraint firstItem="eea-il-pon" firstAttribute="top" secondItem="ikZ-hY-8vI" secondAttribute="bottom" constant="17" id="7io-t0-Fr7"/>
                                             <constraint firstItem="8cQ-cC-hOJ" firstAttribute="top" secondItem="FnZ-OY-cQl" secondAttribute="bottom" constant="22" id="8yS-8i-SIV"/>
+                                            <constraint firstItem="FBX-Pm-VJm" firstAttribute="centerY" secondItem="Qwy-kR-X3q" secondAttribute="centerY" id="9ct-kY-Xa6"/>
+                                            <constraint firstItem="KOZ-fA-z5v" firstAttribute="centerY" secondItem="Qwy-kR-X3q" secondAttribute="centerY" id="AOD-96-loa"/>
                                             <constraint firstItem="BS1-fn-5o0" firstAttribute="centerY" secondItem="gWm-ly-xkU" secondAttribute="centerY" id="Aoo-eS-4ZE"/>
                                             <constraint firstItem="tWx-8R-hZT" firstAttribute="leading" secondItem="rNM-5k-b8d" secondAttribute="leading" constant="16" id="BRq-lm-rh1"/>
                                             <constraint firstAttribute="trailing" secondItem="5a3-we-xDx" secondAttribute="trailing" constant="16" id="CBS-g3-wqc"/>
@@ -1204,20 +1260,30 @@
                                             <constraint firstItem="gWm-ly-xkU" firstAttribute="leading" secondItem="rNM-5k-b8d" secondAttribute="leading" constant="16" id="IxL-8p-c51"/>
                                             <constraint firstItem="Hp8-uS-AiQ" firstAttribute="leading" secondItem="rNM-5k-b8d" secondAttribute="leading" constant="16" id="KVh-2I-hjg"/>
                                             <constraint firstItem="ikZ-hY-8vI" firstAttribute="top" secondItem="gB3-da-Wnd" secondAttribute="bottom" constant="8" id="Kfv-9V-YAj"/>
+                                            <constraint firstAttribute="trailing" secondItem="KOZ-fA-z5v" secondAttribute="trailing" constant="32" id="LrZ-WR-jJK"/>
+                                            <constraint firstItem="ibm-wg-Gcl" firstAttribute="leading" secondItem="rNM-5k-b8d" secondAttribute="leading" constant="32" id="Me9-JP-w1Z"/>
                                             <constraint firstItem="5a3-we-xDx" firstAttribute="top" secondItem="Qwy-kR-X3q" secondAttribute="bottom" constant="12" id="N4I-0U-iAW"/>
                                             <constraint firstAttribute="bottom" secondItem="WSN-No-QjB" secondAttribute="bottom" id="NQb-oK-wpc"/>
                                             <constraint firstAttribute="trailing" secondItem="Qwy-kR-X3q" secondAttribute="trailing" constant="16" id="On9-2u-doJ"/>
                                             <constraint firstAttribute="trailing" secondItem="qQl-R4-dd9" secondAttribute="trailing" id="S71-gt-z28"/>
+                                            <constraint firstItem="FBX-Pm-VJm" firstAttribute="leading" secondItem="rNM-5k-b8d" secondAttribute="leading" constant="32" id="T7u-11-FUI"/>
                                             <constraint firstItem="4vY-Vb-MDq" firstAttribute="top" secondItem="5a3-we-xDx" secondAttribute="bottom" constant="12" id="VC8-BP-KaD"/>
                                             <constraint firstAttribute="trailing" secondItem="eea-il-pon" secondAttribute="trailing" id="VuG-1Y-zgI"/>
                                             <constraint firstItem="s3k-Cr-Xqp" firstAttribute="leading" secondItem="rNM-5k-b8d" secondAttribute="leading" constant="16" id="WJY-w9-YdQ"/>
+                                            <constraint firstItem="2Z9-Bl-oQw" firstAttribute="centerY" secondItem="s3k-Cr-Xqp" secondAttribute="centerY" id="WLU-sJ-KGv"/>
                                             <constraint firstItem="HPR-WG-avh" firstAttribute="top" secondItem="rNM-5k-b8d" secondAttribute="top" constant="17" id="WzC-SX-S2x"/>
+                                            <constraint firstItem="6XK-2c-Dy8" firstAttribute="centerY" secondItem="4vY-Vb-MDq" secondAttribute="centerY" id="Y1e-EF-FOB"/>
                                             <constraint firstItem="8cQ-cC-hOJ" firstAttribute="leading" secondItem="rNM-5k-b8d" secondAttribute="leading" constant="16" id="ZEh-VA-IDq"/>
                                             <constraint firstItem="99t-c8-eoV" firstAttribute="top" secondItem="gWm-ly-xkU" secondAttribute="bottom" constant="30" id="ZVy-Rp-4Gk"/>
                                             <constraint firstItem="qQl-R4-dd9" firstAttribute="top" secondItem="eea-il-pon" secondAttribute="bottom" constant="53" id="bom-Kr-c6Y"/>
                                             <constraint firstItem="FnZ-OY-cQl" firstAttribute="top" secondItem="qQl-R4-dd9" secondAttribute="bottom" constant="30" id="eBw-Vw-b4S"/>
                                             <constraint firstItem="qQl-R4-dd9" firstAttribute="leading" secondItem="rNM-5k-b8d" secondAttribute="leading" id="f5m-Ny-DPe"/>
                                             <constraint firstAttribute="trailing" secondItem="WSN-No-QjB" secondAttribute="trailing" id="h4l-f2-atc"/>
+                                            <constraint firstItem="gRO-Hf-bfE" firstAttribute="centerY" secondItem="s3k-Cr-Xqp" secondAttribute="centerY" id="hGa-jN-UKf"/>
+                                            <constraint firstItem="ibm-wg-Gcl" firstAttribute="centerY" secondItem="4vY-Vb-MDq" secondAttribute="centerY" id="iar-bJ-5cs"/>
+                                            <constraint firstAttribute="trailing" secondItem="6XK-2c-Dy8" secondAttribute="trailing" constant="32" id="kbO-qf-j8x"/>
+                                            <constraint firstItem="2Z9-Bl-oQw" firstAttribute="leading" secondItem="rNM-5k-b8d" secondAttribute="leading" constant="32" id="lOB-Qp-rzS"/>
+                                            <constraint firstAttribute="trailing" secondItem="gRO-Hf-bfE" secondAttribute="trailing" constant="32" id="lYa-X7-R47"/>
                                             <constraint firstAttribute="trailing" secondItem="gWm-ly-xkU" secondAttribute="trailing" constant="16" id="n8n-Lh-wpJ"/>
                                             <constraint firstItem="eea-il-pon" firstAttribute="leading" secondItem="rNM-5k-b8d" secondAttribute="leading" id="pus-fx-LHb"/>
                                             <constraint firstItem="Qwy-kR-X3q" firstAttribute="leading" secondItem="rNM-5k-b8d" secondAttribute="leading" constant="16" id="qCI-nf-86d"/>
@@ -1285,7 +1351,12 @@
                     <navigationItem key="navigationItem" id="mLk-nX-Bdv"/>
                     <size key="freeformSize" width="375" height="1500"/>
                     <connections>
+                        <outlet property="currentEngine" destination="gRO-Hf-bfE" id="0FI-rS-QbO"/>
+                        <outlet property="orderIndexLabel" destination="ikZ-hY-8vI" id="YqH-47-H9a"/>
+                        <outlet property="orderTitleLabel" destination="gB3-da-Wnd" id="Dfn-Ns-DEM"/>
+                        <outlet property="payEngine" destination="KOZ-fA-z5v" id="P74-bE-36W"/>
                         <outlet property="payFileTableView" destination="qQl-R4-dd9" id="Qho-e4-gUg"/>
+                        <outlet property="remainEngine" destination="6XK-2c-Dy8" id="CGS-vk-4Ry"/>
                         <outlet property="requestTextField" destination="gWm-ly-xkU" id="eQr-9u-aPr"/>
                         <outlet property="textFieldTextCount" destination="BS1-fn-5o0" id="y29-2J-CYc"/>
                     </connections>

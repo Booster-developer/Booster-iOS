@@ -245,7 +245,11 @@
                         <viewLayoutGuide key="safeArea" id="exv-hL-4Rw"/>
                     </view>
                     <connections>
+                        <outlet property="myEngineLabel" destination="yoW-aQ-QjI" id="gsF-6P-bkM"/>
                         <outlet property="popUpSwitch" destination="sTc-9m-y5i" id="ixH-5h-YUU"/>
+                        <outlet property="userIDLabel" destination="Aiz-hX-q17" id="jle-TN-MUX"/>
+                        <outlet property="userNameLabel" destination="X5O-63-9QG" id="KaY-xl-sev"/>
+                        <outlet property="userUnivLabel" destination="4lf-hK-bZq" id="BGn-8c-EUE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xop-lS-G8N" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

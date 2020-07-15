@@ -12,6 +12,10 @@ class MyPageHsViewController: UIViewController {
   
   // MARK: - IBOutlets
   @IBOutlet weak var popUpSwitch: UISwitch!
+  @IBOutlet weak var userNameLabel: UILabel!
+  @IBOutlet weak var userUnivLabel: UILabel!
+  @IBOutlet weak var userIDLabel: UILabel!
+  @IBOutlet weak var myEngineLabel: UIButton!
   
   // MARK: - IBActions
   @IBAction func showEngineList(_ sender: Any) {
@@ -31,7 +35,7 @@ class MyPageHsViewController: UIViewController {
       case .requestErr(let message):
         guard let message = message as? String else {return}
         let alertViewController = UIAlertController(title: "로그인 실패", message: message,
-        preferredStyle: .alert)
+                                                    preferredStyle: .alert)
         let action = UIAlertAction(title: "확인", style: .cancel, handler: nil)
         alertViewController.addAction(action)
         self.present(alertViewController, animated: true, completion: nil)
@@ -54,25 +58,57 @@ class MyPageHsViewController: UIViewController {
   
   // MARK: - Vars
   let identifier: String = "MyPageHsViewController"
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-      popUpSwitch.transform = CGAffineTransform(scaleX: 20/51, y: 10/31)
-      print(popUpSwitch.frame.height, popUpSwitch.frame.width)
-        // Do any additional setup after loading the view.
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    popUpSwitch.transform = CGAffineTransform(scaleX: 20/51, y: 10/31)
+    print(popUpSwitch.frame.height, popUpSwitch.frame.width)
+    
+    MyEngineService.shared.getMyEngine() { networkResult in switch networkResult {
+    case .success(let myEngineList):
+      guard let myEngineList = myEngineList as? Point else {return}
+      self.myEngineLabel.titleLabel?.text = String(myEngineList.user_point)
+      self.userNameLabel.text = myEngineList.user_name
+      switch myEngineList.univ_idx {
+      case 1:
+        self.userUnivLabel.text = "숭실대학교"
+      case 2:
+        self.userUnivLabel.text = "중앙대학교"
+      case 3:
+        self.userUnivLabel.text = "서울대학교"
+      default:
+        self.userUnivLabel.text = "숭실대학교"
+      }
+      self.userIDLabel.text = myEngineList.user_id
+      
+    case .requestErr(let message):
+      guard let message = message as? String else {return}
+      let alertViewController = UIAlertController(title: "로그인 실패", message: message,
+                                                  preferredStyle: .alert)
+      let action = UIAlertAction(title: "확인", style: .cancel, handler: nil)
+      alertViewController.addAction(action)
+      self.present(alertViewController, animated: true, completion: nil)
+    case .pathErr: print("path")
+    case .serverErr: print("serverErr")
+    case .networkFail: print("networkFail")
+      }
+      
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    // Do any additional setup after loading the view.
+  }
+  
+  
+  /*
+   // MARK: - Navigation
+   
+   // In a storyboard-based application, you will often want to do a little preparation before navigation
+   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+   // Get the new view controller using segue.destination.
+   // Pass the selected object to the new view controller.
+   }
+   */
+  
 }
 extension UISwitch {
   func set(width: CGFloat, height: CGFloat) {

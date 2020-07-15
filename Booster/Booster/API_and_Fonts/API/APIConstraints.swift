@@ -58,7 +58,7 @@ struct APIConstraints{
   static let modifyProfile = APIConstraints.baseURL + "/mypage/profile"   //put
   static let myEngineList = APIConstraints.baseURL + "/mypage/engine/history"     //get
   static let notiList = APIConstraints.baseURL + "/mypage/notice"         //get
-  static let myEnginePoint = APIConstraints.baseURL + "/mypage/engine/point"
+  static let myEnginePoint = APIConstraints.baseURL + "/mypage/profile/list" //get
 }
 
 
