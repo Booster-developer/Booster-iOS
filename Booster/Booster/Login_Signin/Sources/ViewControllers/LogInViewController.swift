@@ -28,13 +28,14 @@ class LogInViewController: UIViewController {
       LoginService.shared.login(id: logInId, pwd: logInPW) { networkResult in
         switch networkResult{
         case .success(let token):
-          guard let token = token as? String else {return}
-          UserDefaults.standard.set(token, forKey: "token")
+          guard let token = token as? TokenData else {return}
+          UserDefaults.standard.set(token.accessToken, forKey: "token")
           let tabBarStoryboard = UIStoryboard.init(name: "mainTab", bundle: nil)
           guard let mainTab = tabBarStoryboard.instantiateViewController(identifier: "TabBarController") as? MainTabBarController else { return}
           mainTab.modalPresentationStyle = .fullScreen
+          mainTab.univIdx = token.university_idx
           self.present(mainTab, animated: true, completion: nil)
-          
+          print(token.accessToken)
         case .requestErr(let message):
           guard let message = message as? String else { return }
           let alertViewController = UIAlertController(title: "로그인 실패", message: message, preferredStyle: .alert)

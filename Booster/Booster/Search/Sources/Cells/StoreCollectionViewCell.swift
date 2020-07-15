@@ -16,6 +16,8 @@ class StoreCollectionViewCell: UICollectionViewCell {
   @IBOutlet weak var priceInfo: UILabel!
   @IBOutlet weak var storeClosedView: UIView!
   @IBOutlet weak var favorateBtn: UIButton!
+  @IBOutlet weak var grayPrice: UILabel!
+  @IBOutlet weak var colorPrice: UILabel!
   
   var isStoreOpen:Bool = true
   static let identifier:String = "storeCell"
@@ -32,13 +34,11 @@ class StoreCollectionViewCell: UICollectionViewCell {
     storeClosedView.layer.masksToBounds = true
 //    storeView.layer.cornerRadius = 10.0
 //    storeView.layer.masksToBounds = true
-
     if (!isStoreOpen){
       storeClosedView.isHidden = false
     }
     else {
       storeClosedView.isHidden = true 
     }
-    print(storeView.bounds)
   }
 }

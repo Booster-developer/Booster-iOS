@@ -19,7 +19,7 @@ class OrderCollectionViewCell: UICollectionViewCell {
   
   func itemSelected(isSelected : Bool){
     print(isSelected)
-    if isSelected{
+    if !isSelected{
       backgroundImg.image = UIImage(named: "optionselect")
     }
     else {

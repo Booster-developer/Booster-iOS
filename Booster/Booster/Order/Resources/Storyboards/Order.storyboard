@@ -476,6 +476,9 @@
                     <connections>
                         <outlet property="orderBtnAppear" destination="Gh9-kX-qvk" id="qUm-1I-aSV"/>
                         <outlet property="priceLabel" destination="VQb-of-2cX" id="vW2-bO-pfX"/>
+                        <outlet property="storeAddress" destination="VgL-Oq-p7z" id="6Lq-fm-Yrr"/>
+                        <outlet property="storeName" destination="AkL-XP-xz4" id="ZA6-gJ-iDp"/>
+                        <outlet property="totalPrice" destination="VQb-of-2cX" id="V4h-to-yMX"/>
                         <outlet property="waitingListCollectionView" destination="dcr-kT-kUm" id="sqY-1B-1rN"/>
                     </connections>
                 </viewController>

@@ -10,19 +10,51 @@ import UIKit
 import MobileCoreServices
 import QuickLookThumbnailing
 class WaitingListViewController: UIViewController {
+
+  var orderIdx:Int = -1
+  var storeInfo:simpleStoreData?
   
   
+  @IBOutlet weak var storeName: UILabel!
+  @IBOutlet weak var storeAddress: UILabel!
   var tmpImg = UIImage()
   var fileList:[FileInformation] = []
+  var fileDataList :[fileData] = []
   //var file = FileInformation(fileImg: UIImage(), fileName: "")
+  @IBOutlet weak var totalPrice: UILabel!
   @IBOutlet weak var priceLabel: UILabel!
   @IBOutlet weak var waitingListCollectionView: UICollectionView!
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view.
     setWaitingListCV()
+    storeName.text = storeInfo?.store_name
+    storeAddress.text = storeInfo?.store_address
     
-    
+    waitListService.shared.waitlist(orderIdx: orderIdx){
+      networkResult in
+      switch networkResult{
+      case .success(let data):
+        guard let data = data as? waitCellData else {return}
+        var tempFilelist:[fileData] = []
+        if let file =  data.file_info{
+          for i in 0..<file.count{
+            tempFilelist.append(fileData(file_idx: file[i].file_idx, file_name: file[i].file_name, file_extension: file[i].file_extension, file_path: file[i].file_path))
+          }
+          self.fileDataList = tempFilelist
+          tempFilelist.removeAll()
+        }
+        else{
+          self.fileDataList.removeAll()
+          tempFilelist.removeAll()
+        }
+        self.totalPrice.text = String(data.order_price)
+      case .requestErr(let messgae) : print(messgae)
+      case .networkFail: print("networkFail")
+      case .serverErr : print("serverErr")
+      case .pathErr : print("pathErr")
+      }
+    }
   }
   func goBackToStoreSelection(){
     for i in 0..<fileList.count{
@@ -161,27 +193,59 @@ extension WaitingListViewController:UIDocumentPickerDelegate {
       let scale = UIScreen.main.scale
       let request = QLThumbnailGenerator.Request(fileAt: sandboxFileURL, size: size, scale: scale, representationTypes: .thumbnail)
       let generator = QLThumbnailGenerator.shared
-      var cnt:Int = 0
       var thumbNail = UIImage()
       print("local에서 불러온 파일 : ")
       //      print(sandboxFileURL)
       print(sandboxFileURL.lastPathComponent)
+      //파일 업로드 하기
+      do {
+         let data = try Data(contentsOf: sandboxFileURL)
+        uploadFileService.shared.uploadfile(fileData: sandboxFileURL, orderIdx: 20){
+          networkResult in
+          switch networkResult{
+          case .success(let fileIndexData) :
+            
+            guard let fileIndexData = fileIndexData as? fileIdx else {return}
+
+            
+            case .requestErr(let messgae) : print(messgae)
+            case .networkFail: print("networkFail")
+            case .serverErr : print("serverErr")
+            case .pathErr : print("pathErr")
+          }
+        }
+        
+      }
+      catch {
+        print("fail")
+      }
+      
+      
+      
+      
+      
       generator.generateRepresentations(for: request) { (thumbnail, _, error) in
         DispatchQueue.main.async {
           if thumbnail != nil{
+
+              thumbNail = thumbnail!.uiImage
+              print("썸네일 있는 파일")
+            let filename:String = String(sandboxFileURL.lastPathComponent.split(separator: ".")[0])
+            let fileExtension:String = String(sandboxFileURL.lastPathComponent.split(separator: ".")[1])
             
-            thumbNail = thumbnail!.uiImage
-            print("썸네일 있는 파일")
-            self.fileList.append(FileInformation(fileImg: thumbNail, fileName: sandboxFileURL.lastPathComponent))
-            self.waitingListCollectionView.reloadData()
+            self.fileDataList.append(fileData(file_idx: -1, file_name: filename, file_extension: fileExtension, file_path: sandboxFileURL))
+              self.waitingListCollectionView.reloadData()
             
           }
           else if  thumbnail == nil || error != nil{
+
+              print("썸네일 없는 파일")
+              print("error : \(String(describing: error))")
             
-            print("썸네일 없는 파일")
-            print("error : \(String(describing: error))")
-            self.fileList.append(FileInformation(fileImg: thumbNail, fileName: sandboxFileURL.lastPathComponent))
-            self.waitingListCollectionView.reloadData()
+            let filename:String = String(sandboxFileURL.lastPathComponent.split(separator: ".")[0])
+            let fileExtension:String = String(sandboxFileURL.lastPathComponent.split(separator: ".")[1])
+             self.fileDataList.append(fileData(file_idx: -1, file_name: filename, file_extension: fileExtension, file_path: sandboxFileURL))
+              self.waitingListCollectionView.reloadData()
             //self.tmpImg = thumbnail?.uiImage as! UIImage
             
           }
@@ -208,7 +272,7 @@ extension WaitingListViewController:UICollectionViewDelegate{
     return 1
   }
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return fileList.count + 1
+    return fileDataList.count + 1
   }
   
 }
@@ -219,14 +283,14 @@ extension WaitingListViewController:UICollectionViewDataSource{
     
     
     
-    if fileList.count == 0 {
-      orderViewDisappear()
+    if fileDataList.count == 0 {
+       orderViewDisappear()
     }
     else {
       orderViewAppear()
     }
     
-    if indexPath.row == fileList.count{
+    if indexPath.row == fileDataList.count{
       guard let fileAdd:AddFileCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: AddFileCollectionViewCell.identifier, for: indexPath)as? AddFileCollectionViewCell else {
         return UICollectionViewCell()}
       
@@ -239,10 +303,10 @@ extension WaitingListViewController:UICollectionViewDataSource{
     }
     else{
       guard let fileCell:WaitCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: WaitCollectionViewCell.identifier, for:indexPath) as? WaitCollectionViewCell else {
-        return UICollectionViewCell()}
-      
-      fileCell.fileName.text = fileList[indexPath.row].fileName
-      fileCell.preViewImg.setImage(fileList[indexPath.row].fileImg, for: .normal)
+          return UICollectionViewCell()}
+      fileCell.fileName.text = "ddd"
+      //fileCell.fileName.text = fileDataList[indexPath.row].file_name
+      //fileCell.preViewImg.setImage(fileList[indexPath.row].fileImg, for: .normal)
       
       fileCell.deleteCell.tag = indexPath.row
       fileCell.deleteCell.addTarget(self, action: #selector(deleteCell(sender:)), for: .touchUpInside)
@@ -254,18 +318,13 @@ extension WaitingListViewController:UICollectionViewDataSource{
   }
   @objc func getFile(sender:UIButton){
     getFileFromLocal()
-    
   }
   @objc func deleteCell(sender: UIButton){
-    
-    
-    
-    
     let alert = UIAlertController(title: "", message: "파일을 삭제하겠습니까?", preferredStyle: UIAlertController.Style.alert)
     let no = UIAlertAction(title: "Cancel", style: .default, handler : nil)
     let yes = UIAlertAction(title: "OK", style: .default) { (action) in
-      self.clearFileDir(filename: self.fileList[sender.tag].fileName)
-      self.fileList.remove(at: sender.tag)
+      self.clearFileDir(filename: self.fileDataList[sender.tag].file_name)
+      self.fileDataList.remove(at: sender.tag)
       self.waitingListCollectionView.reloadData()
       
     }
@@ -276,14 +335,13 @@ extension WaitingListViewController:UICollectionViewDataSource{
   
   
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-    
-    //print("파일 불러오기")
-    
-    //collectionView.insertItems(at: [indexPath])
-    //collectionView.reloadItems(at:collectionView.indexPathsForVisibleItems)
-    //collectionView.reloadData()
-    
-    if indexPath.row == fileList.count {
+
+      //print("파일 불러오기")
+
+      //collectionView.insertItems(at: [indexPath])
+      //collectionView.reloadItems(at:collectionView.indexPathsForVisibleItems)
+      //collectionView.reloadData()
+    if indexPath.row == fileDataList.count {
       getFileFromLocal()
     }
   }

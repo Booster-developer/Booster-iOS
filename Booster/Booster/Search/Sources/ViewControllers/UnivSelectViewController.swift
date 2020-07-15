@@ -9,8 +9,8 @@
 import UIKit
 
 class UnivSelectViewController: UIViewController {
-
-    
+  var myunivIndex:Int?
+  
 
     @IBOutlet weak var backImageView: UIImageView!
     @IBOutlet weak var dimmerView: UIView!
@@ -22,14 +22,37 @@ class UnivSelectViewController: UIViewController {
   
   
   @IBOutlet weak var univTableView: UITableView!
-  
   override func viewDidLoad() {
       super.viewDidLoad()
-
+    univListService.shared.getUnivList(){
+      networkResult in
+        switch networkResult{
+        case .success(let data):
+          guard let data = data as? [univData] else {return}
+          var tempUnivInfos:[univData] = []
+          for i in 0..<data.count{
+            tempUnivInfos.append(univData(univ_idx: data[i].univ_idx, univ_name: data[i].univ_name, univ_address: data[i].univ_address, univ_line: data[i].univ_line))
+          }
+          self.univInfos = tempUnivInfos
+          tempUnivInfos.removeAll()
+          
+          self.setTableView()
+          self.showSelection()
+        case .requestErr(let message):
+          guard let message = message as? String else { return }
+          let alertViewController = UIAlertController(title: "매장 리스트 불러오기 실패", message: message, preferredStyle: .alert)
+          let action = UIAlertAction(title: "확인", style: .cancel, handler: nil)
+          alertViewController.addAction(action)
+          self.present(alertViewController, animated: true, completion: nil)
+          self.tabBarController?.selectedIndex = 0
+        case .pathErr : print("pathErr")
+        case .serverErr : print("serverErr")
+        case .networkFail: print("networkFail")
+        }
+      }
     
-    print(univInformaitons)
-      setTableView()
-      showSelection()
+
+
       // Do any additional setup after loading the view.
     let dimmerTap = UITapGestureRecognizer(target: self, action: #selector(dimmerViewTapped(_ :)))
     dimmerView.addGestureRecognizer(dimmerTap)
@@ -78,7 +101,17 @@ class UnivSelectViewController: UIViewController {
         showView.startAnimation()
     }
     
-    
+    func getLineInfo(_ lineNum:Int) -> String{
+      switch lineNum {
+      case 2:
+        return "storeImgSubwaySnu2"
+        case 7 :
+          return "storeImgSubwaySsu7"
+        case 9 :
+          return "storeImgSubwayCau9"
+      default : return ""
+      }
+    }
   
   @IBAction func dimmerViewTapped(_ tapRecognizer : UITapGestureRecognizer){
      hideSelectionView()
@@ -112,7 +145,7 @@ class UnivSelectViewController: UIViewController {
     hideView.startAnimation()
   }
   var univInformaitons: [UnivInformations] = []
-  
+  var univInfos:[univData] = []
   func setTableView(){
     univTableView.delegate = self
     univTableView.dataSource = self
@@ -137,27 +170,26 @@ extension UnivSelectViewController:UITableViewDelegate{
     guard let cell = tableView.dequeueReusableCell(withIdentifier: univTableViewCell.identifier, for: indexPath) as? univTableViewCell else {
       print("failed")
       return}
-    
-    for index in 0..<univInformaitons.count{
-      univInformaitons[index].isMyUniv = false
-    }
     let preVC = self.presentingViewController?.children[1] // 탭바의 두번째 뷰가 서치뷰
     guard let vc = preVC as? SearchViewController else {
           print("failed")
           return
     }
-    univInformaitons[indexPath.row].isMyUniv = !univInformaitons[indexPath.row].isMyUniv
-    if (univInformaitons[indexPath.row].isMyUniv){
+    
+    
+    if univInfos[indexPath.row].univ_idx == myunivIndex{
       cell.selectedBox.image = UIImage(named: "storeUnivIcCheck")
       cell.selectedBox.isHidden = false
       self.univTableView.reloadData()
-      //Post 매장 list
-      //vc.GetstoreInformation()
-      vc.univInformations = univInformaitons
-      hideSelectionView()
     }
-    vc.univNameButton.setTitle(univInformaitons[indexPath.row].univName, for: .normal)
-
+    else {
+      print("ddd")
+      cell.selectedBox.isHidden = false
+      vc.univIdx = univInfos[indexPath.row].univ_idx
+      vc.viewDidLoad()
+      vc.storeCollectionView.reloadData()
+    }
+    hideSelectionView()
   }
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
     return (tableView.dequeueReusableCell(withIdentifier: univTableViewCell.identifier)?.frame.height)!
@@ -166,24 +198,20 @@ extension UnivSelectViewController:UITableViewDelegate{
 
 extension UnivSelectViewController:UITableViewDataSource{
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return univInformaitons.count
+    return univInfos.count
   }
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     guard let univTableCell = tableView.dequeueReusableCell(withIdentifier: univTableViewCell.identifier, for: indexPath)as? univTableViewCell else {
       return UITableViewCell()
     }
-    univTableCell.univName.text = univInformaitons[indexPath.row].univName
-    univTableCell.subwayLineImg.image = UIImage(named: univInformaitons[indexPath.row].univLine.getLineNum())
+    univTableCell.univName.text = univInfos[indexPath.row].univ_name
+    univTableCell.subwayLineImg.image = UIImage(named:getLineInfo(univInfos[indexPath.row].univ_line))
     univTableCell.selectedBox.tag = indexPath.row
     univTableCell.selectedBox.image = UIImage(named: "storeUnivIcCheck")
-
-    if univInformaitons[indexPath.row].isMyUniv{
-      univTableCell.selectedBox.isHidden = false
+    univTableCell.selectedBox.isHidden = true
+    if univInfos[indexPath.row].univ_idx == myunivIndex{
+        univTableCell.selectedBox.isHidden = false
     }
-    else{
-      univTableCell.selectedBox.isHidden = true
-    }
-
     return univTableCell
   }
 }

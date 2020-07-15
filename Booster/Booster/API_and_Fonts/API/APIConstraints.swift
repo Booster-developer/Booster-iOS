@@ -85,3 +85,6 @@ struct APIIndex{
     }
   }
 }
+//let a = APIIndex.init(index: .fileIdx(숫자)).index.getIdx()
+
+
