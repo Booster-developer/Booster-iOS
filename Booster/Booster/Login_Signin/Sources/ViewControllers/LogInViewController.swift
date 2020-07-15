@@ -35,7 +35,7 @@ class LogInViewController: UIViewController {
           mainTab.modalPresentationStyle = .fullScreen
           mainTab.univIdx = token.university_idx
           self.present(mainTab, animated: true, completion: nil)
-          
+          print(token.accessToken)
         case .requestErr(let message):
           guard let message = message as? String else { return }
           let alertViewController = UIAlertController(title: "로그인 실패", message: message, preferredStyle: .alert)

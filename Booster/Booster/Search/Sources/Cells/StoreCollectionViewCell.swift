@@ -34,13 +34,11 @@ class StoreCollectionViewCell: UICollectionViewCell {
     storeClosedView.layer.masksToBounds = true
 //    storeView.layer.cornerRadius = 10.0
 //    storeView.layer.masksToBounds = true
-
     if (!isStoreOpen){
       storeClosedView.isHidden = false
     }
     else {
       storeClosedView.isHidden = true 
     }
-    print(storeView.bounds)
   }
 }

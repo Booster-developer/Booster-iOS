@@ -14,8 +14,7 @@ class MainTabBarController: UITabBarController ,UITabBarControllerDelegate{
       super.viewDidLoad()
       self.delegate = self
       setTabBar()
-      print(univIdx)
-        // Do any additional setup after loading the view.
+      // Do any additional setup after loading the view.
     }
     func setTabBar() {
       //self.tabBar.translatesAutoresizingMaskIntoConstraints = true
@@ -70,7 +69,7 @@ class MainTabBarController: UITabBarController ,UITabBarControllerDelegate{
         fifthTab.tabBarItem.selectedImage = UIImage(named: "iconMypageAct")?.withRenderingMode(.alwaysTemplate)
 
         let tabs = [firstTab, secondTab, thirdTab,fourthTab,fifthTab]
-        self.setViewControllers(tabs, animated: false)
+      self.setViewControllers(tabs, animated: false)
         self.selectedViewController = firstTab
 
     }
@@ -78,6 +77,11 @@ class MainTabBarController: UITabBarController ,UITabBarControllerDelegate{
     let itemIndex = tabBarController.selectedIndex
     if(itemIndex == 2){
       tabBarController.tabBar.isHidden = true
+      //tabBarController.viewControllers![2].reloadInputViews()
+      let orderStoryboard = UIStoryboard.init(name:"Order",bundle: nil)
+      guard let thirdTab = orderStoryboard.instantiateViewController(identifier: "OrderViewController") as? UINavigationController else{return}
+      
+      print("DD")
     }
     else{
       tabBarController.tabBar.isHidden = false
