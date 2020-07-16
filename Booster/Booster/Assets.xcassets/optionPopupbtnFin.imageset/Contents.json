@@ -1,8 +1,8 @@
 {
   "images" : [
     {
-      "scale" : "1x",
       "idiom" : "universal",
+      "scale" : "1x",
       "filename" : "optionPopupbtnFin.png"
     },
     {
