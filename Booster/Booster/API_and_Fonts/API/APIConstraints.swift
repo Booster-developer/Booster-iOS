@@ -49,6 +49,7 @@ struct APIConstraints{
   //주문하기
   static let storeSelectionList = APIConstraints.baseURL + "/stores/list"          //get
   //주문현황
+  static let orderStatus = APIConstraints.baseURL + "/progress"
   static let orderStautsList = APIConstraints.baseURL + "/progress/list"             //get
 //  static let orderStatusDetail = APIConstraints.baseURL + "/progress/:order_idx/list"//get
 //  static let deleteOrder = APIConstraints.baseURL + "/orders/:order_idx"             //delete

@@ -15,12 +15,14 @@ class StatusHsViewController: UIViewController {
   @IBOutlet weak var marginView: UIView!
   @IBOutlet weak var marginViewHeight: NSLayoutConstraint!
   @IBOutlet weak var countLabel: UILabel!
+
   
   
   // MARK: - IBActions
   @IBAction func presentCancelOrderViewController(_ sender: Any) {
     let storyBoard = UIStoryboard.init(name: "StatusHs", bundle: nil)
-    let cancelOrderVC = storyBoard.instantiateViewController(identifier: "cancelOrderViewController")
+    let cancelOrderVC = storyBoard.instantiateViewController(identifier: "cancelOrderViewController") as CancelOrderViewController
+    
     cancelOrderVC.modalPresentationStyle = .overCurrentContext
     self.present(cancelOrderVC, animated: false, completion: nil)
   }
@@ -96,6 +98,7 @@ extension StatusHsViewController: UITableViewDataSource {
                                       imageName: statusInformations[indexPath.row].getImageName())
     
     statusHsCell.setBtnImg(imgName: statusInformations[indexPath.row].getImageName())
+    statusHsCell.tag = indexPath.row
     return statusHsCell
     
     

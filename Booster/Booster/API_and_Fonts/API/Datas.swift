@@ -12,7 +12,7 @@ struct LogInData : Codable{
   var success:Bool
   var message : String
   var data : TokenData?
-  s
+  
   enum CodingKeys:String, CodingKey {
     case status = "status"
     case success = "success"
