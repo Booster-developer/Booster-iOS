@@ -10,10 +10,13 @@ import UIKit
 import MobileCoreServices
 import QuickLookThumbnailing
 class WaitingListViewController: UIViewController {
-
+  var refreshCollectionView = UIRefreshControl()
   var orderIdx:Int = -1
   var storeInfo:simpleStoreData?
-  
+  @objc func refresh(){
+    self.view.layoutIfNeeded()
+    refreshCollectionView.endRefreshing()
+  }
   
   @IBOutlet weak var storeName: UILabel!
   @IBOutlet weak var storeAddress: UILabel!
@@ -30,7 +33,12 @@ class WaitingListViewController: UIViewController {
     setWaitingListCV()
     storeName.text = storeInfo?.store_name
     storeAddress.text = storeInfo?.store_address
-    
+    waitingListCollectionView.refreshControl = refreshCollectionView
+    refreshCollectionView.addTarget(self, action: #selector(refresh), for: .valueChanged)
+    self.navigationController?.isNavigationBarHidden = true
+    //loadWaitingView()
+  }
+  func loadWaitingView(orderIdx:Int){
     waitListService.shared.waitlist(orderIdx: orderIdx){
       networkResult in
       switch networkResult{
@@ -56,9 +64,10 @@ class WaitingListViewController: UIViewController {
       }
     }
   }
+  
   func goBackToStoreSelection(){
-    for i in 0..<fileList.count{
-      clearFileDir(filename: fileList[i].fileName)
+    for i in 0..<fileDataList.count{
+      clearFileDir(filename: fileDataList[i].file_name + "." + fileDataList[i].file_extension)
     }
     self.navigationController?.popViewController(animated: true)
     
@@ -198,42 +207,31 @@ extension WaitingListViewController:UIDocumentPickerDelegate {
       //      print(sandboxFileURL)
       print(sandboxFileURL.lastPathComponent)
       //파일 업로드 하기
-      do {
-         let data = try Data(contentsOf: sandboxFileURL)
-        uploadFileService.shared.uploadfile(fileData: sandboxFileURL, orderIdx: 20){
+      uploadFileService.shared.uploadfile(fileData: sandboxFileURL, orderIdx: self.orderIdx){
           networkResult in
           switch networkResult{
           case .success(let fileIndexData) :
             
             guard let fileIndexData = fileIndexData as? fileIdx else {return}
-
+            let filename:String = String(sandboxFileURL.lastPathComponent.split(separator: ".")[0])
+            let fileExtension:String = String(sandboxFileURL.lastPathComponent.split(separator: ".")[1])
+            self.fileDataList.append(fileData(file_idx: fileIndexData.fileIdx, file_name: filename, file_extension: fileExtension, file_path: sandboxFileURL))
+            self.viewDidLoad()
+            self.waitingListCollectionView.reloadData()
+            self.loadWaitingView(orderIdx:self.orderIdx )
             
             case .requestErr(let messgae) : print(messgae)
             case .networkFail: print("networkFail")
             case .serverErr : print("serverErr")
             case .pathErr : print("pathErr")
-          }
         }
-        
       }
-      catch {
-        print("fail")
-      }
-      
-      
-      
-      
-      
       generator.generateRepresentations(for: request) { (thumbnail, _, error) in
         DispatchQueue.main.async {
           if thumbnail != nil{
 
               thumbNail = thumbnail!.uiImage
               print("썸네일 있는 파일")
-            let filename:String = String(sandboxFileURL.lastPathComponent.split(separator: ".")[0])
-            let fileExtension:String = String(sandboxFileURL.lastPathComponent.split(separator: ".")[1])
-            
-            self.fileDataList.append(fileData(file_idx: -1, file_name: filename, file_extension: fileExtension, file_path: sandboxFileURL))
               self.waitingListCollectionView.reloadData()
             
           }
@@ -241,17 +239,18 @@ extension WaitingListViewController:UIDocumentPickerDelegate {
 
               print("썸네일 없는 파일")
               print("error : \(String(describing: error))")
-            
-            let filename:String = String(sandboxFileURL.lastPathComponent.split(separator: ".")[0])
-            let fileExtension:String = String(sandboxFileURL.lastPathComponent.split(separator: ".")[1])
-             self.fileDataList.append(fileData(file_idx: -1, file_name: filename, file_extension: fileExtension, file_path: sandboxFileURL))
-              self.waitingListCollectionView.reloadData()
+            self.waitingListCollectionView.reloadData()
+
             //self.tmpImg = thumbnail?.uiImage as! UIImage
             
           }
         }
       }
+      self.waitingListCollectionView.reloadData()
+      print("파일 가져오고 다시,,")
+
     }
+    
     
     //    guard let url = sandboxFileURL else {
     //      assert(false, "The URL can't be nil")
@@ -280,7 +279,9 @@ extension WaitingListViewController:UICollectionViewDelegate{
 extension WaitingListViewController:UICollectionViewDataSource{
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    
+    print(orderIdx)
+    self.viewDidLoad()
+
     
     
     if fileDataList.count == 0 {
@@ -323,10 +324,21 @@ extension WaitingListViewController:UICollectionViewDataSource{
     let alert = UIAlertController(title: "", message: "파일을 삭제하겠습니까?", preferredStyle: UIAlertController.Style.alert)
     let no = UIAlertAction(title: "Cancel", style: .default, handler : nil)
     let yes = UIAlertAction(title: "OK", style: .default) { (action) in
-      self.clearFileDir(filename: self.fileDataList[sender.tag].file_name)
+      print(self.fileDataList.count)
+      print(sender.tag)
+      self.clearFileDir(filename: self.fileDataList[sender.tag].file_name + "."+self.fileDataList[sender.tag].file_extension)
+      deleteFileService.shared.filedeleter(fileidx: self.fileDataList[sender.tag].file_idx){
+        networkResult in
+        switch networkResult{
+        case .success(let message): print(message)
+          case .requestErr(let messgae) : print(messgae)
+          case .networkFail: print("networkFail")
+          case .serverErr : print("serverErr")
+          case .pathErr : print("pathErr")
+        }
+      }
       self.fileDataList.remove(at: sender.tag)
       self.waitingListCollectionView.reloadData()
-      
     }
     alert.addAction(yes)
     alert.addAction(no)

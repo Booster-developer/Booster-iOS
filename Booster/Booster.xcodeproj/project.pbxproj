@@ -340,8 +340,8 @@
 			children = (
 				DA2BC40124AB4BA300013143 /* AppDelegate.swift */,
 				DA2BC40324AB4BA300013143 /* SceneDelegate.swift */,
-				DA2BC43724AB576800013143 /* Extensions */,
 				DA2BC43624AB576100013143 /* Models */,
+				DA2D706424BFFA230097F1C0 /* Extensions */,
 			);
 			path = Models_and_Extensions;
 			sourceTree = "<group>";
@@ -368,13 +368,6 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		DA2BC43724AB576800013143 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
 		DA2BC43924AB580500013143 /* API */ = {
 			isa = PBXGroup;
 			children = (
@@ -391,6 +384,13 @@
 			children = (
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		DA2D706424BFFA230097F1C0 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		DA93D6E924BCCD2400DE370F /* Cells */ = {

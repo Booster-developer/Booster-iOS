@@ -285,23 +285,53 @@ struct fileUploadData: Codable {
     let success: Bool
     let message: String
     let data: fileIdx?
-  enum CodingKeys:String, CodingKey {
-    case status = "status"
-    case success = "success"
-    case message = "message"
-    case data = "data"
-  }
-  init(from decoder: Decoder) throws{
-  let values = try decoder.container(keyedBy: CodingKeys.self)
-  status = (try? values.decode(Int.self, forKey: .status)) ?? -1
-  success = (try? values.decode(Bool.self, forKey: .success)) ?? false
-  message = (try? values.decode(String.self, forKey: .message)) ?? ""
-    data = (try? values.decode(fileIdx.self, forKey: .data)) ?? fileIdx.init(fileIdx: -1)
-  }
 }
 struct fileIdx: Codable {
     var fileIdx: Int
   init(fileIdx:Int) {
     self.fileIdx = fileIdx
   }
+}
+
+
+struct fileDeleteData:Codable{
+  let status: Int
+  let success: Bool
+  let message: String
+  enum CodingKeys:String, CodingKey {
+     case status = "status"
+     case success = "success"
+     case message = "message"
+  }
+  init(from decoder: Decoder) throws{
+    let values = try decoder.container(keyedBy: CodingKeys.self)
+    status = (try? values.decode(Int.self, forKey: .status)) ?? -1
+    success = (try? values.decode(Bool.self, forKey: .success)) ?? false
+    message = (try? values.decode(String.self, forKey: .message)) ?? ""
+    }
+}
+
+          
+struct HomeViewData:Codable{
+  let status: Int
+  let success: Bool
+  let message: String
+  let data:HomeInfo?
+  enum CodingKeys:String, CodingKey {
+     case status = "status"
+     case success = "success"
+     case message = "message"
+    case data = "data"
+  }
+  init(from decoder: Decoder) throws{
+    let values = try decoder.container(keyedBy: CodingKeys.self)
+    status = (try? values.decode(Int.self, forKey: .status)) ?? -1
+    success = (try? values.decode(Bool.self, forKey: .success)) ?? false
+    message = (try? values.decode(String.self, forKey: .message)) ?? ""
+    data = (try? values.decode(HomeInfo.self, forKey: .message)) ?? HomeInfo(home_state: -1, user_name: "")
+    }
+}
+struct HomeInfo:Codable{
+  let home_state:Int
+  let user_name:String
 }

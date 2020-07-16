@@ -67,7 +67,7 @@ class OrderViewController: UIViewController {
 //      self.tabBarController?.tabBar.isHidden = true
       //self.tabBarController?.tabBar.isHidden = true
     connectServer()
-      self.navigationItem.title = "매장선택"
+    self.navigationController?.isNavigationBarHidden = true
       super.viewDidLoad()
     
     // Do any additional setup after loading the view.
@@ -210,11 +210,11 @@ extension OrderViewController:UICollectionViewDataSource{
     
     if _selectedIndexPath == indexPath {
       storeCell.isSelected = true
-      storeCell.backgroundImg.image = UIImage(named: "bgStore")
+      storeCell.backgroundImg.image = UIImage(named: "optionselect")
     }
     else {
       storeCell.isSelected = false
-      storeCell.backgroundImg.image = UIImage(named: "optionselect")
+      storeCell.backgroundImg.image = UIImage(named: "bgStore")
     }
     switch indexPath.section{
     case 0:
