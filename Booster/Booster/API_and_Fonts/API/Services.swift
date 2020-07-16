@@ -467,3 +467,51 @@ struct deleteFileService{
     
   }
 }
+struct optionSelectService {
+  static let shared = optionSelectService()
+  private func makeParameter(_ option:OptionList) ->Parameters{
+    var start:Int = 0
+    var end:Int = 0
+    print(option.file_range)
+    if option.file_range != "전체 페이지"{
+      let filerangestart = option.file_range.split(separator: "/")
+      start = Int(filerangestart[0]) ?? 0
+      end = Int(filerangestart[1]) ?? 0
+    }
+    print(start)
+    print(end)
+    return ["file_color" : option.file_color, "file_direction" : option.file_direction,"file_sided_type" : option.file_sided_type,"file_collect" : option.file_collect,"file_range_start" : start,"file_range_end" : end,"file_copy_number" : option.file_copy_number]
+  }
+  func optionSend(fileIdx:Int, optionSelect:OptionList, completion:@escaping (NetworkResult<Any>) -> Void){
+    let header:HTTPHeaders = ["Content-Type":"application/json", "token" : UserDefaults.standard.string(forKey: "token")!]
+    let url = APIConstraints.orderRequest + APIIndex.init(index: .fileIdx(fileIdx)).index.getIdx() + APIConstraints.options
+    let dataRequest = Alamofire.request(url, method: .post, parameters: makeParameter(optionSelect), encoding: JSONEncoding.default, headers: header)
+    dataRequest.responseData { dataResponse in
+      switch dataResponse.result{
+      case .success:
+        guard let statusCode = dataResponse.response?.statusCode else{return}
+        guard let value = dataResponse.result.value else {return}
+        var networkResult:NetworkResult<Any>?
+        print(statusCode)
+        switch statusCode{
+        case 200:
+          let decoder = JSONDecoder()
+          guard let decodedData = try? decoder.decode(OptionChangeData.self, from: value) else { return networkResult = .pathErr }
+          print(decodedData.status)
+          if decodedData.status == 200{
+            networkResult = .success(decodedData.message)
+          }
+          else if decodedData.status == 400 {
+            networkResult = .requestErr(decodedData.message)
+          }
+        case 400: networkResult = .pathErr
+        case 500: networkResult = .serverErr
+        default: networkResult = .networkFail
+        }
+        completion(networkResult!)
+      case .failure : completion(.networkFail)
+      }
+    }
+    
+  }
+}

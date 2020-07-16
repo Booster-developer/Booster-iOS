@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zfM-lv-17e">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zfM-lv-17e">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -17,23 +17,28 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D13-os-2o2">
-                                <rect key="frame" x="342" y="59" width="52" height="41"/>
+                                <rect key="frame" x="342" y="44" width="52" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="알람뷰로"/>
                                 <connections>
                                     <segue destination="l1o-Ho-duy" kind="show" id="wqf-Dx-sNm"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hmx-Wq-51A" customClass="AnimationView" customModule="Lottie">
-                                <rect key="frame" x="118" y="542" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hmx-Wq-51A" customClass="AnimationView" customModule="Lottie">
+                                <rect key="frame" x="0.0" y="144" width="414" height="718"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="coffee"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="clock"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Hmx-Wq-51A" firstAttribute="top" secondItem="ALX-jU-QDs" secondAttribute="top" constant="100" id="2ff-EN-PGj"/>
+                            <constraint firstItem="Hmx-Wq-51A" firstAttribute="leading" secondItem="ALX-jU-QDs" secondAttribute="leading" id="APl-hF-f6R"/>
+                            <constraint firstItem="ALX-jU-QDs" firstAttribute="trailing" secondItem="Hmx-Wq-51A" secondAttribute="trailing" id="DRH-sv-77d"/>
+                            <constraint firstItem="ALX-jU-QDs" firstAttribute="bottom" secondItem="Hmx-Wq-51A" secondAttribute="bottom" id="WKs-ez-1cF"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="ALX-jU-QDs"/>
                     </view>
                     <connections>

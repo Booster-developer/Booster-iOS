@@ -12,10 +12,10 @@ import Alamofire
 struct OptionService {
   static let shared = OptionService()
   
-  func getOption(completion: @escaping (NetworkResult<Any>)
+  func getOption(fileidx:Int, completion: @escaping (NetworkResult<Any>)
     -> Void) {
     let header: HTTPHeaders = ["token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkeCI6MSwiaWF0IjoxNTk0MDI1NzE2LCJleHAiOjE1OTc2MjU3MTYsImlzcyI6IkJvb3N0ZXIifQ.FtWfnt4rlyYH9ZV3TyOjLZXOkeR7ya96afmA0zJqTI8"]
-    let index = APIIndex.init(index: .fileIdx(1)).index.getIdx()
+    let index = APIIndex.init(index: .fileIdx(fileidx)).index.getIdx()
     
     let dataRequest = Alamofire.request(APIConstraints.orderRequest+index+"/options", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: header)
     

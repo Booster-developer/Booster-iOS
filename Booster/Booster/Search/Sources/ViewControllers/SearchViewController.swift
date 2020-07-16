@@ -31,7 +31,6 @@ class SearchViewController: UIViewController {
   }
     override func viewDidLoad() {
       super.viewDidLoad()
-      
       storeCollectionView.refreshControl = refreshCollectionView
       refreshCollectionView.addTarget(self, action: #selector(refresh), for: .valueChanged)
       print("뷰디드로드")
@@ -75,6 +74,7 @@ class SearchViewController: UIViewController {
     self.view.layoutIfNeeded()
     refreshCollectionView.endRefreshing()
   }
+  
   @IBOutlet weak var storeCollectionView: UICollectionView!
   func setCollectionViewInfo(){
     storeCollectionView.delegate = self
@@ -116,13 +116,7 @@ class SearchViewController: UIViewController {
     */
   var toggle:Bool = false
   func popupDetailView(){
-    let detailStoryboard = UIStoryboard.init(name:"SearchHs",bundle: nil)
-
-    guard  let detailView = detailStoryboard.instantiateViewController(identifier: "detailView", creator: nil) as? StoreDetailViewController else {
-      return
-    }
-    detailView.modalPresentationStyle = .fullScreen
-    self.present(detailView, animated: true)
+   
   }
 
   @IBAction func popupMapView(_ sender: Any) {
@@ -206,7 +200,17 @@ extension SearchViewController:UICollectionViewDataSource{
   }
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
     print(indexPath)
-    self.popupDetailView()
+    
+    
+    let detailStoryboard = UIStoryboard.init(name:"SearchHs",bundle: nil)
+
+       guard  let detailView = detailStoryboard.instantiateViewController(identifier: "detailView", creator: nil) as? StoreDetailViewController else {
+         return
+       }
+    detailView.storeidx = storeInfos[indexPath.row].store_idx
+
+       detailView.modalPresentationStyle = .fullScreen
+       self.present(detailView, animated: true)
   }
 }
 extension SearchViewController:UICollectionViewDelegateFlowLayout{
