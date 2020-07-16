@@ -81,7 +81,7 @@ class WaitingListViewController: UIViewController {
   @IBAction func cangeCurrentStore(_ sender: Any) {
     goBackToStoreSelection()
   }
-
+  
   @IBAction func goPayView(_ sender: Any) {
     let orderHsStoryboard = UIStoryboard.init(name:"OrderHs",bundle: nil)
     guard let payView = orderHsStoryboard.instantiateViewController(identifier: "PayViewController") as? PayViewController else {return}
@@ -174,39 +174,39 @@ extension WaitingListViewController:UIDocumentPickerDelegate {
       print(sandboxFileURL.lastPathComponent)
       //파일 업로드 하기
       uploadFileService.shared.uploadfile(fileData: sandboxFileURL, orderIdx: self.orderIdx){
-          networkResult in
-          switch networkResult{
-          case .success(let fileIndexData) :
-            
-            guard let fileIndexData = fileIndexData as? fileIdx else {return}
-            let filename:String = String(sandboxFileURL.lastPathComponent.split(separator: ".")[0])
-            let fileExtension:String = String(sandboxFileURL.lastPathComponent.split(separator: ".")[1])
-            self.fileDataList.append(fileData(file_idx: fileIndexData.fileIdx, file_name: filename, file_extension: fileExtension, file_path: sandboxFileURL))
-            self.viewDidLoad()
-            self.waitingListCollectionView.reloadData()
-            self.loadWaitingView(orderIdx:self.orderIdx )
-            
-            case .requestErr(let messgae) : print(messgae)
-            case .networkFail: print("networkFail")
-            case .serverErr : print("serverErr")
-            case .pathErr : print("pathErr")
+        networkResult in
+        switch networkResult{
+        case .success(let fileIndexData) :
+          
+          guard let fileIndexData = fileIndexData as? fileIdx else {return}
+          let filename:String = String(sandboxFileURL.lastPathComponent.split(separator: ".")[0])
+          let fileExtension:String = String(sandboxFileURL.lastPathComponent.split(separator: ".")[1])
+          self.fileDataList.append(fileData(file_idx: fileIndexData.fileIdx, file_name: filename, file_extension: fileExtension, file_path: sandboxFileURL))
+          self.viewDidLoad()
+          self.waitingListCollectionView.reloadData()
+          self.loadWaitingView(orderIdx:self.orderIdx )
+          
+        case .requestErr(let messgae) : print(messgae)
+        case .networkFail: print("networkFail")
+        case .serverErr : print("serverErr")
+        case .pathErr : print("pathErr")
         }
       }
       generator.generateRepresentations(for: request) { (thumbnail, _, error) in
         DispatchQueue.main.async {
           if thumbnail != nil{
-
-              thumbNail = thumbnail!.uiImage
-              print("썸네일 있는 파일")
-              self.waitingListCollectionView.reloadData()
+            
+            thumbNail = thumbnail!.uiImage
+            print("썸네일 있는 파일")
+            self.waitingListCollectionView.reloadData()
             
           }
           else if  thumbnail == nil || error != nil{
-
-              print("썸네일 없는 파일")
-              print("error : \(String(describing: error))")
+            
+            print("썸네일 없는 파일")
+            print("error : \(String(describing: error))")
             self.waitingListCollectionView.reloadData()
-
+            
             //self.tmpImg = thumbnail?.uiImage as! UIImage
             
           }
@@ -214,7 +214,7 @@ extension WaitingListViewController:UIDocumentPickerDelegate {
       }
       self.waitingListCollectionView.reloadData()
       print("파일 가져오고 다시,,")
-
+      
     }
     
     
@@ -247,11 +247,11 @@ extension WaitingListViewController:UICollectionViewDataSource{
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     print(orderIdx)
     self.viewDidLoad()
-
+    
     
     
     if fileDataList.count == 0 {
-       orderViewDisappear()
+      orderViewDisappear()
     }
     else {
       orderViewAppear()
@@ -270,7 +270,7 @@ extension WaitingListViewController:UICollectionViewDataSource{
     }
     else{
       guard let fileCell:WaitCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: WaitCollectionViewCell.identifier, for:indexPath) as? WaitCollectionViewCell else {
-          return UICollectionViewCell()}
+        return UICollectionViewCell()}
       //fileCell.fileName.text = "ddd"
       fileCell.fileName.text = fileDataList[indexPath.row].file_name
       //fileCell.preViewImg.setImage(fileList[indexPath.row].fileImg, for: .normal)
@@ -282,70 +282,70 @@ extension WaitingListViewController:UICollectionViewDataSource{
       fileCell.changeOption.tag = indexPath.row
       fileCell.changeOption.addTarget(self, action: #selector(optionChange(sender:)), for: .touchUpInside)
       return fileCell
-
+      
     }
     
     
   }
   @objc func optionChange(sender:UIButton){
     let fileidx:Int = fileDataList[sender.tag].file_idx
-
+    
     OptionService.shared.getOption(fileidx:fileidx) {networkResult in
-         switch networkResult {
-         case .success(let optionList):
-           guard let optionList = optionList as? OptionList else {return}
-           let orderHsStoryBoard = UIStoryboard.init(name: "OrderHs", bundle: nil)
-           let orderHsStoryboard = UIStoryboard.init(name:"OrderHs",bundle: nil)
-           guard let optView = orderHsStoryboard.instantiateViewController(identifier: "OptionViewController") as? OrderHsViewController else {return}
-           
-           
-           optView.fileIdx = fileidx
-           optView.optionListFromServer = optionList
-           
-           self.navigationController?.pushViewController(optView, animated: true)
-         case .requestErr(let message):
-           guard let message = message as? String else {return}
-           let alertViewController = UIAlertController(title: "로그인 실패", message: message,
-                                                       preferredStyle: .alert)
-           let action = UIAlertAction(title: "확인", style: .cancel, handler: nil)
-           alertViewController.addAction(action)
-           self.present(alertViewController, animated: true, completion: nil)
-         case .pathErr: print("path")
-         case .serverErr: print("serverErr")
-         case .networkFail: print("networkFail")
-         }
-       }
+      switch networkResult {
+      case .success(let optionList):
+        guard let optionList = optionList as? OptionList else {return}
+        let orderHsStoryBoard = UIStoryboard.init(name: "OrderHs", bundle: nil)
+        let orderHsStoryboard = UIStoryboard.init(name:"OrderHs",bundle: nil)
+        guard let optView = orderHsStoryboard.instantiateViewController(identifier: "OptionViewController") as? OrderHsViewController else {return}
+        
+        
+        optView.fileIdx = fileidx
+        optView.optionListFromServer = optionList
+        
+        self.navigationController?.pushViewController(optView, animated: true)
+      case .requestErr(let message):
+        guard let message = message as? String else {return}
+        let alertViewController = UIAlertController(title: "로그인 실패", message: message,
+                                                    preferredStyle: .alert)
+        let action = UIAlertAction(title: "확인", style: .cancel, handler: nil)
+        alertViewController.addAction(action)
+        self.present(alertViewController, animated: true, completion: nil)
+      case .pathErr: print("path")
+      case .serverErr: print("serverErr")
+      case .networkFail: print("networkFail")
+      }
+    }
   }
   @objc func popupOption(sender:UIButton){
     let fileidx:Int = fileDataList[sender.tag].file_idx
     OptionService.shared.getOption(fileidx:fileidx) {networkResult in
-         switch networkResult {
-         case .success(let optionList):
-           guard let optionList = optionList as? OptionList else {return}
-           let orderHsStoryBoard = UIStoryboard.init(name: "OrderHs", bundle: nil)
-           guard let showOptionView = orderHsStoryBoard.instantiateViewController(identifier: "showOptionViewController") as? ShowOptionViewController else {return}
-           showOptionView.modalPresentationStyle = .overCurrentContext
-           self.present(showOptionView, animated: false, completion: nil)
-           print(optionList)
-           showOptionView.fileColor.text = optionList.file_color
-           showOptionView.fileDirection.text = optionList.file_direction
-           showOptionView.fileSidedType.text = optionList.file_sided_type
-           showOptionView.fileCollect.text = String(optionList.file_collect)
-           showOptionView.fileRange.text = optionList.file_range
-           showOptionView.fileCopyNumber.text = String(optionList.file_copy_number)
-           
-         case .requestErr(let message):
-           guard let message = message as? String else {return}
-           let alertViewController = UIAlertController(title: "로그인 실패", message: message,
-                                                       preferredStyle: .alert)
-           let action = UIAlertAction(title: "확인", style: .cancel, handler: nil)
-           alertViewController.addAction(action)
-           self.present(alertViewController, animated: true, completion: nil)
-         case .pathErr: print("path")
-         case .serverErr: print("serverErr")
-         case .networkFail: print("networkFail")
-         }
-       }
+      switch networkResult {
+      case .success(let optionList):
+        guard let optionList = optionList as? OptionList else {return}
+        let orderHsStoryBoard = UIStoryboard.init(name: "OrderHs", bundle: nil)
+        guard let showOptionView = orderHsStoryBoard.instantiateViewController(identifier: "showOptionViewController") as? ShowOptionViewController else {return}
+        showOptionView.modalPresentationStyle = .overCurrentContext
+        self.present(showOptionView, animated: false, completion: nil)
+        print(optionList)
+        showOptionView.fileColor.text = optionList.file_color
+        showOptionView.fileDirection.text = optionList.file_direction
+        showOptionView.fileSidedType.text = optionList.file_sided_type
+        showOptionView.fileCollect.text = String(optionList.file_collect)
+        showOptionView.fileRange.text = optionList.file_range
+        showOptionView.fileCopyNumber.text = String(optionList.file_copy_number)
+        
+      case .requestErr(let message):
+        guard let message = message as? String else {return}
+        let alertViewController = UIAlertController(title: "로그인 실패", message: message,
+                                                    preferredStyle: .alert)
+        let action = UIAlertAction(title: "확인", style: .cancel, handler: nil)
+        alertViewController.addAction(action)
+        self.present(alertViewController, animated: true, completion: nil)
+      case .pathErr: print("path")
+      case .serverErr: print("serverErr")
+      case .networkFail: print("networkFail")
+      }
+    }
   }
   @objc func getFile(sender:UIButton){
     getFileFromLocal()
@@ -361,10 +361,10 @@ extension WaitingListViewController:UICollectionViewDataSource{
         networkResult in
         switch networkResult{
         case .success(let message): print(message)
-          case .requestErr(let messgae) : print(messgae)
-          case .networkFail: print("networkFail")
-          case .serverErr : print("serverErr")
-          case .pathErr : print("pathErr")
+        case .requestErr(let messgae) : print(messgae)
+        case .networkFail: print("networkFail")
+        case .serverErr : print("serverErr")
+        case .pathErr : print("pathErr")
         }
       }
       self.fileDataList.remove(at: sender.tag)
@@ -377,12 +377,12 @@ extension WaitingListViewController:UICollectionViewDataSource{
   
   
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-
-      //print("파일 불러오기")
-
-      //collectionView.insertItems(at: [indexPath])
-      //collectionView.reloadItems(at:collectionView.indexPathsForVisibleItems)
-      //collectionView.reloadData()
+    
+    //print("파일 불러오기")
+    
+    //collectionView.insertItems(at: [indexPath])
+    //collectionView.reloadItems(at:collectionView.indexPathsForVisibleItems)
+    //collectionView.reloadData()
     if indexPath.row == fileDataList.count {
       getFileFromLocal()
     }

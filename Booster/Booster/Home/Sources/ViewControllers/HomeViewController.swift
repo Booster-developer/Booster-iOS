@@ -9,22 +9,16 @@
 import UIKit
 import Lottie
 class HomeViewController: UIViewController {
-  @IBOutlet weak var lottieAnimation: AnimationView!
   
     override func viewDidLoad() {
-      lottieAnimation.contentMode = .scaleAspectFit
-      lottieAnimation.loopMode = .loop
-      lottieAnimation.animationSpeed = 0.5
-      lottieAnimation.play()
         super.viewDidLoad()
+      let jsonName = "home_xs_3"
+      let animation = Animation.named(jsonName)
+      let homeLottieAnimation = AnimationView(animation: animation)
+      homeLottieAnimation.frame = CGRect(x:0, y: 0, width = self.bound)
         // Do any additional setup after loading the view.
     }
   override func viewDidAppear(_ animated: Bool) {
-    lottieAnimation.contentMode = .scaleAspectFit
-    lottieAnimation.loopMode = .loop
-    lottieAnimation.animationSpeed = 0.5
-    lottieAnimation.play()
-    print(lottieAnimation.animation?.framerate)
     super.viewDidAppear(true)
   }
     /*

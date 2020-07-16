@@ -328,7 +328,7 @@ struct HomeViewData:Codable{
     status = (try? values.decode(Int.self, forKey: .status)) ?? -1
     success = (try? values.decode(Bool.self, forKey: .success)) ?? false
     message = (try? values.decode(String.self, forKey: .message)) ?? ""
-    data = (try? values.decode(HomeInfo.self, forKey: .message)) ?? HomeInfo(home_state: -1, user_name: "")
+    data = (try? values.decode(HomeInfo.self, forKey: .data)) ?? HomeInfo(home_state: -1, user_name: "")
     }
 }
 struct HomeInfo:Codable{
@@ -351,5 +351,65 @@ struct OptionChangeData:Codable{
   status = (try? values.decode(Int.self, forKey: .status)) ?? -1
   success = (try? values.decode(Bool.self, forKey: .success)) ?? false
   message = (try? values.decode(String.self, forKey: .message)) ?? ""
+  }
+}
+struct StoreDetailViewLoadData:Codable{
+  let status: Int
+  let success: Bool
+  let message: String
+  let data:StoreDetailData?
+  enum CodingKeys:String, CodingKey {
+     case status = "status"
+     case success = "success"
+     case message = "message"
+    case data = "data"
+  }
+  init(from decoder: Decoder) throws{
+    let values = try decoder.container(keyedBy: CodingKeys.self)
+    status = (try? values.decode(Int.self, forKey: .status)) ?? -1
+    success = (try? values.decode(Bool.self, forKey: .success)) ?? false
+    message = (try? values.decode(String.self, forKey: .message)) ?? ""
+    data = (try? values.decode(StoreDetailData.self, forKey: .data)) ?? StoreDetailData()
+    }
+}
+
+
+
+struct StoreDetailData:Codable{
+  var store_image:URL
+  var store_name: String
+  var store_address:String
+  var store_location:String
+  var store_time_weekdays:String
+  var store_time_saturday:String
+  var store_time_sunday:String
+  var store_phone_number:String
+  var price_color_double : Int
+  var price_color_single : Int
+  var price_gray_double : Int
+  var price_gray_single : Int
+  var univ_line:Int
+  var store_x_location:Double
+  var store_y_location:Double
+  var store_favorite:Int
+
+  
+  init(store_image:URL = URL(fileURLWithPath: ""), store_name:String = "",  store_address:String = "", store_location:String = "",store_time_weekdays:String = "",store_time_saturday:String = "", store_time_sunday:String = "" ,store_phone_number:String = "" , price_color_double:Int = 0, price_color_single:Int = 0, price_gray_double:Int = 0, price_gray_single:Int = 0, univ_line:Int = 0, store_x_location:Double = 0, store_y_location:Double = 0,store_favorite:Int = 0){
+    self.store_image = store_image
+    self.store_name = store_name
+    self.store_address = store_address
+    self.store_location = store_location
+    self.store_time_weekdays = store_time_weekdays
+    self.store_time_saturday = store_time_saturday
+    self.store_time_sunday = store_time_sunday
+    self.store_phone_number = store_phone_number
+    self.price_color_double = price_color_double
+    self.price_color_single = price_color_single
+    self.price_gray_double = price_gray_double
+    self.price_gray_single = price_gray_single
+    self.store_x_location = store_x_location
+    self.store_y_location = store_y_location
+    self.store_favorite = store_favorite
+    self.univ_line = univ_line
   }
 }
