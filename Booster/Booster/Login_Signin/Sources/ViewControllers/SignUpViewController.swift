@@ -177,7 +177,7 @@ class SignUpViewController: UIViewController {
     checkPW.delegate = self
     getPW.tag = 1
     checkPW.tag = 2
-    
+    univSelectionAppear.constant = 0
     
     
         // Do any additional setup after loading the view.

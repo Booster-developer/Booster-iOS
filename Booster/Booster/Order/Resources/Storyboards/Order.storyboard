@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vhQ-X9-mGR">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vhQ-X9-mGR">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -19,17 +19,16 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zDu-HA-yqp">
                                 <rect key="frame" x="0.0" y="1294" width="375" height="146"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="매장 이름" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hqs-ay-nrd">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="매장 이름" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hqs-ay-nrd">
                                         <rect key="frame" x="24" y="16" width="60" height="19.5"/>
                                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xnV-kr-NTB">
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xnV-kr-NTB">
                                         <rect key="frame" x="12" y="52.5" width="351" height="46.5"/>
-                                        <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="18"/>
-                                        <state key="normal" title="선택완료">
+                                        <state key="normal" title="선택완료" backgroundImage="storeDetailBtnOrder">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
@@ -167,26 +166,53 @@
                                     </connections>
                                 </collectionReusableView>
                             </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ovw-x0-qoi">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="88"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y8X-uT-fVJ">
+                                        <rect key="frame" x="0.0" y="44" width="44" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="y8X-uT-fVJ" secondAttribute="height" multiplier="1:1" id="btm-tG-QFd"/>
+                                        </constraints>
+                                        <state key="normal" image="processBackBtn"/>
+                                        <connections>
+                                            <action selector="goBackToHomeView:" destination="Lw1-QX-YQW" eventType="touchUpInside" id="sJ6-KV-Apj"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="매장 선택" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dlu-fC-HzJ">
+                                        <rect key="frame" x="150.5" y="54" width="74.5" height="24"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="y8X-uT-fVJ" firstAttribute="leading" secondItem="ovw-x0-qoi" secondAttribute="leading" id="1dR-fi-kaA"/>
+                                    <constraint firstItem="Dlu-fC-HzJ" firstAttribute="centerX" secondItem="ovw-x0-qoi" secondAttribute="centerX" id="6HP-Ee-bhA"/>
+                                    <constraint firstAttribute="bottom" secondItem="y8X-uT-fVJ" secondAttribute="bottom" id="ABf-rk-TD8"/>
+                                    <constraint firstItem="Dlu-fC-HzJ" firstAttribute="top" secondItem="ovw-x0-qoi" secondAttribute="top" constant="54" id="C2i-fn-TSs"/>
+                                    <constraint firstAttribute="bottom" secondItem="Dlu-fC-HzJ" secondAttribute="bottom" constant="10" id="Kyn-xk-1CF"/>
+                                    <constraint firstItem="y8X-uT-fVJ" firstAttribute="top" secondItem="ovw-x0-qoi" secondAttribute="top" constant="44" id="iVk-8D-zCG"/>
+                                </constraints>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="4Wz-gO-Rpt" firstAttribute="trailing" secondItem="VkJ-9K-Uyy" secondAttribute="trailing" id="8DY-xN-6WE"/>
+                            <constraint firstItem="ovw-x0-qoi" firstAttribute="leading" secondItem="UD2-nW-G5H" secondAttribute="leading" id="EYA-IF-CKv"/>
                             <constraint firstItem="VkJ-9K-Uyy" firstAttribute="leading" secondItem="4Wz-gO-Rpt" secondAttribute="leading" id="VEH-O2-y9R"/>
                             <constraint firstItem="zDu-HA-yqp" firstAttribute="bottom" secondItem="UD2-nW-G5H" secondAttribute="bottom" id="Zmn-08-KDu"/>
                             <constraint firstItem="4Wz-gO-Rpt" firstAttribute="trailing" secondItem="zDu-HA-yqp" secondAttribute="trailing" id="bgN-zK-RaP"/>
                             <constraint firstItem="zDu-HA-yqp" firstAttribute="top" secondItem="VkJ-9K-Uyy" secondAttribute="bottom" id="eBe-27-xKr"/>
-                            <constraint firstItem="VkJ-9K-Uyy" firstAttribute="top" secondItem="4Wz-gO-Rpt" secondAttribute="top" id="sa1-et-L2i"/>
+                            <constraint firstAttribute="trailing" secondItem="ovw-x0-qoi" secondAttribute="trailing" id="mZS-J2-XjX"/>
+                            <constraint firstItem="VkJ-9K-Uyy" firstAttribute="top" secondItem="ovw-x0-qoi" secondAttribute="bottom" id="rbB-ZS-cNW"/>
+                            <constraint firstItem="ovw-x0-qoi" firstAttribute="top" secondItem="UD2-nW-G5H" secondAttribute="top" id="unq-Pc-W4Y"/>
                             <constraint firstItem="zDu-HA-yqp" firstAttribute="leading" secondItem="4Wz-gO-Rpt" secondAttribute="leading" id="xym-JE-LBW"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="4Wz-gO-Rpt"/>
                     </view>
-                    <navigationItem key="navigationItem" title="매장선택" id="BFL-Iv-kSZ">
-                        <barButtonItem key="leftBarButtonItem" image="storeBackBtn" id="PgE-Dh-ZRt">
-                            <connections>
-                                <action selector="goBackToHomeView:" destination="Lw1-QX-YQW" id="Czm-L2-pq5"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="매장선택" id="BFL-Iv-kSZ"/>
                     <size key="freeformSize" width="375" height="1440"/>
                     <connections>
                         <outlet property="selectionBtnHeight" destination="lwj-V6-Yaz" id="VtZ-Tc-oHj"/>
@@ -198,7 +224,7 @@
             </objects>
             <point key="canvasLocation" x="225.36231884057972" y="91.741071428571431"/>
         </scene>
-        <!--대기리스트-->
+        <!--Waiting List View Controller-->
         <scene sceneID="kPF-zS-0iI">
             <objects>
                 <viewController storyboardIdentifier="WaitingVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="k1R-7Z-Ij0" customClass="WaitingListViewController" customModule="Booster" customModuleProvider="target" sceneMemberID="viewController">
@@ -206,6 +232,37 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="1440"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xX4-v3-eon">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="88"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ebj-GG-H5S">
+                                        <rect key="frame" x="0.0" y="44" width="44" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="Ebj-GG-H5S" secondAttribute="height" multiplier="1:1" id="TL6-wU-5t7"/>
+                                        </constraints>
+                                        <state key="normal" image="close24Px"/>
+                                        <connections>
+                                            <action selector="closeBtn:" destination="k1R-7Z-Ij0" eventType="touchUpInside" id="asD-qY-eXh"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="대기 리스트" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="52V-kD-0iM">
+                                        <rect key="frame" x="141.5" y="54" width="92" height="24"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="52V-kD-0iM" firstAttribute="top" secondItem="xX4-v3-eon" secondAttribute="top" constant="54" id="DLP-4d-8hZ"/>
+                                    <constraint firstItem="Ebj-GG-H5S" firstAttribute="top" secondItem="xX4-v3-eon" secondAttribute="top" constant="44" id="JYC-Su-z8l"/>
+                                    <constraint firstItem="Ebj-GG-H5S" firstAttribute="leading" secondItem="xX4-v3-eon" secondAttribute="leading" id="SV9-JS-9hd"/>
+                                    <constraint firstAttribute="bottom" secondItem="Ebj-GG-H5S" secondAttribute="bottom" id="nh4-cX-Gep"/>
+                                    <constraint firstItem="52V-kD-0iM" firstAttribute="centerX" secondItem="xX4-v3-eon" secondAttribute="centerX" id="tYg-SZ-haw"/>
+                                    <constraint firstAttribute="bottom" secondItem="52V-kD-0iM" secondAttribute="bottom" constant="10" id="vWB-ug-NfD"/>
+                                    <constraint firstAttribute="height" constant="88" id="xzw-GH-FLw"/>
+                                </constraints>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5wk-J2-fHm">
                                 <rect key="frame" x="0.0" y="1278" width="375" height="162"/>
                                 <subviews>
@@ -223,11 +280,10 @@
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u6E-ZD-sxG">
                                         <rect key="frame" x="18" y="65" width="339" height="50"/>
-                                        <color key="backgroundColor" red="0.46053391700000001" green="0.88597697019999999" blue="0.64310449359999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="e9c-UG-dB6"/>
                                         </constraints>
-                                        <state key="normal" title="선택완료"/>
+                                        <state key="normal" title="주문하기" backgroundImage="storeDetailBtnOrder"/>
                                         <connections>
                                             <action selector="goPayView:" destination="k1R-7Z-Ij0" eventType="touchUpInside" id="0Ts-8E-Lla"/>
                                         </connections>
@@ -456,22 +512,19 @@
                             <constraint firstItem="5wk-J2-fHm" firstAttribute="top" secondItem="dcr-kT-kUm" secondAttribute="bottom" id="LOj-uF-nwV"/>
                             <constraint firstItem="Hqh-5t-5l3" firstAttribute="leading" secondItem="lfD-pl-wwe" secondAttribute="leading" id="Mct-F7-5bA"/>
                             <constraint firstItem="5wk-J2-fHm" firstAttribute="leading" secondItem="lfD-pl-wwe" secondAttribute="leading" id="NJN-iS-dYT"/>
+                            <constraint firstItem="xX4-v3-eon" firstAttribute="top" secondItem="MSw-Jd-UlD" secondAttribute="top" id="NfZ-9e-J0D"/>
+                            <constraint firstItem="Hqh-5t-5l3" firstAttribute="top" secondItem="xX4-v3-eon" secondAttribute="bottom" id="RlT-QL-0dV"/>
                             <constraint firstItem="lfD-pl-wwe" firstAttribute="trailing" secondItem="Hqh-5t-5l3" secondAttribute="trailing" id="Y4K-qN-z58"/>
                             <constraint firstItem="lfD-pl-wwe" firstAttribute="trailing" secondItem="5wk-J2-fHm" secondAttribute="trailing" id="atW-x6-ID6"/>
                             <constraint firstAttribute="bottom" secondItem="5wk-J2-fHm" secondAttribute="bottom" id="hjh-2w-Imd"/>
-                            <constraint firstItem="Hqh-5t-5l3" firstAttribute="top" secondItem="lfD-pl-wwe" secondAttribute="top" id="j26-AF-Ita"/>
+                            <constraint firstItem="xX4-v3-eon" firstAttribute="leading" secondItem="lfD-pl-wwe" secondAttribute="leading" id="kGL-vj-XGC"/>
+                            <constraint firstItem="xX4-v3-eon" firstAttribute="trailing" secondItem="lfD-pl-wwe" secondAttribute="trailing" id="mbS-P4-t3E"/>
                             <constraint firstItem="lfD-pl-wwe" firstAttribute="trailing" secondItem="dcr-kT-kUm" secondAttribute="trailing" id="pZA-Ud-qek"/>
                             <constraint firstItem="dcr-kT-kUm" firstAttribute="leading" secondItem="lfD-pl-wwe" secondAttribute="leading" id="sM0-mI-5DP"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="lfD-pl-wwe"/>
                     </view>
-                    <navigationItem key="navigationItem" title="대기리스트" id="NWO-a8-QzR">
-                        <barButtonItem key="leftBarButtonItem" image="close24Px" id="ezQ-kZ-523">
-                            <connections>
-                                <action selector="closeBtn:" destination="k1R-7Z-Ij0" id="LI6-Gm-UZV"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="NWO-a8-QzR"/>
                     <size key="freeformSize" width="375" height="1440"/>
                     <connections>
                         <outlet property="orderBtnAppear" destination="Gh9-kX-qvk" id="qUm-1I-aSV"/>
@@ -594,10 +647,9 @@
         <!--Navigation Controller-->
         <scene sceneID="xfE-Bi-WTG">
             <objects>
-                <navigationController storyboardIdentifier="OrderViewController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="vhQ-X9-mGR" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="OrderViewController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" navigationBarHidden="YES" id="vhQ-X9-mGR" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="XFN-kt-x6a">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -612,10 +664,10 @@
         <!--Navigation Controller-->
         <scene sceneID="Zu1-Rx-aiy">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="L6g-ol-sEh" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="L6g-ol-sEh" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="j4g-7P-6Lg">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -718,6 +770,7 @@
         <image name="close24Px" width="20" height="20"/>
         <image name="iconTrash" width="37" height="30"/>
         <image name="optionPopupbtnFin" width="240" height="44"/>
-        <image name="storeBackBtn" width="44" height="44"/>
+        <image name="processBackBtn" width="44" height="44"/>
+        <image name="storeDetailBtnOrder" width="343" height="50"/>
     </resources>
 </document>

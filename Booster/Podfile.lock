@@ -1,30 +1,28 @@
 PODS:
   - Alamofire (4.8.2)
-  - Kingfisher (5.14.1):
-    - Kingfisher/Core (= 5.14.1)
-  - Kingfisher/Core (5.14.1)
+  - lottie-ios (3.1.8)
   - NMapsMap (3.8.0)
   - SwiftGifOrigin (1.7.0)
 
 DEPENDENCIES:
   - Alamofire (~> 4.8.2)
-  - Kingfisher (~> 5.0)
+  - lottie-ios
   - NMapsMap
   - SwiftGifOrigin (~> 1.7.0)
 
 SPEC REPOS:
   trunk:
     - Alamofire
-    - Kingfisher
+    - lottie-ios
     - NMapsMap
     - SwiftGifOrigin
 
 SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
-  Kingfisher: 8050bc6f7f68cbf3908bd04df7ccbac188f6d6d6
+  lottie-ios: 48fac6be217c76937e36e340e2d09cf7b10b7f5f
   NMapsMap: b3633ad688483a318be9293aeddd323a714fb08b
   SwiftGifOrigin: fbd6cf37afcfcf97a5c3db996ddc0492e5c5c145
 
-PODFILE CHECKSUM: 77f8e72413608af9601a7ba863ccf45b09f33403
+PODFILE CHECKSUM: 4e1dd50f2c07da6966d6c34d996b0010b0dfae52
 
 COCOAPODS: 1.9.1

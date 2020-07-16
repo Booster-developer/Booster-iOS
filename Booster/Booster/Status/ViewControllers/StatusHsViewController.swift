@@ -16,6 +16,9 @@ class StatusHsViewController: UIViewController {
   @IBOutlet weak var marginViewHeight: NSLayoutConstraint!
   @IBOutlet weak var countLabel: UILabel!
   
+  @IBAction func back(_ sender: Any) {
+    self.tabBarController?.selectedIndex = 0
+  }
   
   // MARK: - IBActions
   @IBAction func presentCancelOrderViewController(_ sender: Any) {

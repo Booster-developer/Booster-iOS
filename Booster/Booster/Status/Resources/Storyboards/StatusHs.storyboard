@@ -17,6 +17,16 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="saP-QG-0aA">
                                 <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yyD-LB-REA">
+                                        <rect key="frame" x="16" y="8" width="30" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="&lt;"/>
+                                        <connections>
+                                            <action selector="back:" destination="5zu-yB-ZBx" eventType="touchUpInside" id="P7F-I1-kli"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="ht8-LB-QKY"/>
@@ -34,55 +44,52 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="82i-r3-d8B">
-                                        <rect key="frame" x="16" y="51" width="217" height="48"/>
-                                        <attributedString key="attributedText">
-                                            <fragment content="부릉~ ">
-                                                <attributes>
-                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                                    <font key="NSFont" size="20" name="AppleSDGothicNeo-Regular"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content="박정미 님의 부스터">
-                                                <attributes>
-                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                                    <font key="NSFont" size="20" name="AppleSDGothicNeo-Bold"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content="가 ">
-                                                <attributes>
-                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                                    <font key="NSFont" size="20" name="AppleSDGothicNeo-Regular"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content="3개 가동 중">
-                                                <attributes>
-                                                    <color key="NSColor" red="0.14117647058823529" green="0.20784313725490194" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <font key="NSFont" size="20" name="AppleSDGothicNeo-Bold"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content="입니다.">
-                                                <attributes>
-                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                                    <font key="NSFont" size="20" name="AppleSDGothicNeo-Regular"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                </attributes>
-                                            </fragment>
-                                        </attributedString>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="부릉~" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hgp-J6-Zq9">
+                                        <rect key="frame" x="16" y="53" width="41" height="22"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="박정미 님의 부스터" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mJU-NF-UGU">
+                                        <rect key="frame" x="64" y="53" width="135" height="22"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3개 가동 중" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gRD-Li-MZe">
+                                        <rect key="frame" x="16" y="76" width="82" height="22"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="18"/>
+                                        <color key="textColor" red="0.1849613786" green="0.2296494842" blue="0.96084004639999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="가" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b6D-Wx-4bQ">
+                                        <rect key="frame" x="199" y="53" width="16" height="22"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="입니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vDi-Sk-PJu">
+                                        <rect key="frame" x="98" y="76" width="51" height="22"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="18"/>
+                                        <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
-                                    <constraint firstItem="82i-r3-d8B" firstAttribute="top" secondItem="jvu-9z-5lT" secondAttribute="bottom" constant="12" id="5FO-QG-stz"/>
+                                    <constraint firstItem="gRD-Li-MZe" firstAttribute="leading" secondItem="ipW-6R-PiC" secondAttribute="leading" constant="16" id="6D7-DX-ou1"/>
+                                    <constraint firstItem="mJU-NF-UGU" firstAttribute="leading" secondItem="Hgp-J6-Zq9" secondAttribute="trailing" constant="7" id="AzM-nb-9Lk"/>
                                     <constraint firstItem="jvu-9z-5lT" firstAttribute="leading" secondItem="ipW-6R-PiC" secondAttribute="leading" constant="16" id="IO6-Ox-8bE"/>
                                     <constraint firstItem="jvu-9z-5lT" firstAttribute="top" secondItem="ipW-6R-PiC" secondAttribute="top" constant="8" id="Sae-VF-65v"/>
-                                    <constraint firstItem="82i-r3-d8B" firstAttribute="leading" secondItem="ipW-6R-PiC" secondAttribute="leading" constant="16" id="T6P-fg-eXJ"/>
-                                    <constraint firstItem="82i-r3-d8B" firstAttribute="width" secondItem="ipW-6R-PiC" secondAttribute="width" multiplier="217:375" id="nLR-yz-O4m"/>
+                                    <constraint firstAttribute="bottom" secondItem="gRD-Li-MZe" secondAttribute="bottom" constant="23" id="ghy-kn-woq"/>
+                                    <constraint firstItem="mJU-NF-UGU" firstAttribute="centerY" secondItem="Hgp-J6-Zq9" secondAttribute="centerY" id="kWV-Av-kzL"/>
+                                    <constraint firstItem="vDi-Sk-PJu" firstAttribute="centerY" secondItem="gRD-Li-MZe" secondAttribute="centerY" id="kfn-Li-z15"/>
+                                    <constraint firstItem="gRD-Li-MZe" firstAttribute="top" secondItem="Hgp-J6-Zq9" secondAttribute="bottom" constant="1" id="nGZ-gO-ohf"/>
+                                    <constraint firstItem="Hgp-J6-Zq9" firstAttribute="top" secondItem="jvu-9z-5lT" secondAttribute="bottom" constant="14" id="oZk-5D-o62"/>
+                                    <constraint firstItem="b6D-Wx-4bQ" firstAttribute="leading" secondItem="mJU-NF-UGU" secondAttribute="trailing" id="sXm-aI-RsH"/>
+                                    <constraint firstItem="vDi-Sk-PJu" firstAttribute="leading" secondItem="gRD-Li-MZe" secondAttribute="trailing" id="sbq-WS-LmX"/>
+                                    <constraint firstItem="b6D-Wx-4bQ" firstAttribute="centerY" secondItem="Hgp-J6-Zq9" secondAttribute="centerY" id="tHj-NQ-K7f"/>
+                                    <constraint firstItem="Hgp-J6-Zq9" firstAttribute="leading" secondItem="ipW-6R-PiC" secondAttribute="leading" constant="16" id="vly-qR-uSM"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PFL-Wl-c1J">
@@ -259,7 +266,6 @@
                             <constraint firstItem="saP-QG-0aA" firstAttribute="leading" secondItem="oFW-d0-JYT" secondAttribute="leading" id="SUY-Ed-oPm"/>
                             <constraint firstAttribute="trailing" secondItem="saP-QG-0aA" secondAttribute="trailing" id="UXR-8U-4JF"/>
                             <constraint firstItem="kxz-Tn-nID" firstAttribute="trailing" secondItem="PFL-Wl-c1J" secondAttribute="trailing" id="WDD-Hz-thG"/>
-                            <constraint firstItem="ipW-6R-PiC" firstAttribute="height" secondItem="oFW-d0-JYT" secondAttribute="height" multiplier="121:812" id="bZf-1M-yLc"/>
                             <constraint firstItem="ipW-6R-PiC" firstAttribute="leading" secondItem="kxz-Tn-nID" secondAttribute="leading" id="jlw-6B-Hmv"/>
                             <constraint firstItem="2Yb-H3-3mG" firstAttribute="top" secondItem="PFL-Wl-c1J" secondAttribute="bottom" id="lSs-NF-576"/>
                             <constraint firstItem="2Yb-H3-3mG" firstAttribute="leading" secondItem="kxz-Tn-nID" secondAttribute="leading" id="sfK-O1-P8z"/>

@@ -351,7 +351,7 @@ struct waitListService{
           let decoder = JSONDecoder()
           guard let decodedData = try? decoder.decode(waitListData.self, from: value) else { return networkResult = .pathErr }
           
-          print(decodedData.status)
+          print(decodedData)
           guard let orderIdx = decodedData.data else{return networkResult = .requestErr(decodedData.message)}
           if decodedData.status == 200{
             networkResult = .success(orderIdx)
@@ -383,28 +383,38 @@ struct uploadFileService{
     let url = APIConstraints.orderRequest + APIIndex.init(index: .orderIdx(orderIdx)).index.getIdx() + APIConstraints.file
     Alamofire.upload(multipartFormData: {(formData) in
       formData.append(fileData,withName: "file")
-      print(formData.contentType)
-      print(formData.contentLength)
-      print(formData.boundary)
     }, to: url, method: .post, headers: header, encodingCompletion: {(encodingResult) in
       print(encodingResult)
       switch encodingResult {
       case .success(let request,_,_):
+        print(request)
         request.responseJSON(completionHandler: { (response) in
-          print(request)
           guard let statusCode = response.response?.statusCode else {return}
-          guard let value = response.result.value as? [[String:Any]] else {return}
+          let data = response.result.value as! [String : Any]
+          print(data)
+          let status = data["status"]
+          let file = data["data"] as! [String:Any]?
+          let fileidx = file?["file_idx"]
+          let message = data["message"]
+          guard let value = response.result.value else {
+            return}
           var networkResult:NetworkResult<Any>?
           print(statusCode)
+          
           switch statusCode{
           case 200 :
-            let decoder = JSONDecoder()
-            guard let decodeData = try? decoder.decode(fileUploadData.self, from: value as! Data) else {return  networkResult = .pathErr}
+            print(value)
+            let decodeData:fileUploadData = fileUploadData(status: status as! Int, success: true, message: message as! String, data: fileIdx(fileIdx: fileidx as? Int ?? -1))
             guard let resultdata = decodeData.data else { return networkResult = .requestErr(decodeData.message)}
+            print("decodeData")
+            print(decodeData)
+            print(resultdata)
             if decodeData.status == 200 {
               networkResult = .success(resultdata)
             }
-            
+            else{
+              networkResult = .requestErr(decodeData.message)
+            }
             case 400: networkResult = .pathErr
             case 500: networkResult = .serverErr
             default: networkResult = .networkFail
@@ -412,6 +422,7 @@ struct uploadFileService{
           completion(networkResult!)
         })
       case .failure(_):
+        
         completion(.networkFail)
         print("UPload failed")
       }
@@ -420,3 +431,39 @@ struct uploadFileService{
   }
 }
 
+
+struct deleteFileService{
+  static let shared = deleteFileService()
+  func filedeleter(fileidx:Int, completion:@escaping (NetworkResult<Any>) -> Void){
+    let header:HTTPHeaders = ["token":UserDefaults.standard.string(forKey: "token")!]
+    let url = APIConstraints.orderRequest+APIIndex.init(index: .fileIdx(fileidx)).index.getIdx()
+    
+    let dataRequest = Alamofire.request(url, method: .delete, parameters: nil, encoding: JSONEncoding.default, headers: header)
+    dataRequest.responseData { dataResponse in
+      
+      switch dataResponse.result{
+      case .success:
+        guard let statusCode = dataResponse.response?.statusCode else{return}
+        guard let value = dataResponse.result.value else {return}
+        var networkResult:NetworkResult<Any>?
+        switch statusCode{
+        case 200:
+          let decoder = JSONDecoder()
+          guard let decodedData = try? decoder.decode(fileDeleteData.self, from: value) else { return networkResult = .pathErr }
+          if decodedData.status == 200{
+            networkResult = .success(decodedData.message)
+          }
+          else if decodedData.status == 403 {
+            networkResult = .requestErr(decodedData.message)
+          }
+        case 400: networkResult = .pathErr
+        case 500: networkResult = .serverErr
+        default: networkResult = .networkFail
+        }
+        completion(networkResult!)
+      case .failure : completion(.networkFail)
+      }
+    }
+    
+  }
+}
