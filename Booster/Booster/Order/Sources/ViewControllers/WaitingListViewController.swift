@@ -45,6 +45,7 @@ class WaitingListViewController: UIViewController {
       case .success(let data):
         guard let data = data as? waitCellData else {return}
         var tempFilelist:[fileData] = []
+        
         if let file =  data.file_info{
           for i in 0..<file.count{
             tempFilelist.append(fileData(file_idx: file[i].file_idx, file_name: file[i].file_name, file_extension: file[i].file_extension, file_path: file[i].file_path))
@@ -80,48 +81,12 @@ class WaitingListViewController: UIViewController {
   @IBAction func cangeCurrentStore(_ sender: Any) {
     goBackToStoreSelection()
   }
-  @IBAction func selectOption(_ sender: Any) {
-    let orderHsStoryboard = UIStoryboard.init(name:"OrderHs",bundle: nil)
-    guard let optView = orderHsStoryboard.instantiateViewController(identifier: "OptionViewController") as? OrderHsViewController else {return}
-    self.navigationController?.pushViewController(optView, animated: true)
-  }
+
   @IBAction func goPayView(_ sender: Any) {
     let orderHsStoryboard = UIStoryboard.init(name:"OrderHs",bundle: nil)
     guard let payView = orderHsStoryboard.instantiateViewController(identifier: "PayViewController") as? PayViewController else {return}
     payView.orderIndex = self.orderIdx
     self.navigationController?.pushViewController(payView, animated: true)
-  }
-  @IBAction func goShowOptionView(_ sender: Any) {
-    OptionService.shared.getOption() {networkResult in
-      
-      switch networkResult {
-      case .success(let optionList):
-        guard let optionList = optionList as? OptionList else {return}
-        let orderHsStoryBoard = UIStoryboard.init(name: "OrderHs", bundle: nil)
-        guard let showOptionView = orderHsStoryBoard.instantiateViewController(identifier: "showOptionViewController") as? ShowOptionViewController else {return}
-        showOptionView.modalPresentationStyle = .overCurrentContext
-        self.present(showOptionView, animated: false, completion: nil)
-        print(optionList)
-        showOptionView.fileColor.text = optionList.file_color
-        showOptionView.fileDirection.text = optionList.file_direction
-        showOptionView.fileSidedType.text = optionList.file_sided_type
-        showOptionView.fileCollect.text = String(optionList.file_collect)
-        showOptionView.fileRange.text = optionList.file_range
-        showOptionView.fileCopyNumber.text = String(optionList.file_copy_number)
-        
-      case .requestErr(let message):
-        guard let message = message as? String else {return}
-        let alertViewController = UIAlertController(title: "로그인 실패", message: message,
-                                                    preferredStyle: .alert)
-        let action = UIAlertAction(title: "확인", style: .cancel, handler: nil)
-        alertViewController.addAction(action)
-        self.present(alertViewController, animated: true, completion: nil)
-      case .pathErr: print("path")
-      case .serverErr: print("serverErr")
-      case .networkFail: print("networkFail")
-      }
-    }
-    
   }
   
   func setWaitingListCV(){
@@ -306,17 +271,81 @@ extension WaitingListViewController:UICollectionViewDataSource{
     else{
       guard let fileCell:WaitCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: WaitCollectionViewCell.identifier, for:indexPath) as? WaitCollectionViewCell else {
           return UICollectionViewCell()}
-      fileCell.fileName.text = "ddd"
-      //fileCell.fileName.text = fileDataList[indexPath.row].file_name
+      //fileCell.fileName.text = "ddd"
+      fileCell.fileName.text = fileDataList[indexPath.row].file_name
       //fileCell.preViewImg.setImage(fileList[indexPath.row].fileImg, for: .normal)
-      
+      fileCell.fileExtention.text = fileDataList[indexPath.row].file_extension
+      fileCell.checkOption.tag = indexPath.row
+      fileCell.checkOption.addTarget(self, action: #selector(popupOption(sender:)), for: .touchUpInside)
       fileCell.deleteCell.tag = indexPath.row
       fileCell.deleteCell.addTarget(self, action: #selector(deleteCell(sender:)), for: .touchUpInside)
+      fileCell.changeOption.tag = indexPath.row
+      fileCell.changeOption.addTarget(self, action: #selector(optionChange(sender:)), for: .touchUpInside)
       return fileCell
-      
+
     }
     
     
+  }
+  @objc func optionChange(sender:UIButton){
+    let fileidx:Int = fileDataList[sender.tag].file_idx
+
+    OptionService.shared.getOption(fileidx:fileidx) {networkResult in
+         switch networkResult {
+         case .success(let optionList):
+           guard let optionList = optionList as? OptionList else {return}
+           let orderHsStoryBoard = UIStoryboard.init(name: "OrderHs", bundle: nil)
+           let orderHsStoryboard = UIStoryboard.init(name:"OrderHs",bundle: nil)
+           guard let optView = orderHsStoryboard.instantiateViewController(identifier: "OptionViewController") as? OrderHsViewController else {return}
+           
+           
+           optView.fileIdx = fileidx
+           optView.optionListFromServer = optionList
+           
+           self.navigationController?.pushViewController(optView, animated: true)
+         case .requestErr(let message):
+           guard let message = message as? String else {return}
+           let alertViewController = UIAlertController(title: "로그인 실패", message: message,
+                                                       preferredStyle: .alert)
+           let action = UIAlertAction(title: "확인", style: .cancel, handler: nil)
+           alertViewController.addAction(action)
+           self.present(alertViewController, animated: true, completion: nil)
+         case .pathErr: print("path")
+         case .serverErr: print("serverErr")
+         case .networkFail: print("networkFail")
+         }
+       }
+  }
+  @objc func popupOption(sender:UIButton){
+    let fileidx:Int = fileDataList[sender.tag].file_idx
+    OptionService.shared.getOption(fileidx:fileidx) {networkResult in
+         switch networkResult {
+         case .success(let optionList):
+           guard let optionList = optionList as? OptionList else {return}
+           let orderHsStoryBoard = UIStoryboard.init(name: "OrderHs", bundle: nil)
+           guard let showOptionView = orderHsStoryBoard.instantiateViewController(identifier: "showOptionViewController") as? ShowOptionViewController else {return}
+           showOptionView.modalPresentationStyle = .overCurrentContext
+           self.present(showOptionView, animated: false, completion: nil)
+           print(optionList)
+           showOptionView.fileColor.text = optionList.file_color
+           showOptionView.fileDirection.text = optionList.file_direction
+           showOptionView.fileSidedType.text = optionList.file_sided_type
+           showOptionView.fileCollect.text = String(optionList.file_collect)
+           showOptionView.fileRange.text = optionList.file_range
+           showOptionView.fileCopyNumber.text = String(optionList.file_copy_number)
+           
+         case .requestErr(let message):
+           guard let message = message as? String else {return}
+           let alertViewController = UIAlertController(title: "로그인 실패", message: message,
+                                                       preferredStyle: .alert)
+           let action = UIAlertAction(title: "확인", style: .cancel, handler: nil)
+           alertViewController.addAction(action)
+           self.present(alertViewController, animated: true, completion: nil)
+         case .pathErr: print("path")
+         case .serverErr: print("serverErr")
+         case .networkFail: print("networkFail")
+         }
+       }
   }
   @objc func getFile(sender:UIButton){
     getFileFromLocal()

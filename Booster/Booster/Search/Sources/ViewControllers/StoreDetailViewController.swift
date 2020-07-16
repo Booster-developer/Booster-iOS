@@ -9,7 +9,7 @@
 import UIKit
 
 class StoreDetailViewController: UIViewController {
-
+  var storeidx:Int?
   // MARK: - Vars
   var toggle: Bool = true
   // MARK: - IBOutlet

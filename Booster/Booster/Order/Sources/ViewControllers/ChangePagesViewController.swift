@@ -37,6 +37,7 @@ class ChangePagesViewController: UIViewController {
     guard let vc = self.presentingViewController?.children[2] as? OrderHsViewController else {return}
     vc.pagesLabel.text = self.pagesNum.text!+"부"
     vc.pagesNum = Int(self.pagesNum.text!)!
+    vc.optionListFromServer?.file_copy_number = Int(self.pagesNum.text!)!
     dismiss(animated: false, completion: nil)
   }
   @IBAction func backBtnClicked(_ sender: Any) {

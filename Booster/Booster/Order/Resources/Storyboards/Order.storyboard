@@ -403,8 +403,8 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="343" height="128"/>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="파일이름" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MkL-Mz-VAq">
-                                                            <rect key="frame" x="102.5" y="15" width="59" height="20.5"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <rect key="frame" x="102.5" y="15" width="55.5" height="20"/>
+                                                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="16"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -417,9 +417,6 @@
                                                             <state key="normal" title="옵션 설정">
                                                                 <color key="titleColor" red="0.48630654810000001" green="0.49018782379999998" blue="0.49019646639999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                             </state>
-                                                            <connections>
-                                                                <action selector="selectOption:" destination="k1R-7Z-Ij0" eventType="touchUpInside" id="fpx-c3-hYa"/>
-                                                            </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IdJ-sx-pcc">
                                                             <rect key="frame" x="266" y="6" width="71" height="71"/>
@@ -432,9 +429,6 @@
                                                             <rect key="frame" x="247" y="94" width="38" height="24"/>
                                                             <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="10"/>
                                                             <state key="normal" title="옵션 보기"/>
-                                                            <connections>
-                                                                <action selector="goShowOptionView:" destination="k1R-7Z-Ij0" eventType="touchUpInside" id="m6T-GM-rT3"/>
-                                                            </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E1B-05-nmM">
                                                             <rect key="frame" x="8" y="8" width="83.5" height="112"/>
@@ -443,12 +437,19 @@
                                                                 <constraint firstAttribute="width" secondItem="E1B-05-nmM" secondAttribute="height" multiplier="38:51" id="bbT-yf-Av4"/>
                                                             </constraints>
                                                         </button>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=".확장자" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jGn-di-Gy9">
+                                                            <rect key="frame" x="158" y="15" width="45.5" height="20"/>
+                                                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="16"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
                                                     </subviews>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                     <constraints>
                                                         <constraint firstItem="E1B-05-nmM" firstAttribute="top" secondItem="obH-bd-ERH" secondAttribute="top" constant="8" id="1jZ-67-QCt"/>
                                                         <constraint firstAttribute="trailing" secondItem="OzY-o5-59X" secondAttribute="trailing" constant="11" id="4Fh-fh-nex"/>
                                                         <constraint firstItem="E1B-05-nmM" firstAttribute="leading" secondItem="obH-bd-ERH" secondAttribute="leading" constant="8" id="4vL-4N-zbQ"/>
+                                                        <constraint firstItem="jGn-di-Gy9" firstAttribute="centerY" secondItem="MkL-Mz-VAq" secondAttribute="centerY" id="H4v-6z-D9s"/>
                                                         <constraint firstAttribute="bottom" secondItem="E1B-05-nmM" secondAttribute="bottom" constant="8" id="HQp-VO-Tsz"/>
                                                         <constraint firstItem="MkL-Mz-VAq" firstAttribute="top" secondItem="obH-bd-ERH" secondAttribute="top" constant="15" id="ONC-xH-j9M"/>
                                                         <constraint firstItem="MkL-Mz-VAq" firstAttribute="leading" secondItem="E1B-05-nmM" secondAttribute="trailing" constant="11" id="PLg-Cg-i2i"/>
@@ -462,6 +463,7 @@
                                                         <constraint firstItem="bhk-1s-zrI" firstAttribute="leading" secondItem="obH-bd-ERH" secondAttribute="leading" id="u4z-bU-k4L"/>
                                                         <constraint firstAttribute="bottom" secondItem="bhk-1s-zrI" secondAttribute="bottom" id="xHT-eT-Qfu"/>
                                                         <constraint firstItem="qAV-cJ-gMQ" firstAttribute="centerY" secondItem="OzY-o5-59X" secondAttribute="centerY" id="xmQ-Td-5Ac"/>
+                                                        <constraint firstItem="jGn-di-Gy9" firstAttribute="leading" secondItem="MkL-Mz-VAq" secondAttribute="trailing" id="z0j-HV-NWg"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
@@ -477,6 +479,7 @@
                                             <outlet property="changeOption" destination="OzY-o5-59X" id="m3u-6g-JmD"/>
                                             <outlet property="checkOption" destination="qAV-cJ-gMQ" id="cV1-C9-DO9"/>
                                             <outlet property="deleteCell" destination="IdJ-sx-pcc" id="E90-82-fOM"/>
+                                            <outlet property="fileExtention" destination="jGn-di-Gy9" id="BAr-lH-m3T"/>
                                             <outlet property="fileName" destination="MkL-Mz-VAq" id="sHs-fX-dnc"/>
                                             <outlet property="preViewImg" destination="E1B-05-nmM" id="aWV-A8-d81"/>
                                         </connections>
