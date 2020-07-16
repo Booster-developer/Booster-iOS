@@ -43,6 +43,7 @@ struct PayFile {
     self.expandName = expandName
     self.options = options
     self.price = price
+   
   }
 }
 struct StoreInfo {

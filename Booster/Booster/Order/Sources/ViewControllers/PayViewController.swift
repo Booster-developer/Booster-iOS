@@ -14,6 +14,7 @@ class PayViewController: UIViewController {
   var payFileInformations: [PayFile] = []
   var textFieldColor: UIColor = UIColor(displayP3Red: 187/255, green: 187/255, blue: 187/255, alpha: 1)
   var textFieldCount: Int = 0
+  var orderIndex: Int = 0
   
   // MARK: - Functions
   
@@ -42,15 +43,22 @@ class PayViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    payFileTableView.delegate = self
-    payFileTableView.dataSource = self
-    requestTextField.delegate = self
+    
     self.navigationController?.isNavigationBarHidden = true
     self.requestTextField.attributedPlaceholder = NSAttributedString(string: "사장님께 요청사항을 작성해주세요.", attributes: [NSAttributedString.Key.foregroundColor:textFieldColor])
     self.updateCharacterCount()
-    
-    PaymentService.shared.getPayment() { networkResult in switch networkResult {
+    if self.requestTextField.isSelected {
+      self.requestTextField.layer.borderWidth = 1
+      self.requestTextField.layer.borderColor = (UIColor.init(red: 48/255, green: 79/255, blue: 255/255, alpha: 1).cgColor)
+      
+    }
+    else {
+      self.requestTextField.layer.borderColor = UIColor.black.cgColor
+    }
+    PaymentService.shared.getPayment(orderIdx: self.orderIndex) { networkResult in switch networkResult {
     case .success(let paymentList):
+      print(self.orderIndex)
+      print(paymentList)
       guard let paymentList = paymentList as? DataClass else {return}
       self.currentEngine.text = String(paymentList.user_point)+"P"
       self.payEngine.text = String(paymentList.order_price)+"P"
@@ -62,8 +70,13 @@ class PayViewController: UIViewController {
         
         let paymentInfo = PayFile.init(fileName: paymentList.fileOption[i].file_name, expandName: paymentList.fileOption[i].file_extension, options: payOption, price: paymentList.fileOption[i].file_price)
         self.payFileInformations.append(paymentInfo)
-        print(self.payFileInformations)
+        
       }
+      self.payFileTableView.translatesAutoresizingMaskIntoConstraints = false
+      self.payFileTableView.heightAnchor.constraint(equalToConstant: CGFloat(103 * self.payFileInformations.count)).isActive = true
+      self.payFileTableView.delegate = self
+      self.payFileTableView.dataSource = self
+      self.requestTextField.delegate = self
       self.payFileTableView.reloadData()
       
     case .requestErr(let message):
@@ -91,12 +104,12 @@ class PayViewController: UIViewController {
     
   }
   
-  override func viewDidLayoutSubviews() {
-    super.viewDidLayoutSubviews()
-    payFileTableView.translatesAutoresizingMaskIntoConstraints = false
-    payFileTableView.heightAnchor.constraint(equalToConstant: CGFloat(103 * payFileInformations.count)).isActive = true
-    
-  }
+//  override func viewDidLayoutSubviews() {
+//    super.viewDidLayoutSubviews()
+//    payFileTableView.translatesAutoresizingMaskIntoConstraints = false
+//    payFileTableView.heightAnchor.constraint(equalToConstant: CGFloat(103 * payFileInformations.count)).isActive = true
+//
+//  }
   
   
   /*
@@ -113,12 +126,14 @@ class PayViewController: UIViewController {
 // MARK: - Extensions
 extension PayViewController: UITableViewDataSource {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    print(payFileInformations.count)
     return payFileInformations.count
   }
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     guard let payFileCell = tableView.dequeueReusableCell(withIdentifier: PayTableViewCell.identifier, for: indexPath) as? PayTableViewCell else {return UITableViewCell()}
-    payFileCell.separatorInset = UIEdgeInsets.zero
     payFileCell.setPayFileInformation(fileName: payFileInformations[indexPath.row].fileName, expandName: payFileInformations[indexPath.row].expandName, fileOption: payFileInformations[indexPath.row].options, price: payFileInformations[indexPath.row].price)
+    print("PayFileCell:")
+    print(payFileCell)
     return payFileCell
   }
 }
@@ -126,7 +141,7 @@ extension PayViewController: UITableViewDelegate {
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
     return 103
   }
-  
+
 }
 extension PayViewController: UITextFieldDelegate {
   func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {

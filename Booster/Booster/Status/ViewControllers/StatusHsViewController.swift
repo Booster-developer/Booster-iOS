@@ -22,13 +22,15 @@ class StatusHsViewController: UIViewController {
   }
   
   // MARK: - IBActions
-  @IBAction func presentCancelOrderViewController(_ sender: Any) {
-    let storyBoard = UIStoryboard.init(name: "StatusHs", bundle: nil)
-    let cancelOrderVC = storyBoard.instantiateViewController(identifier: "cancelOrderViewController") as CancelOrderViewController
-    
-    cancelOrderVC.modalPresentationStyle = .overCurrentContext
-    self.present(cancelOrderVC, animated: false, completion: nil)
-  }
+//  @IBAction func presentCancelOrderViewController(_ sender: Any) {
+//    let storyBoard = UIStoryboard.init(name: "StatusHs", bundle: nil)
+//    guard let cancelOrderVC = storyBoard.instantiateViewController(identifier: "cancelOrderViewController") as? CancelOrderViewController else {return}
+//
+//    cancelOrderVC.modalPresentationStyle = .overCurrentContext
+//    cancelOrderVC.orderNum = self.orderNum
+//    print(self.orderNum)
+//    self.present(cancelOrderVC, animated: false, completion: nil)
+//  }
   @IBAction func completePickUp(_ sender: Any) {
     
     statusHsTableView.reloadData()
@@ -38,9 +40,11 @@ class StatusHsViewController: UIViewController {
   var statusInformations: [StatusInformation] = []
   private var marginViewHeightConstraint : NSLayoutConstraint!
   private var toggle: Bool = true
+  var orderNum: Int?
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    statusHsTableView.reloadData()
     statusHsTableView.dataSource = self
     statusHsTableView.delegate = self
     
@@ -102,12 +106,24 @@ extension StatusHsViewController: UITableViewDataSource {
     
     statusHsCell.setBtnImg(imgName: statusInformations[indexPath.row].getImageName())
     statusHsCell.tag = indexPath.row
+    
+    
+    statusHsCell.cancelOrderBtn.tag = indexPath.row
+    statusHsCell.cancelOrderBtn.addTarget(self, action: #selector(deleteCell(sender:)), for: .touchUpInside)
+    
     return statusHsCell
+  }
+  @objc func deleteCell(sender:UIButton) {
+    let storyBoard = UIStoryboard.init(name: "StatusHs", bundle: nil)
+    guard let cancelOrderVC = storyBoard.instantiateViewController(identifier: "cancelOrderViewController") as? CancelOrderViewController else {return}
+    cancelOrderVC.modalPresentationStyle = .overCurrentContext
+    cancelOrderVC.orderNum = statusInformations[sender.tag].orderNum
     
-    
-    
+    self.present(cancelOrderVC, animated: false, completion: nil)
   }
 }
+
+
 
 extension StatusHsViewController: UITableViewDelegate {
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -121,7 +137,6 @@ extension StatusHsViewController: UITableViewDelegate {
       toggle = !toggle
     }
   }
-  
 }
 extension NSLayoutConstraint {
   func constraintWithMultiplier(_ multiplier: CGFloat) -> NSLayoutConstraint {

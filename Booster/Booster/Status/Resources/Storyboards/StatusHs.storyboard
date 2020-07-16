@@ -201,9 +201,6 @@
                                                     <state key="normal" title="주문 취소">
                                                         <color key="titleColor" red="0.73333333333333328" green="0.73333333333333328" blue="0.73333333333333328" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
                                                     </state>
-                                                    <connections>
-                                                        <action selector="presentCancelOrderViewController:" destination="5zu-yB-ZBx" eventType="touchUpInside" id="M39-Ls-VIu"/>
-                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>

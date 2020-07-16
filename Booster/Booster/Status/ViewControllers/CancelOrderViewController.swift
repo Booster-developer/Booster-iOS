@@ -28,8 +28,8 @@ class CancelOrderViewController: UIViewController {
     guard let vc = self.presentingViewController?.children[3] as? StatusHsViewController else {return}
     DeleteStatusService.shared.deleteStatus(orderIndex: orderNum!){ networkResult in
       switch networkResult {
-      case .success(let message) :
-        
+      case .success(_ ) :
+        print(self.orderNum)
         vc.statusHsTableView.reloadData()
         self.dismiss(animated: false, completion: nil)
       case .requestErr(let message):

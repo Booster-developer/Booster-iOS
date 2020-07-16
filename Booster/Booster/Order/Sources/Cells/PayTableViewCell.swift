@@ -30,8 +30,9 @@ class PayTableViewCell: UITableViewCell {
   
   func setPayFileInformation(fileName: String, expandName: String, fileOption: String, price: Int) {
     fileNameLabel.text = fileName
-    expandLabel.text = expandName
+    expandLabel.text = "."+expandName
     fileOptionLabel.text = fileOption
+    fileOptionLabel.textColor = UIColor(red: 187/255, green: 187/255, blue: 187/255, alpha: 1)
     priceLabel.text = String(price)
     
   }

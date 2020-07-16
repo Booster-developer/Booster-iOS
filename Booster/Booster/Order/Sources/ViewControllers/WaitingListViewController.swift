@@ -88,6 +88,7 @@ class WaitingListViewController: UIViewController {
   @IBAction func goPayView(_ sender: Any) {
     let orderHsStoryboard = UIStoryboard.init(name:"OrderHs",bundle: nil)
     guard let payView = orderHsStoryboard.instantiateViewController(identifier: "PayViewController") as? PayViewController else {return}
+    payView.orderIndex = self.orderIdx
     self.navigationController?.pushViewController(payView, animated: true)
   }
   @IBAction func goShowOptionView(_ sender: Any) {

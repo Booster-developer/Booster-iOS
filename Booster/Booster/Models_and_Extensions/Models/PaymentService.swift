@@ -12,11 +12,10 @@ import Alamofire
 struct PaymentService {
   static let shared = PaymentService()
   
-  func getPayment(completion: @escaping (NetworkResult<Any>) -> Void) {
+  func getPayment(orderIdx: Int, completion: @escaping (NetworkResult<Any>) -> Void) {
     let header: HTTPHeaders = ["token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkeCI6MSwiaWF0IjoxNTk0MDI1NzE2LCJleHAiOjE1OTc2MjU3MTYsImlzcyI6IkJvb3N0ZXIifQ.FtWfnt4rlyYH9ZV3TyOjLZXOkeR7ya96afmA0zJqTI8"]
-    let index = APIIndex.init(index: .orderIdx(1)).index.getIdx()
     
-    let dataRequest = Alamofire.request(APIConstraints.orderRequest+index+"/payment", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: header)
+    let dataRequest = Alamofire.request(APIConstraints.orderRequest+"/"+String(orderIdx)+"/payment", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: header)
     
     dataRequest.responseData { dataResponse in
       switch dataResponse.result {
