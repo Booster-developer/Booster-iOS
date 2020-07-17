@@ -9,6 +9,11 @@
 import UIKit
 
 class OrderViewController: UIViewController {
+  var refreshCollectionView = UIRefreshControl()
+  @objc func refresh(){
+    self.view.layoutIfNeeded()
+    refreshCollectionView.endRefreshing()
+  }
   var _selectedIndexPath : IndexPath? = nil
   @IBOutlet weak var storeNameInSelection: UILabel!
   func connectServer(){
@@ -46,11 +51,10 @@ class OrderViewController: UIViewController {
         }
         self.defaultStorelist = tempStore
         tempStore.removeAll()
-        print(data)
-        self.setCollectionVeiw()
-        self.storeCollectionView.reloadData()
-        
-        
+        print("리로드데이터")
+        self.storeCollectionView?.reloadData()
+        self.refreshCollectionView.addTarget(self, action: #selector(self.refresh), for: .valueChanged)
+
       case .requestErr(let messgae) : print(messgae)
       case .networkFail: print("networkFail")
       case .serverErr : print("serverErr")
@@ -62,11 +66,13 @@ class OrderViewController: UIViewController {
     
     clearInternalFile()
     clearAllSelections()
-    
+    self.setCollectionVeiw()
+    connectServer()
+    self.storeCollectionView?.reloadData()
+    self.storeCollectionView?.refreshControl = refreshCollectionView
     //      print(self.tabBarController?.selectedIndex)
     //      self.tabBarController?.tabBar.isHidden = true
     //self.tabBarController?.tabBar.isHidden = true
-    connectServer()
     self.navigationController?.isNavigationBarHidden = true
     super.viewDidLoad()
     
@@ -141,9 +147,9 @@ class OrderViewController: UIViewController {
   
   @IBOutlet weak var storeCollectionView: UICollectionView!
   func setCollectionVeiw(){
-    selectionBtnHeight.constant = 0
-    storeCollectionView.delegate = self
-    storeCollectionView.dataSource = self
+    selectionBtnHeight?.constant = 0
+    storeCollectionView?.delegate = self
+    storeCollectionView?.dataSource = self
   }
   @IBOutlet weak var selectionBtnHeight: NSLayoutConstraint!
   func selectionBtnAppear(){
@@ -259,8 +265,6 @@ extension OrderViewController:UICollectionViewDataSource{
     guard let cell:OrderCollectionViewCell=collectionView.dequeueReusableCell(withReuseIdentifier: OrderCollectionViewCell.identifier, for: indexPath) as? OrderCollectionViewCell else{return}
     
     storeNameInSelection.text = cell.storeName.text
-    
-    
     if ((_selectedIndexPath) != nil){
       guard let oldcell :OrderCollectionViewCell=collectionView.dequeueReusableCell(withReuseIdentifier: OrderCollectionViewCell.identifier, for: _selectedIndexPath!) as? OrderCollectionViewCell else{return}
       if indexPath.compare(_selectedIndexPath!) == ComparisonResult.orderedSame{

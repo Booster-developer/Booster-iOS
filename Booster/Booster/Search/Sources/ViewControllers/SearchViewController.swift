@@ -75,8 +75,8 @@ class SearchViewController: UIViewController {
   
   @IBOutlet weak var storeCollectionView: UICollectionView!
   func setCollectionViewInfo(){
-    storeCollectionView.delegate = self
-    storeCollectionView.dataSource = self
+    storeCollectionView?.delegate = self
+    storeCollectionView?.dataSource = self
     
     setStoreInfos()
   }

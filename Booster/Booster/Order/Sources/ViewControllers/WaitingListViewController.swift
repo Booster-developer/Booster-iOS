@@ -104,10 +104,11 @@ class WaitingListViewController: UIViewController {
   
   func clearFileDir(filename:String){
     
+    let filethumbnail = String(filename.split(separator: ".").first!) + "_thumbnail.jpg"
     let curDirectory = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
     
     let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
-    
+    let thumbnail = dir.appendingPathComponent(filethumbnail)
     let file = dir.appendingPathComponent(filename)
     if FileManager.default.fileExists(atPath: dir.path){
       print("파일이 있다네요")
@@ -117,7 +118,14 @@ class WaitingListViewController: UIViewController {
       catch {
         print("삭제가 안되나요")
       }
+      do {
+        try FileManager.default.removeItem(at: thumbnail)
+      }
+      catch {
+        print("썸네일 삭제 실패")
+      }
     }
+    
   }
   
   //  func thumbNailGenerator(_ fileURL:URL, thumbnailSize:CGSize) -> UIImage?{
@@ -169,36 +177,45 @@ extension WaitingListViewController:UIDocumentPickerDelegate {
       let request = QLThumbnailGenerator.Request(fileAt: sandboxFileURL, size: size, scale: scale, representationTypes: .thumbnail)
       let generator = QLThumbnailGenerator.shared
       var thumbNail = UIImage()
+      var thumbNailData = Data()
+      let uploadfile = sandboxFileURL.lastPathComponent.split(separator: ".")
+      let filename = String(uploadfile[0]) + "_thumbnail.jpg"
+      var thumbNailURL:URL?
       print("local에서 불러온 파일 : ")
       //      print(sandboxFileURL)
       print(sandboxFileURL.lastPathComponent)
       //파일 업로드 하기
-      uploadFileService.shared.uploadfile(fileData: sandboxFileURL, orderIdx: self.orderIdx){
-        networkResult in
-        switch networkResult{
-        case .success(let fileIndexData) :
-          
-          guard let fileIndexData = fileIndexData as? fileIdx else {return}
-          let filename:String = String(sandboxFileURL.lastPathComponent.split(separator: ".")[0])
-          let fileExtension:String = String(sandboxFileURL.lastPathComponent.split(separator: ".")[1])
-          self.fileDataList.append(fileData(file_idx: fileIndexData.fileIdx, file_name: filename, file_extension: fileExtension, file_path: sandboxFileURL))
-          self.viewDidLoad()
-          self.waitingListCollectionView.reloadData()
-          self.loadWaitingView(orderIdx:self.orderIdx )
-          
-        case .requestErr(let messgae) : print(messgae)
-        case .networkFail: print("networkFail")
-        case .serverErr : print("serverErr")
-        case .pathErr : print("pathErr")
-        }
-      }
       generator.generateRepresentations(for: request) { (thumbnail, _, error) in
         DispatchQueue.main.async {
           if thumbnail != nil{
-            
             thumbNail = thumbnail!.uiImage
             print("썸네일 있는 파일")
             self.waitingListCollectionView.reloadData()
+            thumbNailData = thumbNail.jpegData(compressionQuality: 0.8) ?? Data()
+            try? thumbNailData.write(to:             dir.appendingPathComponent(filename))
+            let fileURL = dir.appendingPathComponent(filename)
+            uploadFileService.shared.uploadfile(fileData: sandboxFileURL, thumbNail: fileURL, orderIdx: self.orderIdx){
+              networkResult in
+              switch networkResult{
+              case .success(let fileIndexData) :
+                
+                guard let fileIndexData = fileIndexData as? fileIdx else {return}
+                let filename:String = String(sandboxFileURL.lastPathComponent.split(separator: ".")[0])
+                let fileExtension:String = String(sandboxFileURL.lastPathComponent.split(separator: ".")[1])
+                self.fileDataList.append(fileData(file_idx: fileIndexData.fileIdx, file_name: filename, file_extension: fileExtension, file_path: sandboxFileURL))
+                self.viewDidLoad()
+                self.waitingListCollectionView.reloadData()
+                self.loadWaitingView(orderIdx:self.orderIdx )
+                
+              case .requestErr(let messgae) :
+                self.clearFileDir(filename:sandboxFileURL.lastPathComponent)
+                
+              case .networkFail: print("networkFail")
+              case .serverErr : print("serverErr")
+              case .pathErr : print("pathErr")
+              }
+            }
+            
             
           }
           else if  thumbnail == nil || error != nil{
@@ -206,31 +223,37 @@ extension WaitingListViewController:UIDocumentPickerDelegate {
             print("썸네일 없는 파일")
             print("error : \(String(describing: error))")
             self.waitingListCollectionView.reloadData()
-            
-            //self.tmpImg = thumbnail?.uiImage as! UIImage
-            
           }
         }
+        //self.tmpImg = thumbnail?.uiImage as! UIImage
       }
-      self.waitingListCollectionView.reloadData()
-      print("파일 가져오고 다시,,")
+      print(thumbNailURL = dir.appendingPathComponent(filename))
+      print(sandboxFileURL)
       
     }
-    
-    
-    //    guard let url = sandboxFileURL else {
-    //      assert(false, "The URL can't be nil")
-    //      return
-    //    }
-    //    guard let url = Bundle.main.url(forResource: "test", withExtension: "pdf") else {
-    //      return
-    //    }
-    
-    
-    //    guard let test = self.storyboard?.instantiateViewController(withIdentifier: "optionViewTest") else {return}
-    //    self.present(test,animated: true)
+    self.waitingListCollectionView.reloadData()
+    print("파일 가져오고 다시,,")
   }
+  
+  
+  
+  
+  
 }
+
+
+//    guard let url = sandboxFileURL else {
+//      assert(false, "The URL can't be nil")
+//      return
+//    }
+//    guard let url = Bundle.main.url(forResource: "test", withExtension: "pdf") else {
+//      return
+//    }
+
+
+//    guard let test = self.storyboard?.instantiateViewController(withIdentifier: "optionViewTest") else {return}
+//    self.present(test,animated: true)
+
 
 extension WaitingListViewController:UICollectionViewDelegate{
   func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -272,7 +295,13 @@ extension WaitingListViewController:UICollectionViewDataSource{
       guard let fileCell:WaitCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: WaitCollectionViewCell.identifier, for:indexPath) as? WaitCollectionViewCell else {
         return UICollectionViewCell()}
       //fileCell.fileName.text = "ddd"
-      fileCell.fileName.text = fileDataList[indexPath.row].file_name
+      let thumbnail:String = String(fileDataList[indexPath.row].file_path.lastPathComponent.split(separator: ".").first!) + "_thumbnail.jpg"
+      
+      
+      let thumbnailURL = (FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!).appendingPathComponent(thumbnail)
+      
+      fileCell.preViewImg.setImage(UIImage(contentsOfFile: thumbnailURL.path), for: .normal)
+      fileCell.fileName.text = fileDataList[indexPath.row].file_name 
       //fileCell.preViewImg.setImage(fileList[indexPath.row].fileImg, for: .normal)
       fileCell.fileExtention.text = fileDataList[indexPath.row].file_extension
       fileCell.checkOption.tag = indexPath.row
@@ -356,6 +385,9 @@ extension WaitingListViewController:UICollectionViewDataSource{
     let yes = UIAlertAction(title: "OK", style: .default) { (action) in
       print(self.fileDataList.count)
       print(sender.tag)
+      if(self.fileDataList[sender.tag].file_extension == "jpeg"){
+        self.fileDataList[sender.tag].file_extension = "jpg"
+      }
       self.clearFileDir(filename: self.fileDataList[sender.tag].file_name + "."+self.fileDataList[sender.tag].file_extension)
       deleteFileService.shared.filedeleter(fileidx: self.fileDataList[sender.tag].file_idx){
         networkResult in
@@ -418,3 +450,4 @@ extension WaitingListViewController:UICollectionViewDelegateFlowLayout{
     return 0
   }
 }
+

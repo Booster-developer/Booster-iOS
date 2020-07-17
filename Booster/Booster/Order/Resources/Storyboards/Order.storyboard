@@ -11,7 +11,7 @@
         <!--매장선택-->
         <scene sceneID="Bmf-Pp-nTu">
             <objects>
-                <viewController id="Lw1-QX-YQW" customClass="OrderViewController" customModule="Booster" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="orderView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Lw1-QX-YQW" customClass="OrderViewController" customModule="Booster" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UD2-nW-G5H">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="1440"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
