@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5zu-yB-ZBx">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5zu-yB-ZBx">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -97,7 +97,7 @@
                                 <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2Yb-H3-3mG">
-                                <rect key="frame" x="0.0" y="213" width="375" height="599"/>
+                                <rect key="frame" x="0.0" y="213" width="375" height="565"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="StatusHsCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="StatusHsCell" rowHeight="257" id="6Oz-gA-8yy" customClass="StatusHsCell" customModule="Booster" customModuleProvider="target">
@@ -257,7 +257,7 @@
                             <constraint firstItem="saP-QG-0aA" firstAttribute="top" secondItem="kxz-Tn-nID" secondAttribute="top" id="2Z2-w3-Odr"/>
                             <constraint firstItem="kxz-Tn-nID" firstAttribute="trailing" secondItem="2Yb-H3-3mG" secondAttribute="trailing" id="DvO-Vc-2Z3"/>
                             <constraint firstItem="PFL-Wl-c1J" firstAttribute="top" secondItem="ipW-6R-PiC" secondAttribute="bottom" id="GeM-dp-Cxc"/>
-                            <constraint firstAttribute="bottom" secondItem="2Yb-H3-3mG" secondAttribute="bottom" id="J6x-3R-NS9"/>
+                            <constraint firstItem="kxz-Tn-nID" firstAttribute="bottom" secondItem="2Yb-H3-3mG" secondAttribute="bottom" id="J6x-3R-NS9"/>
                             <constraint firstItem="saP-QG-0aA" firstAttribute="bottom" secondItem="ipW-6R-PiC" secondAttribute="top" id="JRu-gE-emF"/>
                             <constraint firstItem="PFL-Wl-c1J" firstAttribute="height" secondItem="oFW-d0-JYT" secondAttribute="height" multiplier="4:812" priority="250" id="Kya-nG-LEK"/>
                             <constraint firstItem="PFL-Wl-c1J" firstAttribute="leading" secondItem="kxz-Tn-nID" secondAttribute="leading" id="QsA-F4-IX3"/>

@@ -40,11 +40,7 @@ class HomeViewController: UIViewController {
       self.deviceInfo = "home_i8"
     }
     else if(UIScreen.main.bounds.size.width == 414 && UIScreen.main.bounds.size.height == 896){// 아8+
-      self.deviceInfo = "home_i8"
-      
-    }
-    else if(UIScreen.main.bounds.size.width == 414 && UIScreen.main.bounds.size.height == 896){ // 아이폰 11
-      self.deviceInfo = "home_xs"
+      self.deviceInfo = "home_i11"
       
     }
     else if(UIScreen.main.bounds.size.width == 375 && UIScreen.main.bounds.size.height == 812) { // 11pro

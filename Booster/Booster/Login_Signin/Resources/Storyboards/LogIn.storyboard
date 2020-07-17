@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8zl-6a-rkO">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2SM-Ko-D1k">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -331,7 +331,7 @@
                                                 <rect key="frame" x="16" y="464" width="343" height="106"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rbs-Yg-REH">
-                                                        <rect key="frame" x="0.0" y="0.0" width="343" height="35.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="343" height="29"/>
                                                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="14"/>
                                                         <state key="normal" title="숭실대학교">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -341,7 +341,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LBp-Hp-lbk">
-                                                        <rect key="frame" x="0.0" y="35.5" width="343" height="35"/>
+                                                        <rect key="frame" x="0.0" y="29" width="343" height="35"/>
                                                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="14"/>
                                                         <state key="normal" title="중앙대학교">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -350,8 +350,8 @@
                                                             <action selector="cuBtn:" destination="RDe-fH-mpg" eventType="touchUpInside" id="ufP-A0-w58"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2JZ-Pl-ABc">
-                                                        <rect key="frame" x="0.0" y="70.5" width="343" height="35.5"/>
+                                                    <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2JZ-Pl-ABc">
+                                                        <rect key="frame" x="0.0" y="64" width="343" height="42"/>
                                                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="14"/>
                                                         <state key="normal" title="서울대학교">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -371,11 +371,9 @@
                                                     <constraint firstAttribute="trailing" secondItem="LBp-Hp-lbk" secondAttribute="trailing" id="NQj-jW-6BZ"/>
                                                     <constraint firstItem="LBp-Hp-lbk" firstAttribute="leading" secondItem="6VM-aZ-x3Z" secondAttribute="leading" id="WyO-9c-Eiw"/>
                                                     <constraint firstItem="2JZ-Pl-ABc" firstAttribute="top" secondItem="LBp-Hp-lbk" secondAttribute="bottom" id="Xz2-s3-BOP"/>
-                                                    <constraint firstItem="rbs-Yg-REH" firstAttribute="height" secondItem="6VM-aZ-x3Z" secondAttribute="height" multiplier="0.334906" id="Ygb-bV-QpS"/>
                                                     <constraint firstItem="rbs-Yg-REH" firstAttribute="leading" secondItem="6VM-aZ-x3Z" secondAttribute="leading" id="Z6w-9Y-mfD"/>
                                                     <constraint firstItem="rbs-Yg-REH" firstAttribute="top" secondItem="6VM-aZ-x3Z" secondAttribute="top" id="dcY-gX-VFb"/>
                                                     <constraint firstAttribute="trailing" secondItem="2JZ-Pl-ABc" secondAttribute="trailing" id="lNv-1B-9WI"/>
-                                                    <constraint firstItem="2JZ-Pl-ABc" firstAttribute="height" secondItem="6VM-aZ-x3Z" secondAttribute="height" multiplier="0.334906" id="mqU-qn-TYZ"/>
                                                     <constraint firstItem="LBp-Hp-lbk" firstAttribute="top" secondItem="rbs-Yg-REH" secondAttribute="bottom" id="uEF-ig-nkF"/>
                                                 </constraints>
                                             </view>
@@ -486,6 +484,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wMy-h3-mTc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="845.6521739130435" y="105.13392857142857"/>
+        </scene>
+        <!--Splash View Controller-->
+        <scene sceneID="Iut-S8-Q5R">
+            <objects>
+                <viewController id="2SM-Ko-D1k" customClass="SplashViewController" customModule="Booster" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="H8S-X7-I1c">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="4q5-OZ-sHP"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bdB-pb-ETC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1891" y="236"/>
         </scene>
     </scenes>
     <resources>

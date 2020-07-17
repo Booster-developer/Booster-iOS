@@ -46,16 +46,24 @@ class PayViewController: UIViewController {
     case .success(let message) :
       loadingVC.modalPresentationStyle = .overCurrentContext
       self.present(loadingVC, animated: false, completion: nil)
-      case .requestErr(let message):
-        guard let message = message as? String else {return}
-        let alertViewController = UIAlertController(title: "로그인 실패", message: message,
-                                                    preferredStyle: .alert)
-        let action = UIAlertAction(title: "확인", style: .cancel, handler: nil)
-        alertViewController.addAction(action)
-        self.present(alertViewController, animated: true, completion: nil)
-      case .pathErr: print("path")
-      case .serverErr: print("serverErr")
-      case .networkFail: print("networkFail")
+
+      DispatchQueue.main.asyncAfter(deadline: .now() + 3.5) {
+        self.tabBarController?.tabBar.isHidden = false
+        self.tabBarController?.selectedIndex = 3
+        self.navigationController?.popToRootViewController(animated: false)
+
+      }
+
+    case .requestErr(let message):
+      guard let message = message as? String else {return}
+      let alertViewController = UIAlertController(title: "결제 실패", message: message,
+                                                  preferredStyle: .alert)
+      let action = UIAlertAction(title: "확인", style: .cancel, handler: nil)
+      alertViewController.addAction(action)
+      self.present(alertViewController, animated: true, completion: nil)
+    case .pathErr: print("path")
+    case .serverErr: print("serverErr")
+    case .networkFail: print("networkFail")
       }
       
     }
@@ -127,12 +135,12 @@ class PayViewController: UIViewController {
     
   }
   
-//  override func viewDidLayoutSubviews() {
-//    super.viewDidLayoutSubviews()
-//    payFileTableView.translatesAutoresizingMaskIntoConstraints = false
-//    payFileTableView.heightAnchor.constraint(equalToConstant: CGFloat(103 * payFileInformations.count)).isActive = true
-//
-//  }
+  //  override func viewDidLayoutSubviews() {
+  //    super.viewDidLayoutSubviews()
+  //    payFileTableView.translatesAutoresizingMaskIntoConstraints = false
+  //    payFileTableView.heightAnchor.constraint(equalToConstant: CGFloat(103 * payFileInformations.count)).isActive = true
+  //
+  //  }
   
   
   /*
@@ -162,7 +170,7 @@ extension PayViewController: UITableViewDelegate {
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
     return 103
   }
-
+  
 }
 extension PayViewController: UITextFieldDelegate {
   func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
