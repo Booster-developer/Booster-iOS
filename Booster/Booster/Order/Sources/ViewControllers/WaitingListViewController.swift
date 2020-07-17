@@ -303,7 +303,7 @@ extension WaitingListViewController:UICollectionViewDataSource{
       fileCell.preViewImg.setImage(UIImage(contentsOfFile: thumbnailURL.path), for: .normal)
       fileCell.fileName.text = fileDataList[indexPath.row].file_name 
       //fileCell.preViewImg.setImage(fileList[indexPath.row].fileImg, for: .normal)
-      fileCell.fileExtention.text = fileDataList[indexPath.row].file_extension
+      fileCell.fileExtention.text = "." + fileDataList[indexPath.row].file_extension
       fileCell.checkOption.tag = indexPath.row
       fileCell.checkOption.addTarget(self, action: #selector(popupOption(sender:)), for: .touchUpInside)
       fileCell.deleteCell.tag = indexPath.row

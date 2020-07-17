@@ -20,8 +20,8 @@ class LogInViewController: UIViewController {
   @IBOutlet weak var logInIdTextField: UITextField!
   @IBOutlet weak var logInPWTextField: UITextField!
   @IBAction func logInButtonClicked(_ sender: Any) {
-    logInIdTextField.text = "daeun"
-    logInPWTextField.text = "1234"
+//    logInIdTextField.text = "daeun"
+//    logInPWTextField.text = "1234"
     if (!logInIdTextField.isEmpty && !logInPWTextField.isEmpty){
       let logInId:String = logInIdTextField.text!
       let logInPW:String = logInPWTextField.text!

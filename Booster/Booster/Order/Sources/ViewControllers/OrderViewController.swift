@@ -336,7 +336,7 @@ extension OrderViewController:UICollectionViewDataSource{
     if kind == UICollectionView.elementKindSectionHeader{
       header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "orderHeader", for: indexpath) as? OrderCollectionViewHeader
       if indexpath.section == 0{
-        header.headerTitle.text = "최근 방문 매장"
+        header.headerTitle.text = "최근 주문 매장"
       }
       else if indexpath.section == 1 {
         header.headerTitle.text = "즐겨 찾는 매장"
