@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hnv-Vf-k5q">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hnv-Vf-k5q">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -797,7 +797,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CeT-M4-2si" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1913" y="68"/>
+            <point key="canvasLocation" x="2009" y="88"/>
         </scene>
         <!--changePagesViewController-->
         <scene sceneID="YFQ-Gd-IqD">
@@ -1319,6 +1319,9 @@
                                         <state key="normal" title="결제하기" backgroundImage="btnPay">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="payBtnClicked:" destination="Ih0-yW-asM" eventType="touchUpInside" id="GOr-V4-Nf1"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -1592,6 +1595,79 @@
             </objects>
             <point key="canvasLocation" x="1913" y="745"/>
         </scene>
+        <!--loadingViewController-->
+        <scene sceneID="gRi-CH-Pom">
+            <objects>
+                <viewController storyboardIdentifier="loadingViewController" title="loadingViewController" id="Rl0-FH-9Kt" customClass="LodingViewController" customModule="Booster" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Fj6-v9-p7B">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="payImgLoading" translatesAutoresizingMaskIntoConstraints="NO" id="GkM-oS-5Us">
+                                <rect key="frame" x="168" y="387" width="38" height="38"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="38" id="hjo-yM-g8s"/>
+                                    <constraint firstAttribute="height" constant="38" id="tF5-YP-Ahh"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.64937392979999997" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="GkM-oS-5Us" firstAttribute="centerY" secondItem="3VF-WM-EM6" secondAttribute="centerY" id="gSD-tc-zPu"/>
+                            <constraint firstItem="GkM-oS-5Us" firstAttribute="centerX" secondItem="3VF-WM-EM6" secondAttribute="centerX" id="oML-Ed-uAe"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="3VF-WM-EM6"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cRz-rn-APx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6073" y="-134"/>
+        </scene>
+        <!--completePaymentViewController-->
+        <scene sceneID="9ib-P3-qoc">
+            <objects>
+                <viewController storyboardIdentifier="completePaymentViewController" title="completePaymentViewController" id="aHR-2c-abK" customClass="CompletePaymentViewController" customModule="Booster" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Xg3-XJ-iFC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LFy-AV-fYM">
+                                <rect key="frame" x="67.666666666666686" y="325" width="240" height="172"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconDone" translatesAutoresizingMaskIntoConstraints="NO" id="fMJ-g4-wRF">
+                                <rect key="frame" x="165" y="366" width="45" height="45"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="결제가 완료되었습니다!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Ic-HV-pcd">
+                                <rect key="frame" x="114" y="428" width="147" height="19"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="19" id="SEY-Js-0CK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.64937392979999997" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="LFy-AV-fYM" firstAttribute="width" secondItem="Xg3-XJ-iFC" secondAttribute="width" multiplier="240:375" id="5Pu-kE-h1S"/>
+                            <constraint firstItem="fMJ-g4-wRF" firstAttribute="height" secondItem="LFy-AV-fYM" secondAttribute="width" multiplier="45:240" id="8vC-pQ-RtO"/>
+                            <constraint firstItem="LFy-AV-fYM" firstAttribute="centerY" secondItem="I8K-hA-6Zi" secondAttribute="centerY" id="9MY-hK-Ef7"/>
+                            <constraint firstItem="fMJ-g4-wRF" firstAttribute="centerX" secondItem="LFy-AV-fYM" secondAttribute="centerX" id="Clc-M7-HY1"/>
+                            <constraint firstItem="5Ic-HV-pcd" firstAttribute="centerX" secondItem="LFy-AV-fYM" secondAttribute="centerX" id="DK1-DA-3zU"/>
+                            <constraint firstItem="LFy-AV-fYM" firstAttribute="height" secondItem="Xg3-XJ-iFC" secondAttribute="height" multiplier="172:812" id="I5T-KU-Bs3"/>
+                            <constraint firstItem="fMJ-g4-wRF" firstAttribute="bottom" secondItem="LFy-AV-fYM" secondAttribute="centerY" id="KwM-ea-3aN"/>
+                            <constraint firstItem="fMJ-g4-wRF" firstAttribute="width" secondItem="LFy-AV-fYM" secondAttribute="width" multiplier="45:240" id="MOt-5o-se2"/>
+                            <constraint firstItem="LFy-AV-fYM" firstAttribute="centerX" secondItem="I8K-hA-6Zi" secondAttribute="centerX" id="P7c-AY-Kux"/>
+                            <constraint firstItem="5Ic-HV-pcd" firstAttribute="top" secondItem="fMJ-g4-wRF" secondAttribute="bottom" constant="17" id="VVa-te-UD1"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="I8K-hA-6Zi"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UbF-wa-PvU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6727" y="-134"/>
+        </scene>
     </scenes>
     <resources>
         <image name="182" width="375" height="1"/>
@@ -1617,6 +1693,7 @@
         <image name="iconAuto" width="69" height="69"/>
         <image name="iconColor" width="69" height="69"/>
         <image name="iconDan" width="69" height="69"/>
+        <image name="iconDone" width="45" height="45"/>
         <image name="iconHeight" width="69" height="69"/>
         <image name="iconMono" width="69" height="69"/>
         <image name="iconNumBlue" width="161" height="73"/>
@@ -1628,6 +1705,7 @@
         <image name="iconYang2" width="69" height="69"/>
         <image name="myBgProfile" width="346" height="85"/>
         <image name="optionPopupbtnFin" width="240" height="44"/>
+        <image name="payImgLoading" width="38" height="38"/>
         <image name="payWave" width="378" height="50.666667938232422"/>
         <image name="processBackBtn" width="44" height="44"/>
     </resources>

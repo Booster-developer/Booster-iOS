@@ -41,9 +41,15 @@
 		CCB2C54D24BF697D00F3200A /* EditProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB2C54C24BF697D00F3200A /* EditProfileService.swift */; };
 		CCB2C54F24BF79BB00F3200A /* DeleteStatusData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB2C54E24BF79BB00F3200A /* DeleteStatusData.swift */; };
 		CCB2C55124BF7A4B00F3200A /* DeleteStatusService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB2C55024BF7A4B00F3200A /* DeleteStatusService.swift */; };
+		CCBF2E3124C0BF2D00F497B7 /* PayActionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBF2E3024C0BF2D00F497B7 /* PayActionService.swift */; };
+		CCBF2E3324C0CAF600F497B7 /* PayActionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBF2E3224C0CAF600F497B7 /* PayActionData.swift */; };
 		CCE019E324B2D13A0067F721 /* SearchHs.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCE019E224B2D13A0067F721 /* SearchHs.storyboard */; };
 		CCE019E524B2D1CB0067F721 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE019E424B2D1CB0067F721 /* MapViewController.swift */; };
 		CCE019E724B2D7CA0067F721 /* StoreDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE019E624B2D7CA0067F721 /* StoreDetailViewController.swift */; };
+		CCE5476524C0B10200C134C1 /* LodingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE5476424C0B10200C134C1 /* LodingViewController.swift */; };
+		CCE5476724C0B3B500C134C1 /* CompletePaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE5476624C0B3B500C134C1 /* CompletePaymentViewController.swift */; };
+		CCE5476924C0BD6E00C134C1 /* CompletePickupData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE5476824C0BD6E00C134C1 /* CompletePickupData.swift */; };
+		CCE5476B24C0BD7C00C134C1 /* CompletePickupService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE5476A24C0BD7C00C134C1 /* CompletePickupService.swift */; };
 		D37338012F3166BBDF741F1C /* Pods_BoosterTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF5F3976B85D8FEDD0677FC6 /* Pods_BoosterTests.framework */; };
 		DA12557124BC5FDE00520138 /* AddFileCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA12557024BC5FDE00520138 /* AddFileCollectionViewCell.swift */; };
 		DA12557324BC8FA700520138 /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA12557224BC8FA700520138 /* AlertViewController.swift */; };
@@ -147,9 +153,15 @@
 		CCB2C54C24BF697D00F3200A /* EditProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileService.swift; sourceTree = "<group>"; };
 		CCB2C54E24BF79BB00F3200A /* DeleteStatusData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteStatusData.swift; sourceTree = "<group>"; };
 		CCB2C55024BF7A4B00F3200A /* DeleteStatusService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteStatusService.swift; sourceTree = "<group>"; };
+		CCBF2E3024C0BF2D00F497B7 /* PayActionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayActionService.swift; sourceTree = "<group>"; };
+		CCBF2E3224C0CAF600F497B7 /* PayActionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayActionData.swift; sourceTree = "<group>"; };
 		CCE019E224B2D13A0067F721 /* SearchHs.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchHs.storyboard; sourceTree = "<group>"; };
 		CCE019E424B2D1CB0067F721 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		CCE019E624B2D7CA0067F721 /* StoreDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreDetailViewController.swift; sourceTree = "<group>"; };
+		CCE5476424C0B10200C134C1 /* LodingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LodingViewController.swift; sourceTree = "<group>"; };
+		CCE5476624C0B3B500C134C1 /* CompletePaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletePaymentViewController.swift; sourceTree = "<group>"; };
+		CCE5476824C0BD6E00C134C1 /* CompletePickupData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletePickupData.swift; sourceTree = "<group>"; };
+		CCE5476A24C0BD7C00C134C1 /* CompletePickupService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletePickupService.swift; sourceTree = "<group>"; };
 		DA12557024BC5FDE00520138 /* AddFileCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFileCollectionViewCell.swift; sourceTree = "<group>"; };
 		DA12557224BC8FA700520138 /* AlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
 		DA12557524BC938600520138 /* AlertCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -366,6 +378,10 @@
 				CCB2C54C24BF697D00F3200A /* EditProfileService.swift */,
 				CCB2C54E24BF79BB00F3200A /* DeleteStatusData.swift */,
 				CCB2C55024BF7A4B00F3200A /* DeleteStatusService.swift */,
+				CCE5476824C0BD6E00C134C1 /* CompletePickupData.swift */,
+				CCE5476A24C0BD7C00C134C1 /* CompletePickupService.swift */,
+				CCBF2E3024C0BF2D00F497B7 /* PayActionService.swift */,
+				CCBF2E3224C0CAF600F497B7 /* PayActionData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -647,6 +663,8 @@
 				DA6D64D824B644E200215BE4 /* testViewController.swift */,
 				CC3AB86124B6671D0007662E /* PayViewController.swift */,
 				CC28996024BB212F00F9C822 /* ShowOptionViewController.swift */,
+				CCE5476424C0B10200C134C1 /* LodingViewController.swift */,
+				CCE5476624C0B3B500C134C1 /* CompletePaymentViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -970,6 +988,7 @@
 				CCB2C54924BF335C00F3200A /* PaymentService.swift in Sources */,
 				DACA390E24B231AE0025E230 /* StatusViewController.swift in Sources */,
 				CC0C4F9E24BC991A00CD83F9 /* EngineListViewController.swift in Sources */,
+				CCBF2E3124C0BF2D00F497B7 /* PayActionService.swift in Sources */,
 				CCB2C53B24BDF68900F3200A /* OptionData.swift in Sources */,
 				CC18782F24B63BD800830F0E /* ChangePagesViewController.swift in Sources */,
 				CCB2C54D24BF697D00F3200A /* EditProfileService.swift in Sources */,
@@ -981,6 +1000,7 @@
 				CCB2C53924BD8E8200F3200A /* EngineService.swift in Sources */,
 				CC28996124BB212F00F9C822 /* ShowOptionViewController.swift in Sources */,
 				DA93D6E824BCCC8400DE370F /* StatusDetailViewController.swift in Sources */,
+				CCE5476924C0BD6E00C134C1 /* CompletePickupData.swift in Sources */,
 				DAD179A524B58226009BFECC /* WaitCollectionViewHeader.swift in Sources */,
 				DA95BDA124B2DA7D00BC1F60 /* StoreCollectionViewCell.swift in Sources */,
 				DACA390524B231640025E230 /* SearchViewController.swift in Sources */,
@@ -1000,6 +1020,7 @@
 				CCB2C54124BE0D9F00F3200A /* StatusService.swift in Sources */,
 				CC18782924B6085600830F0E /* StructModels.swift in Sources */,
 				CC862D9524BD8CBB008BBF04 /* EngineData.swift in Sources */,
+				CCE5476524C0B10200C134C1 /* LodingViewController.swift in Sources */,
 				DACA390B24B231970025E230 /* OrderViewController.swift in Sources */,
 				CC1233D724B47FE50049F7A4 /* CancelOrderViewController.swift in Sources */,
 				DAC4D1CD24B4A8AA0025EC1C /* OrderCollectionViewCell.swift in Sources */,
@@ -1016,9 +1037,12 @@
 				CC3AB86224B6671D0007662E /* PayViewController.swift in Sources */,
 				CCB2C54B24BF68B900F3200A /* EditProfileData.swift in Sources */,
 				CCE019E724B2D7CA0067F721 /* StoreDetailViewController.swift in Sources */,
+				CCBF2E3324C0CAF600F497B7 /* PayActionData.swift in Sources */,
+				CCE5476724C0B3B500C134C1 /* CompletePaymentViewController.swift in Sources */,
 				DA12557324BC8FA700520138 /* AlertViewController.swift in Sources */,
 				CCB2C53D24BDF80800F3200A /* OptionService.swift in Sources */,
 				CCB2C54F24BF79BB00F3200A /* DeleteStatusData.swift in Sources */,
+				CCE5476B24C0BD7C00C134C1 /* CompletePickupService.swift in Sources */,
 				DACA391C24B2BAEA0025E230 /* UnivSelectViewController.swift in Sources */,
 				DA95BDA524B3623A00BC1F60 /* WaitingListViewController.swift in Sources */,
 				DACB87C524B6C532006E0AED /* APIConstraints.swift in Sources */,

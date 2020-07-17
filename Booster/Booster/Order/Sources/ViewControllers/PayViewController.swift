@@ -38,6 +38,29 @@ class PayViewController: UIViewController {
   @IBAction func backBtnClicked(_ sender: Any) {
     self.navigationController?.popViewController(animated: true)
   }
+  @IBAction func payBtnClicked(_ sender: Any) {
+    let storyBoard = UIStoryboard.init(name: "OrderHs", bundle: nil)
+    let loadingVC = storyBoard.instantiateViewController(identifier: "loadingViewController")
+    
+    PayActionService.shared.postUserComment(order_idx: self.orderIndex, user_comment: requestTextField.text) { networkResult in switch networkResult {
+    case .success(let message) :
+      loadingVC.modalPresentationStyle = .overCurrentContext
+      self.present(loadingVC, animated: false, completion: nil)
+      case .requestErr(let message):
+        guard let message = message as? String else {return}
+        let alertViewController = UIAlertController(title: "로그인 실패", message: message,
+                                                    preferredStyle: .alert)
+        let action = UIAlertAction(title: "확인", style: .cancel, handler: nil)
+        alertViewController.addAction(action)
+        self.present(alertViewController, animated: true, completion: nil)
+      case .pathErr: print("path")
+      case .serverErr: print("serverErr")
+      case .networkFail: print("networkFail")
+      }
+      
+    }
+    
+  }
   
   
   
@@ -126,14 +149,12 @@ class PayViewController: UIViewController {
 // MARK: - Extensions
 extension PayViewController: UITableViewDataSource {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    print(payFileInformations.count)
     return payFileInformations.count
   }
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     guard let payFileCell = tableView.dequeueReusableCell(withIdentifier: PayTableViewCell.identifier, for: indexPath) as? PayTableViewCell else {return UITableViewCell()}
     payFileCell.setPayFileInformation(fileName: payFileInformations[indexPath.row].fileName, expandName: payFileInformations[indexPath.row].expandName, fileOption: payFileInformations[indexPath.row].options, price: payFileInformations[indexPath.row].price)
-    print("PayFileCell:")
-    print(payFileCell)
+    
     return payFileCell
   }
 }

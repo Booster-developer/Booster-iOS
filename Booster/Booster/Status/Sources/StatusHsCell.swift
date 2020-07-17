@@ -22,6 +22,8 @@ class StatusHsCell: UITableViewCell {
   @IBOutlet weak var cancelOrderBtn: UIButton!
   @IBOutlet weak var completePickUpBtn: UIButton!
   
+  
+  
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

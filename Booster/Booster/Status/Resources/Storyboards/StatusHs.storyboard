@@ -240,7 +240,7 @@
                                         </constraints>
                                         <connections>
                                             <outlet property="cancelOrderBtn" destination="BN3-AV-mN3" id="qhM-Cs-kV2"/>
-                                            <outlet property="completePickUpBtn" destination="kaM-jf-GVh" id="283-m0-JIj"/>
+                                            <outlet property="completePickUpBtn" destination="kaM-jf-GVh" id="CpN-67-6Qn"/>
                                             <outlet property="dateLabel" destination="q9q-Lb-jac" id="aUZ-Rw-xwg"/>
                                             <outlet property="docsLabel" destination="O1h-DN-Lj8" id="Goi-0X-rXY"/>
                                             <outlet property="numLabel" destination="0bV-eB-tMF" id="dwK-Nm-oDn"/>
@@ -251,6 +251,7 @@
                                 </prototypes>
                             </tableView>
                         </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="kxz-Tn-nID" firstAttribute="trailing" secondItem="ipW-6R-PiC" secondAttribute="trailing" id="1Yf-zv-MU6"/>
                             <constraint firstItem="saP-QG-0aA" firstAttribute="top" secondItem="kxz-Tn-nID" secondAttribute="top" id="2Z2-w3-Odr"/>

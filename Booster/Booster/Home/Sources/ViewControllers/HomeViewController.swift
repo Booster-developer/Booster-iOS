@@ -15,7 +15,7 @@ class HomeViewController: UIViewController {
       let jsonName = "home_xs_3"
       let animation = Animation.named(jsonName)
       let homeLottieAnimation = AnimationView(animation: animation)
-      homeLottieAnimation.frame = CGRect(x:0, y: 0, width = self.bound)
+      
         // Do any additional setup after loading the view.
     }
   override func viewDidAppear(_ animated: Bool) {

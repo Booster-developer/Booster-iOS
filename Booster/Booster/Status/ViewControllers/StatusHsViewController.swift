@@ -15,26 +15,26 @@ class StatusHsViewController: UIViewController {
   @IBOutlet weak var marginView: UIView!
   @IBOutlet weak var marginViewHeight: NSLayoutConstraint!
   @IBOutlet weak var countLabel: UILabel!
-
+  
   
   @IBAction func back(_ sender: Any) {
     self.tabBarController?.selectedIndex = 0
   }
   
   // MARK: - IBActions
-//  @IBAction func presentCancelOrderViewController(_ sender: Any) {
-//    let storyBoard = UIStoryboard.init(name: "StatusHs", bundle: nil)
-//    guard let cancelOrderVC = storyBoard.instantiateViewController(identifier: "cancelOrderViewController") as? CancelOrderViewController else {return}
-//
-//    cancelOrderVC.modalPresentationStyle = .overCurrentContext
-//    cancelOrderVC.orderNum = self.orderNum
-//    print(self.orderNum)
-//    self.present(cancelOrderVC, animated: false, completion: nil)
+  //  @IBAction func presentCancelOrderViewController(_ sender: Any) {
+  //    let storyBoard = UIStoryboard.init(name: "StatusHs", bundle: nil)
+  //    guard let cancelOrderVC = storyBoard.instantiateViewController(identifier: "cancelOrderViewController") as? CancelOrderViewController else {return}
+  //
+  //    cancelOrderVC.modalPresentationStyle = .overCurrentContext
+  //    cancelOrderVC.orderNum = self.orderNum
+  //    print(self.orderNum)
+  //    self.present(cancelOrderVC, animated: false, completion: nil)
+  //  }
+//  @IBAction func completePickUp(_ sender: Any) {
+//    
+//    statusHsTableView.reloadData()
 //  }
-  @IBAction func completePickUp(_ sender: Any) {
-    
-    statusHsTableView.reloadData()
-  }
   
   // MARK: - Vars
   var statusInformations: [StatusInformation] = []
@@ -42,12 +42,21 @@ class StatusHsViewController: UIViewController {
   private var toggle: Bool = true
   var orderNum: Int?
   
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     statusHsTableView.reloadData()
     statusHsTableView.dataSource = self
     statusHsTableView.delegate = self
+    getServerData()
+    _ = Timer.scheduledTimer(timeInterval: 3, target: self, selector: (#selector(self.getServerData)), userInfo: nil, repeats: true)
     
+    
+    // Do any additional setup after loading the view.
+  }
+  
+  // MARK: - Functions
+  @objc func getServerData() {
     StatusService.shared.getStatus() { networkResult in
       switch networkResult {
       case .success(let statusList) :
@@ -56,7 +65,6 @@ class StatusHsViewController: UIViewController {
         for i in 0..<statusList.order_list.count {
           let statusInfo = StatusInformation.init(orderNum: statusList.order_list[i].order_idx, storeName: statusList.order_list[i].order_store_name, date: statusList.order_list[i].order_time, docsName: statusList.order_list[i].order_title, status: statusList.order_list[i].order_state)
           self.statusInformations.append(statusInfo)
-          print(self.statusInformations)
         }
         self.statusHsTableView.reloadData()
       case .requestErr(let message):
@@ -72,14 +80,8 @@ class StatusHsViewController: UIViewController {
         
       }
     }
-    
-  
-    // Do any additional setup after loading the view.
   }
   
-  // MARK: - Functions
-  
-
   
   /*
    // MARK: - Navigation
@@ -111,6 +113,9 @@ extension StatusHsViewController: UITableViewDataSource {
     statusHsCell.cancelOrderBtn.tag = indexPath.row
     statusHsCell.cancelOrderBtn.addTarget(self, action: #selector(deleteCell(sender:)), for: .touchUpInside)
     
+    statusHsCell.completePickUpBtn.tag = indexPath.row
+    statusHsCell.completePickUpBtn.addTarget(self, action: #selector(pickup(sender:)), for: .touchUpInside)
+    
     return statusHsCell
   }
   @objc func deleteCell(sender:UIButton) {
@@ -121,7 +126,30 @@ extension StatusHsViewController: UITableViewDataSource {
     
     self.present(cancelOrderVC, animated: false, completion: nil)
   }
+  @objc func pickup(sender:UIButton) {
+    //self.orderNum
+    let tempordernum = statusInformations[sender.tag].orderNum
+    
+    CompletePickupService.shared.pickup(orderIndex: tempordernum) {
+      networkResult in switch networkResult {
+      case .success(let message) :
+        self.getServerData()
+      case .requestErr(let message):
+        guard let message = message as? String else {return}
+        let alertViewController = UIAlertController(title: "로그인 실패", message: message,
+                                                    preferredStyle: .alert)
+        let action = UIAlertAction(title: "확인", style: .cancel, handler: nil)
+        alertViewController.addAction(action)
+        self.present(alertViewController, animated: true, completion: nil)
+      case .pathErr: print("path")
+      case .serverErr: print("serverErr")
+      case .networkFail: print("networkFail")
+        
+      }
+    }
+  }
 }
+
 
 
 

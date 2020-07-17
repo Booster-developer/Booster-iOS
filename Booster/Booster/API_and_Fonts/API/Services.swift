@@ -65,13 +65,13 @@ struct idCheckService{
         guard let statusCode = dataResponse.response?.statusCode else{return}
         guard let value = dataResponse.result.value else {return}
         var networkResult:NetworkResult<Any>?
-        print(statusCode)
+
         switch statusCode{
         case 200:
           let decoder = JSONDecoder()
           guard let decodedData = try? decoder.decode(IDCheckData.self, from: value) else { return networkResult = .pathErr }
           
-          print(decodedData.status)
+
           
           if decodedData.status == 200{
             networkResult = .success(decodedData.message)
@@ -351,7 +351,6 @@ struct waitListService{
           let decoder = JSONDecoder()
           guard let decodedData = try? decoder.decode(waitListData.self, from: value) else { return networkResult = .pathErr }
           
-          print(decodedData)
           guard let orderIdx = decodedData.data else{return networkResult = .requestErr(decodedData.message)}
           if decodedData.status == 200{
             networkResult = .success(orderIdx)
@@ -384,14 +383,14 @@ struct uploadFileService{
     Alamofire.upload(multipartFormData: {(formData) in
       formData.append(fileData,withName: "file")
     }, to: url, method: .post, headers: header, encodingCompletion: {(encodingResult) in
-      print(encodingResult)
+
       switch encodingResult {
       case .success(let request,_,_):
-        print(request)
+
         request.responseJSON(completionHandler: { (response) in
           guard let statusCode = response.response?.statusCode else {return}
           let data = response.result.value as! [String : Any]
-          print(data)
+
           let status = data["status"]
           let file = data["data"] as! [String:Any]?
           let fileidx = file?["file_idx"]
@@ -399,16 +398,11 @@ struct uploadFileService{
           guard let value = response.result.value else {
             return}
           var networkResult:NetworkResult<Any>?
-          print(statusCode)
           
           switch statusCode{
           case 200 :
-            print(value)
             let decodeData:fileUploadData = fileUploadData(status: status as! Int, success: true, message: message as! String, data: fileIdx(fileIdx: fileidx as? Int ?? -1))
             guard let resultdata = decodeData.data else { return networkResult = .requestErr(decodeData.message)}
-            print("decodeData")
-            print(decodeData)
-            print(resultdata)
             if decodeData.status == 200 {
               networkResult = .success(resultdata)
             }
@@ -472,14 +466,11 @@ struct optionSelectService {
   private func makeParameter(_ option:OptionList) ->Parameters{
     var start:Int = 0
     var end:Int = 0
-    print(option.file_range)
     if option.file_range != "전체 페이지"{
       let filerangestart = option.file_range.split(separator: "/")
       start = Int(filerangestart[0]) ?? 0
       end = Int(filerangestart[1]) ?? 0
     }
-    print(start)
-    print(end)
     return ["file_color" : option.file_color, "file_direction" : option.file_direction,"file_sided_type" : option.file_sided_type,"file_collect" : option.file_collect,"file_range_start" : start,"file_range_end" : end,"file_copy_number" : option.file_copy_number]
   }
   func optionSend(fileIdx:Int, optionSelect:OptionList, completion:@escaping (NetworkResult<Any>) -> Void){
@@ -492,12 +483,10 @@ struct optionSelectService {
         guard let statusCode = dataResponse.response?.statusCode else{return}
         guard let value = dataResponse.result.value else {return}
         var networkResult:NetworkResult<Any>?
-        print(statusCode)
         switch statusCode{
         case 200:
           let decoder = JSONDecoder()
           guard let decodedData = try? decoder.decode(OptionChangeData.self, from: value) else { return networkResult = .pathErr }
-          print(decodedData.status)
           if decodedData.status == 200{
             networkResult = .success(decodedData.message)
           }
@@ -519,7 +508,6 @@ struct storeDetailListService{
   static let shared = storeDetailListService()
   
   func getStoreDetailList(_ storeIdx:Int, completion : @escaping (NetworkResult<Any>) -> Void){
-    print(storeIdx)
     let header:HTTPHeaders = ["token" : UserDefaults.standard.string(forKey: "token")!]
     let url = APIConstraints.storeRequest + "/" + String(storeIdx) + APIConstraints.detail
 
@@ -536,7 +524,6 @@ struct storeDetailListService{
         case 200 :
           let decoder = JSONDecoder()
           guard let decodedData = try? decoder.decode(StoreDetailViewLoadData.self, from: value) else { return networkResult = .pathErr }
-          print(decodedData)
           if decodedData.status == 200 && decodedData.success{
             networkResult = .success(decodedData.data)
           }
