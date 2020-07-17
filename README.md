@@ -325,13 +325,40 @@ These files can included in resources folder
 
 ##### 	images
 
+![스플래시](https://tva1.sinaimg.cn/large/007S8ZIlgy1ggu93my9y4g303c06mte5.gif)
+
 ##### 	descriptions
+
+- Launchscreen.storyboard can't use thirdparty classes like Lottie of Airbnb. In order to make custom splash, SplashViewController is implemented using Lottie. Lottie is library of managing animations using .json files of images like you can see above.
+
+- The application start with Splash view controller and present Log-in view after splash animation is ended.
+
+- splash json file can't handle every devices because they have their own screen size. so, It have to be loaded by different file for different UIScreen size. it was important to figure out boundary of view size by swift programmally.
+
+  ``` swift
+    func getLayoutofUserDevice(){
+      if(UIScreen.main.bounds.size.width == 375 && UIScreen.main.bounds.size.height == 667){ // i8
+        self.splashJsonName = "splash_i8"
+      }
+      else if(UIScreen.main.bounds.size.width == 414 && UIScreen.main.bounds.size.height == 896){// 11
+        self.splashJsonName = "splash_i11"
+        
+      }
+      else if(UIScreen.main.bounds.size.width == 375 && UIScreen.main.bounds.size.height == 812) { // xs
+        self.splashJsonName = "splash_xs"
+      }
+    }
+  ```
 
 ####   Login/Sign In
 
 ##### 	images
 
+![KakaoTalk_Photo_2020-07-17-20-28-14](https://tva1.sinaimg.cn/large/007S8ZIlgy1ggu9jqm5ivj304m09ydfx.jpg)
+
 ##### 	descriptions
+
+- 
 
 ####   Home
 
