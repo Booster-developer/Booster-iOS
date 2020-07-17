@@ -10,6 +10,7 @@ import UIKit
 
 class StoreDetailViewController: UIViewController {
   var storeidx:Int?
+  var cellidx:Int?
   @IBOutlet weak var storeDetailImg: UIImageView!
   var storeInfo:StoreDetailData = StoreDetailData()
   @IBOutlet weak var univLineImg: UIImageView!
@@ -57,6 +58,12 @@ class StoreDetailViewController: UIViewController {
   
   @IBAction func backBtn(_ sender: Any) {
     self.dismiss(animated: true, completion: nil)
+    let searchvc = self.presentingViewController?.children[1]
+    guard let vc = searchvc as? SearchViewController else { return }
+    vc.viewDidLoad()
+    vc.storeCollectionView.reloadData()
+    print(vc.storeInfos)
+    vc.refresh()
   }
   
   @IBAction func popUpMapView(_ sender: Any) {
@@ -96,13 +103,21 @@ class StoreDetailViewController: UIViewController {
   
   // MARK: - IBAction
   @IBAction func changeFavBtn(_ sender: Any) {
-    if toggle {
-      self.favBtn.setImage(UIImage.init(named: "storeDetailIcStarActive"), for: .normal)
-      toggle = !toggle
-    }
-    else if !toggle {
-      self.favBtn.setImage(UIImage.init(named: "storeDetailIcStarInactive"), for: .normal)
-      toggle = !toggle
+    favoriteService.shared.favorateToggle(self.storeidx ?? 0) {
+         networkResult in
+         switch networkResult {
+         case .success(let message):
+           print(message)
+             self.favBtn.setImage(UIImage.init(named: "storeDetailIcStarActive"), for: .normal)
+           self.toggle = !self.toggle
+         case .requestErr(let message):
+           print(message)
+           self.favBtn.setImage(UIImage.init(named: "storeDetailIcStarInactive"), for: .normal)
+           self.toggle = !self.toggle
+         case .pathErr : print("pathErr")
+         case .serverErr : print("serverErr")
+         case .networkFail: print("networkFail")
+         }
     }
     
   }
@@ -138,6 +153,12 @@ class StoreDetailViewController: UIViewController {
   }
   func setView(){
     self.storeDetailImg.setImage(path: storeInfo.store_image)
+    if storeInfo.store_favorite == 1 {
+      self.favBtn.setImage(UIImage.init(named: "storeDetailIcStarActive"), for: .normal)
+    }
+    else if storeInfo.store_favorite == 1 {
+      self.favBtn.setImage(UIImage.init(named: "storeDetailIcStarInactive"), for: .normal)
+    }
     self.storeName.text = storeInfo.store_name
     self.storeLocation.text = storeInfo.store_location
     self.storeAddress.text = storeInfo.store_address

@@ -12,11 +12,14 @@ class CompletePaymentViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-      let storyBoard = UIStoryboard.init(name: "StatusHs", bundle: nil)
-      let statusVC = storyBoard.instantiateViewController(identifier: "StatusViewController")
-      statusVC.modalPresentationStyle = .fullScreen
-      self.present(statusVC, animated: false, completion: nil)
+    guard let loadview = self.storyboard?.instantiateViewController(identifier: "loadingViewController") as? LodingViewController else {return}
+    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+      self.dismiss(animated: false, completion: nil)
+      loadview.dismiss(animated: false, completion: nil)
+//      let storyBoard = UIStoryboard.init(name: "StatusHs", bundle: nil)
+//      let statusVC = storyBoard.instantiateViewController(identifier: "StatusViewController")
+//      statusVC.modalPresentationStyle = .fullScreen
+//      self.present(statusVC, animated: false, completion: nil)
     }
     // Do any additional setup after loading the view.
   }

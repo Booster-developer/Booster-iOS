@@ -207,7 +207,7 @@ extension SearchViewController:UICollectionViewDataSource{
       return
     }
     detailView.storeidx = storeInfos[indexPath.row].store_idx
-    
+    detailView.cellidx = indexPath.row
     detailView.modalPresentationStyle = .fullScreen
     self.present(detailView, animated: true)
   }

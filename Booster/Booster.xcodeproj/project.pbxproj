@@ -69,7 +69,10 @@
 		DA3E656124C1639300746FE1 /* splash_i11.json in Resources */ = {isa = PBXBuildFile; fileRef = DA3E655E24C1639300746FE1 /* splash_i11.json */; };
 		DA3E656224C1639300746FE1 /* splash_xs.json in Resources */ = {isa = PBXBuildFile; fileRef = DA3E655F24C1639300746FE1 /* splash_xs.json */; };
 		DA3E656324C1639300746FE1 /* splash_i8.json in Resources */ = {isa = PBXBuildFile; fileRef = DA3E656024C1639300746FE1 /* splash_i8.json */; };
-		DA3E656524C163B900746FE1 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3E656424C163B900746FE1 /* SplashViewController.swift */; };
+		DA3E656924C174ED00746FE1 /* home_i11_2.json in Resources */ = {isa = PBXBuildFile; fileRef = DA3E656624C174ED00746FE1 /* home_i11_2.json */; };
+		DA3E656A24C174ED00746FE1 /* home_i11_1.json in Resources */ = {isa = PBXBuildFile; fileRef = DA3E656724C174ED00746FE1 /* home_i11_1.json */; };
+		DA3E656B24C174ED00746FE1 /* home_i11_3.json in Resources */ = {isa = PBXBuildFile; fileRef = DA3E656824C174ED00746FE1 /* home_i11_3.json */; };
+		DA3E656F24C17CDA00746FE1 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3E656E24C17CDA00746FE1 /* SplashViewController.swift */; };
 		DA6718F324BD7EE600B9CD86 /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6718F224BD7EE600B9CD86 /* NetworkResult.swift */; };
 		DA6718F524BD806500B9CD86 /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6718F424BD806500B9CD86 /* Services.swift */; };
 		DA6718F724BD87EA00B9CD86 /* Datas.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6718F624BD87EA00B9CD86 /* Datas.swift */; };
@@ -195,7 +198,10 @@
 		DA3E655E24C1639300746FE1 /* splash_i11.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = splash_i11.json; path = "../../../../../../../Downloads/splash_iOS_final(2)/splash_i11.json"; sourceTree = "<group>"; };
 		DA3E655F24C1639300746FE1 /* splash_xs.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = splash_xs.json; path = "../../../../../../../Downloads/splash_iOS_final(2)/splash_xs.json"; sourceTree = "<group>"; };
 		DA3E656024C1639300746FE1 /* splash_i8.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = splash_i8.json; path = "../../../../../../../Downloads/splash_iOS_final(2)/splash_i8.json"; sourceTree = "<group>"; };
-		DA3E656424C163B900746FE1 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		DA3E656624C174ED00746FE1 /* home_i11_2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = home_i11_2.json; path = ../../../../../../../Downloads/i11/home_i11_2.json; sourceTree = "<group>"; };
+		DA3E656724C174ED00746FE1 /* home_i11_1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = home_i11_1.json; path = ../../../../../../../Downloads/i11/home_i11_1.json; sourceTree = "<group>"; };
+		DA3E656824C174ED00746FE1 /* home_i11_3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = home_i11_3.json; path = ../../../../../../../Downloads/i11/home_i11_3.json; sourceTree = "<group>"; };
+		DA3E656E24C17CDA00746FE1 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		DA6718F224BD7EE600B9CD86 /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
 		DA6718F424BD806500B9CD86 /* Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
 		DA6718F624BD87EA00B9CD86 /* Datas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Datas.swift; sourceTree = "<group>"; };
@@ -333,7 +339,6 @@
 				DACA38E424B2174A0025E230 /* Mypage */,
 				DACA38DF24B216E10025E230 /* Login_Signin */,
 				DA2BC40C24AB4BA600013143 /* LaunchScreen.storyboard */,
-				DA3E656424C163B900746FE1 /* SplashViewController.swift */,
 				DA2BC40F24AB4BA600013143 /* Info.plist */,
 				DACA38F824B229650025E230 /* mainTab.storyboard */,
 				DACA38FA24B22A5E0025E230 /* MainTabBarController.swift */,
@@ -432,6 +437,9 @@
 				DA3E655124C103A500746FE1 /* home_xs_1.json */,
 				DA3E655024C103A400746FE1 /* home_xs_2.json */,
 				DA3E655624C103F100746FE1 /* home_xs_3.json */,
+				DA3E656724C174ED00746FE1 /* home_i11_1.json */,
+				DA3E656624C174ED00746FE1 /* home_i11_2.json */,
+				DA3E656824C174ED00746FE1 /* home_i11_3.json */,
 				DA3E656024C1639300746FE1 /* splash_i8.json */,
 				DA3E655E24C1639300746FE1 /* splash_i11.json */,
 				DA3E655F24C1639300746FE1 /* splash_xs.json */,
@@ -738,6 +746,7 @@
 			children = (
 				DACA391724B23ADA0025E230 /* LogInViewController.swift */,
 				DA6897A424BAA3FA009E3BB5 /* SignUpViewController.swift */,
+				DA3E656E24C17CDA00746FE1 /* SplashViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -878,12 +887,15 @@
 				DACA390924B231880025E230 /* Order.storyboard in Resources */,
 				DACA390724B231710025E230 /* Search.storyboard in Resources */,
 				DA3E655324C103A500746FE1 /* home_xs_1.json in Resources */,
+				DA3E656B24C174ED00746FE1 /* home_i11_3.json in Resources */,
 				DACA391A24B23AEB0025E230 /* LogIn.storyboard in Resources */,
 				CC28996324BC234B00F9C822 /* MyPageHs.storyboard in Resources */,
 				DA3E655D24C1040100746FE1 /* home_i8_2.json in Resources */,
 				DA3E656124C1639300746FE1 /* splash_i11.json in Resources */,
 				DA3E655C24C1040100746FE1 /* home_i8_3.json in Resources */,
+				DA3E656924C174ED00746FE1 /* home_i11_2.json in Resources */,
 				DA3E655724C103F100746FE1 /* home_xs_3.json in Resources */,
+				DA3E656A24C174ED00746FE1 /* home_i11_1.json in Resources */,
 				DA3E655224C103A500746FE1 /* home_xs_2.json in Resources */,
 				DACA38F924B229650025E230 /* mainTab.storyboard in Resources */,
 				CC1233CF24B3544D0049F7A4 /* StatusHs.storyboard in Resources */,
@@ -1067,6 +1079,7 @@
 				DAD179A724B5823E009BFECC /* WaitCollectionViewCell.swift in Sources */,
 				DAD179A324B4BF40009BFECC /* OrderCollectionViewHeader.swift in Sources */,
 				DA6D64D924B644E200215BE4 /* testViewController.swift in Sources */,
+				DA3E656F24C17CDA00746FE1 /* SplashViewController.swift in Sources */,
 				CC28996524BC235D00F9C822 /* MyPageHsViewController.swift in Sources */,
 				CC1233D524B45F200049F7A4 /* StatusInformation.swift in Sources */,
 				CC3AB86224B6671D0007662E /* PayViewController.swift in Sources */,
@@ -1079,7 +1092,6 @@
 				CCB2C54F24BF79BB00F3200A /* DeleteStatusData.swift in Sources */,
 				CCE5476B24C0BD7C00C134C1 /* CompletePickupService.swift in Sources */,
 				DACA391C24B2BAEA0025E230 /* UnivSelectViewController.swift in Sources */,
-				DA3E656524C163B900746FE1 /* SplashViewController.swift in Sources */,
 				DA95BDA524B3623A00BC1F60 /* WaitingListViewController.swift in Sources */,
 				DACB87C524B6C532006E0AED /* APIConstraints.swift in Sources */,
 				DA2BC40424AB4BA300013143 /* SceneDelegate.swift in Sources */,
