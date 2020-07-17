@@ -1,0 +1,23 @@
+{
+  "images" : [
+    {
+      "filename" : "storeSection1.png",
+      "scale" : "1x",
+      "idiom" : "universal"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x",
+      "filename" : "storeSection1@2x.png"
+    },
+    {
+      "filename" : "storeSection1@3x.png",
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "version" : 1,
+    "author" : "xcode"
+  }
+}

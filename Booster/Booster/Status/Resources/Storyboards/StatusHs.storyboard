@@ -18,10 +18,12 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="saP-QG-0aA">
                                 <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yyD-LB-REA">
-                                        <rect key="frame" x="16" y="8" width="30" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="&lt;"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yyD-LB-REA">
+                                        <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="yyD-LB-REA" secondAttribute="height" multiplier="1:1" id="dH8-dT-4q7"/>
+                                        </constraints>
+                                        <state key="normal" image="processBackBtn"/>
                                         <connections>
                                             <action selector="back:" destination="5zu-yB-ZBx" eventType="touchUpInside" id="P7F-I1-kli"/>
                                         </connections>
@@ -29,7 +31,10 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
+                                    <constraint firstItem="yyD-LB-REA" firstAttribute="leading" secondItem="saP-QG-0aA" secondAttribute="leading" id="8JH-lH-AFS"/>
                                     <constraint firstAttribute="height" constant="44" id="ht8-LB-QKY"/>
+                                    <constraint firstItem="yyD-LB-REA" firstAttribute="top" secondItem="saP-QG-0aA" secondAttribute="top" id="ohe-p8-0BE"/>
+                                    <constraint firstAttribute="bottom" secondItem="yyD-LB-REA" secondAttribute="bottom" id="rv3-pK-HXX"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ipW-6R-PiC">
@@ -191,9 +196,6 @@
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kaM-jf-GVh">
                                                     <rect key="frame" x="282" y="188.33333333333334" width="77" height="50.666666666666657"/>
                                                     <state key="normal" image="processBtnPickupFile2"/>
-                                                    <connections>
-                                                        <action selector="completePickUp:" destination="5zu-yB-ZBx" eventType="touchUpInside" id="3jQ-Lp-ent"/>
-                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BN3-AV-mN3">
                                                     <rect key="frame" x="205" y="188.33333333333334" width="77" height="50.666666666666657"/>
@@ -273,9 +275,11 @@
                     <navigationItem key="navigationItem" id="x9N-o9-lRX"/>
                     <connections>
                         <outlet property="StatusHsTableView" destination="2Yb-H3-3mG" id="dnN-Hh-plu"/>
+                        <outlet property="itemCount" destination="gRD-Li-MZe" id="hKj-HW-bEG"/>
                         <outlet property="marginView" destination="PFL-Wl-c1J" id="v5Y-75-CRt"/>
                         <outlet property="marginViewHeight" destination="Kya-nG-LEK" id="kS8-0m-d2N"/>
                         <outlet property="statusHsTableView" destination="2Yb-H3-3mG" id="yAa-6h-s6g"/>
+                        <outlet property="userName" destination="mJU-NF-UGU" id="dU8-ub-xSM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CPB-V0-Bc1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -372,6 +376,7 @@
         <image name="btnClose" width="24" height="24"/>
         <image name="iconTrash" width="37" height="30"/>
         <image name="optionPopupbtnFin" width="240" height="44"/>
+        <image name="processBackBtn" width="44" height="44"/>
         <image name="processBtnPickupFile2" width="77" height="48"/>
         <image name="progressSlider1" width="323" height="16"/>
     </resources>

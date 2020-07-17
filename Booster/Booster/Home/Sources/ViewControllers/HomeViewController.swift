@@ -22,7 +22,8 @@ class HomeViewController: UIViewController {
     getCurrentStatus()
     super.viewDidLoad()
     print(view.bounds.height)
-    
+    let storyBoard = UIStoryboard.init(name: "StatusHs", bundle: nil)
+    guard let status = storyBoard.instantiateViewController(identifier: "StatusViewController") as? StatusHsViewController else {return}
     // Do any additional setup after loading the view.
   }
   func getDeviceIdentifier() -> String {
@@ -69,6 +70,11 @@ class HomeViewController: UIViewController {
           self.progressLabel?.text = "인쇄를 시작해볼까요?"
           self.jsonName = self.deviceInfo + "_1"
         }
+        
+        let storyBoard = UIStoryboard.init(name: "StatusHs", bundle: nil)
+        guard let status = storyBoard.instantiateViewController(identifier: "StatusViewController") as? StatusHsViewController else {return}
+        status.getUserName = home.user_name
+
         print(self.jsonName)
         self.animation = Animation.named(self.jsonName)
         self.homeLottieAnimation = AnimationView(animation: self.animation)

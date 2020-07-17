@@ -37,7 +37,7 @@ class StatusHsCell: UITableViewCell {
   
   func setStatusInformation(num: Int, storeName: String, date: String, docsName: String,
                             imageName: String) {
-    numLabel.text = String(num)
+    numLabel.text = "no. " + String(num)
     storeLabel.text = storeName
     dateLabel.text = date
     docsLabel.text = docsName

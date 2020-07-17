@@ -60,13 +60,13 @@ class ChangeRangeViewController: UIViewController {
       isEndPartEmpty = false
     }
     if whichButtonClicked == "whole" {
-      vc.rangeLabel.text = "전체인쇄"
+      vc.rangeLabel?.text = "전체인쇄"
       vc.optionListFromServer?.file_range = "전체인쇄"
       dismiss(animated: false, completion: nil)
     }
     else if (whichButtonClicked == "part") {
       if !isStartPartEmpty && !isEndPartEmpty {
-      vc.rangeLabel.text = "부분인쇄"
+      vc.rangeLabel?.text = "부분인쇄"
         vc.optionListFromServer?.file_range = (startRangeField.text ?? "0") + "/" + (endRangeField.text ?? "0")
         print(vc.optionListFromServer?.file_range)
 

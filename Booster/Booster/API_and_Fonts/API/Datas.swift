@@ -413,3 +413,70 @@ struct StoreDetailData:Codable{
     self.univ_line = univ_line
   }
 }
+
+struct OrderDetailData: Codable {
+    let status: Int
+    let success: Bool
+    let message: String
+    let data: OrderDetail?
+  enum CodingKeys:String, CodingKey {
+      case status = "status"
+      case success = "success"
+      case message = "message"
+     case data = "data"
+   }
+   init(from decoder: Decoder) throws{
+     let values = try decoder.container(keyedBy: CodingKeys.self)
+     status = (try? values.decode(Int.self, forKey: .status)) ?? -1
+     success = (try? values.decode(Bool.self, forKey: .success)) ?? false
+     message = (try? values.decode(String.self, forKey: .message)) ?? ""
+     data = (try? values.decode(OrderDetail.self, forKey: .data)) ?? nil
+     }
+}
+
+// MARK: - DataClass
+struct OrderDetail: Codable {
+    let orderIdx: Int
+    let orderStoreName: String
+    let orderState: Int
+    let orderTime: String
+    let orderPrice: Int
+    let orderComment: String
+    let orderFileList: [OrderFileList]
+
+    enum CodingKeys: String, CodingKey {
+        case orderIdx = "order_idx"
+        case orderStoreName = "order_store_name"
+        case orderState = "order_state"
+        case orderTime = "order_time"
+        case orderPrice = "order_price"
+        case orderComment = "order_comment"
+        case orderFileList = "order_file_list"
+    }
+  
+}
+
+// MARK: - OrderFileList
+struct OrderFileList: Codable {
+    let fileThumbnailPath: URL
+    let fileName, fileExtension: String
+    let filePrice: Int
+    let fileColor: String
+    let fileRangeStart, fileRangeEnd: Int
+    let fileSidedType, fileDirection: String
+    let fileCollect, fileCopyNumber: Int
+
+    enum CodingKeys: String, CodingKey {
+        case fileThumbnailPath = "file_thumbnail_path"
+        case fileName = "file_name"
+        case fileExtension = "file_extension"
+        case filePrice = "file_price"
+        case fileColor = "file_color"
+        case fileRangeStart = "file_range_start"
+        case fileRangeEnd = "file_range_end"
+        case fileSidedType = "file_sided_type"
+        case fileDirection = "file_direction"
+        case fileCollect = "file_collect"
+        case fileCopyNumber = "file_copy_number"
+    }
+}

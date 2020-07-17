@@ -9,7 +9,8 @@
 import UIKit
 
 class StatusDetailViewController: UIViewController {
-
+  var orderIdx:Int? = 0
+  var detailStatusInfo : [OrderFileList] = []
   @IBOutlet weak var orderRequest: UILabel!
   @IBOutlet weak var orderDate: UILabel!
   @IBOutlet weak var orderPrice: UILabel!
@@ -18,30 +19,43 @@ class StatusDetailViewController: UIViewController {
   @IBOutlet weak var orderStatus: UILabel!
   @IBOutlet weak var fileDetailCollectionView: UICollectionView!
   override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-    }
+    super.viewDidLoad()
+    print(orderIdx)
+    // Do any additional setup after loading the view.
+  }
   func setCollectionView(){
     fileDetailCollectionView.delegate = self
     fileDetailCollectionView.dataSource = self
   }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+  func getStatusLabel(_ idxx:Int) ->String{
+    switch idxx {
+    case 1: return "접수"
+    case 2: return "인쇄중"
+    case 3: return "인쇄완료"
+    default:
+      return "대기하기 상태"
     }
-    */
+  }
 
+  /*
+   // MARK: - Navigation
+   
+   // In a storyboard-based application, you will often want to do a little preparation before navigation
+   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+   // Get the new view controller using segue.destination.
+   // Pass the selected object to the new view controller.
+   }
+   */
+  @IBAction func gobackbtn(_ sender: Any) {
+    self.dismiss(animated: true, completion: nil)
+  }
+  
 }
 
 
 extension StatusDetailViewController:UICollectionViewDelegate{
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return 10
+    return self.detailStatusInfo.count
   }
 }
 extension StatusDetailViewController:UICollectionViewDataSource{
@@ -49,7 +63,17 @@ extension StatusDetailViewController:UICollectionViewDataSource{
     guard let fileCell:FileListCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: FileListCollectionViewCell.identifier, for: indexPath) as? FileListCollectionViewCell else {
       return UICollectionViewCell()
     }
+    fileCell.fileName.text = detailStatusInfo[indexPath.row].fileName
+    fileCell.filePrice.text = String(detailStatusInfo[indexPath.row].filePrice) + "원"
+
+    DispatchQueue.global(qos: .background).async {
+      guard let data:Data = try? Data(contentsOf: self.detailStatusInfo[indexPath.row].fileThumbnailPath) , let image:UIImage = UIImage(data: data) else { return }
+      DispatchQueue.main.async {
+        fileCell.preViewImg.setImage(image, for: .normal)
+      }
+    }
     return fileCell
     
   }
+  
 }

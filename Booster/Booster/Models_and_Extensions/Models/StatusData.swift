@@ -26,11 +26,12 @@ struct StatusData: Codable {
     status = (try? values.decode(Int.self, forKey: .status)) ?? -1
     success = (try? values.decode(Bool.self, forKey: .success)) ?? false
     message = (try? values.decode(String.self, forKey: .message)) ?? ""
-    data = (try? values.decode(StatusList.self, forKey: .data)) ?? StatusList.init(booster_count: 1, order_list: [orders.init()])
+    data = (try? values.decode(StatusList.self, forKey: .data)) ?? StatusList.init(user_name:"",booster_count: 1, order_list: [orders.init()])
   }
 }
 
 struct StatusList: Codable {
+  var user_name:String
   var booster_count: Int
   var order_list: [orders]
 }

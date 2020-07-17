@@ -14,7 +14,11 @@ class StatusHsViewController: UIViewController {
   @IBOutlet weak var statusHsTableView: UITableView!
   @IBOutlet weak var marginView: UIView!
   @IBOutlet weak var marginViewHeight: NSLayoutConstraint!
+  
+  var getUserName:String = ""
   @IBOutlet weak var countLabel: UILabel!
+  @IBOutlet weak var userName: UILabel!
+  @IBOutlet weak var itemCount: UILabel!
   
   
   @IBAction func back(_ sender: Any) {
@@ -62,11 +66,16 @@ class StatusHsViewController: UIViewController {
       case .success(let statusList) :
         
         guard let statusList = statusList as? StatusList else {return}
+        var tempList:[StatusInformation] = []
         for i in 0..<statusList.order_list.count {
           let statusInfo = StatusInformation.init(orderNum: statusList.order_list[i].order_idx, storeName: statusList.order_list[i].order_store_name, date: statusList.order_list[i].order_time, docsName: statusList.order_list[i].order_title, status: statusList.order_list[i].order_state)
-          self.statusInformations.append(statusInfo)
+          tempList.append(statusInfo)
         }
+        self.statusInformations = tempList
+        self.userName.text = statusList.user_name + "님의 부스터"
+        self.itemCount.text = String(self.statusInformations.count) + "개 가동중"
         self.statusHsTableView.reloadData()
+        tempList.removeAll()
       case .requestErr(let message):
         guard let message = message as? String else {return}
         let alertViewController = UIAlertController(title: "로그인 실패", message: message,
@@ -157,7 +166,50 @@ extension StatusHsViewController: UITableViewDelegate {
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
     return 243
   }
-  
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    let detailstoryboard = UIStoryboard.init(name:"Status",bundle: nil)
+    guard  let detailCell = detailstoryboard.instantiateViewController(identifier: "statusDetail", creator: nil) as? StatusDetailViewController else {
+      return
+    }
+    detailCell.orderIdx = statusInformations[indexPath.row].orderNum
+      orderDetailViewService.shared.orderDetail(statusInformations[indexPath.row].orderNum){
+        networkResult in
+        switch networkResult {
+        case .success(let data) :
+          guard let fileList = data as? OrderDetail else {return}
+          var tempList : [OrderFileList] = []
+          if fileList.orderFileList.isEmpty {
+            tempList.removeAll()
+            detailCell.detailStatusInfo.removeAll()
+          }
+          else {
+            for i in 0..<fileList.orderFileList.count {
+              tempList.append(fileList.orderFileList[i])
+            }
+            detailCell.detailStatusInfo = tempList
+            tempList.removeAll()
+          }
+          detailCell.storeName.text = fileList.orderStoreName
+          detailCell.orderNumber.text = "no. " + String(fileList.orderIdx)
+          detailCell.orderDate.text = fileList.orderTime
+          detailCell.orderPrice.text = String(fileList.orderPrice) + "원"
+          detailCell.orderRequest.text = fileList.orderComment
+          detailCell.orderStatus.text = detailCell.getStatusLabel(fileList.orderState)
+          detailCell.setCollectionView()
+          
+          detailCell.modalPresentationStyle = .fullScreen
+          self.present(detailCell, animated: true)
+        case .requestErr(let message):
+          print(message)
+        case .pathErr : print("pathErr")
+        case .serverErr : print("serverErr")
+        case .networkFail: print("networkFail")
+        }
+    }
+
+    
+    
+  }
   func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
     if toggle {
       marginViewHeightConstraint = marginViewHeight

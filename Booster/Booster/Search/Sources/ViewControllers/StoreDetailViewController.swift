@@ -29,7 +29,7 @@ class StoreDetailViewController: UIViewController {
 
   @IBAction func gotoWaitingList(_ sender: Any) {
     let waitingstoryboard = UIStoryboard.init(name:"Order",bundle: nil)
-    
+
     guard let goToWaitingList = waitingstoryboard.instantiateViewController(withIdentifier: "WaitingVC") as? WaitingListViewController else {return}
     var storeData = simpleStoreData()
     storeData.store_address = self.storeInfo.store_address
@@ -44,6 +44,8 @@ class StoreDetailViewController: UIViewController {
         guard let data = data as? orderIdx else {return}
         goToWaitingList.orderIdx = data.order_idx
         print(data)
+        self.dismiss(animated: true, completion: nil)
+
       case .requestErr(let message):
         print(message)
       case .networkFail : print("networkFailed")
@@ -51,9 +53,12 @@ class StoreDetailViewController: UIViewController {
       case .serverErr : print("serverErr")
       }
     }
+    self.tabBarController?.selectedIndex = 2
+    self.tabBarController?.tabBar.isHidden = true
     print("dj")
     let navi = UINavigationController.init(rootViewController: goToWaitingList)
-    navi.pushViewController(goToWaitingList, animated: true)
+    print(navi)
+    //navi.pushViewController(goToWaitingList, animated: true)
   }
   
   @IBAction func backBtn(_ sender: Any) {

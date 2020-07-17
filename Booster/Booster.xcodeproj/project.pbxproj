@@ -67,9 +67,6 @@
 		DA3E655B24C1040100746FE1 /* home_i8_1.json in Resources */ = {isa = PBXBuildFile; fileRef = DA3E655824C1040000746FE1 /* home_i8_1.json */; };
 		DA3E655C24C1040100746FE1 /* home_i8_3.json in Resources */ = {isa = PBXBuildFile; fileRef = DA3E655924C1040000746FE1 /* home_i8_3.json */; };
 		DA3E655D24C1040100746FE1 /* home_i8_2.json in Resources */ = {isa = PBXBuildFile; fileRef = DA3E655A24C1040100746FE1 /* home_i8_2.json */; };
-		DA3E656124C1639300746FE1 /* splash_i11.json in Resources */ = {isa = PBXBuildFile; fileRef = DA3E655E24C1639300746FE1 /* splash_i11.json */; };
-		DA3E656224C1639300746FE1 /* splash_xs.json in Resources */ = {isa = PBXBuildFile; fileRef = DA3E655F24C1639300746FE1 /* splash_xs.json */; };
-		DA3E656324C1639300746FE1 /* splash_i8.json in Resources */ = {isa = PBXBuildFile; fileRef = DA3E656024C1639300746FE1 /* splash_i8.json */; };
 		DA3E656924C174ED00746FE1 /* home_i11_2.json in Resources */ = {isa = PBXBuildFile; fileRef = DA3E656624C174ED00746FE1 /* home_i11_2.json */; };
 		DA3E656A24C174ED00746FE1 /* home_i11_1.json in Resources */ = {isa = PBXBuildFile; fileRef = DA3E656724C174ED00746FE1 /* home_i11_1.json */; };
 		DA3E656B24C174ED00746FE1 /* home_i11_3.json in Resources */ = {isa = PBXBuildFile; fileRef = DA3E656824C174ED00746FE1 /* home_i11_3.json */; };
@@ -79,6 +76,9 @@
 		DA6718F724BD87EA00B9CD86 /* Datas.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6718F624BD87EA00B9CD86 /* Datas.swift */; };
 		DA6897A524BAA3FA009E3BB5 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6897A424BAA3FA009E3BB5 /* SignUpViewController.swift */; };
 		DA6D64D924B644E200215BE4 /* testViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6D64D824B644E200215BE4 /* testViewController.swift */; };
+		DA7365DE24C19B660042470F /* splash_i8.json in Resources */ = {isa = PBXBuildFile; fileRef = DA7365DB24C19B660042470F /* splash_i8.json */; };
+		DA7365DF24C19B660042470F /* splash_i11.json in Resources */ = {isa = PBXBuildFile; fileRef = DA7365DC24C19B660042470F /* splash_i11.json */; };
+		DA7365E024C19B660042470F /* splash_xs.json in Resources */ = {isa = PBXBuildFile; fileRef = DA7365DD24C19B660042470F /* splash_xs.json */; };
 		DA93D6E824BCCC8400DE370F /* StatusDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA93D6E724BCCC8400DE370F /* StatusDetailViewController.swift */; };
 		DA93D6EB24BCCD4800DE370F /* FileListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA93D6EA24BCCD4800DE370F /* FileListCollectionViewCell.swift */; };
 		DA95BDA124B2DA7D00BC1F60 /* StoreCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA95BDA024B2DA7D00BC1F60 /* StoreCollectionViewCell.swift */; };
@@ -197,9 +197,6 @@
 		DA3E655824C1040000746FE1 /* home_i8_1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = home_i8_1.json; sourceTree = "<group>"; };
 		DA3E655924C1040000746FE1 /* home_i8_3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = home_i8_3.json; sourceTree = "<group>"; };
 		DA3E655A24C1040100746FE1 /* home_i8_2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = home_i8_2.json; sourceTree = "<group>"; };
-		DA3E655E24C1639300746FE1 /* splash_i11.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = splash_i11.json; path = "../../../../../../../Downloads/splash_iOS_final(2)/splash_i11.json"; sourceTree = "<group>"; };
-		DA3E655F24C1639300746FE1 /* splash_xs.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = splash_xs.json; path = "../../../../../../../Downloads/splash_iOS_final(2)/splash_xs.json"; sourceTree = "<group>"; };
-		DA3E656024C1639300746FE1 /* splash_i8.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = splash_i8.json; path = "../../../../../../../Downloads/splash_iOS_final(2)/splash_i8.json"; sourceTree = "<group>"; };
 		DA3E656624C174ED00746FE1 /* home_i11_2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = home_i11_2.json; path = ../../../../../../../Downloads/i11/home_i11_2.json; sourceTree = "<group>"; };
 		DA3E656724C174ED00746FE1 /* home_i11_1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = home_i11_1.json; path = ../../../../../../../Downloads/i11/home_i11_1.json; sourceTree = "<group>"; };
 		DA3E656824C174ED00746FE1 /* home_i11_3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = home_i11_3.json; path = ../../../../../../../Downloads/i11/home_i11_3.json; sourceTree = "<group>"; };
@@ -209,6 +206,9 @@
 		DA6718F624BD87EA00B9CD86 /* Datas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Datas.swift; sourceTree = "<group>"; };
 		DA6897A424BAA3FA009E3BB5 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		DA6D64D824B644E200215BE4 /* testViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testViewController.swift; sourceTree = "<group>"; };
+		DA7365DB24C19B660042470F /* splash_i8.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = splash_i8.json; path = "../../../../../../../Downloads/splash_iOS_final(2) 1/splash_i8.json"; sourceTree = "<group>"; };
+		DA7365DC24C19B660042470F /* splash_i11.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = splash_i11.json; path = "../../../../../../../Downloads/splash_iOS_final(2) 1/splash_i11.json"; sourceTree = "<group>"; };
+		DA7365DD24C19B660042470F /* splash_xs.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = splash_xs.json; path = "../../../../../../../Downloads/splash_iOS_final(2) 1/splash_xs.json"; sourceTree = "<group>"; };
 		DA93D6E724BCCC8400DE370F /* StatusDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusDetailViewController.swift; sourceTree = "<group>"; };
 		DA93D6EA24BCCD4800DE370F /* FileListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileListCollectionViewCell.swift; sourceTree = "<group>"; };
 		DA95BDA024B2DA7D00BC1F60 /* StoreCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -443,9 +443,9 @@
 				DA3E656724C174ED00746FE1 /* home_i11_1.json */,
 				DA3E656624C174ED00746FE1 /* home_i11_2.json */,
 				DA3E656824C174ED00746FE1 /* home_i11_3.json */,
-				DA3E656024C1639300746FE1 /* splash_i8.json */,
-				DA3E655E24C1639300746FE1 /* splash_i11.json */,
-				DA3E655F24C1639300746FE1 /* splash_xs.json */,
+				DA7365DB24C19B660042470F /* splash_i8.json */,
+				DA7365DC24C19B660042470F /* splash_i11.json */,
+				DA7365DD24C19B660042470F /* splash_xs.json */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -557,8 +557,8 @@
 			children = (
 				DA93D6E924BCCD2400DE370F /* Cells */,
 				DACA38F124B2268A0025E230 /* ViewControllers */,
-				CC1233D224B363AC0049F7A4 /* StatusHsCell.swift */,
 				CC1233D424B45F200049F7A4 /* StatusInformation.swift */,
+				CC1233D224B363AC0049F7A4 /* StatusHsCell.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -880,6 +880,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA2BC40E24AB4BA600013143 /* LaunchScreen.storyboard in Resources */,
+				DA7365DE24C19B660042470F /* splash_i8.json in Resources */,
 				DACA38FF24B22D0C0025E230 /* Home.storyboard in Resources */,
 				DA2BC40B24AB4BA600013143 /* Assets.xcassets in Resources */,
 				DACA391224B231F40025E230 /* MyPage.storyboard in Resources */,
@@ -890,9 +891,11 @@
 				DA3E655324C103A500746FE1 /* home_xs_1.json in Resources */,
 				DA3E656B24C174ED00746FE1 /* home_i11_3.json in Resources */,
 				DACA391A24B23AEB0025E230 /* LogIn.storyboard in Resources */,
+				DA7365DF24C19B660042470F /* splash_i11.json in Resources */,
 				CC28996324BC234B00F9C822 /* MyPageHs.storyboard in Resources */,
 				DA3E655D24C1040100746FE1 /* home_i8_2.json in Resources */,
 				DA3E655C24C1040100746FE1 /* home_i8_3.json in Resources */,
+				DA7365E024C19B660042470F /* splash_xs.json in Resources */,
 				DA3E656924C174ED00746FE1 /* home_i11_2.json in Resources */,
 				DA3E655724C103F100746FE1 /* home_xs_3.json in Resources */,
 				DA3E656A24C174ED00746FE1 /* home_i11_1.json in Resources */,
