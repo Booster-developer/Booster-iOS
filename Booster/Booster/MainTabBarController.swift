@@ -15,26 +15,21 @@ class MainTabBarController: UITabBarController ,UITabBarControllerDelegate{
       super.viewDidLoad()
       self.delegate = self
       setTabBar()
+      
       // Do any additional setup after loading the view.
     }
     func setTabBar() {
-      //self.tabBar.translatesAutoresizingMaskIntoConstraints = true
+      self.tabBar.backgroundImage = UIImage(named: "bgTab")
       
-      self.tabBar.rightAnchor.constraint(equalTo: self.view.rightAnchor).isActive = true
-      self.tabBar.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true
-      self.tabBar.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
-      self.tabBar.contentMode = .scaleAspectFill
-      addHeightConstraintToTabbar()
-      //self.tabBar.heightAnchor.constraint(equalToConstant: 64)
-      var frame:CGRect = self.tabBar.frame
+      var tempsize:CGSize = self.tabBar.bounds.size
+      print(tempsize)
+      self.tabBar.bounds.size = self.tabBar.sizeThatFits(tempsize)
       print(tabBar.frame)
-      var insets:UIEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-      frame.size.height = 65
-      self.tabBar.frame = frame
+      print(self.tabBar.bounds.size)
       let homeStoryboard = UIStoryboard.init(name:"Home",bundle: nil)
         guard let firstTab = homeStoryboard.instantiateViewController(identifier: "HomeViewController") as? HomeViewController else{return}
 
-        firstTab.tabBarItem.title = ""
+        firstTab.tabBarItem.title = "홈"
       firstTab.tabBarItem.image = UIImage(named: "iconHomeInact")?.withRenderingMode(.alwaysOriginal)
       
       firstTab.tabBarItem.selectedImage = UIImage(named: "iconHomeAct")?.withRenderingMode(.alwaysTemplate)
@@ -42,7 +37,7 @@ class MainTabBarController: UITabBarController ,UITabBarControllerDelegate{
         let searchStoryboard = UIStoryboard.init(name:"Search",bundle: nil)
         guard let secondTab = searchStoryboard.instantiateViewController(identifier: "SearchViewController") as? SearchViewController else{return}
       secondTab.univIdx = univIdx
-        secondTab.tabBarItem.title = ""
+        secondTab.tabBarItem.title = "매장"
       secondTab.tabBarItem.image = UIImage(named: "iconStoreInact")?.withRenderingMode(.automatic)
       
       //secondTab.tabBarItem.accessibilityFrame = CGRect()
@@ -53,19 +48,20 @@ class MainTabBarController: UITabBarController ,UITabBarControllerDelegate{
       
         thirdTab.tabBarItem.title = ""
         thirdTab.tabBarItem.image = UIImage(named: "iconRocket")?.withRenderingMode(.alwaysOriginal)
+      thirdTab.tabBarItem.imageInsets.top = 0
         //thirdTab.tabBarItem.selectedImage = UIImage(named: "btnTab3Active")?.withRenderingMode(.alwaysTemplate)
         
         let statusStoryboard = UIStoryboard.init(name:"StatusHs",bundle: nil)
         guard let fourthTab = statusStoryboard.instantiateViewController(identifier: "StatusViewController") as? StatusHsViewController else{return}
         
-        fourthTab.tabBarItem.title = ""
+        fourthTab.tabBarItem.title = "주문현황"
         fourthTab.tabBarItem.image = UIImage(named: "iconHistoryInact")?.withRenderingMode(.alwaysOriginal)
         fourthTab.tabBarItem.selectedImage = UIImage(named: "iconHistoryAct")?.withRenderingMode(.alwaysTemplate)
 
         let myPageStoryboard = UIStoryboard.init(name:"MyPageHs",bundle: nil)
         guard let fifthTab = myPageStoryboard.instantiateViewController(identifier: "MyPageHsViewController") as? MyPageHsViewController else{return}
 
-        fifthTab.tabBarItem.title = ""
+        fifthTab.tabBarItem.title = "마이페이지"
         fifthTab.tabBarItem.image = UIImage(named: "iconMypageInact")?.withRenderingMode(.alwaysOriginal)
         fifthTab.tabBarItem.selectedImage = UIImage(named: "iconMypageAct")?.withRenderingMode(.alwaysTemplate)
 
@@ -76,12 +72,24 @@ class MainTabBarController: UITabBarController ,UITabBarControllerDelegate{
     }
   func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
     let itemIndex = tabBarController.selectedIndex
+    if (itemIndex == 0 ){
+      let homeStoryboard = UIStoryboard.init(name:"Home",bundle: nil)
+             guard let firstTab = homeStoryboard.instantiateViewController(identifier: "HomeViewController") as? HomeViewController else{return}
+      print(firstTab.HomeLottieVie?.subviews)
+
+      firstTab.homeLottieAnimation.reloadImages()
+      firstTab.homeLottieAnimation.play()
+      firstTab.homeLottieAnimation.removeFromSuperview()
+      firstTab.viewDidLoad()
+
+    }
     if(itemIndex == 2){
       tabBarController.tabBar.isHidden = true
       //tabBarController.viewControllers![2].reloadInputViews()
       let orderStoryboard = UIStoryboard.init(name:"Order",bundle: nil)
-      guard let thirdTab = orderStoryboard.instantiateViewController(identifier: "OrderViewController") as? UINavigationController else{return}
-      
+      guard let thirdTab = orderStoryboard.instantiateViewController(identifier: "orderView") as? OrderViewController else{return}
+      print("jj")
+      thirdTab.viewDidLoad()
       print("DD")
     }
     
@@ -91,7 +99,7 @@ class MainTabBarController: UITabBarController ,UITabBarControllerDelegate{
   }
   
   func addHeightConstraintToTabbar() -> Void {
-    let heightConstant:CGFloat = self.view.safeAreaInsets.bottom + 49.0
+    let heightConstant:CGFloat = self.view.safeAreaInsets.bottom + 101.0
     self.tabBar.heightAnchor.constraint(equalToConstant: heightConstant).isActive = true
   }
   
@@ -105,4 +113,12 @@ class MainTabBarController: UITabBarController ,UITabBarControllerDelegate{
    }
    */
   
+}
+extension UITabBar{
+  override open func sizeThatFits(_ size: CGSize) -> CGSize {
+      super.sizeThatFits(size)
+      var sizeThatFits = super.sizeThatFits(size)
+      sizeThatFits.height = 101
+      return sizeThatFits
+  }
 }

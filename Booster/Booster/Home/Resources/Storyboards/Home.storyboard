@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zfM-lv-17e">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -13,36 +13,85 @@
             <objects>
                 <viewController storyboardIdentifier="HomeViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="zfM-lv-17e" customClass="HomeViewController" customModule="Booster" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5QX-7V-FWs">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D13-os-2o2">
-                                <rect key="frame" x="297" y="142" width="52" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="알람뷰로"/>
-                                <connections>
-                                    <segue destination="l1o-Ho-duy" kind="show" id="wqf-Dx-sNm"/>
-                                </connections>
-                            </button>
+                            <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qtF-k1-UMh">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="702"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D13-os-2o2">
+                                        <rect key="frame" x="370" y="44" width="44" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="44" id="Cg9-QJ-o0F"/>
+                                            <constraint firstAttribute="height" constant="44" id="MbL-Kg-1FH"/>
+                                        </constraints>
+                                        <state key="normal" image="homeIcAlarm"/>
+                                        <connections>
+                                            <segue destination="l1o-Ho-duy" kind="show" id="wqf-Dx-sNm"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F3R-Fb-1zp">
+                                        <rect key="frame" x="23.999999999999996" y="100" width="62.666666666666657" height="31.666666666666657"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="26"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="님," textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2bU-8w-Nt6">
+                                        <rect key="frame" x="90.666666666666671" y="109.66666666666667" width="20.333333333333329" height="22.000000000000014"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="18"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="20V-Ch-LXz">
+                                        <rect key="frame" x="23.999999999999996" y="135.66666666666666" width="43.666666666666657" height="22"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="18"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="2bU-8w-Nt6" firstAttribute="bottom" secondItem="F3R-Fb-1zp" secondAttribute="bottom" id="2Xg-8o-QIM"/>
+                                    <constraint firstItem="D13-os-2o2" firstAttribute="top" secondItem="qtF-k1-UMh" secondAttribute="top" constant="44" id="37q-fv-l75"/>
+                                    <constraint firstItem="20V-Ch-LXz" firstAttribute="top" secondItem="F3R-Fb-1zp" secondAttribute="bottom" constant="4" id="3Iw-fu-Qtd"/>
+                                    <constraint firstAttribute="trailing" secondItem="D13-os-2o2" secondAttribute="trailing" id="CRR-Yp-CaH"/>
+                                    <constraint firstItem="F3R-Fb-1zp" firstAttribute="top" secondItem="qtF-k1-UMh" secondAttribute="top" constant="100" id="Qas-vh-eDh"/>
+                                    <constraint firstItem="20V-Ch-LXz" firstAttribute="leading" secondItem="qtF-k1-UMh" secondAttribute="leading" constant="24" id="Qc8-0q-rKU"/>
+                                    <constraint firstItem="2bU-8w-Nt6" firstAttribute="leading" secondItem="F3R-Fb-1zp" secondAttribute="trailing" constant="4" id="Qi8-hu-nM3"/>
+                                    <constraint firstItem="F3R-Fb-1zp" firstAttribute="leading" secondItem="qtF-k1-UMh" secondAttribute="leading" constant="24" id="kfX-3r-7AR"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="ALX-jU-QDs" firstAttribute="bottom" secondItem="qtF-k1-UMh" secondAttribute="bottom" id="EDN-6C-Qbb"/>
+                            <constraint firstItem="qtF-k1-UMh" firstAttribute="top" secondItem="5QX-7V-FWs" secondAttribute="top" id="G1o-dU-hpH"/>
+                            <constraint firstItem="qtF-k1-UMh" firstAttribute="leading" secondItem="ALX-jU-QDs" secondAttribute="leading" id="Qr0-f5-CUZ"/>
+                            <constraint firstItem="ALX-jU-QDs" firstAttribute="trailing" secondItem="qtF-k1-UMh" secondAttribute="trailing" id="r4k-q3-omL"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="ALX-jU-QDs"/>
                     </view>
+                    <size key="freeformSize" width="414" height="736"/>
+                    <connections>
+                        <outlet property="HomeLottieVie" destination="qtF-k1-UMh" id="XUh-iC-Lrt"/>
+                        <outlet property="progressLabel" destination="20V-Ch-LXz" id="LCu-57-OUX"/>
+                        <outlet property="userName" destination="F3R-Fb-1zp" id="6GC-tG-vI1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rbm-B6-YQA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-7.2463768115942031" y="-186.16071428571428"/>
+            <point key="canvasLocation" x="-19" y="-214"/>
         </scene>
         <!--Alert View Controller-->
         <scene sceneID="Hqm-UV-1aV">
             <objects>
                 <viewController storyboardIdentifier="alertView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="l1o-Ho-duy" customClass="AlertViewController" customModule="Booster" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="krN-5y-Rxl">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oeg-kJ-Ltq">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bdL-00-J5F">
                                         <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
@@ -64,10 +113,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gjP-Y0-bhn">
-                                <rect key="frame" x="0.0" y="44" width="414" height="55.5"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="55.666666666666657"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="알림" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fTg-vx-uip">
-                                        <rect key="frame" x="16" y="12" width="45" height="31.5"/>
+                                        <rect key="frame" x="16" y="12.000000000000002" width="45" height="31.666666666666671"/>
                                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="26"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -81,7 +130,7 @@
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="sWX-vD-kDf">
-                                <rect key="frame" x="0.0" y="99.5" width="414" height="708.5"/>
+                                <rect key="frame" x="0.0" y="99.666666666666686" width="375" height="624.33333333333326"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Nz3-d8-LS6">
                                     <size key="itemSize" width="414" height="111"/>
@@ -91,38 +140,38 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="alertCell" reuseIdentifier="alertCell" id="dGT-vs-qdK" customClass="AlertCollectionViewCell" customModule="Booster" customModuleProvider="target">
-                                        <rect key="frame" x="18.5" y="0.0" width="377.5" height="98"/>
+                                        <rect key="frame" x="-19.666666666666668" y="0.0" width="414" height="111"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="kbI-QH-lKY">
-                                            <rect key="frame" x="0.0" y="0.0" width="377.5" height="98"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="111"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bgOrder1" translatesAutoresizingMaskIntoConstraints="NO" id="dpr-3v-OTb">
-                                                    <rect key="frame" x="0.0" y="0.0" width="377.5" height="98"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="377.66666666666669" height="98"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="dpr-3v-OTb" secondAttribute="height" multiplier="343:89" id="Iiu-lp-Nyq"/>
                                                     </constraints>
                                                 </imageView>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="noticeIc1" translatesAutoresizingMaskIntoConstraints="NO" id="xpt-L2-lJu">
-                                                    <rect key="frame" x="14" y="33" width="26.5" height="32"/>
+                                                    <rect key="frame" x="14" y="33" width="26.333333333333329" height="32"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="xpt-L2-lJu" secondAttribute="height" multiplier="19:23" id="By2-Xx-dl9"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="주문 번호" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kDX-zp-MN3">
-                                                    <rect key="frame" x="61.5" y="11" width="45" height="14.5"/>
+                                                    <rect key="frame" x="61.333333333333343" y="11" width="45" height="14.666666666666664"/>
                                                     <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="12"/>
                                                     <color key="textColor" red="0.48630654810000001" green="0.49018782379999998" blue="0.49019646639999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2020.07.17" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8c5-iH-MU9">
-                                                    <rect key="frame" x="61.5" y="62" width="57" height="15"/>
+                                                    <rect key="frame" x="61.333333333333343" y="62" width="57" height="15"/>
                                                     <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="12"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xMf-Vk-BDf">
-                                                    <rect key="frame" x="61.5" y="25.5" width="264.5" height="31.5"/>
+                                                    <rect key="frame" x="61.333333333333343" y="25.666666666666671" width="264.33333333333326" height="31.333333333333329"/>
                                                     <string key="text">복사왕 김제본에서 주문하신 인쇄가 완료되었습니다.
 픽업 완료 버튼을 눌러주세요.</string>
                                                     <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="13"/>
@@ -177,6 +226,7 @@
     </scenes>
     <resources>
         <image name="bgOrder1" width="352" height="98"/>
+        <image name="homeIcAlarm" width="48" height="48"/>
         <image name="noticeIc1" width="19" height="23"/>
         <image name="processBackBtn" width="44" height="44"/>
     </resources>
