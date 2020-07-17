@@ -13,10 +13,11 @@ class CompletePaymentViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-      let storyBoard = UIStoryboard.init(name: "StatusHs", bundle: nil)
-      let statusVC = storyBoard.instantiateViewController(identifier: "StatusViewController")
-      statusVC.modalPresentationStyle = .fullScreen
-      self.present(statusVC, animated: false, completion: nil)
+      self.tabBarController?.selectedIndex = 3
+      self.tabBarController?.tabBar.isHidden = false
+      print(self.presentingViewController?.presentingViewController.self?.navigationController?.popToRootViewController(animated: false))
+      
+      self.navigationController?.popToRootViewController(animated: false)
     }
     // Do any additional setup after loading the view.
   }

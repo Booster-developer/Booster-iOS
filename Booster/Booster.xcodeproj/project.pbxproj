@@ -50,6 +50,7 @@
 		CCE5476724C0B3B500C134C1 /* CompletePaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE5476624C0B3B500C134C1 /* CompletePaymentViewController.swift */; };
 		CCE5476924C0BD6E00C134C1 /* CompletePickupData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE5476824C0BD6E00C134C1 /* CompletePickupData.swift */; };
 		CCE5476B24C0BD7C00C134C1 /* CompletePickupService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE5476A24C0BD7C00C134C1 /* CompletePickupService.swift */; };
+		CCF835C924C173E500755680 /* StatusDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF835C824C173E500755680 /* StatusDetail.swift */; };
 		D37338012F3166BBDF741F1C /* Pods_BoosterTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF5F3976B85D8FEDD0677FC6 /* Pods_BoosterTests.framework */; };
 		DA12557124BC5FDE00520138 /* AddFileCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA12557024BC5FDE00520138 /* AddFileCollectionViewCell.swift */; };
 		DA12557324BC8FA700520138 /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA12557224BC8FA700520138 /* AlertViewController.swift */; };
@@ -66,9 +67,6 @@
 		DA3E655B24C1040100746FE1 /* home_i8_1.json in Resources */ = {isa = PBXBuildFile; fileRef = DA3E655824C1040000746FE1 /* home_i8_1.json */; };
 		DA3E655C24C1040100746FE1 /* home_i8_3.json in Resources */ = {isa = PBXBuildFile; fileRef = DA3E655924C1040000746FE1 /* home_i8_3.json */; };
 		DA3E655D24C1040100746FE1 /* home_i8_2.json in Resources */ = {isa = PBXBuildFile; fileRef = DA3E655A24C1040100746FE1 /* home_i8_2.json */; };
-		DA3E656124C1639300746FE1 /* splash_i11.json in Resources */ = {isa = PBXBuildFile; fileRef = DA3E655E24C1639300746FE1 /* splash_i11.json */; };
-		DA3E656224C1639300746FE1 /* splash_xs.json in Resources */ = {isa = PBXBuildFile; fileRef = DA3E655F24C1639300746FE1 /* splash_xs.json */; };
-		DA3E656324C1639300746FE1 /* splash_i8.json in Resources */ = {isa = PBXBuildFile; fileRef = DA3E656024C1639300746FE1 /* splash_i8.json */; };
 		DA3E656524C163B900746FE1 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3E656424C163B900746FE1 /* SplashViewController.swift */; };
 		DA6718F324BD7EE600B9CD86 /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6718F224BD7EE600B9CD86 /* NetworkResult.swift */; };
 		DA6718F524BD806500B9CD86 /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6718F424BD806500B9CD86 /* Services.swift */; };
@@ -171,6 +169,7 @@
 		CCE5476624C0B3B500C134C1 /* CompletePaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletePaymentViewController.swift; sourceTree = "<group>"; };
 		CCE5476824C0BD6E00C134C1 /* CompletePickupData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletePickupData.swift; sourceTree = "<group>"; };
 		CCE5476A24C0BD7C00C134C1 /* CompletePickupService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletePickupService.swift; sourceTree = "<group>"; };
+		CCF835C824C173E500755680 /* StatusDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusDetail.swift; sourceTree = "<group>"; };
 		DA12557024BC5FDE00520138 /* AddFileCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFileCollectionViewCell.swift; sourceTree = "<group>"; };
 		DA12557224BC8FA700520138 /* AlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
 		DA12557524BC938600520138 /* AlertCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -192,9 +191,6 @@
 		DA3E655824C1040000746FE1 /* home_i8_1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = home_i8_1.json; sourceTree = "<group>"; };
 		DA3E655924C1040000746FE1 /* home_i8_3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = home_i8_3.json; sourceTree = "<group>"; };
 		DA3E655A24C1040100746FE1 /* home_i8_2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = home_i8_2.json; sourceTree = "<group>"; };
-		DA3E655E24C1639300746FE1 /* splash_i11.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = splash_i11.json; path = "../../../../../../../Downloads/splash_iOS_final(2)/splash_i11.json"; sourceTree = "<group>"; };
-		DA3E655F24C1639300746FE1 /* splash_xs.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = splash_xs.json; path = "../../../../../../../Downloads/splash_iOS_final(2)/splash_xs.json"; sourceTree = "<group>"; };
-		DA3E656024C1639300746FE1 /* splash_i8.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = splash_i8.json; path = "../../../../../../../Downloads/splash_iOS_final(2)/splash_i8.json"; sourceTree = "<group>"; };
 		DA3E656424C163B900746FE1 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		DA6718F224BD7EE600B9CD86 /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
 		DA6718F424BD806500B9CD86 /* Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
@@ -401,6 +397,7 @@
 				CCE5476A24C0BD7C00C134C1 /* CompletePickupService.swift */,
 				CCBF2E3024C0BF2D00F497B7 /* PayActionService.swift */,
 				CCBF2E3224C0CAF600F497B7 /* PayActionData.swift */,
+				CCF835C824C173E500755680 /* StatusDetail.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -432,9 +429,6 @@
 				DA3E655124C103A500746FE1 /* home_xs_1.json */,
 				DA3E655024C103A400746FE1 /* home_xs_2.json */,
 				DA3E655624C103F100746FE1 /* home_xs_3.json */,
-				DA3E656024C1639300746FE1 /* splash_i8.json */,
-				DA3E655E24C1639300746FE1 /* splash_i11.json */,
-				DA3E655F24C1639300746FE1 /* splash_xs.json */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -868,20 +862,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA2BC40E24AB4BA600013143 /* LaunchScreen.storyboard in Resources */,
-				DA3E656224C1639300746FE1 /* splash_xs.json in Resources */,
 				DACA38FF24B22D0C0025E230 /* Home.storyboard in Resources */,
 				DA2BC40B24AB4BA600013143 /* Assets.xcassets in Resources */,
 				DACA391224B231F40025E230 /* MyPage.storyboard in Resources */,
 				CC1233D924B4B0040049F7A4 /* OrderHs.storyboard in Resources */,
 				DACA391024B231E20025E230 /* Status.storyboard in Resources */,
-				DA3E656324C1639300746FE1 /* splash_i8.json in Resources */,
 				DACA390924B231880025E230 /* Order.storyboard in Resources */,
 				DACA390724B231710025E230 /* Search.storyboard in Resources */,
 				DA3E655324C103A500746FE1 /* home_xs_1.json in Resources */,
 				DACA391A24B23AEB0025E230 /* LogIn.storyboard in Resources */,
 				CC28996324BC234B00F9C822 /* MyPageHs.storyboard in Resources */,
 				DA3E655D24C1040100746FE1 /* home_i8_2.json in Resources */,
-				DA3E656124C1639300746FE1 /* splash_i11.json in Resources */,
 				DA3E655C24C1040100746FE1 /* home_i8_3.json in Resources */,
 				DA3E655724C103F100746FE1 /* home_xs_3.json in Resources */,
 				DA3E655224C103A500746FE1 /* home_xs_2.json in Resources */,
@@ -1076,6 +1067,7 @@
 				CCE5476724C0B3B500C134C1 /* CompletePaymentViewController.swift in Sources */,
 				DA12557324BC8FA700520138 /* AlertViewController.swift in Sources */,
 				CCB2C53D24BDF80800F3200A /* OptionService.swift in Sources */,
+				CCF835C924C173E500755680 /* StatusDetail.swift in Sources */,
 				CCB2C54F24BF79BB00F3200A /* DeleteStatusData.swift in Sources */,
 				CCE5476B24C0BD7C00C134C1 /* CompletePickupService.swift in Sources */,
 				DACA391C24B2BAEA0025E230 /* UnivSelectViewController.swift in Sources */,
