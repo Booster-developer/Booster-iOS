@@ -350,27 +350,65 @@ These files can included in resources folder
     }
   ```
 
-####   Login/Sign In
+####   Login/Sign Up
 
 ##### 	images
 
-![KakaoTalk_Photo_2020-07-17-20-28-14](https://tva1.sinaimg.cn/large/007S8ZIlgy1ggu9jqm5ivj304m09ydfx.jpg)
+![](https://tva1.sinaimg.cn/large/007S8ZIlgy1ggu9wi3g2gj304m09ygli.jpg)![KakaoTalk_Photo_2020-07-17-20-26-41-25](https://tva1.sinaimg.cn/large/007S8ZIlgy1ggu9wwn7fpj304m09yglv.jpg)![KakaoTalk_Photo_2020-07-17-20-26-41-24](https://tva1.sinaimg.cn/large/007S8ZIlgy1ggu9wlg3jtj304m09yjrn.jpg)
+
+
 
 ##### 	descriptions
 
-- 
+- After splash animation ended, login view is loaded. in login view, there are two textfield for id / password. Log in button initiate networking with server py POST. With empty textfield, Log in button shows alert and message.
+- In sing up view, Name, Id, password and university information is needed to activate Sign up button. Every textfield are checked if it is empty when any textfield ended typing or any buttons are clicked.
+- After insert ID textfield, ID check button must be clicked. ID Check button communicate with server by POST action and check if there is a same ID in server. if there is no same ID in server field, small label below textfield will shows that saying it is okay to continue sign up. if there is same ID in server, small label below textfield will notice that there is same ID in server, and textfiled will be cleared.
+- After that, In pw field, two textfiled must be filled in same text. Texts are checked when one of two textfiled ended typing. If two text are not same, small label below second textfield will show that pw is incorrect.
+- University must selected to locate position of users. 
+- After all buttons are clicked, and Every textfield are filled properly, Sign up button will activate. with Sign up button, client send user information to server and recieve results.
 
 ####   Home
 
 ##### 	images
 
+![KakaoTalk_Photo_2020-07-17-20-26-41-23](https://tva1.sinaimg.cn/large/007S8ZIlgy1gguaa9m97oj304m09y0tu.jpg)![KakaoTalk_Photo_2020-07-17-20-26-41-22](https://tva1.sinaimg.cn/large/007S8ZIlgy1gguaa904rgj304m09y0t8.jpg)
+
+
+
 ##### 	descriptions
+
+- After log in, the First view of Tabbar is Home view.
+
+- When Home view is loaded, communication with server is initiate in same time. and get informations that will be showed in Home view. 
+
+- There are two values are get from server, user name and current status.
+
+- By status information, Lottie Animation is changed and Label is also changed by status information like below code .
+
+  ```swift
+          switch (self.statusIdx ?? 0){
+          case 2:
+            self.progressLabel?.text = "인쇄 진행 중이에요!"
+            self.jsonName = self.deviceInfo + "_2"
+          case 3:
+            self.progressLabel?.text = "인쇄가 완료되었어요 :)"
+            self.jsonName = self.deviceInfo + "_3"
+            
+          default:
+            self.progressLabel?.text = "인쇄를 시작해볼까요?"
+            self.jsonName = self.deviceInfo + "_1"
+          }
+  ```
+
+- Alert button in top-right corner persent current alert informations.
+
+- in alert view, every cells have toggle image assets. if user check alert, alert image go inactive. 
 
 ####   Store
 
 ##### 	images
 
-<img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1ggjnnpqbtbj30n01ds1kx.jpg" alt="storelist" style="zoom:20%; margin-right:10px;" align="left" width="20%" margin-right="5px" padding-right="5px"/><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1ggjnpdk2p4j30n01dsk8a.jpg" alt="selectcollege" style="zoom:20% margin-right:10px; float:auto;" width="20%" margin-right="5px" padding-right="5px"/><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1ggjnpq7f26j30n01dsdx1.jpg" alt="storedetail-fav" style="zoom:20%; float:auto; margin-right:5px;" width="20%" margin-right="5px" padding-right="5px"/><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1ggjntaknejj30n01dsqos.jpg" alt="mapview" style="zoom:20%; float:right;" width="20%" margin-right="5"/>
+![KakaoTalk_Photo_2020-07-17-20-26-41-21](https://tva1.sinaimg.cn/large/007S8ZIlgy1gguajzaoulj304m09ytah.jpg)![KakaoTalk_Photo_2020-07-17-20-26-41-17](https://tva1.sinaimg.cn/large/007S8ZIlgy1gguak5eyh3j304m09y0tu.jpg)![KakaoTalk_Photo_2020-07-17-20-26-41-19](https://tva1.sinaimg.cn/large/007S8ZIlgy1gguake4kt5j304m09yaby.jpg)![KakaoTalk_Photo_2020-07-17-20-26-41-20](https://tva1.sinaimg.cn/large/007S8ZIlgy1gguaknutrfj304m09ydgw.jpg)![KakaoTalk_Photo_2020-07-17-20-26-41-16](https://tva1.sinaimg.cn/large/007S8ZIlgy1gguakut6yxj304m09ytak.jpg)
 
 ##### 	descriptions
 
@@ -383,12 +421,81 @@ These files can included in resources folder
 
 ##### 	images
 
-<img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1ggjo2y6ykhj30n01dsjue.jpg" alt="order-selectstore" style="zoom:20%;" width="20%" margin="5"/><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1ggjo3dqda4j30n01dswhe.jpg" alt="order-selectstore2" style="zoom:20%;" width="20%" margin="5"/>
+![KakaoTalk_Photo_2020-07-17-20-26-41-15](https://tva1.sinaimg.cn/large/007S8ZIlgy1ggucq0low1j304m09yweg.jpg)![KakaoTalk_Photo_2020-07-17-22-33-13](https://tva1.sinaimg.cn/large/007S8ZIlgy1gguany08tej304m09y74r.jpg)![KakaoTalk_Photo_2020-07-17-20-26-41-13](https://tva1.sinaimg.cn/large/007S8ZIlgy1gguawn9iuyj304m09yjrc.jpg)![KakaoTalk_Photo_2020-07-17-20-26-41-9](https://tva1.sinaimg.cn/large/007S8ZIlgy1gguawszg8oj304m09ydfy.jpg)![KakaoTalk_Photo_2020-07-17-20-26-41-10](https://tva1.sinaimg.cn/large/007S8ZIlgy1gguax23r4yj304m09ywel.jpg)![KakaoTalk_Photo_2020-07-17-20-26-41-12](https://tva1.sinaimg.cn/large/007S8ZIlgy1gguay3f5t0j304m09yt8x.jpg)![KakaoTalk_Photo_2020-07-17-20-26-41-11](https://tva1.sinaimg.cn/large/007S8ZIlgy1gguaxvfre1j304m09yaa8.jpg)![KakaoTalk_Photo_2020-07-17-20-26-41-7](https://tva1.sinaimg.cn/large/007S8ZIlgy1gguaxi3fqej304m09yaa9.jpg)![KakaoTalk_Photo_2020-07-17-20-26-41-8](https://tva1.sinaimg.cn/large/007S8ZIlgy1gguax7wtmjj304m09y74i.jpg)
 
 ##### 	descriptions
 
-- third item of tabbar presents Order view. which find stores to order printing service using UITableView. there are three sections, recentStore, favorateStore and nearbyStores. when any cell is selected, the view below appears from bottom and there is a button links to submit view.
-- display submit view when a store is clicked on the 1st view by modifying layout constraints of the view.
+- third item of tabbar presents Order view. which find stores to order printing service using UITableView.
+
+- When view loaded, user send token to server and get store list nearby university. 3 sections are divided by favorite store, recently visited store, and all stores nearby. server give users store list and informations and 3 different sections are implemented by different arrays. 
+
+- Every cells can be selected. when selection occurs, button appears from bottom and disappear when selection canceled.
+
+- Selection cannot  be duplicated. Using  _selectedIndexPath, duplicated selection problems are solved. 
+
+  ```swift
+        if indexPath.compare(_selectedIndexPath!) == ComparisonResult.orderedSame{ /*이미 클릭되어 있는 cell을 클릭*/
+          _selectedIndexPath = nil
+          clearAllSelections()
+          selectionBtnHide()
+        }
+        else { /*클릭되어 있지 않은 셀을 클릭할 때*/
+          selectionBtnAppear()
+          switch indexPath.section {
+          case 0:
+            cell.itemSelected(isSelected: true)
+            storeNameInSelection.text = recentStorelist[indexPath.row].store_name
+            
+          case 1:
+            cell.itemSelected(isSelected: true)
+            storeNameInSelection.text = favorageStorelist[indexPath.row].store_name
+            
+          case 2:
+            cell.itemSelected(isSelected: true)
+            storeNameInSelection.text = defaultStorelist[indexPath.row].store_name
+          default:
+            cell.itemSelected(isSelected: true)
+          }
+                  
+          switch _selectedIndexPath!.section {
+          case 0:
+            oldcell.itemSelected(isSelected: false)
+          case 1:
+            oldcell.itemSelected(isSelected: false)
+          case 2:
+            oldcell.itemSelected(isSelected: false)
+          default:
+            oldcell.itemSelected(isSelected: false)
+          }
+          _selectedIndexPath = indexPath
+        }
+  ```
+
+- After click button below, the Waiting View are loaded. In waiting view, user upload file from local file manager and set a options for print
+
+- When collection view is empty, the order button is hidden. but if user upload any file, the order button appears form bottom of view. 
+
+- file uploading is implemented using FileManager and UIDocumentPicker. and QLThumbnailGenerator helps to make thumbnail image from file.  images extenstions are limited by pdf, jpg, png and so on. if user tring to upload exiting files, warnig alert pop up.
+
+- After uploading files, The collectionview cells are generated automatically and it contains option check and option change buttons. 
+
+- when option change buttons are clicked, option selection view is presented and users can make options for printing files. 
+
+- if user don't set any options, default print use default printing options. 
+
+- option check button present simple view of options. 
+
+- if delete button of cell is clicked, client send a delete message to server. 
+
+  ##### Order 
+
+  ###### - images
+
+![KakaoTalk_Photo_2020-07-17-20-26-41-6](https://tva1.sinaimg.cn/large/007S8ZIlgy1gguc1a17kgj304m09y3yp.jpg)![KakaoTalk_Photo_2020-07-17-20-26-41-5](https://tva1.sinaimg.cn/large/007S8ZIlgy1gguc1dw6sdj304m09yjrj.jpg)
+
+- when all files uploaded, and order button clicked, payment view is loaded. 
+- in this view, user can check file list and total price of print. Users can also sent a message to printing store owner.
+- if payment button clicked, with a few seconds of loading, view pop up Status tab of tabbarcontrollser
 
 ####   Status
 
@@ -405,7 +512,13 @@ These files can included in resources folder
 
 ##### 	images
 
+![KakaoTalk_Photo_2020-07-17-20-26-41-3](https://tva1.sinaimg.cn/large/007S8ZIlgy1gguc5c2549j304m09yq32.jpg)![KakaoTalk_Photo_2020-07-17-20-26-41-1](https://tva1.sinaimg.cn/large/007S8ZIlgy1gguc5eztl9j304m09ygm1.jpg)![KakaoTalk_Photo_2020-07-17-20-26-41-4](https://tva1.sinaimg.cn/large/007S8ZIlgy1gguc5j8nzdj304m09yq33.jpg)
+
 ##### 	descriptions
+
+- My page view shows User informations and shows use history. if rocket shape button clicked, Use history view is loaded and shows past payment
+- Profile modification button is located in right side of user name. if this button clicked, modification view is loaded. In this view, password textfiled are checked when editing is ended. if every textfiled are fullfilled modification complete button began active.
+- When button clicked, user send server modificated user informations and server reset user informations.
 
 ------
 
@@ -415,13 +528,13 @@ These files can included in resources folder
 
 | Primary Function | Details                 | Status | Developer |
 | :--------------- | :---------------------- | :----: | :-------: |
-| Splash           |                         |  Todo  |  Taehoon  |
-| Login            |                         |  Todo  |  Hansol   |
-| Sign In          |                         |  Todo  |  Taehoon  |
-|                  | double check            |  Todo  |  Taehoon  |
-|                  | sign in                 |  Todo  |  Taehoon  |
-| Home             |                         |  Todo  |  Taehoon  |
-|                  | summary of order status |  Todo  |  Taehoon  |
+| Splash           |                         |  Done  |  Taehoon  |
+| Login            |                         |  Done  |  Hansol   |
+| Sign In          |                         |  Done  |  Taehoon  |
+|                  | double check            |  Done  |  Taehoon  |
+|                  | sign in                 |  Done  |  Taehoon  |
+| Home             |                         |  Done  |  Taehoon  |
+|                  | summary of order status |  Done  |  Taehoon  |
 |                  | tabbar                  |  Done  |  Taehoon  |
 | Search           |                         |  Done  |   Both    |
 |                  | display stores          |  Done  |  Taehoon  |
@@ -432,16 +545,16 @@ These files can included in resources folder
 | Order            |                         |        |   Both    |
 |                  | select a store          |  Done  |  Taehoon  |
 |                  | waiting list            |  Done  |  Taehoon  |
-|                  | upload files            |  Todo  |  Taehoon  |
+|                  | upload files            |  Done  |  Taehoon  |
 |                  | select options          | Doing  |  Hansol   |
-|                  | pay credits             |  Todo  |  Hansol   |
+|                  | pay credits             |  Done  |  Hansol   |
 | Order Status     |                         |        |  Hansol   |
 |                  | order status view       |  Done  |  Hansol   |
 |                  | order details view      |  Done  |  Hansol   |
 | My page          |                         |        |  Hansol   |
-|                  | my profile              |  Todo  |  Hansol   |
+|                  | my profile              |  Done  |  Hansol   |
 |                  | logout                  |  Todo  |  Hansol   |
-|                  | engine view             |  Todo  |  Hansol   |
+|                  | engine view             |  Done  |  Hansol   |
 |                  | Settings                |  Todo  |  Hansol   |
 |                  |                         |        |           |
 |                  |                         |        |           |
@@ -452,7 +565,11 @@ These files can included in resources folder
 
 ### Challenges and Something New
 
+Duplicated selection in multiple-section collection view.
 
+File uploading to server by .PUT argument
+
+Get a file thumbnail form file.
 
 ------
 
