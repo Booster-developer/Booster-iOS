@@ -9,7 +9,7 @@
 import UIKit
 
 class SignUpViewController: UIViewController {
-
+  
   @IBOutlet weak var getName: UITextField!
   @IBOutlet weak var getID: UITextField!
   @IBOutlet weak var getPW: UITextField!
@@ -27,32 +27,42 @@ class SignUpViewController: UIViewController {
   @IBOutlet weak var univName: UILabel!
   @IBAction func checkID(_ sender: Any) {
     if let text = getID.text, !text.isEmpty {
-    guard let inputID = getID.text else{return}
-    idCheckService.shared.checkID(id: inputID) {
-      networkResult in
-      switch networkResult {
-      case .success(let message):
-        self.idCheckFailedLabel.isHidden = false
-        self.getID.layer.borderColor = UIColor.green.cgColor
-        self.idCheckFailedLabel.text = message as! String
-        self.isIDChecked = true
-        self.userInfo.userID = self.getID.text!
-        self.idCheckFailedLabel.textColor = UIColor.green
-      case .requestErr(let message):
-        self.idCheckFailedLabel.isHidden = false
-        self.getID.layer.borderColor = UIColor.red.cgColor
-        self.idCheckFailedLabel.text  = message as! String
-        self.getID.text = ""
-        self.idCheckFailedLabel.textColor = UIColor.red
-        self.userInfo.userID = ""
-
-        self.registerBtn.isEnabled = false
+      guard let inputID = getID.text else{return}
+      idCheckService.shared.checkID(id: inputID) {
+        networkResult in
+        switch networkResult {
+        case .success(let message):
+          self.idCheckFailedLabel.isHidden = false
+          self.getID.layer.borderColor = UIColor.green.cgColor
+          self.idCheckFailedLabel.text = message as! String
+          self.isIDChecked = true
+          self.userInfo.userID = self.getID.text!
+          self.getID.tag = 9
+          self.getID.layer.masksToBounds = true
+          self.getID.layer.cornerRadius = 5
+          self.getID.layer.borderColor = UIColor.green.cgColor
+          self.getID.layer.borderWidth = 1.0
+          self.getID.isEnabled = false
+          self.idCheckFailedLabel.textColor = UIColor.green
+        case .requestErr(let message):
+          self.idCheckFailedLabel.isHidden = false
+          self.getID.layer.borderColor = UIColor.red.cgColor
+          self.idCheckFailedLabel.text  = message as! String
+          self.getID.layer.masksToBounds = true
+          self.getID.layer.cornerRadius = 5
+          self.getID.layer.borderColor = UIColor.red.cgColor
+          self.getID.layer.borderWidth = 1.0
+          self.getID.text = ""
+          self.idCheckFailedLabel.textColor = UIColor.red
+          self.userInfo.userID = ""
+          
+          self.registerBtn.isEnabled = false
         //self.idCheckFailedLabel.layer.borderColor = CGColor.
-      case .pathErr : print("pathErr")
-      case .serverErr : print("serverErr")
-      case .networkFail: print("networkFail")
-    }
-  }
+        case .pathErr : print("pathErr")
+        case .serverErr : print("serverErr")
+        case .networkFail: print("networkFail")
+        }
+      }
     }
     else {
       self.registerBtn.isEnabled = false
@@ -60,12 +70,23 @@ class SignUpViewController: UIViewController {
       self.idCheckFailedLabel.text = "아이디를 입력해주세요"
       
     }
-}
-  @IBAction func univSelectBtn(_ sender: Any) {
-    univSelectionAppear.constant = 132
   }
+
+  @IBOutlet weak var ssUniv: UIButton!
+  @IBOutlet weak var cuUniv: UIButton!
+  @IBOutlet weak var snUniv: UIButton!
+  @IBAction func univSelectBtn(_ sender: Any) {
+    ssUniv.isHidden = false
+    cuUniv.isHidden = false
+    snUniv.isHidden = false
+    univSelectionAppear.constant = 105
+  }
+
   @IBAction func ssBtn(_ sender: Any) {
     isUnivSelected = true
+    ssUniv.isHidden = true
+    cuUniv.isHidden = true
+    snUniv.isHidden = true
     univSelectionAppear.constant = 0
     univName.text = "숭실대학교"
     userInfo.userUniv = 1
@@ -73,6 +94,9 @@ class SignUpViewController: UIViewController {
   }
   @IBAction func cuBtn(_ sender: Any) {
     isUnivSelected = true
+    ssUniv.isHidden = true
+    cuUniv.isHidden = true
+    snUniv.isHidden = true
     univSelectionAppear.constant = 0
     univName.text = "중앙대학교"
     userInfo.userUniv = 2
@@ -80,6 +104,9 @@ class SignUpViewController: UIViewController {
   }
   @IBAction func snuBtn(_ sender: Any) {
     isUnivSelected = true
+    ssUniv.isHidden = true
+    cuUniv.isHidden = true
+    snUniv.isHidden = true
     univSelectionAppear.constant = 0
     univName.text = "서울대학교"
     userInfo.userUniv = 3
@@ -90,13 +117,13 @@ class SignUpViewController: UIViewController {
     var test:Bool = getName.isEmpty || getID.isEmpty || getPW.isEmpty || checkPW.isEmpty
     test = !test
     if (test && isUnivSelected && termChecked_1 && termChecked_2 && isIDChecked && isPWChecked){
-        self.registerBtn.setBackgroundImage(UIImage(named: "storeDetailBtnOrder"), for: .normal)
-        self.registerBtn.isEnabled = true
+      self.registerBtn.setBackgroundImage(UIImage(named: "storeDetailBtnOrder"), for: .normal)
+      self.registerBtn.isEnabled = true
       userInfo.userName = getName.text!
-      }
-      else {
-        self.registerBtn.isEnabled = false
-      }
+    }
+    else {
+      self.registerBtn.isEnabled = false
+    }
     return test && isUnivSelected && termChecked_1 && termChecked_2 && isIDChecked && isPWChecked
   }
   
@@ -119,14 +146,14 @@ class SignUpViewController: UIViewController {
   }
   @IBAction func checkClick_1(_ sender: Any) {
     termChecked_1 = !termChecked_1
-       if termChecked_1 {
-         checkBox_1.setBackgroundImage(UIImage(named: "registerBtnCheckInactive2"), for: .normal)
-         checkBox_1.setImage(UIImage(named: "registerBtnCheckInactive1"), for: .normal)
-       }
-       else {
-         checkBox_1.setImage(UIImage(named: "registerBtnCheckInactive"), for: .normal)
-       }
-       print(resgisterBtnActive())
+    if termChecked_1 {
+      checkBox_1.setBackgroundImage(UIImage(named: "registerBtnCheckInactive2"), for: .normal)
+      checkBox_1.setImage(UIImage(named: "registerBtnCheckInactive1"), for: .normal)
+    }
+    else {
+      checkBox_1.setImage(UIImage(named: "registerBtnCheckInactive"), for: .normal)
+    }
+    print(resgisterBtnActive())
   }
   func enableRegister(){
     if resgisterBtnActive(){
@@ -138,7 +165,7 @@ class SignUpViewController: UIViewController {
     }
   }
   @IBAction func popUpTerms(_ sender: Any) {
-   
+    
   }
   @IBAction func signUpBtn(_ sender: Any) {
     
@@ -160,7 +187,7 @@ class SignUpViewController: UIViewController {
       }
     }
     print(userInfo)
-
+    
     
     
     
@@ -170,7 +197,9 @@ class SignUpViewController: UIViewController {
     pwIncorrectLabel.isHidden = true
     registerBtn.isEnabled = false
     super.viewDidLoad()
-    
+    ssUniv.isHidden = true
+    cuUniv.isHidden = true
+    snUniv.isHidden = true
     getPW.delegate = self
     getName.delegate = self
     getID.delegate = self
@@ -180,8 +209,8 @@ class SignUpViewController: UIViewController {
     univSelectionAppear.constant = 0
     
     
-        // Do any additional setup after loading the view.
-    }
+    // Do any additional setup after loading the view.
+  }
   
   @IBOutlet weak var pwIncorrectLabel: UILabel!
   func comparePW(){
@@ -189,17 +218,17 @@ class SignUpViewController: UIViewController {
       pwIncorrectLabel.isHidden = false
     }
   }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+  
+  
+  /*
+   // MARK: - Navigation
+   
+   // In a storyboard-based application, you will often want to do a little preparation before navigation
+   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+   // Get the new view controller using segue.destination.
+   // Pass the selected object to the new view controller.
+   }
+   */
   override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
     view.endEditing(true)
   }
@@ -210,7 +239,18 @@ extension SignUpViewController:UITextFieldDelegate{
     textField.resignFirstResponder()
     return true
   }
+  func textFieldDidBeginEditing(_ textField: UITextField) {
+    textField.layer.masksToBounds = true
+    textField.layer.cornerRadius = 5.0
+    textField.layer.borderColor = UIColor.blue.cgColor
+    textField.layer.borderWidth = 1.0
+    
+  }
   func textFieldDidEndEditing(_ textField: UITextField) {
+    if textField.tag != 9{
+    textField.layer.masksToBounds = false
+    textField.layer.borderWidth = 0.0
+    }
     if (textField.tag == 1 || textField.tag == 2) {
       if(getPW.isEmpty && checkPW.isEmpty){
         print("둘다 비었군")
@@ -218,6 +258,7 @@ extension SignUpViewController:UITextFieldDelegate{
       else if(getPW.text == checkPW.text){
         isPWChecked = true
         pwIncorrectLabel.text = "비밀번호가 일치합니다."
+        pwIncorrectLabel.textColor = UIColor.green
         userInfo.userPW = getPW.text!
       }
       else{
@@ -228,5 +269,5 @@ extension SignUpViewController:UITextFieldDelegate{
     }
     print(resgisterBtnActive())
   }
-
+  
 }

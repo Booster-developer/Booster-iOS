@@ -263,7 +263,10 @@ extension OrderViewController:UICollectionViewDataSource{
   }
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
     guard let cell:OrderCollectionViewCell=collectionView.dequeueReusableCell(withReuseIdentifier: OrderCollectionViewCell.identifier, for: indexPath) as? OrderCollectionViewCell else{return}
-    
+    if favorageStorelist.count == 0 && indexPath.section == 1 {
+      
+    }
+    else {
     storeNameInSelection.text = cell.storeName.text
     if ((_selectedIndexPath) != nil){
       guard let oldcell :OrderCollectionViewCell=collectionView.dequeueReusableCell(withReuseIdentifier: OrderCollectionViewCell.identifier, for: _selectedIndexPath!) as? OrderCollectionViewCell else{return}
@@ -328,7 +331,8 @@ extension OrderViewController:UICollectionViewDataSource{
       _selectedIndexPath = indexPath
     }
     storeNameInSelection.reloadInputViews()
-    collectionView.reloadItems(at: collectionView.indexPathsForVisibleItems)
+      collectionView.reloadItems(at: collectionView.indexPathsForVisibleItems)
+    }
   }
   
   func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexpath:IndexPath) ->UICollectionReusableView{

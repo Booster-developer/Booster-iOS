@@ -11,22 +11,26 @@ import Alamofire
 
 struct PayActionService {
   static let shared = PayActionService()
-  func makeParameter(_ user_comment: String?) -> Parameters {
-    print(user_comment)
-    return ["user_comment" : user_comment]
+  func makeParameter(_ user_comment: String) -> Parameters {
+    return ["order_comment" : user_comment]
   }
-  
-  func postUserComment(order_idx: Int?, user_comment: String?, completion: @escaping(NetworkResult<Any>) -> Void) {
-    let header: HTTPHeaders = ["token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkeCI6MSwiaWF0IjoxNTk0MDI1NzE2LCJleHAiOjE1OTc2MjU3MTYsImlzcyI6IkJvb3N0ZXIifQ.FtWfnt4rlyYH9ZV3TyOjLZXOkeR7ya96afmA0zJqTI8"]
-    
-    let dataRequest = Alamofire.request(APIConstraints.orderRequest+"/"+String(order_idx!)+"/request", method: .post, parameters: makeParameter(user_comment), encoding: BodyStringEncoding(body: user_comment!), headers: header)
+  func postUserComment(order_idx: Int?, user_comment: String, completion: @escaping(NetworkResult<Any>) -> Void) {
+    let header: HTTPHeaders = ["Content-Type" : "application/json", "token" : UserDefaults.standard.string(forKey: "token")!]
+    print(UserDefaults.standard.string(forKey: "token")!)
+    print(user_comment)
+    print(order_idx!)
+    print(header)
+    print(APIConstraints.orderRequest+"/"+String(order_idx!)+"/request")
+    let dataRequest = Alamofire.request(APIConstraints.orderRequest+"/"+String(order_idx!)+"/request", method: .post, parameters: makeParameter(user_comment), encoding: JSONEncoding.default, headers: header)
     
     dataRequest.responseData { dataResponse in
+      print(dataResponse.result)
       switch dataResponse.result{
       case .success:
         guard let statusCode = dataResponse.response?.statusCode else{return}
         guard let value = dataResponse.result.value else {return}
         var networkResult:NetworkResult<Any>?
+        print(statusCode)
         switch statusCode{
         case 200:
           let decoder = JSONDecoder()
@@ -41,7 +45,8 @@ struct PayActionService {
             networkResult = .requestErr(decodedData.message)
           }
         case 400: networkResult = .pathErr
-        case 500: networkResult = .serverErr
+        case 500:print("여기서 터짐?")
+          networkResult = .serverErr
         default: networkResult = .networkFail
         }
         completion(networkResult!)

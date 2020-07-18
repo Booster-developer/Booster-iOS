@@ -206,6 +206,8 @@ extension SearchViewController:UICollectionViewDataSource{
     guard  let detailView = detailStoryboard.instantiateViewController(identifier: "detailView", creator: nil) as? StoreDetailViewController else {
       return
     }
+    
+    
     detailView.storeidx = storeInfos[indexPath.row].store_idx
     detailView.cellidx = indexPath.row
     detailView.modalPresentationStyle = .fullScreen

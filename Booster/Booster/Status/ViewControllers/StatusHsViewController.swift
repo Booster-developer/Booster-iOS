@@ -189,13 +189,7 @@ extension StatusHsViewController: UITableViewDelegate {
             detailCell.detailStatusInfo = tempList
             tempList.removeAll()
           }
-          detailCell.storeName.text = fileList.orderStoreName
-          detailCell.orderNumber.text = "no. " + String(fileList.orderIdx)
-          detailCell.orderDate.text = fileList.orderTime
-          detailCell.orderPrice.text = String(fileList.orderPrice) + "원"
-          detailCell.orderRequest.text = fileList.orderComment
-          detailCell.orderStatus.text = detailCell.getStatusLabel(fileList.orderState)
-          detailCell.setCollectionView()
+          detailCell.detailStatus = fileList
           
           detailCell.modalPresentationStyle = .fullScreen
           self.present(detailCell, animated: true)

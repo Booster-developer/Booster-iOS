@@ -20,8 +20,8 @@ class LogInViewController: UIViewController {
   @IBOutlet weak var logInIdTextField: UITextField!
   @IBOutlet weak var logInPWTextField: UITextField!
   @IBAction func logInButtonClicked(_ sender: Any) {
-//    logInIdTextField.text = "daeun"
-//    logInPWTextField.text = "1234"
+    logInIdTextField.text = "daeun"
+    logInPWTextField.text = "1234"
     if (!logInIdTextField.isEmpty && !logInPWTextField.isEmpty){
       let logInId:String = logInIdTextField.text!
       let logInPW:String = logInPWTextField.text!
@@ -75,5 +75,15 @@ extension LogInViewController:UITextFieldDelegate{
      textField.resignFirstResponder()
      return true
    }
+  func textFieldDidBeginEditing(_ textField: UITextField) {
+    textField.layer.masksToBounds = true
+    textField.layer.cornerRadius = 5.0
+    textField.layer.borderColor = UIColor.blue.cgColor
+    textField.layer.borderWidth = 1.0
+  }
+  func textFieldDidEndEditing(_ textField: UITextField) {
+    textField.layer.masksToBounds = false
+    textField.layer.borderWidth = 0.0
+  }
   
 }

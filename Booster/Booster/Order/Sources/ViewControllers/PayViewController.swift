@@ -41,8 +41,8 @@ class PayViewController: UIViewController {
   @IBAction func payBtnClicked(_ sender: Any) {
     let storyBoard = UIStoryboard.init(name: "OrderHs", bundle: nil)
     let loadingVC = storyBoard.instantiateViewController(identifier: "loadingViewController")
-    
-    PayActionService.shared.postUserComment(order_idx: self.orderIndex, user_comment: requestTextField.text) { networkResult in switch networkResult {
+    print(self.orderIndex)
+    PayActionService.shared.postUserComment(order_idx: self.orderIndex, user_comment: requestTextField.text ?? "") { networkResult in switch networkResult {
     case .success(let message) :
       loadingVC.modalPresentationStyle = .overCurrentContext
       self.present(loadingVC, animated: false, completion: nil)
@@ -74,7 +74,7 @@ class PayViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    
+    self.requestTextField.delegate = self
     self.navigationController?.isNavigationBarHidden = true
     self.requestTextField.attributedPlaceholder = NSAttributedString(string: "사장님께 요청사항을 작성해주세요.", attributes: [NSAttributedString.Key.foregroundColor:textFieldColor])
     self.updateCharacterCount()
@@ -178,6 +178,10 @@ extension PayViewController: UITextFieldDelegate {
       return requestTextField.text!.count + (string.count - range.length) <= 50
     }
     return false
+  }
+  func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    textField.resignFirstResponder()
+    return true
   }
   override func didChangeValue(forKey key: String) {
     self.updateCharacterCount()

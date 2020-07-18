@@ -10,6 +10,8 @@ import UIKit
 
 class StatusDetailViewController: UIViewController {
   var orderIdx:Int? = 0
+  var storN:String?
+  var detailStatus: OrderDetail?
   var detailStatusInfo : [OrderFileList] = []
   @IBOutlet weak var orderRequest: UILabel!
   @IBOutlet weak var orderDate: UILabel!
@@ -20,12 +22,20 @@ class StatusDetailViewController: UIViewController {
   @IBOutlet weak var fileDetailCollectionView: UICollectionView!
   override func viewDidLoad() {
     super.viewDidLoad()
+    storeName?.text = detailStatus?.orderStoreName
+    orderNumber?.text = "no. " + String(detailStatus?.orderIdx ?? 0)
+    orderDate?.text = detailStatus?.orderTime
+    orderPrice?.text = String(detailStatus?.orderPrice ?? 0) + "원"
+    orderRequest?.text = detailStatus?.orderComment
+    orderStatus?.text = self.getStatusLabel(detailStatus?.orderState ?? 0)
+    setCollectionView()
+    setCollectionView()
     print(orderIdx)
     // Do any additional setup after loading the view.
   }
   func setCollectionView(){
-    fileDetailCollectionView.delegate = self
-    fileDetailCollectionView.dataSource = self
+    fileDetailCollectionView?.delegate = self
+    fileDetailCollectionView?.dataSource = self
   }
   func getStatusLabel(_ idxx:Int) ->String{
     switch idxx {

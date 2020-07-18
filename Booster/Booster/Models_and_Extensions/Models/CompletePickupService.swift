@@ -13,7 +13,7 @@ struct CompletePickupService {
   static let shared = CompletePickupService()
   
   func pickup(orderIndex: Int, completion:@escaping (NetworkResult<Any>) -> Void){
-      let header:HTTPHeaders = ["token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkeCI6MSwiaWF0IjoxNTk0MDI1NzE2LCJleHAiOjE1OTc2MjU3MTYsImlzcyI6IkJvb3N0ZXIifQ.FtWfnt4rlyYH9ZV3TyOjLZXOkeR7ya96afmA0zJqTI8"]
+      let header:HTTPHeaders = ["token" : UserDefaults.standard.string(forKey: "token")!]
       let dataRequest = Alamofire.request(APIConstraints.progressRequest+"/"+String(orderIndex)+"/pickup", method: .put, parameters: nil, encoding: JSONEncoding.default, headers: header)
       dataRequest.responseData { dataResponse in
         switch dataResponse.result{

@@ -132,7 +132,7 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="20"/>
                                         <state key="normal" title="가입하기" backgroundImage="storeDetailBtnOrder">
-                                            <color key="titleColor" red="0.48630654810000001" green="0.49018782379999998" blue="0.49019646639999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
                                             <action selector="signUpBtn:" destination="RDe-fH-mpg" eventType="touchUpInside" id="fQZ-SV-FUU"/>
@@ -331,7 +331,7 @@
                                                 <rect key="frame" x="16" y="464" width="343" height="106"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rbs-Yg-REH">
-                                                        <rect key="frame" x="0.0" y="0.0" width="343" height="29"/>
+                                                        <rect key="frame" x="0.0" y="4" width="343" height="35"/>
                                                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="14"/>
                                                         <state key="normal" title="숭실대학교">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -341,7 +341,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LBp-Hp-lbk">
-                                                        <rect key="frame" x="0.0" y="29" width="343" height="35"/>
+                                                        <rect key="frame" x="0.0" y="39" width="343" height="35"/>
                                                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="14"/>
                                                         <state key="normal" title="중앙대학교">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -351,7 +351,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2JZ-Pl-ABc">
-                                                        <rect key="frame" x="0.0" y="64" width="343" height="42"/>
+                                                        <rect key="frame" x="0.0" y="74" width="343" height="32"/>
                                                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="14"/>
                                                         <state key="normal" title="서울대학교">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -372,7 +372,8 @@
                                                     <constraint firstItem="LBp-Hp-lbk" firstAttribute="leading" secondItem="6VM-aZ-x3Z" secondAttribute="leading" id="WyO-9c-Eiw"/>
                                                     <constraint firstItem="2JZ-Pl-ABc" firstAttribute="top" secondItem="LBp-Hp-lbk" secondAttribute="bottom" id="Xz2-s3-BOP"/>
                                                     <constraint firstItem="rbs-Yg-REH" firstAttribute="leading" secondItem="6VM-aZ-x3Z" secondAttribute="leading" id="Z6w-9Y-mfD"/>
-                                                    <constraint firstItem="rbs-Yg-REH" firstAttribute="top" secondItem="6VM-aZ-x3Z" secondAttribute="top" id="dcY-gX-VFb"/>
+                                                    <constraint firstItem="LBp-Hp-lbk" firstAttribute="height" secondItem="rbs-Yg-REH" secondAttribute="height" id="Zfv-gI-pBh"/>
+                                                    <constraint firstItem="rbs-Yg-REH" firstAttribute="top" secondItem="6VM-aZ-x3Z" secondAttribute="top" constant="4" id="dcY-gX-VFb"/>
                                                     <constraint firstAttribute="trailing" secondItem="2JZ-Pl-ABc" secondAttribute="trailing" id="lNv-1B-9WI"/>
                                                     <constraint firstItem="LBp-Hp-lbk" firstAttribute="top" secondItem="rbs-Yg-REH" secondAttribute="bottom" id="uEF-ig-nkF"/>
                                                 </constraints>
@@ -438,6 +439,7 @@
                                             <constraint firstItem="1lV-mv-5qS" firstAttribute="top" secondItem="j1x-w9-CkD" secondAttribute="bottom" constant="4" id="uhU-nC-gH3"/>
                                             <constraint firstItem="6VM-aZ-x3Z" firstAttribute="leading" secondItem="dz3-O4-CEV" secondAttribute="leading" constant="16" id="vYB-oX-6YL"/>
                                             <constraint firstItem="jaj-9t-K43" firstAttribute="top" secondItem="1lV-mv-5qS" secondAttribute="bottom" constant="8" id="xDa-SW-ilS"/>
+                                            <constraint firstItem="sAB-Kx-Vwq" firstAttribute="width" secondItem="aJ4-C4-3yp" secondAttribute="width" multiplier="0.714286" id="yFz-g3-yAN"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -471,12 +473,15 @@
                         <outlet property="checkBox_1" destination="TqM-jq-JJA" id="gAf-sP-aHc"/>
                         <outlet property="checkBox_2" destination="gfc-rA-3k5" id="FJS-ae-KB7"/>
                         <outlet property="checkPW" destination="jaj-9t-K43" id="H1v-JF-dmx"/>
+                        <outlet property="cuUniv" destination="LBp-Hp-lbk" id="kgc-NA-Hze"/>
                         <outlet property="getID" destination="oXd-NG-2rs" id="6ju-q9-9dQ"/>
                         <outlet property="getName" destination="doB-hi-lg2" id="dgc-ah-WPR"/>
                         <outlet property="getPW" destination="1lV-mv-5qS" id="Eqc-Zn-de1"/>
                         <outlet property="idCheckFailedLabel" destination="7TS-Iw-d6u" id="e7f-Sb-IsW"/>
                         <outlet property="pwIncorrectLabel" destination="N7V-IZ-0UY" id="YY0-ov-jYd"/>
                         <outlet property="registerBtn" destination="1Cq-7J-o6N" id="otc-lm-HPB"/>
+                        <outlet property="snUniv" destination="2JZ-Pl-ABc" id="rJx-Fb-Uwa"/>
+                        <outlet property="ssUniv" destination="rbs-Yg-REH" id="vGV-hX-3Hy"/>
                         <outlet property="univName" destination="g2P-ss-ql8" id="rn6-qW-udX"/>
                         <outlet property="univSelectionAppear" destination="0vq-aK-MKy" id="YoD-rI-aaN"/>
                     </connections>

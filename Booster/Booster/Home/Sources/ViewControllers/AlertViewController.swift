@@ -47,8 +47,8 @@ extension AlertViewController:UICollectionViewDataSource{
   }
   
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    self.tabBarController?.selectedIndex = 3
     self.dismiss(animated: true, completion: nil)
-     self.tabBarController?.selectedIndex = 3
     
     print("주문현황으로 넘어가기")
     
