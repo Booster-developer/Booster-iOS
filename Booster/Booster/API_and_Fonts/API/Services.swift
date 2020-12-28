@@ -65,13 +65,13 @@ struct idCheckService{
         guard let statusCode = dataResponse.response?.statusCode else{return}
         guard let value = dataResponse.result.value else {return}
         var networkResult:NetworkResult<Any>?
-
+        
         switch statusCode{
         case 200:
           let decoder = JSONDecoder()
           guard let decodedData = try? decoder.decode(IDCheckData.self, from: value) else { return networkResult = .pathErr }
           
-
+          
           
           if decodedData.status == 200{
             networkResult = .success(decodedData.message)
@@ -141,7 +141,7 @@ struct storeListService{
   func getStoreList(_ univIdx:Int, completion : @escaping (NetworkResult<Any>) -> Void){
     let header:HTTPHeaders = ["token" : UserDefaults.standard.string(forKey: "token")!]
     let url = APIConstraints.storeRequest + APIIndex.init(index: .univIdx(univIdx)).index.getIdx()+APIConstraints.list
-
+    
     
     let dataRequest = Alamofire.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: header)
     dataRequest.responseData {
@@ -159,11 +159,11 @@ struct storeListService{
             networkResult = .success(decodedData.data!)
           }
           else if decodedData.status == 400{
-             networkResult = .requestErr(decodedData.message)
-           }
-           else {
-             networkResult = .serverErr
-           }
+            networkResult = .requestErr(decodedData.message)
+          }
+          else {
+            networkResult = .serverErr
+          }
         case 400 : networkResult = .pathErr
         case 500 : networkResult = .serverErr
         default: networkResult = .networkFail
@@ -198,11 +198,11 @@ struct univListService{
             networkResult = .success(decodedData.data!)
           }
           else if decodedData.status == 400{
-             networkResult = .requestErr(decodedData.message)
-           }
-           else {
-             networkResult = .serverErr
-           }
+            networkResult = .requestErr(decodedData.message)
+          }
+          else {
+            networkResult = .serverErr
+          }
         case 400 : networkResult = .pathErr
         case 500 : networkResult = .serverErr
         default: networkResult = .networkFail
@@ -215,7 +215,7 @@ struct univListService{
 }
 
 struct favoriteService {
-    static let shared = favoriteService()
+  static let shared = favoriteService()
   
   func favorateToggle(_ storeIdx : Int, completion : @escaping (NetworkResult<Any>) -> Void){
     let url = APIConstraints.storeRequest + APIIndex.init(index: .storeIdx(storeIdx)).index.getIdx() + APIConstraints.favorate
@@ -236,11 +236,11 @@ struct favoriteService {
             networkResult = .success(decodedData.message)
           }
           else if decodedData.status == 200{
-             networkResult = .requestErr(decodedData.message)
-           }
-           else {
-             networkResult = .serverErr
-           }
+            networkResult = .requestErr(decodedData.message)
+          }
+          else {
+            networkResult = .serverErr
+          }
         case 400 : networkResult = .pathErr
         case 500 : networkResult = .serverErr
         default: networkResult = .networkFail
@@ -256,41 +256,41 @@ struct favoriteService {
 struct orderStoreListService{
   static let shared = orderStoreListService()
   func getOrderStoreList(completion : @escaping (NetworkResult<Any>) -> Void){
-     let url = APIConstraints.storeSelectionList
+    let url = APIConstraints.storeSelectionList
     let header:HTTPHeaders = ["token" : UserDefaults.standard.string(forKey: "token")!]
-     let dataRequest = Alamofire.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: header)
+    let dataRequest = Alamofire.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: header)
     print(dataRequest)
-     dataRequest.responseData {
-       dataResponse in
-       switch dataResponse.result {
-       case .success:
-         guard let statusCode = dataResponse.response?.statusCode else{return}
-         guard let value = dataResponse.result.value else {return}
-         var networkResult:NetworkResult<Any>?
-         switch statusCode{
-         case 200 :
-           let decoder = JSONDecoder()
-           guard let decodedData = try? decoder.decode(orderListData.self, from: value) else { return networkResult = .pathErr }
-           print(decodedData)
-           if decodedData.status == 200 && decodedData.success{
+    dataRequest.responseData {
+      dataResponse in
+      switch dataResponse.result {
+      case .success:
+        guard let statusCode = dataResponse.response?.statusCode else{return}
+        guard let value = dataResponse.result.value else {return}
+        var networkResult:NetworkResult<Any>?
+        switch statusCode{
+        case 200 :
+          let decoder = JSONDecoder()
+          guard let decodedData = try? decoder.decode(orderListData.self, from: value) else { return networkResult = .pathErr }
+          print(decodedData)
+          if decodedData.status == 200 && decodedData.success{
             print("hh")
-             networkResult = .success(decodedData.data!)
-           }
-           else if decodedData.status == 400{
-              networkResult = .requestErr(decodedData.message)
-            }
-            else {
-              networkResult = .serverErr
-            }
-         case 400 : networkResult = .pathErr
-         case 500 : networkResult = .serverErr
-         default: networkResult = .networkFail
-         }
-         completion(networkResult!)
-       case .failure : completion(.networkFail)
-       }
-     }
-   }
+            networkResult = .success(decodedData.data!)
+          }
+          else if decodedData.status == 400{
+            networkResult = .requestErr(decodedData.message)
+          }
+          else {
+            networkResult = .serverErr
+          }
+        case 400 : networkResult = .pathErr
+        case 500 : networkResult = .serverErr
+        default: networkResult = .networkFail
+        }
+        completion(networkResult!)
+      case .failure : completion(.networkFail)
+      }
+    }
+  }
 }
 
 struct orderService {
@@ -384,14 +384,14 @@ struct uploadFileService{
       formData.append(fileData,withName: "file")
       formData.append(thumbNail,withName: "thumbnail")
     }, to: url, method: .post, headers: header, encodingCompletion: {(encodingResult) in
-
+      
       switch encodingResult {
       case .success(let request,_,_):
-
+        
         request.responseJSON(completionHandler: { (response) in
           guard let statusCode = response.response?.statusCode else {return}
           let data = response.result.value as! [String : Any]
-
+          
           let status = data["status"]
           let file = data["data"] as! [String:Any]?
           let fileidx = file?["file_idx"]
@@ -410,9 +410,9 @@ struct uploadFileService{
             else{
               networkResult = .requestErr(decodeData.message)
             }
-            case 400: networkResult = .pathErr
-            case 500: networkResult = .serverErr
-            default: networkResult = .networkFail
+          case 400: networkResult = .pathErr
+          case 500: networkResult = .serverErr
+          default: networkResult = .networkFail
           }
           completion(networkResult!)
         })
@@ -421,7 +421,7 @@ struct uploadFileService{
         completion(.networkFail)
         print("UPload failed")
       }
-      }
+    }
     )
   }
 }
@@ -470,151 +470,154 @@ struct optionSelectService {
     if option.file_range != "전체 페이지"{
       let filerangestart = option.file_range.split(separator: "/")
       start = Int(filerangestart[0]) ?? 0
-      end = Int(filerangestart[1]) ?? start
+      if filerangestart.count == 2 {
+        end = Int(filerangestart[1]) ?? start
+      }
+      else {end = 0}
     }
-    return ["file_color" : option.file_color, "file_direction" : option.file_direction,"file_sided_type" : option.file_sided_type,"file_collect" : option.file_collect,"file_range_start" : start,"file_range_end" : end,"file_copy_number" : option.file_copy_number]
-  }
-  func optionSend(fileIdx:Int, optionSelect:OptionList, completion:@escaping (NetworkResult<Any>) -> Void){
-    let header:HTTPHeaders = ["Content-Type":"application/json", "token" : UserDefaults.standard.string(forKey: "token")!]
-    let url = APIConstraints.orderRequest + APIIndex.init(index: .fileIdx(fileIdx)).index.getIdx() + APIConstraints.options
-    let dataRequest = Alamofire.request(url, method: .post, parameters: makeParameter(optionSelect), encoding: JSONEncoding.default, headers: header)
-    dataRequest.responseData { dataResponse in
-      switch dataResponse.result{
-      case .success:
-        guard let statusCode = dataResponse.response?.statusCode else{return}
-        guard let value = dataResponse.result.value else {return}
-        var networkResult:NetworkResult<Any>?
-        switch statusCode{
-        case 200:
-          let decoder = JSONDecoder()
-          guard let decodedData = try? decoder.decode(OptionChangeData.self, from: value) else { return networkResult = .pathErr }
-          if decodedData.status == 200{
-            networkResult = .success(decodedData.message)
+      return ["file_color" : option.file_color, "file_direction" : option.file_direction,"file_sided_type" : option.file_sided_type,"file_collect" : option.file_collect,"file_range_start" : start,"file_range_end" : end,"file_copy_number" : option.file_copy_number]
+    }
+    func optionSend(fileIdx:Int, optionSelect:OptionList, completion:@escaping (NetworkResult<Any>) -> Void){
+      let header:HTTPHeaders = ["Content-Type":"application/json", "token" : UserDefaults.standard.string(forKey: "token")!]
+      let url = APIConstraints.orderRequest + APIIndex.init(index: .fileIdx(fileIdx)).index.getIdx() + APIConstraints.options
+      let dataRequest = Alamofire.request(url, method: .post, parameters: makeParameter(optionSelect), encoding: JSONEncoding.default, headers: header)
+      dataRequest.responseData { dataResponse in
+        switch dataResponse.result{
+        case .success:
+          guard let statusCode = dataResponse.response?.statusCode else{return}
+          guard let value = dataResponse.result.value else {return}
+          var networkResult:NetworkResult<Any>?
+          switch statusCode{
+          case 200:
+            let decoder = JSONDecoder()
+            guard let decodedData = try? decoder.decode(OptionChangeData.self, from: value) else { return networkResult = .pathErr }
+            if decodedData.status == 200{
+              networkResult = .success(decodedData.message)
+            }
+            else if decodedData.status == 400 {
+              networkResult = .requestErr(decodedData.message)
+            }
+          case 400: networkResult = .pathErr
+          case 500: networkResult = .serverErr
+          default: networkResult = .networkFail
           }
-          else if decodedData.status == 400 {
-            networkResult = .requestErr(decodedData.message)
-          }
-        case 400: networkResult = .pathErr
-        case 500: networkResult = .serverErr
-        default: networkResult = .networkFail
+          completion(networkResult!)
+        case .failure : completion(.networkFail)
         }
-        completion(networkResult!)
-      case .failure : completion(.networkFail)
+      }
+      
+    }
+  }
+  struct storeDetailListService{
+    static let shared = storeDetailListService()
+    
+    func getStoreDetailList(_ storeIdx:Int, completion : @escaping (NetworkResult<Any>) -> Void){
+      let header:HTTPHeaders = ["token" : UserDefaults.standard.string(forKey: "token")!]
+      let url = APIConstraints.storeRequest + "/" + String(storeIdx) + APIConstraints.detail
+      
+      
+      let dataRequest = Alamofire.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: header)
+      dataRequest.responseData {
+        dataResponse in
+        switch dataResponse.result {
+        case .success:
+          guard let statusCode = dataResponse.response?.statusCode else{return}
+          guard let value = dataResponse.result.value else {return}
+          var networkResult:NetworkResult<Any>?
+          switch statusCode{
+          case 200 :
+            let decoder = JSONDecoder()
+            guard let decodedData = try? decoder.decode(StoreDetailViewLoadData.self, from: value) else { return networkResult = .pathErr }
+            if decodedData.status == 200 && decodedData.success{
+              networkResult = .success(decodedData.data)
+            }
+            else if decodedData.status == 400{
+              networkResult = .requestErr(decodedData.message)
+            }
+            else {
+              networkResult = .serverErr
+            }
+          case 400 : networkResult = .pathErr
+          case 500 : networkResult = .serverErr
+          default: networkResult = .networkFail
+          }
+          completion(networkResult!)
+        case .failure : completion(.networkFail)
+        }
       }
     }
-    
   }
-}
-struct storeDetailListService{
-  static let shared = storeDetailListService()
+  struct homeViewService {
+    static let shared = homeViewService()
+    func getHomeData(completion : @escaping (NetworkResult<Any>) -> Void){
+      
+      let header:HTTPHeaders = ["token" : UserDefaults.standard.string(forKey: "token")!]
+      let url = APIConstraints.getOrder
+      let dataRequest = Alamofire.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: header)
+      dataRequest.responseData { dataResponse in
+        
+        switch dataResponse.result{
+        case .success:
+          guard let statusCode = dataResponse.response?.statusCode else{return}
+          guard let value = dataResponse.result.value else {return}
+          var networkResult:NetworkResult<Any>?
+          print(statusCode)
+          switch statusCode{
+          case 200:
+            let decoder = JSONDecoder()
+            guard let decodedData = try? decoder.decode(HomeViewData.self, from: value) else { return networkResult = .pathErr }
+            
+            print(decodedData)
+            guard let homeData = decodedData.data else{return networkResult = .requestErr(decodedData.message)}
+            if decodedData.status == 200{
+              networkResult = .success(homeData)
+            }
+            else if decodedData.status == 400 {
+              networkResult = .requestErr(decodedData.message)
+            }
+          case 400: networkResult = .pathErr
+          case 500: networkResult = .serverErr
+          default: networkResult = .networkFail
+          }
+          completion(networkResult!)
+        case .failure : completion(.networkFail)
+        }
+      }
+    }
+  }
   
-  func getStoreDetailList(_ storeIdx:Int, completion : @escaping (NetworkResult<Any>) -> Void){
-    let header:HTTPHeaders = ["token" : UserDefaults.standard.string(forKey: "token")!]
-    let url = APIConstraints.storeRequest + "/" + String(storeIdx) + APIConstraints.detail
-
-    
-    let dataRequest = Alamofire.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: header)
-    dataRequest.responseData {
-      dataResponse in
-      switch dataResponse.result {
-      case .success:
-        guard let statusCode = dataResponse.response?.statusCode else{return}
-        guard let value = dataResponse.result.value else {return}
-        var networkResult:NetworkResult<Any>?
-        switch statusCode{
-        case 200 :
-          let decoder = JSONDecoder()
-          guard let decodedData = try? decoder.decode(StoreDetailViewLoadData.self, from: value) else { return networkResult = .pathErr }
-          if decodedData.status == 200 && decodedData.success{
-            networkResult = .success(decodedData.data)
+  struct orderDetailViewService {
+    static let shared = orderDetailViewService()
+    func orderDetail(_ orderIdx:Int, completion : @escaping (NetworkResult<Any>) -> Void){
+      
+      let header:HTTPHeaders = ["token" : UserDefaults.standard.string(forKey: "token")!]
+      let url = APIConstraints.progressRequest + "/" + String(orderIdx) + APIConstraints.list
+      let dataRequest = Alamofire.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: header)
+      dataRequest.responseData { dataResponse in
+        switch dataResponse.result{
+        case .success:
+          guard let statusCode = dataResponse.response?.statusCode else{return}
+          guard let value = dataResponse.result.value else {return}
+          var networkResult:NetworkResult<Any>?
+          print(statusCode)
+          switch statusCode{
+          case 200:
+            let decoder = JSONDecoder()
+            guard let decodedData = try? decoder.decode(OrderDetailData.self, from: value) else { return networkResult = .pathErr }
+            print(decodedData)
+            if decodedData.status == 200{
+              networkResult = .success(decodedData.data)
+            }
+            else if decodedData.status == 400 {
+              networkResult = .requestErr(decodedData.message)
+            }
+          case 400: networkResult = .pathErr
+          case 500: networkResult = .serverErr
+          default: networkResult = .networkFail
           }
-          else if decodedData.status == 400{
-             networkResult = .requestErr(decodedData.message)
-           }
-           else {
-             networkResult = .serverErr
-           }
-        case 400 : networkResult = .pathErr
-        case 500 : networkResult = .serverErr
-        default: networkResult = .networkFail
+          completion(networkResult!)
+        case .failure : completion(.networkFail)
         }
-        completion(networkResult!)
-      case .failure : completion(.networkFail)
       }
     }
-  }
-}
-struct homeViewService {
-  static let shared = homeViewService()
-  func getHomeData(completion : @escaping (NetworkResult<Any>) -> Void){
-    
-    let header:HTTPHeaders = ["token" : UserDefaults.standard.string(forKey: "token")!]
-    let url = APIConstraints.getOrder
-    let dataRequest = Alamofire.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: header)
-       dataRequest.responseData { dataResponse in
-         
-         switch dataResponse.result{
-         case .success:
-           guard let statusCode = dataResponse.response?.statusCode else{return}
-           guard let value = dataResponse.result.value else {return}
-           var networkResult:NetworkResult<Any>?
-           print(statusCode)
-           switch statusCode{
-           case 200:
-             let decoder = JSONDecoder()
-             guard let decodedData = try? decoder.decode(HomeViewData.self, from: value) else { return networkResult = .pathErr }
-             
-             print(decodedData)
-             guard let homeData = decodedData.data else{return networkResult = .requestErr(decodedData.message)}
-             if decodedData.status == 200{
-               networkResult = .success(homeData)
-             }
-             else if decodedData.status == 400 {
-               networkResult = .requestErr(decodedData.message)
-             }
-           case 400: networkResult = .pathErr
-           case 500: networkResult = .serverErr
-           default: networkResult = .networkFail
-           }
-           completion(networkResult!)
-         case .failure : completion(.networkFail)
-         }
-       }
-  }
-}
-
-struct orderDetailViewService {
-  static let shared = orderDetailViewService()
-  func orderDetail(_ orderIdx:Int, completion : @escaping (NetworkResult<Any>) -> Void){
-    
-    let header:HTTPHeaders = ["token" : UserDefaults.standard.string(forKey: "token")!]
-    let url = APIConstraints.progressRequest + "/" + String(orderIdx) + APIConstraints.list
-    let dataRequest = Alamofire.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: header)
-       dataRequest.responseData { dataResponse in
-         switch dataResponse.result{
-         case .success:
-           guard let statusCode = dataResponse.response?.statusCode else{return}
-           guard let value = dataResponse.result.value else {return}
-           var networkResult:NetworkResult<Any>?
-           print(statusCode)
-           switch statusCode{
-           case 200:
-             let decoder = JSONDecoder()
-             guard let decodedData = try? decoder.decode(OrderDetailData.self, from: value) else { return networkResult = .pathErr }
-             print(decodedData)
-             if decodedData.status == 200{
-              networkResult = .success(decodedData.data) 
-             }
-             else if decodedData.status == 400 {
-               networkResult = .requestErr(decodedData.message)
-             }
-           case 400: networkResult = .pathErr
-           case 500: networkResult = .serverErr
-           default: networkResult = .networkFail
-           }
-           completion(networkResult!)
-         case .failure : completion(.networkFail)
-         }
-       }
-  }
 }

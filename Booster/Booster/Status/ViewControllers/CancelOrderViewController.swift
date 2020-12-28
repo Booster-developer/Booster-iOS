@@ -13,7 +13,8 @@ class CancelOrderViewController: UIViewController {
   // MARK: - Vars
   let orderTitle: String = " "
   var orderNum : Int?
-  
+  var filename : String = ""
+  var filecount : Int = 1
   // MARK: - Functions
   
   // MARK: - IBOutlets
@@ -33,7 +34,7 @@ class CancelOrderViewController: UIViewController {
         self.dismiss(animated: false, completion: nil)
       case .requestErr(let message):
         guard let message = message as? String else {return}
-        let alertViewController = UIAlertController(title: "로그인 실패", message: message,
+        let alertViewController = UIAlertController(title: "파일 삭제 실패", message: message,
                                                     preferredStyle: .alert)
         let action = UIAlertAction(title: "확인", style: .cancel, handler: nil)
         alertViewController.addAction(action)
@@ -53,7 +54,7 @@ class CancelOrderViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     self.popUpView.layer.cornerRadius = 10
-    
+    self.cancelMessageLabel.text = "'" + filename + " 외 " + String(filecount) + "건'의 인쇄를 취소하려고 합니다."
     // Do any additional setup after loading the view.
   }
   

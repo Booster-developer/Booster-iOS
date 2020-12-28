@@ -1041,13 +1041,13 @@
                                                 <color key="textColor" red="0.27450980390000002" green="0.49803921569999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bgFile3" translatesAutoresizingMaskIntoConstraints="NO" id="s3k-Cr-Xqp">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bgFile3" translatesAutoresizingMaskIntoConstraints="NO" id="s3k-Cr-Xqp">
                                                 <rect key="frame" x="16" y="841.33333333333337" width="343" height="59"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="59" id="DB1-aX-NJG"/>
                                                 </constraints>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bgFile3" translatesAutoresizingMaskIntoConstraints="NO" id="Qwy-kR-X3q">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bgFile3" translatesAutoresizingMaskIntoConstraints="NO" id="Qwy-kR-X3q">
                                                 <rect key="frame" x="16" y="912.33333333333337" width="343" height="59"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="59" id="2y7-om-ITl"/>
@@ -1059,7 +1059,7 @@
                                                     <constraint firstAttribute="height" constant="1" id="nu1-Dz-kyZ"/>
                                                 </constraints>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bgAmount" translatesAutoresizingMaskIntoConstraints="NO" id="4vY-Vb-MDq">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bgAmount" translatesAutoresizingMaskIntoConstraints="NO" id="4vY-Vb-MDq">
                                                 <rect key="frame" x="16" y="996.33333333333326" width="343" height="59"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="59" id="sMY-Js-psj"/>

@@ -57,7 +57,7 @@ class WaitingListViewController: UIViewController {
           self.fileDataList.removeAll()
           tempFilelist.removeAll()
         }
-        self.totalPrice.text = String(data.order_price)
+        self.totalPrice.text = String(data.order_price) + " P"
       case .requestErr(let messgae) : print(messgae)
       case .networkFail: print("networkFail")
       case .serverErr : print("serverErr")
@@ -192,7 +192,7 @@ extension WaitingListViewController:UIDocumentPickerDelegate {
             print("썸네일 있는 파일")
             self.waitingListCollectionView.reloadData()
             thumbNailData = thumbNail.jpegData(compressionQuality: 0.8) ?? Data()
-            try? thumbNailData.write(to:             dir.appendingPathComponent(filename))
+            try? thumbNailData.write(to: dir.appendingPathComponent(filename))
             let fileURL = dir.appendingPathComponent(filename)
             uploadFileService.shared.uploadfile(fileData: sandboxFileURL, thumbNail: fileURL, orderIdx: self.orderIdx){
               networkResult in

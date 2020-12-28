@@ -78,7 +78,7 @@ class StatusHsViewController: UIViewController {
         tempList.removeAll()
       case .requestErr(let message):
         guard let message = message as? String else {return}
-        let alertViewController = UIAlertController(title: "로그인 실패", message: message,
+        let alertViewController = UIAlertController(title: "정보 가져오기 실패", message: message,
                                                     preferredStyle: .alert)
         let action = UIAlertAction(title: "확인", style: .cancel, handler: nil)
         alertViewController.addAction(action)
@@ -132,7 +132,8 @@ extension StatusHsViewController: UITableViewDataSource {
     guard let cancelOrderVC = storyBoard.instantiateViewController(identifier: "cancelOrderViewController") as? CancelOrderViewController else {return}
     cancelOrderVC.modalPresentationStyle = .overCurrentContext
     cancelOrderVC.orderNum = statusInformations[sender.tag].orderNum
-    
+    cancelOrderVC.filename = statusInformations[sender.tag].docsName
+//    cancelOrderVC.filecount = statusInformations[sender.tag]
     self.present(cancelOrderVC, animated: false, completion: nil)
   }
   @objc func pickup(sender:UIButton) {
